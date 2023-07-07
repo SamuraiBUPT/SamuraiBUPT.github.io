@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="【python-vtk】二维序列图像进行三维重建" />
+    <meta name="hexo-theme-A4" content="v1.7.0" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>SamuraiBUPT | C++ developer</title>
+
+    
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <style>
+        :root {
+            --waline-theme-color: #000000; 
+            --waline-color: #000000; 
+            --waline-border-color: #000000; 
+            --waline-white: #000000; 
+            --waline-bgcolor-light: #ffffff;  
+        }
+        body {
+            color: #000000;
+            background: #e4e4e4;
+        }
+        .post-md code {
+            background: #f3f4f4;
+            color: black; 
+        }
+        .year-font-color {
+            color: #000000 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #000000; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #000000;
+            color: #000000; 
+        }
+        .wl-btn {
+            border: 1px solid #000000; 
+            color:  #000000;  
+        }
+        .wl-btn.primary {
+            color: #ffffff; 
+        }
+        .wl-header label {
+            color: #000000;
+        }
+        a {
+            color: #4c7cdc;
+        }
+
+        .post-md a {
+            color: #4c7cdc;
+        }
+
+        .nav li a {
+            color: #4c7cdc;
+        }
+
+        .archive-main a:link {
+            color: #4c7cdc;
+        }
+        .archive-main a:visited {
+            color: #4c7cdc; 
+        }
+
+        .archive li span {
+            color: #000000;
+        }
+
+        .post-main-title {
+            color: #000000;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #000000;
+        }
+
+        [data-waline] p {
+            color: #000000;
+        }
+        [data-waline] a {
+            color: #000000;
+        } 
+        .wl-sort li.active {
+            color: #000000;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #ffffff;
+        }
+
+        .paper {
+            background: #e4e4e4;
+        }
+
+        .index-main {
+            background: #ffffff;
+        }
+
+        .paper-main {
+            background: #ffffff;
+        }
+
+        .wl-panel {
+            background: #ffffff;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #ffffff;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .post-md>table tr:nth-child(odd) td {
+            background: #ffffff;
+        }
+
+        .post-md>table tr:nth-child(even) td {
+            background: #ffffff;
+        }
+    </style>
+
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">SamuraiBUPT</a> 
+            <span class="description">Technique report of developing and personal thoughts recording.</span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            【python-vtk】二维序列图像进行三维重建
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="post-toc-text">一、问题描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="post-toc-text">二、解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#0-%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="post-toc-text">0. 写在前面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="post-toc-text">1. 准备工作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="post-toc-text">2. 文件结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3"><span class="post-toc-text">3. 代码讲解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-0-%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="post-toc-text">3.0 完整代码</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-1-%E5%AE%9A%E4%B9%89%E6%B8%B2%E6%9F%93%E7%AA%97%E5%8F%A3%E3%80%81%E4%BA%A4%E4%BA%92%E6%A8%A1%E5%BC%8F"><span class="post-toc-text">3.1 定义渲染窗口、交互模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-2-%E8%AF%BB%E5%8F%96%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E5%BA%8F%E5%88%97-%E5%AE%9A%E4%B9%89%E8%AF%BB%E5%8F%96%E6%8E%A5%E5%8F%A3"><span class="post-toc-text">3.2 读取二维图像序列 - 定义读取接口</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-3-%E8%AF%BB%E5%8F%96%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%83%8F%E5%BA%8F%E5%88%97-%E5%89%8D%E7%BD%AE%E8%AE%BE%E7%BD%AE-amp-%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96"><span class="post-toc-text">3.3 读取二维图像序列 - 前置设置 &amp; 图像读取</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-4-%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E9%87%8F%E5%B0%91%EF%BC%8C%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E7%9A%84%E7%BB%93%E6%9E%9C%E5%BE%88%E6%89%81%E5%B9%B3"><span class="post-toc-text">3.4 图像数据量少，三维建模的结果很扁平</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-5-%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E5%B9%B3%E6%BB%91%E2%80%94%E9%AB%98%E6%96%AF%E5%B9%B3%E6%BB%91"><span class="post-toc-text">3.5 三维重建结果的平滑—高斯平滑</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-6-%E8%AE%A1%E7%AE%97%E8%BD%AE%E5%BB%93%E4%B8%8E%E8%BE%B9%E7%BC%98%E6%8F%90%E5%8F%96"><span class="post-toc-text">3.6 计算轮廓与边缘提取</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-7-%E7%AE%A1%E9%81%93%E6%93%8D%E4%BD%9C%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B1%95%E7%A4%BA"><span class="post-toc-text">3.7 管道操作与可视化展示</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E4%B8%80%E4%BA%9Bvtk%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB"><span class="post-toc-text">三、一些vtk库的使用经验分享</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-python-vtk"><span class="post-toc-text">1. python vtk</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-%E6%95%B0%E6%8D%AE%E4%BC%A0%E5%85%A5%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="post-toc-text">2. 数据传入的两种方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-GetOutputPort-%E5%92%8C-SetInputConnection"><span class="post-toc-text">2.1 .GetOutputPort() 和 .SetInputConnection()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-GetOutput-%E5%92%8C-SetInputData"><span class="post-toc-text">2.1 .GetOutput() 和 .SetInputData()</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-vtkImageData-%E5%92%8C-vtkPolyData"><span class="post-toc-text">3. vtkImageData 和 vtkPolyData</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="post-toc-text">后记</span></a></li></ol>
+        
+        <h3 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h3><p>最近在开发过程中遇到了这样的问题：</p>
+<p>在医学图像开发过程中，我们将医学图像通过<strong>深度学习</strong>算法进行分割，现在想要<strong>通过这一套二维图像进行三维重构</strong>。</p>
+<p>以下是分割结果：</p>
+<center>
+    <img src="1.png">
+    <br>
+    <div style="color:orange;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图一：前列腺核磁图像分割结果</div>
+</center>
+
+
+<p>以下是读取的遮罩mask：</p>
+<center>
+    <img src="2.png">
+    <br>
+    <div style="color:orange;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图二：图像分割遮罩</div>
+</center>
+
+<p>如何将这些二维图像进行三维重建，是个棘手问题，笔者通过vtk进行建模操作。</p>
+<h3 id="二、解决方案"><a href="#二、解决方案" class="headerlink" title="二、解决方案"></a>二、解决方案</h3><h4 id="0-写在前面"><a href="#0-写在前面" class="headerlink" title="0. 写在前面"></a>0. 写在前面</h4><p>医学图像的三维重建本身就是热点技术，这项技术也并非新鲜技术，笔者调研多份前者的博客与其余资料，整理出了自己的解决方案，旨在与大家共同交流，如果您有更好的建模方案，欢迎随时与我交流！</p>
+<h4 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h4><p>进行医学图像的三维重建，首先需要提供清晰可见的轮廓与遮罩。（如图二所示）</p>
+<p>所用到的库：</p>
+<ul>
+<li>vtk，您可以通过 <code>pip install vtk</code> 直接安装</li>
+</ul>
+<h4 id="2-文件结构"><a href="#2-文件结构" class="headerlink" title="2. 文件结构"></a>2. 文件结构</h4><ul>
+<li><strong>mask文件夹</strong> （用于存放分割结果遮罩，图片名为 <code>mask_0.png</code>, <code>mask_1.png</code> , <code>mask_2.png</code> 等20张图片）</li>
+<li><strong>vtk_gaussian.py</strong>  （python脚本，用于执行并进行三维重建）</li>
+</ul>
+<p>如图所示：</p>
+<center>
+    <img src="3.png">
+    <br>
+    <div style="color:orange;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图三：项目采用的文件结构</div>
+</center>
+
+<h4 id="3-代码讲解"><a href="#3-代码讲解" class="headerlink" title="3. 代码讲解"></a>3. 代码讲解</h4><h5 id="3-0-完整代码"><a href="#3-0-完整代码" class="headerlink" title="3.0 完整代码"></a>3.0 完整代码</h5><p>我知道有的朋友比较急，这里先给出完整代码：</p>
+<pre><code class="python">import vtk
+
+# 定义渲染窗口、交互模式
+aRender = vtk.vtkRenderer()
+Renwin = vtk.vtkRenderWindow()
+Renwin.AddRenderer(aRender)
+iren = vtk.vtkRenderWindowInteractor()
+iren.SetRenderWindow(Renwin)
+
+# 定义个图片读取接口
+# 读取PNG图片就换成PNG_Reader = vtk.vtkPNGReader()
+PNG_Reader = vtk.vtkPNGReader()
+PNG_Reader.SetNumberOfScalarComponents(1)
+PNG_Reader.SetFileDimensionality(2)  # 说明图像是三维的
+
+# 定义图像大小，本行表示图像大小为（512*512*240）
+PNG_Reader.SetDataExtent(0, 256, 0, 256, 0, 19)
+# 设置图像的存放位置
+name_prefix = [&#39;mask/mask_&#39;]
+PNG_Reader.SetFilePrefix(name_prefix[0])
+
+# 设置图像前缀名字
+# 表示图像前缀为数字（如：0.jpg）
+PNG_Reader.SetFilePattern(&quot;%s%d.png&quot;)
+PNG_Reader.Update()
+PNG_Reader.SetDataByteOrderToLittleEndian()
+spacing = [1.0, 1.0, 2.5]  # x, y 方向上的间距为 2 像素，z 方向上的间距为 2.5 像素
+PNG_Reader.GetOutput().SetSpacing(spacing)
+
+# 高斯平滑
+gauss = vtk.vtkImageGaussianSmooth()
+gauss.SetInputConnection(PNG_Reader.GetOutputPort())
+gauss.SetStandardDeviations(1.0, 1.0, 1.0)
+gauss.SetRadiusFactors(1.0, 1.0, 1.0)
+gauss.Update()
+
+# 计算轮廓的方法
+contour = vtk.vtkMarchingCubes()
+gauss.GetOutput().SetSpacing(spacing)
+contour.SetInputConnection(gauss.GetOutputPort())
+contour.ComputeNormalsOn()
+contour.SetValue(0, 100)
+
+mapper = vtk.vtkPolyDataMapper()
+mapper.SetInputConnection(contour.GetOutputPort())
+mapper.ScalarVisibilityOff()
+
+actor = vtk.vtkActor()
+actor.SetMapper(mapper)
+
+renderer = vtk.vtkRenderer()
+renderer.SetBackground([1.0, 1.0, 1.0])
+renderer.AddActor(actor)
+
+window = vtk.vtkRenderWindow()
+window.SetSize(512, 512)
+window.AddRenderer(renderer)
+
+interactor = vtk.vtkRenderWindowInteractor()
+interactor.SetRenderWindow(window)
+
+# 开始显示
+if __name__ == &#39;__main__&#39;:
+    window.Render()
+    interactor.Initialize()
+    interactor.Start()
+</code></pre>
+<h5 id="3-1-定义渲染窗口、交互模式"><a href="#3-1-定义渲染窗口、交互模式" class="headerlink" title="3.1 定义渲染窗口、交互模式"></a>3.1 定义渲染窗口、交互模式</h5><pre><code class="python">import vtk
+
+# 定义渲染窗口、交互模式
+aRender = vtk.vtkRenderer()
+Renwin = vtk.vtkRenderWindow()
+Renwin.AddRenderer(aRender)
+iren = vtk.vtkRenderWindowInteractor()
+iren.SetRenderWindow(Renwin)
+</code></pre>
+<p>本人的所有三维重建脚本中几乎都包含这一块内容，同时这也是进行vtk交互窗口初始化的部分，更多信息您可以查阅vtk官方文档或者其他技术博客。</p>
+<h5 id="3-2-读取二维图像序列-定义读取接口"><a href="#3-2-读取二维图像序列-定义读取接口" class="headerlink" title="3.2 读取二维图像序列 - 定义读取接口"></a>3.2 读取二维图像序列 - 定义读取接口</h5><p>要将<code>mask_0.png</code>到<code>mask_19.png</code>的图像全部读取，需要先定义个图片读取接口 (vtk.vtkXxxReader)。</p>
+<p>笔者的图像为<code>.png</code>格式，因此使用<code>vtk.vtkPNGReader()</code> 进行图像读取。</p>
+<pre><code class="python">PNG_Reader = vtk.vtkPNGReader()
+PNG_Reader.SetNumberOfScalarComponents(1)
+PNG_Reader.SetFileDimensionality(2)  # 说明图像是二维的
+</code></pre>
+<p>在这里，可以根据不同的图片格式选取不同的vtkReader，如果是 <code>.jpg</code> 格式的图像，可以有如下更改：</p>
+<pre><code class="python">JPG_Reader = vtk.vtkJPEGReader()
+# your code here...
+</code></pre>
+<h5 id="3-3-读取二维图像序列-前置设置-amp-图像读取"><a href="#3-3-读取二维图像序列-前置设置-amp-图像读取" class="headerlink" title="3.3 读取二维图像序列 - 前置设置 &amp; 图像读取"></a>3.3 读取二维图像序列 - 前置设置 &amp; 图像读取</h5><pre><code class="python"># 定义图像大小，本人表示图像大小为（256*256）
+# 后两个参数是图片的数目，本人这里所用的图像共20张，所以就输入0, 19
+# 在后续读取的时候，会根据这个序列进行读取
+PNG_Reader.SetDataExtent(0, 256, 0, 256, 0, 19)
+# 设置图像的存放位置
+name_prefix = [&#39;mask/mask_&#39;]
+PNG_Reader.SetFilePrefix(name_prefix[0])
+
+# 表示图像前缀为数字（如：0.jpg）
+PNG_Reader.SetFilePattern(&quot;%s%d.png&quot;)
+PNG_Reader.Update()
+PNG_Reader.SetDataByteOrderToLittleEndian()
+</code></pre>
+<p>这段代码是进行图像读取的一些前置设置。<code>SetDataExtent()</code>函数的参数设置会对后续图像的处理会有一定影响，请正确填写您所使用的图片的大小和数目！</p>
+<p><code>SetFilePrefix()</code> 函数会根据传入的字符串进行锁定。在这里一定要<strong>特别注意</strong>：</p>
+<ul>
+<li>本人的图像存放在<code>mask</code>文件夹下，每张图片的名字为：<code>mask_0.png</code>, <code>mask_1.png</code> 等</li>
+<li>在这里设置Prefix时，就要输入 <code>mask/mask_</code></li>
+<li>后面的<code>SetFilePattern()</code> 函数会自动读取数字，因为前缀已经设置好，不需要再在此处进行一些正则运算符操作</li>
+</ul>
+<h5 id="3-4-图像数据量少，三维建模的结果很扁平"><a href="#3-4-图像数据量少，三维建模的结果很扁平" class="headerlink" title="3.4 图像数据量少，三维建模的结果很扁平"></a>3.4 图像数据量少，三维建模的结果很扁平</h5><p>解决方案：您可以增大图像之间的间距来解决这个问题，紧接着上面的代码：</p>
+<pre><code class="python">PNG_Reader.SetDataByteOrderToLittleEndian()
+spacing = [1.0, 1.0, 2.5]  # x, y 方向上的间距为 2 像素，z 方向上的间距为 2.5 像素
+PNG_Reader.GetOutput().SetSpacing(spacing)
+</code></pre>
+<p>在读取好图片之后，可以设置图像之间的 <code>spacing</code> 这个列表，分别代表<code>x, y, z</code> 三个维度的间距，其中我将<code>z</code>维度的间距增大为<code>2.5</code>， 这样的操作在后面的建模中有显著效果。具体内容如下：</p>
+<center>
+    <img src="4.png">
+    <br>
+    <div style="color:orange;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图四：两种不同间距的建模结果，左图为z=1.0，右图为z=2.5</div>
+</center>
+
+<p>为了使建模结果更接近与器官的形状，我建议<strong>设置好二维图像之间的间距</strong>。</p>
+<h5 id="3-5-三维重建结果的平滑—高斯平滑"><a href="#3-5-三维重建结果的平滑—高斯平滑" class="headerlink" title="3.5 三维重建结果的平滑—高斯平滑"></a>3.5 三维重建结果的平滑—高斯平滑</h5><p>原本建模的结果“层次分明”，并不是特别美观。笔者采用高斯平滑的方案对图像进行平滑。</p>
+<p>如果您有更好的平滑方案，欢迎您与我交流！</p>
+<pre><code class="python"># 高斯平滑
+gauss = vtk.vtkImageGaussianSmooth()
+gauss.SetInputConnection(PNG_Reader.GetOutputPort())
+gauss.SetStandardDeviations(1.0, 1.0, 1.0)
+gauss.SetRadiusFactors(1.0, 1.0, 1.0)
+gauss.Update()
+</code></pre>
+<center>
+    <img src="5.png">
+    <br>
+    <div style="color:orange;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图五：两种不同间距的平滑结果，左图为未平滑，右图为使用高斯平滑</div>
+</center>
+
+<h5 id="3-6-计算轮廓与边缘提取"><a href="#3-6-计算轮廓与边缘提取" class="headerlink" title="3.6 计算轮廓与边缘提取"></a>3.6 计算轮廓与边缘提取</h5><p>在进行高斯平滑之后，进行边缘提取。</p>
+<pre><code class="python"># 计算轮廓的方法
+contour = vtk.vtkMarchingCubes()
+gauss.GetOutput().SetSpacing(spacing)
+contour.SetInputConnection(gauss.GetOutputPort())
+contour.ComputeNormalsOn()
+contour.SetValue(0, 100)
+</code></pre>
+<h5 id="3-7-管道操作与可视化展示"><a href="#3-7-管道操作与可视化展示" class="headerlink" title="3.7 管道操作与可视化展示"></a>3.7 管道操作与可视化展示</h5><p>后面这段代码是vtk的显示部分，笔者一般不去动它，也是每一份脚本中的固有内容，如果您对该部分感兴趣，您应该查阅vtk官方文档。</p>
+<pre><code class="python">mapper = vtk.vtkPolyDataMapper()
+mapper.SetInputConnection(contour.GetOutputPort())
+mapper.ScalarVisibilityOff()
+
+actor = vtk.vtkActor()
+actor.SetMapper(mapper)
+
+renderer = vtk.vtkRenderer()
+renderer.SetBackground([1.0, 1.0, 1.0])
+renderer.AddActor(actor)
+
+window = vtk.vtkRenderWindow()
+window.SetSize(512, 512)
+window.AddRenderer(renderer)
+
+interactor = vtk.vtkRenderWindowInteractor()
+interactor.SetRenderWindow(window)
+
+# 开始显示
+if __name__ == &#39;__main__&#39;:
+    window.Render()
+    interactor.Initialize()
+    interactor.Start()
+</code></pre>
+<h3 id="三、一些vtk库的使用经验分享"><a href="#三、一些vtk库的使用经验分享" class="headerlink" title="三、一些vtk库的使用经验分享"></a>三、一些vtk库的使用经验分享</h3><h4 id="1-python-vtk"><a href="#1-python-vtk" class="headerlink" title="1. python vtk"></a>1. python vtk</h4><p>个人感觉python vtk的开发并没有pythonic风格，开发者有一些将cpp的开发思路带入python库&#x2F;接口的设计，让我写起来味如嚼蜡，从上面的代码亦可以看出，具有浓厚的cpp风格。</p>
+<p>不过代码能跑就行，不得不说vtk仍然是很强大的三维重建工具！</p>
+<h4 id="2-数据传入的两种方式"><a href="#2-数据传入的两种方式" class="headerlink" title="2. 数据传入的两种方式"></a>2. 数据传入的两种方式</h4><h5 id="2-1-GetOutputPort-和-SetInputConnection"><a href="#2-1-GetOutputPort-和-SetInputConnection" class="headerlink" title="2.1 .GetOutputPort() 和 .SetInputConnection()"></a>2.1 <code>.GetOutputPort()</code> 和 <code>.SetInputConnection()</code></h5><p>您会看见诸如 <code>contour.SetInputConnection(gauss.GetOutputPort())</code> 的句子。</p>
+<p>这两个函数一般是成对出现，上下传递的。</p>
+<h5 id="2-1-GetOutput-和-SetInputData"><a href="#2-1-GetOutput-和-SetInputData" class="headerlink" title="2.1 .GetOutput() 和 .SetInputData()"></a>2.1 <code>.GetOutput()</code> 和 <code>.SetInputData()</code></h5><p>笔者在参阅其他博主的博客时，同样看见这样的写法，例如:</p>
+<p> <code>contour.SetInputData(gauss.GetOutput())</code> </p>
+<p>这两个函数一般是成对出现的，进行上下传递处理结果。</p>
+<h4 id="3-vtkImageData-和-vtkPolyData"><a href="#3-vtkImageData-和-vtkPolyData" class="headerlink" title="3. vtkImageData 和 vtkPolyData"></a>3. vtkImageData 和 vtkPolyData</h4><p>在开发过程中，您可能会遇到不少报错，其中肯定会有vtk数据类型报错的问题。我整理了一份表格：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Input Type</th>
+<th align="center">Return Type</th>
+<th align="center">Variable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">vtk.vtkPNGReader()</td>
+<td align="center">?</td>
+<td align="center">vtkImageData</td>
+<td align="center">PNG_Reader</td>
+</tr>
+<tr>
+<td align="center">vtk.vtkImageGaussianSmooth()</td>
+<td align="center">vtkImageData</td>
+<td align="center">vtkImageData</td>
+<td align="center">gauss</td>
+</tr>
+<tr>
+<td align="center">vtk.vtkMarchingCubes()</td>
+<td align="center">vtkImageData</td>
+<td align="center">vtkPolyData</td>
+<td align="center">contour</td>
+</tr>
+<tr>
+<td align="center">vtk.vtkPolyDataNormals()</td>
+<td align="center">vtkImageData</td>
+<td align="center">vtkPolyData</td>
+<td align="center">normfilter</td>
+</tr>
+</tbody></table>
+<p>希望能够帮助您解决开发过程中的一些疑惑。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>医学图像的三维重建工作部分博客较少，笔者希望提供一些星星之火，大家共同进步！</p>
+<p>笔者采用的重建代码已经打包至百度云盘，您可以通过下面的链接下载：</p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1N--vL6OxyfLoqpxxo5S-3Q?pwd=jpt3">下载链接</a></p>
+<p>提取码：jpt3</p>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-04-08</span>
+            
+                <span>该篇文章被 Yazhu Dong</span>
+            
+            
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/Python/'>
+                            Python
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2023 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Programming is a life-long journey.</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>

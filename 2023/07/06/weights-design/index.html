@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="从Llama源码学习指针应用与设计理念" />
+    <meta name="hexo-theme-A4" content="v1.7.0" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>SamuraiBUPT | C++ developer</title>
+
+    
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <style>
+        :root {
+            --waline-theme-color: #000000; 
+            --waline-color: #000000; 
+            --waline-border-color: #000000; 
+            --waline-white: #000000; 
+            --waline-bgcolor-light: #ffffff;  
+        }
+        body {
+            color: #000000;
+            background: #e4e4e4;
+        }
+        .post-md code {
+            background: #f3f4f4;
+            color: black; 
+        }
+        .year-font-color {
+            color: #000000 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #000000; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #000000;
+            color: #000000; 
+        }
+        .wl-btn {
+            border: 1px solid #000000; 
+            color:  #000000;  
+        }
+        .wl-btn.primary {
+            color: #ffffff; 
+        }
+        .wl-header label {
+            color: #000000;
+        }
+        a {
+            color: #4c7cdc;
+        }
+
+        .post-md a {
+            color: #4c7cdc;
+        }
+
+        .nav li a {
+            color: #4c7cdc;
+        }
+
+        .archive-main a:link {
+            color: #4c7cdc;
+        }
+        .archive-main a:visited {
+            color: #4c7cdc; 
+        }
+
+        .archive li span {
+            color: #000000;
+        }
+
+        .post-main-title {
+            color: #000000;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #000000;
+        }
+
+        [data-waline] p {
+            color: #000000;
+        }
+        [data-waline] a {
+            color: #000000;
+        } 
+        .wl-sort li.active {
+            color: #000000;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #ffffff;
+        }
+
+        .paper {
+            background: #e4e4e4;
+        }
+
+        .index-main {
+            background: #ffffff;
+        }
+
+        .paper-main {
+            background: #ffffff;
+        }
+
+        .wl-panel {
+            background: #ffffff;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #ffffff;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .post-md>table tr:nth-child(odd) td {
+            background: #ffffff;
+        }
+
+        .post-md>table tr:nth-child(even) td {
+            background: #ffffff;
+        }
+    </style>
+
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">SamuraiBUPT</a> 
+            <span class="description">Technique report of developing and personal thoughts recording.</span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            从Llama源码学习指针应用与设计理念
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E6%9D%A5%E8%AE%B0%E5%BD%95%E6%9D%83%E9%87%8D%E4%BD%8D%E7%BD%AE"><span class="post-toc-text">1. 通过一个指针数组来记录权重位置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-base"><span class="post-toc-text">1.1 base</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-LlamaDecoderLayerWeight-loadModel"><span class="post-toc-text">1.2 LlamaDecoderLayerWeight.loadModel()</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-%E9%92%88%E5%AF%B9%E6%8C%87%E9%92%88%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%93%8D%E4%BD%9C"><span class="post-toc-text">2. 针对指针位置的初始化操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-%E5%88%86%E9%85%8D%E6%98%BE%E5%AD%98%E7%A9%BA%E9%97%B4"><span class="post-toc-text">2.1 分配显存空间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-%E5%B0%86%E6%9D%83%E9%87%8D%E5%9C%B0%E5%9D%80%E8%B5%8B%E5%80%BC%E7%BB%99%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="post-toc-text">2.2 将权重地址赋值给成员变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-%E5%AE%8F%E8%A7%82%EF%BC%9A%E6%95%B4%E4%B8%AA%E6%9D%83%E9%87%8D%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A6%82%E8%A7%88"><span class="post-toc-text">3. 宏观：整个权重系统的设计概览</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-32%E4%B8%AA%E5%B1%82%E7%9A%84%E6%9D%83%E9%87%8D%E8%AE%BE%E8%AE%A1"><span class="post-toc-text">3.1 32个层的权重设计</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-%E5%A4%96%E9%83%A8%E6%9D%83%E9%87%8D%E5%B1%82%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="post-toc-text">3.2 外部权重层的设计</span></a></li></ol></li></ol>
+        
+        <p>通过指针调度内存资源方案。</p>
+<p>在加载大模型权重的过程中，每一层layer都有如下几种权重，此处以<code>n</code>代表层数index：</p>
+<ul>
+<li>n.input_layernorm.weight.0.bin                           </li>
+<li>n.attention.query_key_value.weight.0.bin         </li>
+<li>n.attention.dense.weight.0.bin 							</li>
+<li>n.mlp.gate_proj.weight.0.bin                               </li>
+<li>n.mlp.up_proj.weight.0.bin                                    </li>
+<li>n.mlp.down_proj.weight.0.bin                               </li>
+<li>n.post_attention_layernorm.weight.bin</li>
+</ul>
+<p>一共有32层。Llama源码对于权重的调度与实现，值得分析、总结、学习。</p>
+<h3 id="1-通过一个指针数组来记录权重位置"><a href="#1-通过一个指针数组来记录权重位置" class="headerlink" title="1. 通过一个指针数组来记录权重位置"></a>1. 通过一个指针数组来记录权重位置</h3><h4 id="1-1-base"><a href="#1-1-base" class="headerlink" title="1.1 base"></a>1.1 base</h4><pre><code class="cpp">struct LlamaDecoderLayerWeight&#123;
+    // other attribute...
+      T*        weights_ptr[14];  
+&#125;;
+</code></pre>
+<p>这一个指针数组，后面会记录每一份权重的位置信息。</p>
+<h4 id="1-2-LlamaDecoderLayerWeight-loadModel"><a href="#1-2-LlamaDecoderLayerWeight-loadModel" class="headerlink" title="1.2 LlamaDecoderLayerWeight.loadModel()"></a>1.2 <code>LlamaDecoderLayerWeight.loadModel()</code></h4><pre><code class="cpp">template&lt;typename T&gt;
+void LlamaDecoderLayerWeight&lt;T&gt;::loadModel(std::string dir_path, FtCudaDataType model_file_type)
+&#123;
+    FT_CHECK(is_maintain_buffer == true);
+    const std::string rank_spec = std::to_string(tensor_para_rank_);
+
+    // fill all bias to zeros
+    deviceFill(weights_ptr[0], (size_t)hidden_units_, (T)0.0);
+    loadWeightFromBin&lt;T&gt;(
+        weights_ptr[1], &#123;(size_t)hidden_units_&#125;, dir_path + &quot;.input_layernorm.weight.bin&quot;, model_file_type);
+
+    loadWeightFromBin&lt;T&gt;(weights_ptr[2],
+                         &#123;(size_t)hidden_units_, (size_t)(3 * hidden_units_ / tensor_para_size_)&#125;,
+                         dir_path + &quot;.attention.query_key_value.weight.&quot; + rank_spec + &quot;.bin&quot;,
+                         model_file_type);
+    deviceFill(weights_ptr[3], (size_t)(3 * hidden_units_ / tensor_para_size_), (T)0.0);
+
+    loadWeightFromBin&lt;T&gt;(weights_ptr[4],
+                         &#123;(size_t)(hidden_units_ / tensor_para_size_), (size_t)hidden_units_&#125;,
+                         dir_path + &quot;.attention.dense.weight.&quot; + rank_spec + &quot;.bin&quot;,
+                         model_file_type);
+    if (!use_gptj_residual_) &#123;
+        deviceFill(weights_ptr[5], (size_t)hidden_units_, (T)0.0);
+    &#125;
+    // more code here...
+&#125;
+</code></pre>
+<p>诸如此类，把二进制文件放在每一个weight_ptr数组中，以便后续操作。</p>
+<p>梳理如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Array Index</th>
+<th align="center">Layer Binary File</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">weights_ptr[0]</td>
+<td align="center">null</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[1]</td>
+<td align="center">input_layernorm.weight.0.bin</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[2]</td>
+<td align="center">attention.query_key_value.weight.0.bin</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[3]</td>
+<td align="center">null</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[4]</td>
+<td align="center">attention.dense.weight.0.bin</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[5]</td>
+<td align="center">null</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[6]</td>
+<td align="center">mlp.gate_proj.weight.0.bin</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[7]</td>
+<td align="center">null</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[8]</td>
+<td align="center">mlp.up_proj.weight.0.bin</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[9]</td>
+<td align="center">null</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[10]</td>
+<td align="center">mlp.down_proj.weight.0.bin</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[11]</td>
+<td align="center">null</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[12]</td>
+<td align="center">null</td>
+</tr>
+<tr>
+<td align="center">weights_ptr[13]</td>
+<td align="center">post_attention_layernorm.weight.bin</td>
+</tr>
+</tbody></table>
+<h3 id="2-针对指针位置的初始化操作"><a href="#2-针对指针位置的初始化操作" class="headerlink" title="2. 针对指针位置的初始化操作"></a>2. 针对指针位置的初始化操作</h3><h4 id="2-1-分配显存空间"><a href="#2-1-分配显存空间" class="headerlink" title="2.1 分配显存空间"></a>2.1 分配显存空间</h4><p>构造函数：调用其他两个函数</p>
+<pre><code class="cpp">mallocWeights();
+setWeightPtr();
+</code></pre>
+<pre><code class="cpp">template&lt;typename T&gt;
+void LlamaDecoderLayerWeight&lt;T&gt;::mallocWeights()
+&#123;
+    deviceMalloc(&amp;weights_ptr[0], hidden_units_); // pre layernorm beta
+    deviceMalloc(&amp;weights_ptr[1], hidden_units_); // pre layernorm gamma
+    deviceMalloc(&amp;weights_ptr[2], hidden_units_ * 3 * hidden_units_ / tensor_para_size_); // qkv kernel
+    deviceMalloc(&amp;weights_ptr[3], 3 * hidden_units_ / tensor_para_size_); // qkv bias
+    deviceMalloc(&amp;weights_ptr[4], hidden_units_ / tensor_para_size_ * hidden_units_); // attention output weight
+    if (!use_gptj_residual_) &#123;
+        deviceMalloc(&amp;weights_ptr[5], hidden_units_); // attention output bias
+    &#125;
+
+    deviceMalloc(&amp;weights_ptr[6], hidden_units_ * inter_size_ / tensor_para_size_); // intermediate_weight kernel
+    deviceMalloc(&amp;weights_ptr[7], inter_size_ / tensor_para_size_);                 // intermediate_weight bias
+    deviceMalloc(&amp;weights_ptr[8], hidden_units_ * inter_size_ / tensor_para_size_); // intermediate_weight2 kernel
+    deviceMalloc(&amp;weights_ptr[9], inter_size_ / tensor_para_size_);                 // intermediate_weight2 bias
+    deviceMalloc(&amp;weights_ptr[10], inter_size_ / tensor_para_size_ * hidden_units_); // output_weight kernel
+    deviceMalloc(&amp;weights_ptr[11], hidden_units_);                                   // output_weight bias
+    deviceMalloc(&amp;weights_ptr[12], hidden_units_); // post attn layernorm beta
+    deviceMalloc(&amp;weights_ptr[13], hidden_units_); // post attn layernorm gamma
+&#125;
+</code></pre>
+<p><code>mallocWeights()</code>方法在为权重分配显存空间。</p>
+<h4 id="2-2-将权重地址赋值给成员变量"><a href="#2-2-将权重地址赋值给成员变量" class="headerlink" title="2.2 将权重地址赋值给成员变量"></a>2.2 将权重地址赋值给成员变量</h4><p>在后续的开发中，一直使用指针进行操作，实际上是很麻烦的事情。</p>
+<p><code>pre_layernorm_weights.gamma</code>总比<code>weight[1]</code>的用法要<strong>更为人所接受</strong>，同时也不容易出错。</p>
+<p>所以，开发者就想到了将指针地址赋值给类中的成员变量，从今以后<strong>通过对成员变量进行操作进而间接对内存中权重进行操作</strong>，而不至于<strong>直接通过指针进行操作。</strong></p>
+<p>所以有：</p>
+<pre><code class="cpp">struct LlamaDecoderLayerWeight&#123;
+    LayerNormWeight&lt;T&gt; pre_layernorm_weights;
+    AttentionWeight&lt;T&gt; self_attention_weights;
+    LayerNormWeight&lt;T&gt; post_attention_layernorm_weights;
+    FfnWeight&lt;T&gt;       ffn_weights;
+&#125;;
+
+// 以下是它们的内部实现，可以看到全部都是指针
+template&lt;typename T&gt;
+struct LayerNormWeight &#123;
+    const T* gamma = nullptr;
+    const T* beta  = nullptr;
+&#125;;
+
+struct AttentionWeight &#123;
+    DenseWeight&lt;T1, T2&gt; query_weight;
+    DenseWeight&lt;T1, T2&gt; key_weight;
+    DenseWeight&lt;T1, T2&gt; value_weight;
+    DenseWeight&lt;T1, T2&gt; attention_output_weight;
+    DenseWeight&lt;T1, T2&gt; ia3_key_weight;
+    DenseWeight&lt;T1, T2&gt; ia3_value_weight;
+&#125;;
+
+template&lt;typename T1, typename T2 = T1&gt;
+struct FfnWeight &#123;
+    DenseWeight&lt;T1, T2&gt; gating_weight;
+    DenseWeight&lt;T1, T2&gt; intermediate_weight;
+    DenseWeight&lt;T1, T2&gt; intermediate_weight2;  // for gated activation
+    DenseWeight&lt;T1, T2&gt; output_weight;
+    DenseWeight&lt;T1, T2&gt; ia3_weight;
+&#125;;
+
+template&lt;typename T1, typename T2 = T1&gt;
+struct DenseWeight &#123;
+    const T1* kernel    = nullptr;
+    const T2* bias      = nullptr;
+    const T1* fp8_bias  = nullptr;
+    const T1* sp_kernel = nullptr;
+
+    bool fuse_gemm_bias = false;
+&#125;;
+</code></pre>
+<p>有了上面的基础，接下来可以看构造函数中第二个调用的函数：</p>
+<pre><code class="cpp">template&lt;typename T&gt;
+void LlamaDecoderLayerWeight&lt;T&gt;::setWeightPtr()
+&#123;
+    pre_layernorm_weights.beta                            = weights_ptr[0];
+    pre_layernorm_weights.gamma                           = weights_ptr[1];
+    self_attention_weights.query_weight.kernel            = weights_ptr[2];
+    self_attention_weights.query_weight.bias              = weights_ptr[3];
+    self_attention_weights.attention_output_weight.kernel = weights_ptr[4];
+    self_attention_weights.attention_output_weight.bias   = use_gptj_residual_ ? nullptr : weights_ptr[5];
+
+    ffn_weights.intermediate_weight.kernel  = weights_ptr[6];
+    ffn_weights.intermediate_weight.bias    = weights_ptr[7];
+    ffn_weights.intermediate_weight2.kernel = weights_ptr[8];
+    ffn_weights.intermediate_weight2.bias   = weights_ptr[9];
+    ffn_weights.output_weight.kernel        = weights_ptr[10];
+    ffn_weights.output_weight.bias          = weights_ptr[11];
+
+    post_attention_layernorm_weights.beta  = weights_ptr[12];
+    post_attention_layernorm_weights.gamma = weights_ptr[13];
+    is_maintain_buffer                     = true;
+&#125;
+</code></pre>
+<p>反思：上面这种方法，方便之处在哪里呢？</p>
+<ul>
+<li>使用同一片内存空间，节约空间开销，避免反复为权重开辟新空间</li>
+<li>底层是一个指针数组，但是通过成员变量的方式对这些内容进行调用，实际上非常高效而不至出错</li>
+<li><strong>分配显存空间、赋值给成员函数、加载模型权重</strong>，这些都可以异步进行。它的执行顺序是：先占据内存空间分配指针地址，然后占据显存空间分配显存地址，最后再在固定的位置加载模型权重。</li>
+</ul>
+<center>
+    <img src="4.png">
+    <br>
+    <div style="color:orange; 
+    display: inline-block;
+    color: #999;
+    padding: 2px;">layer weight design</div>
+</center>
+
+<h3 id="3-宏观：整个权重系统的设计概览"><a href="#3-宏观：整个权重系统的设计概览" class="headerlink" title="3. 宏观：整个权重系统的设计概览"></a>3. 宏观：整个权重系统的设计概览</h3><h4 id="3-1-32个层的权重设计"><a href="#3-1-32个层的权重设计" class="headerlink" title="3.1 32个层的权重设计"></a>3.1 32个层的权重设计</h4><pre><code class="cpp">template&lt;typename T&gt;
+struct LlamaDecoderLayerWeight &#123;
+public:
+    LlamaDecoderLayerWeight() = default;
+    LlamaDecoderLayerWeight(const int  hidden_units,
+                            const int  inter_size,
+                            const int  tensor_para_size = 1,
+                            const int  tensor_para_rank = 0,
+                            const bool use_gptj_residual = true);
+    ~LlamaDecoderLayerWeight();
+    LlamaDecoderLayerWeight(const LlamaDecoderLayerWeight&amp; other);
+    LlamaDecoderLayerWeight&amp; operator=(const LlamaDecoderLayerWeight&amp; other);
+
+    void loadModel(std::string dir_path, FtCudaDataType model_file_type);
+
+    LayerNormWeight&lt;T&gt; pre_layernorm_weights;
+    AttentionWeight&lt;T&gt; self_attention_weights;
+    LayerNormWeight&lt;T&gt; post_attention_layernorm_weights;
+    FfnWeight&lt;T&gt;       ffn_weights;
+
+private:
+    // to offer imformations for cuda memory allocate space
+    int       hidden_units_;
+    int       inter_size_;
+    int       tensor_para_size_;
+    int       tensor_para_rank_;
+    bool      use_gptj_residual_;
+    const int attention_dense_bias_weight_id = 5;
+    bool      is_maintain_buffer = false;
+    T* weights_ptr[14];
+
+    void setWeightPtr();
+    void mallocWeights();
+&#125;;
+</code></pre>
+<p>首先是构造函数区，提供一系列构造方法。</p>
+<p>然后是<code>loadModel()</code>方法，这个方法<strong>并不在该类中被调用。因为这个类仅仅是针对单个层做出的设计</strong>。后面会有一个<code>vector&lt;LlamaDecoderLayerWeight&lt;T&gt;*&gt;*</code>的指针，专门来掌管32个layers。</p>
+<p>再是四个核心成员变量，在后续的开发中，实际上都是通过他们对权重进行读取访问，这些成员类的内部实际上也是指针，通过他们的成员指针对权重位置进行记录并赋值，进而在后续开发中仅仅需要关注名字即可，而不是直接通过weights操作内存。实际上这样的设计理念在后面也可以看到：<code>T* weights_ptr[]</code>指针数组是一个private声明的成员变量，不能被外部所访问。</p>
+<p>下面的几个private成员变量，其实是为了分配cuda显存空间而存在的。只有知道他们的值，才能够正确地分配显存空间。</p>
+<p>最底部的是两个成员方法，第二个<strong>分配显存空间</strong>，第一个<strong>把指针的值赋值给成员对象的内部成员变量（指针）中</strong>，以便后续访问。</p>
+<h4 id="3-2-外部权重层的设计"><a href="#3-2-外部权重层的设计" class="headerlink" title="3.2 外部权重层的设计"></a>3.2 外部权重层的设计</h4><p>因为一共有32个transfromer layer，除此之外还有其余的层，需要一个更大的类来进行包裹。</p>
+<center>
+    <img src="1.png">
+    <br>
+    <div style="color:orange; 
+    display: inline-block;
+    color: #999;
+    padding: 2px;">decoder-only structure</div>
+</center>
+
+<p>如果说我们刚才完成了中间block部分权重的设计，接下来我们需要把剩下部分的权重也包含在内。也就是外部的<code>LlamaWeight</code>类</p>
+<p><code>LlamaWeight</code>的内部代码此处不放出，因为实在比较占据空间，此处可以略讲。</p>
+<ul>
+<li><p>首先是一些必要信息，主要还是用于分配cuda内存</p>
+</li>
+<li><p>构造函数</p>
+</li>
+<li><p><code>std::vector&lt;LlamaDecoderLayerWeight&lt;T&gt;*&gt; decoder_layer_weights</code>，通过一个vector来存放<strong>控制每一个层的权重的对象指针</strong></p>
+</li>
+<li><p>加载外部layer权重的相关成员：</p>
+<ul>
+<li><p>同样的底层private指针数组：<code>std::vector&lt;T*&gt; weights_ptr</code></p>
+</li>
+<li><p>两个成员对象，用于间接控制权重而非直接操作：</p>
+<pre><code class="cpp">LayerNormWeight&lt;T&gt; post_decoder_layernorm;
+DenseWeight&lt;T&gt;     post_decoder_embedding;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><code>loadModel()</code>方法，在这里进行所有权重的加载，并且遍历32个layer完成内部权重的读取。</p>
+</li>
+<li><p>杂项</p>
+</li>
+</ul>
+<p>实际上在之后的forward函数调用的过程中，函数的参数永远是指针：</p>
+<ul>
+<li><p>Llama.h:</p>
+<pre><code class="cpp">void forward(std::unordered_map&lt;std::string, Tensor&gt;* output_tensors,
+            const std::unordered_map&lt;std::string, Tensor&gt;* input_tensors,
+            const LlamaWeight&lt;T&gt;* gpt_weights);
+</code></pre>
+</li>
+<li><p>LlamaDecoder.h:</p>
+<pre><code class="cpp">virtual void forward(std::vector&lt;Tensor&gt;*                              output_tensors,
+                         const std::vector&lt;Tensor&gt;*                        input_tensors,
+                         const std::vector&lt;LlamaDecoderLayerWeight&lt;T&gt;*&gt;* decoder_layer_weights);
+</code></pre>
+</li>
+</ul>
+<p>在这里要进行解读：llama.h的成员变量中，并不包含weights，相反<code>LlamaWeight</code>类是在llama类被使用的过程中，直接include头文件然后临时创建的，也就是说llama本身其实是不带这个类的。所以在传参的时候：<code>gpt.forward(&amp;output_tensors, &amp;input_tensors, &amp;gpt_weights);</code></p>
+<p>进一步，在<code>forward()</code>内部进行传参的时候，同理：</p>
+<pre><code class="cpp">gpt_decoder_-&gt;forward(&amp;decoder_output_tensors, &amp;decoder_input_tensors, &amp;gpt_weights-&gt;decoder_layer_weights);
+</code></pre>
+<p><strong>在实际工程中，参数大多数会是指针，而传进来的变量，也一般都会以取自身的地址的方式传入。</strong> 有关该方案的原因分析，可以看笔者上一篇博文。</p>
+
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-07-06</span>
+            
+                <span>该篇文章被 Yazhu Dong</span>
+            
+            
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/Cplusplus/'>
+                            Cplusplus
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2023 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Programming is a life-long journey.</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>
