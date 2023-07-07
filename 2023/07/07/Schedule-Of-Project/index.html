@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
+    <meta name="description" content="代码开发工程管理 LTS" />
+    <meta name="hexo-theme-A4" content="v1.7.0" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>SamuraiBUPT | C++ developer</title>
+
+    
+        
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/reset.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/markdown.css">
+
+            
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/fonts.css">
+ 
+            <!--注意：首页既不是post也不是page-->
+            
+        
+    
+    
+<link rel="stylesheet" href="/css/ui.css">
+ 
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
+    <style>
+        :root {
+            --waline-theme-color: #000000; 
+            --waline-color: #000000; 
+            --waline-border-color: #000000; 
+            --waline-white: #000000; 
+            --waline-bgcolor-light: #ffffff;  
+        }
+        body {
+            color: #000000;
+            background: #e4e4e4;
+        }
+        .post-md code {
+            background: #f3f4f4;
+            color: black; 
+        }
+        .year-font-color {
+            color: #000000 !important;
+        }
+        .wl-card span.wl-nick {
+            color: #000000; 
+        }
+        .wl-card .wl-badge {
+            border: 1px solid #000000;
+            color: #000000; 
+        }
+        .wl-btn {
+            border: 1px solid #000000; 
+            color:  #000000;  
+        }
+        .wl-btn.primary {
+            color: #ffffff; 
+        }
+        .wl-header label {
+            color: #000000;
+        }
+        a {
+            color: #4c7cdc;
+        }
+
+        .post-md a {
+            color: #4c7cdc;
+        }
+
+        .nav li a {
+            color: #4c7cdc;
+        }
+
+        .archive-main a:link {
+            color: #4c7cdc;
+        }
+        .archive-main a:visited {
+            color: #4c7cdc; 
+        }
+
+        .archive li span {
+            color: #000000;
+        }
+
+        .post-main-title {
+            color: #000000;
+        }
+
+        .post-md h1,
+        .post-md h2,
+        .post-md h3,
+        .post-md h4,
+        .post-md h5,
+        .post-md h6 {
+            color: #000000;
+        }
+
+        [data-waline] p {
+            color: #000000;
+        }
+        [data-waline] a {
+            color: #000000;
+        } 
+        .wl-sort li.active {
+            color: #000000;
+        }
+
+        .wl-card .wl-meta>span {
+            background: #ffffff;
+        }
+
+        .paper {
+            background: #e4e4e4;
+        }
+
+        .index-main {
+            background: #ffffff;
+        }
+
+        .paper-main {
+            background: #ffffff;
+        }
+
+        .wl-panel {
+            background: #ffffff;
+        }
+
+        .archive li:nth-child(odd) {
+            background: #ffffff;
+            ;
+        }
+
+        .archive li:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .post-md>table tr:nth-child(odd) td {
+            background: #ffffff;
+        }
+
+        .post-md>table tr:nth-child(even) td {
+            background: #ffffff;
+        }
+    </style>
+
+    <body>
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">SamuraiBUPT</a> 
+            <span class="description">Technique report of developing and personal thoughts recording.</span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            代码开发工程管理 LTS
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8B%96%E5%BB%B6%E6%9C%89%E5%BE%88%E5%A4%9A%E5%9B%A0%E7%B4%A0%EF%BC%8C%E4%B8%8D%E8%83%BD%E7%AC%BC%E7%BB%9F%E5%BD%92%E5%9B%A0"><span class="post-toc-text">拖延有很多因素，不能笼统归因</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%B0%8A%E9%87%8D%E4%BB%96%E4%BA%BA%E6%84%8F%E8%A7%81%EF%BC%8C%E6%91%92%E5%BC%83%E4%B8%AA%E4%BA%BA%E4%B8%BB%E4%B9%89"><span class="post-toc-text">尊重他人意见，摒弃个人主义</span></a></li></ol>
+        
+        <p>从去年的大创到今年的AIR项目，个人对于工程的管理与把握有一定经验，在这里进行经验分享与总结。</p>
+<center>
+    <img src="1.jpg">
+    <!-- <br>
+    <div style="color:orange;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图一：前列腺核磁图像分割结果</div> -->
+</center>
+
+
+<p>项目管理相较于代码开发能力可能并没有那么显眼突出，是一个不常被人提起的偏门技能树。它是从宏观层面把握项目进度，保证项目正常推进。它所起到的作用，可能会远大于单纯提高代码开发能力对项目的推进作用。</p>
+<p>笔者将两年以来工程项目所踩的坑进行总结，同时也从人性角度对项目推进过程中的问题进行分析，在日后的开发过程中也会经常进行阶段性总结，提高个人的项目管理能力。</p>
+<h3 id="拖延有很多因素，不能笼统归因"><a href="#拖延有很多因素，不能笼统归因" class="headerlink" title="拖延有很多因素，不能笼统归因"></a>拖延有很多因素，不能笼统归因</h3><p>在代码开发的过程中，我们经常遇到拖延的情况，无论是自己因为各种原因的拖延，还是coworker的拖延，都对整个项目推进带来了一定影响，一步一步将整个项目拖向失败的泥沼。<strong>解决拖延问题是保证代码开发项目的首要目标。</strong> 只有彻底解决了拖延问题，才能够保证项目推进的基础。</p>
+<p>在展开讲这个板块之前，我想先从我自己的故事开始讲起。</p>
+<blockquote>
+<p>2022年春，我刚刚结束大一学业，时逢一年一度的<code>大学生创新创业计划</code>开始展开报名，我秉着找机会做项目的原则，最后辗转到一个项目组开始大创事业。运气比较好，遇到的队友都是高我一届的大二学长学姐，指导老师的力量也非常雄厚，一切都在向着比较好的方向发展。事情的进展并非我想象的顺利，因为我们做的工作是 <strong>深度学习-计算机视觉-医学图像</strong> 方向的工作，我当时的水平只能勉强完成C++的各种小型设计，没有任何项目经验（无论是开发经验还是管理经验）。代码能力不强、没有任何相关专业知识，这就是我的根本痛点，以至于一直跟不上项目的开发进度。</p>
+</blockquote>
+<blockquote>
+<p>最开始我也想尽快跟上项目的开发进度，早日投身代码开发工作。但是由于专业知识相差太多（比如医学图像处理的基本知识，包括医学图像格式、医学图像如何观测病灶位置；还有深度学习相关知识：无论是基本的神经网络原理，还是代码工程Pytorch工具的应用，乃至数据集的处理：有训练集和标注集等），我找不到方向，在一次又一次的迷茫中，停摆了任务。</p>
+</blockquote>
+<blockquote>
+<p>在计算机科学的学习道路中，遇到了什么问题，最好是上网搜索，检索资料求得解答的方法有很多，这个后面再描述。这是方法之一，也是所有CS专业学生都应该学会的基本技能。求问学长的方法虽然快，但是存在一个问题：学长也是学生，他虽然能力比你优秀，但是人家为什么要专门花很多时间来指导你呢？这是一个付出而没有回报的事情，我明白这个道理，也不愿意经常去咨询。但是当时检索问题的能力也比较薄弱，还在锻炼的途中，因此遇到了很多不懂的问题花费了很多时间都无法解答。</p>
+</blockquote>
+<blockquote>
+<p>这个项目到了最后，在2023年初，学长端出来了他独自训练的深度学习成果，我依据他的工作结果，做了一个前后端网页并且成功部署了深度学习模型，整个项目勉勉强强能够结项，并且取得了还算不错的成果。</p>
+</blockquote>
+<p>故事讲到这里就暂时告一段落。我想对过往这段经历进行一个复盘总结：我认为我的拖延并不是因为单纯的懒惰，而是因为没有找到开发项目、解决问题的方法。</p>
+<p>代码的开发，往往都是有一定背景的。大家都是在基于某一个背景做实体的任务。而这样实体的背景，往往需要很多东西来支撑，我举一个简单的例子：</p>
+<ul>
+<li>医学图像处理任务，首先需要医学图像的相关知识，其次需要深度学习处理图像的知识，还需要基本的识别、理解神经网络工作原理的专业知识，最后还需要实际工程问题的工程能力经验。</li>
+<li>大型语言模型任务：首先需要对所做的大型语言模型的的基础知识有了解（transformer layer，attention，LoRA等），其次需要工程能力（token，layer，batch，各种资源的调度，C++的实现等）</li>
+</ul>
+<p>从上面这两个例子可以看出，<strong>无论做任何代码开发工作，我们都需要在理解相应知识的基础上，再进行代码开发。</strong> 代码开发属于工程问题，它其实是一个 <strong>非常下层</strong> 的工作，真正的上层任务是搞懂基础知识。</p>
+<p><strong>这句话听起来简单且显而易见，但是做起来并不那么容易铭记</strong> ，因为很多人在草草查资料之后就开始上手工程项目，结果在工程中遇到了问题又反过去查相应的基础知识，这样的工作流程有一个缺点：<strong>在反复的查找资料的过程中，大脑实际上在双通道工作，一方面是查明白基础知识，另一方面是学习工程代码到底是怎么实现这个功能的</strong> ，在两方面反复切换的场景中，人就逐渐丧失了信心，也逐渐迷惘，不知道下一步该怎么办，而且效率也逐渐降低，因为一个人检索问题与解决问题的过程，也存在一个“体力值”，体力值消耗过度，解决问题的效率就降下来了。</p>
+<p>回到我们的主题，<strong>很多时候拖延就是因为这样的情况而产生的，我们在做工程的时候，想不通它为什么能这样设计，因为我们没有明白他的基础原理；最后双通道困顿，以至于停摆。这种停摆不仅仅是脑力层面的停摆，它对开发者心理层面的影响同样也是巨大的，很容易让人不想来理睬这方面的工作，以至于一拖再拖，最后都是临近组会周报，才勉强开始动手做事，糊弄过周报又开始新一周的混吃等死。</strong></p>
+<p>这种情况引起的拖延，就是因为我们找不到解决问题的办法，在错误的方法中越陷越深。我们一定要有一个正确的解决方案，只要把 <strong>阻塞开发过程</strong> 的问题处置好，就能够顺利地解决这方面的拖延问题。</p>
+<p>面对这种情况，我认为有如下方法可供参考：</p>
+<ul>
+<li>首先树立一个观念：不解决先验知识的基础问题，就开始上手下游的工程问题，是不切实际的，最终也站不住脚。</li>
+<li>先花时间耐心调研基础知识，等看得差不多以后，再去上手工程项目。</li>
+<li>看前人的代码，<strong>先不要想我应该怎么往下实现</strong>，而是先看懂他是怎么实现的，对于某个基础模块，比如<code>transformer layer</code>前人是怎么实现的。一步一步解决基础问题，再谈代码开发的问题。</li>
+</ul>
+<p>代码开发中有两个宏观的阶段：一个是读前人的代码，另一个是自己动手写代码。<strong>这两个过程都会上网查询资料，这两个过程虽然路径上看起来是差不多的，实际上有着天壤之别</strong> ，一个是在<strong>学习</strong> ，另一个是在<strong>创造</strong> ，大脑的 <strong>工作区域</strong> 和 <strong>工作方式</strong> 是不一样的。不是说我们对着显示屏输出就是在做同一件事，一定要辨析清楚这两者的根本区别。</p>
+<p>先看，先学，等学得差不多了，再开始进行创造工作。而不是边学边创造，创造的过程中受阻了，再倒回去学，学了点皮毛，又回来进行创造。这样反复横跳的方法是一定不可取的。</p>
+<p>写到这里，是因为在AIR的开发过程中，我似乎又发现了去年的影子，在这样下去，可能整个开发都会被拖垮。因此特地写一篇文章对过往的经历进行剖析，希望以后不要再犯此类错误。</p>
+<h3 id="尊重他人意见，摒弃个人主义"><a href="#尊重他人意见，摒弃个人主义" class="headerlink" title="尊重他人意见，摒弃个人主义"></a>尊重他人意见，摒弃个人主义</h3>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-07-07</span>
+            
+                <span>该篇文章被 Yazhu Dong</span>
+            
+            
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/Coding-life/'>
+                            Coding-life
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    
+        
+
+     
+</div>
+
+
+
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 2022-2023 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>Programming is a life-long journey.</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+        
+<link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/a11y-dark.min.css">
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlight.min.js"></script>
+
+        
+<script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/highlightjs-line-numbers.js"></script>
+
+    
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+                </div>
+            
+    </body>
+</html>
