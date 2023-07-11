@@ -388,9 +388,15 @@ target_link_libraries(LlamaDecoderLayerWeight PUBLIC memory_utils cuda_utils log
 <p>在构建项目的时候，不仅<strong>要在头文件中写好相应文件的位置，以声明refer工作</strong>，还要在CMake中考虑自身文件与其他文件的关系：</p>
 <ul>
 <li>该文件是否会被其他文件include？ -&gt; <strong>add_library()</strong> 就是把自己编译为一个库，便于其他库使用</li>
-<li>该文件是否会include其他文件？ -&gt; <strong>target_link_library()</strong> 与其他库链接，便于自己的代码中使用其他库的代码</li>
+<li>该文件是否会include其他文件？ -&gt; <strong>target_link_libraries()</strong> 与其他库链接，便于自己的代码中使用其他库的代码</li>
 </ul>
-<p>这里需要注意的是，头文件中include了什么，target_link_library就需要引入什么。可能需要进行link的库就在源码中，可能是其他库；同理，源码中使用的库可能就在源码中，也可能就在其他library中。无论如何都要进行<strong>双通道</strong>的reference。</p>
+<p>这里需要注意的是，头文件中include了什么，target_link_libraries就需要引入什么。可能需要进行link的库就在源码中，可能是其他库；同理，源码中使用的库可能就在源码中，也可能就在其他library中。无论如何都要进行<strong>双通道</strong>的reference。</p>
+<p>在**target_link_libraries()**中不免会遇到这种参数：<code>-lcudart</code> ，这其实是由两个部分组成：</p>
+<ul>
+<li>-l</li>
+<li>cudart</li>
+</ul>
+<p>其中cudart是系统的标准库，-l是参数，表示链接这个库。<strong>所以在代码中编译而生成的库，都用其自身在add_library()时定义的库名字表示，而引用系统的、外部的库，都用<code>-l</code>指令表示。</strong></p>
 <h3 id="分层编译-与-lt-TARGET-xxx-gt"><a href="#分层编译-与-lt-TARGET-xxx-gt" class="headerlink" title="分层编译 与 $<TARGET:xxx>"></a>分层编译 与 $&lt;TARGET:xxx&gt;</h3><p>CMake工具有一个特点，就是每个路径会有一个单独的<code>CMakeLists.txt</code>保证该路径下的文件能够被编译，而在上一层目录中，会使用<code>add_subdirectory()</code>进行指明子路径的编译项目。</p>
 <p>例如，子路径下的CMake：</p>
 <pre><code class="cmake">cmake_minimum_required(VERSION 3.8)
@@ -468,6 +474,8 @@ option(SPARSITY_SUPPORT "Build project with Ampere sparsity feature support" OFF
 #endif
 </code></pre>
 <p>在此处，宏<code>SPARSITY_ENABLED</code>就是在cmake里面指定好的一个definition，这个在编译中会被编译器识别，进而编译这其中的代码块。</p>
+<p><strong>set()与option()的区别</strong></p>
+<p>一般而言，set()创建的变量是仅在cmake中读写的，外部不能访问；而option()提供了一个外部用户可访问的开关选项，可以在编译的时候由用户指定。</p>
 
     </div>
 
