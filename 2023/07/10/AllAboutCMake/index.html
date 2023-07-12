@@ -320,7 +320,7 @@ mjx-container[display="true"] + br {
 
     <div class="post-md">
         
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%EF%BC%9A%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E9%A1%B9%E7%9B%AE"><span class="post-toc-text">基础：构建一个小型项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E4%B8%BA%E5%BA%93%EF%BC%9Aadd-library-%E4%B8%8E-target-link-library"><span class="post-toc-text">编译为库：add_library 与 target_link_library</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E5%B1%82%E7%BC%96%E8%AF%91-%E4%B8%8E-lt-TARGET-xxx-gt"><span class="post-toc-text">分层编译 与 $&lt;TARGET:xxx&gt;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%EF%BC%9Aoption-%E4%B8%8E-add-definition"><span class="post-toc-text">编译参数：option 与 add_definition</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%EF%BC%9A%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%9E%8B%E9%A1%B9%E7%9B%AE"><span class="post-toc-text">基础：构建一个小型项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E4%B8%BA%E5%BA%93%EF%BC%9Aadd-library-%E4%B8%8E-target-link-library"><span class="post-toc-text">编译为库：add_library() 与 target_link_library()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3"><span class="post-toc-text">基础讲解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CMake%E7%BC%96%E8%AF%91%E6%A0%91"><span class="post-toc-text">CMake编译树</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%EF%BC%9Aoption-%E4%B8%8E-add-definition"><span class="post-toc-text">编译参数：option 与 add_definition</span></a></li></ol>
         
         <p>最近在项目开发中用到了cmake这个工具，cmake在构建C++大型项目方面的作用非常大，整体而言CMake是一个存在于 <strong>source code</strong> 和 <strong>executable files</strong> 之间的<strong>layer</strong>。CMake通过专有的工具<code>CmakeLists.txt</code>来构建<code>build</code>内容，并且会自动生成一份<code>makefile</code>，从而避免很多手动构建项目编译脚本的麻烦，最终仅需要一键<code>make -j12</code>即可。有利于构建一个功能完整、逻辑严谨的项目，是开发C++大型项目必须学习的内容。在此笔者对开发过程中的cmake用法进行总结与提炼。</p>
 <h3 id="基础：构建一个小型项目"><a href="#基础：构建一个小型项目" class="headerlink" title="基础：构建一个小型项目"></a>基础：构建一个小型项目</h3><p>假设现在我的C++项目文件分别有：<code>test.h</code>，<code>test.cc</code>，<code>main.cc</code>三份文件，在前两份文件中我定义了一些函数，在<code>main.cc</code>中对其进行调用，并实现完整的main函数。下面将使用cmake工具对项目进行构建，目的是生成一份可执行文件。</p>
@@ -366,7 +366,7 @@ make -j"$(grep -c ^processor /proc/cpuinfo)"
 <li><code>CMAKE_BINARY_DIR</code>是一个只读路径，因为在build路径下执行cmake，cmake会自动绑定build就是<code>CMAKE_BINARY_DIR</code></li>
 <li>set指令应当在<code>add_executable</code>前面，<strong>如果在后面的话，不起作用</strong></li>
 </ul>
-<h3 id="编译为库：add-library-与-target-link-library"><a href="#编译为库：add-library-与-target-link-library" class="headerlink" title="编译为库：add_library 与 target_link_library"></a>编译为库：add_library 与 target_link_library</h3><pre><code class="cmake">add_library(LlamaDecoderLayerWeight STATIC LlamaDecoderLayerWeight.cc)
+<h3 id="编译为库：add-library-与-target-link-library"><a href="#编译为库：add-library-与-target-link-library" class="headerlink" title="编译为库：add_library() 与 target_link_library()"></a>编译为库：add_library() 与 target_link_library()</h3><h4 id="基础讲解"><a href="#基础讲解" class="headerlink" title="基础讲解"></a>基础讲解</h4><pre><code class="cmake">add_library(LlamaDecoderLayerWeight STATIC LlamaDecoderLayerWeight.cc)
 set_property(TARGET LlamaDecoderLayerWeight PROPERTY POSITION_INDEPENDENT_CODE  ON)
 set_property(TARGET LlamaDecoderLayerWeight PROPERTY CUDA_RESOLVE_DEVICE_SYMBOLS  ON)
 target_link_libraries(LlamaDecoderLayerWeight PUBLIC memory_utils cuda_utils logger)
@@ -385,19 +385,31 @@ target_link_libraries(LlamaDecoderLayerWeight PUBLIC memory_utils cuda_utils log
 <li><p><code>target_link_libraries</code>：用于指定目标需要链接的其他库。<code>target_link_libraries(LlamaDecoderLayerWeight PUBLIC memory_utils cuda_utils logger)</code> 将 “LlamaDecoderLayerWeight” 目标与名为 “memory_utils”、”cuda_utils” 和 “logger” 的库进行链接。这样，当构建 “LlamaDecoderLayerWeight” 目标时，CMake 会自动解析这些依赖关系并链接相应的库。<strong>这里是因为即便是LlamaDecoderWeight.cc或者.h里面也有很多需要include其他头文件。如果是这样的话，那么这个library同样需要与其他library相连接才可以完成编译任务。</strong></p>
 </li>
 </ol>
+<p><strong>Conclude:</strong></p>
 <p>在构建项目的时候，不仅<strong>要在头文件中写好相应文件的位置，以声明refer工作</strong>，还要在CMake中考虑自身文件与其他文件的关系：</p>
 <ul>
 <li>该文件是否会被其他文件include？ -&gt; <strong>add_library()</strong> 就是把自己编译为一个库，便于其他库使用</li>
 <li>该文件是否会include其他文件？ -&gt; <strong>target_link_libraries()</strong> 与其他库链接，便于自己的代码中使用其他库的代码</li>
 </ul>
 <p>这里需要注意的是，头文件中include了什么，target_link_libraries就需要引入什么。可能需要进行link的库就在源码中，可能是其他库；同理，源码中使用的库可能就在源码中，也可能就在其他library中。无论如何都要进行<strong>双通道</strong>的reference。</p>
-<p>在**target_link_libraries()**中不免会遇到这种参数：<code>-lcudart</code> ，这其实是由两个部分组成：</p>
+<p><strong>parameter <code>-l</code> in target_link_libraries():</strong></p>
+<p>在 <strong>target_link_libraries()</strong> 中不免会遇到这种参数：<code>-lcudart</code> ，这其实是由两个部分组成：</p>
 <ul>
 <li>-l</li>
 <li>cudart</li>
 </ul>
 <p>其中cudart是系统的标准库，-l是参数，表示链接这个库。<strong>所以在代码中编译而生成的库，都用其自身在add_library()时定义的库名字表示，而引用系统的、外部的库，都用<code>-l</code>指令表示。</strong></p>
-<h3 id="分层编译-与-lt-TARGET-xxx-gt"><a href="#分层编译-与-lt-TARGET-xxx-gt" class="headerlink" title="分层编译 与 $<TARGET:xxx>"></a>分层编译 与 $&lt;TARGET:xxx&gt;</h3><p>CMake工具有一个特点，就是每个路径会有一个单独的<code>CMakeLists.txt</code>保证该路径下的文件能够被编译，而在上一层目录中，会使用<code>add_subdirectory()</code>进行指明子路径的编译项目。</p>
+<p><strong>关键字ALIAS</strong></p>
+<p>同样在cmake中看到这样的用法：</p>
+<pre><code class="cmake">add_library(
+  TritonFasterTransformerBackend::triton-fastertransformer-backend ALIAS triton-fastertransformer-backend
+)
+</code></pre>
+<p>这个<code>ALIAS</code>的用法就是把前面的words与后面的库名称画等号：</p>
+<pre><code class="cmake">add_library(&lt;other_name&gt; ALIAS &lt;lib_name&gt;)
+</code></pre>
+<p>在这里，如果有其他库会用到<code>TritonFasterTransformerBackend::triton-fastertransformer-backend</code>，cmake解释器会自动将其链接到<code>triton-fastertransformer-backend</code>。</p>
+<h3 id="CMake编译树"><a href="#CMake编译树" class="headerlink" title="CMake编译树"></a>CMake编译树</h3><p>CMake工具有一个特点，<strong>就是每个路径会有一个单独的<code>CMakeLists.txt</code>保证该路径下的文件能够被编译，而在上一层目录中，会使用<code>add_subdirectory()</code>进行指明子路径的编译项目。</strong></p>
 <p>例如，子路径下的CMake：</p>
 <pre><code class="cmake">cmake_minimum_required(VERSION 3.8)
 
