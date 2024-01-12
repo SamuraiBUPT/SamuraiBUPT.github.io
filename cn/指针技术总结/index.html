@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/cn/指针技术总结/">
+  <title>
+    
+      C++ Pointer - Programming life
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Technique Blogs</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>C++ Pointer</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yazhu Dong on
+              2023-08-20
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">49</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">12.8k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>最近在工作中使用C++直接对内存进行操作的场景较多，同时也从他人的源码中汲取了大量经验。因为捕获的知识较为杂乱，按照个人笔记整理的方式虽然略有条理，但是总是存在碎片化的因素。因此以<strong>内存</strong>为主题，对有关<strong>C++内存管理</strong>的相应内容进行梳理与总结。</p>
+<p>这份技术总结，同时也是随着个人代码功力的提升，不断更新的内容，希望通过系统性的总结，让整个人的代码开发能力更上一个档次。</p>
+<h1>1. 入门：从指针的角度重新认识数组</h1>
+<h2 id="1-1-指针眼中的数组">1.1 指针眼中的数组</h2>
+<p>在最初接触C++的时候，还并不是很懂指针与数组之间的互通关系，仅仅是从语法的角度窥得其中一隅，未能剖析全貌。</p>
+<p><strong>1. 数组是一块连续的内存空间。</strong></p>
+<p>在内存空间中，我们声明一个变量的时候，可能会在堆/栈空间的随机地址之上生成一个变量，如果涉及到相应的内存操作就不会非常方便。数组可以解决这个问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>在<code>t[0]</code>的位置，我们假设它的内存地址是<code>0x646bf320</code>，那么<code>t[1]</code>的内存地址就是<code>0x646bf324</code>。一个<code>int</code>类型的变量大小为<strong>4 bytes</strong>，因此在内存地址上，可以看到向后移动四个字节。</p>
+<p><strong>利用<code>数组实质上是在操作一块连续的内存空间</code>这个理念</strong>，我们可以使用一个指针对其进行操作，有如下代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *p_arr = t;                         <span class="comment">// 数组首地址，也就是t[0]的地址</span></span><br><span class="line">std::cout &lt;&lt; p_arr &lt;&lt; std::endl;        <span class="comment">// 0x646bf320</span></span><br><span class="line">std::cout &lt;&lt; ++p_arr &lt;&lt; std::endl;      <span class="comment">// 0x646bf324</span></span><br><span class="line">std::cout &lt;&lt; *(p_arr) &lt;&lt; std::endl;     <span class="comment">// 2</span></span><br><span class="line">std::cout &lt;&lt; p_arr[<span class="number">1</span>] &lt;&lt; std::endl;     <span class="comment">// 3</span></span><br><span class="line">std::cout &lt;&lt; &amp;p_arr[<span class="number">1</span>] &lt;&lt; std::endl;    <span class="comment">// 0x646bf328</span></span><br></pre></td></tr></table></figure>
+<p>指针可以进行自加运算。自加的值等于<strong>指向变量的大小</strong>。（如果是<code>char*</code>类型的指针，即便是自加，也只会在内存地址上移动<strong>一个字节</strong>。）</p>
+<p>在自加之后，指针向后移动四个字节，指向了原来<code>t[1]</code>的位置。这时候再对其进行取值，会取到<code>2</code>。</p>
+<p>再下一行代码，我们对移动之后的指针进行取值，<code>p_arr[1]</code>实际上会取到<code>t[2]</code>的值，也就是<code>3</code>。</p>
+<p><strong>2. <code>[]</code>运算符</strong></p>
+<p>我们在进行内存操作的时候，使用<code>[]</code>运算符实际上就是在进行<strong>取值</strong>的操作，取到的值等于<strong>基地址 + 偏移</strong>。</p>
+<p>以上面的例子举例，在进行自加运算之后，<code>p_arr</code>指向了<code>t[1]</code>的地址，也就是<strong>基地址</strong> ，如果我们这个时候再使用<code>[]</code>运算符，编译器首先会根据方括号里面的值，在基地址的基础上进行偏移n个字节：</p>
+<p>$$*(BaseAddress + n × sizeof(T))$$</p>
+<p>举例<code>p_arr[1]</code>，也就是：</p>
+<p>$$ *(646bf324 + 1×4) = *(646bf328) = 2 $$</p>
+<h2 id="1-2-指针运算">1.2 指针运算</h2>
+<p>既然写到指针与数组的互通操作，可以补充说明一些指针的更多知识。</p>
+<p>我们所说的地址，每一个地址代表着<strong>一个字节</strong>。</p>
+<p>一个普通的指针存储的地址可以从<code>0x00000000</code>到<code>0xffffffff</code>，所以<strong>所有指针的大小都是四个字节，不随所指向的变量大小变化而变化。</strong></p>
+<p>例如一个double类型的指针，也许数据的大小是<code>8 bytes</code>，但是这个指针的大小是<code>4 bytes</code>。如果感兴趣可以使用<code>sizeof()</code>关键字进行实验。<code>sizeof</code> 返回的单位也是字节。</p>
+<p>指针<strong>可以与整型变量 (int) 进行运算。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> a = <span class="number">3.2f</span>;</span><br><span class="line"><span class="keyword">float</span>* a_ptr = &amp;a;</span><br><span class="line">cout&lt;&lt;a_ptr&lt;&lt;endl;	<span class="comment">// 0x57bdb5d4</span></span><br><span class="line">a_ptr += <span class="number">5</span>;</span><br><span class="line">cout&lt;&lt;a_ptr&lt;&lt;endl;	<span class="comment">// 0x57bdb5e8</span></span><br></pre></td></tr></table></figure>
+<p>一个int是4个字节，在这里加上$ 5×4=20 $，换算为16进制，结果符合预期。</p>
+<p>这样的$ptr+offset$的操作，在实际开发中广为使用。</p>
+<h1>2. 对指针本体的剖析</h1>
+<h2 id="2-1-指针的几种基本用法">2.1 指针的几种基本用法</h2>
+<p>指针有很多种用法，指针本身的作用，就是指向一块内存空间，如果指针不指向任何地址，那么这个指针就是无用的指针。</p>
+<p>基于上面这句描述以及其理解，笔者对常见指针的用法，加以分类。</p>
+<h3 id="1-通过指针，掌握内存区块"><strong>1. 通过指针，掌握内存区块</strong></h3>
+<p>这是最常见的，也是最重要的功能。这个 <strong>内存区块</strong> 的概念，是非常抽象而博大的。</p>
+<p>指针指向的内存资源，可以是一块栈内存，也可以是一块堆内存（通过<code>new</code>分配），还可以是一个被加载的资源文件。（比如深度学习模型的权重文件，动辄上百M），这些庞杂的资源，都需要通过指针进行内存管理。</p>
+<p>我们在后面，会对这种方法加以剖析。</p>
+<h3 id="2-指针作为参数进行传递"><strong>2. 指针作为参数进行传递</strong></h3>
+<p>在大型项目中，函数传参时，往往不会传递一个对象。因为函数传参的时候实际上传入的是对象的拷贝，这样对内存资源的占用是非常大的，而且如果这个对象是<em>线程</em>，如果进行拷贝，后果将会是灾难性的。所以在函数传参的时候，我们经常会看到指针作为参数。这个是习以为常的事情，不应该惊讶，更不应该感到头疼。</p>
+<p><strong>那么传递指针的话，就不用拷贝了吗？</strong></p>
+<p>当然不是，只是因为拷贝一个指针（64位系统 8字节）比拷贝整个对象的开销小了很多，所以才会使用指针作为参数进行传递。</p>
+<p>这里有一个实战中的代码片段：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> Llama&lt;T&gt;::forward(std::unordered_map&lt;std::string, Tensor&gt;*       output_tensors,</span><br><span class="line">                         <span class="keyword">const</span> std::unordered_map&lt;std::string, Tensor&gt;* input_tensors,</span><br><span class="line">                         <span class="keyword">const</span> LlamaWeight&lt;T&gt;*                        gpt_weights)</span><br></pre></td></tr></table></figure>
+<p>有关拷贝的概念，我们也会在后面进行阐述。</p>
+<h3 id="3-指针本身的运算"><strong>3. 指针本身的运算</strong></h3>
+<p>指针本身，既然是控制一片内存空间，那么肯定就能控制这篇内存空间里面的值。这句话是什么意思呢？假如说有一个数组</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>现在有一个指针<code>int *p = a;</code>指向了a的首地址。</p>
+<p>如果这个时候进行<code>p++</code>，那么对这个指针本身解引用，就会从<code>*p</code>为1，变成<code>*p</code>为2，因为它已经指向了第二个元素的地址。</p>
+<p>我们可以再看下面这个例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t[<span class="number">10</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *p_arr = t;</span><br><span class="line">std::cout &lt;&lt; p_arr &lt;&lt; std::endl;		<span class="comment">// 0x7fff646bf320</span></span><br><span class="line">std::cout &lt;&lt; ++p_arr &lt;&lt; std::endl;  	<span class="comment">// 自加一个自己的, 0x7fff646bf324</span></span><br><span class="line">std::cout &lt;&lt; *(p_arr) &lt;&lt; std::endl; 	<span class="comment">// 2</span></span><br><span class="line">std::cout &lt;&lt; p_arr[<span class="number">1</span>] &lt;&lt; std::endl; 	<span class="comment">// 3，因为之前自加过，所以理论上取到的应该是原来的t[2]</span></span><br><span class="line">std::cout &lt;&lt; &amp;p_arr[<span class="number">1</span>] &lt;&lt; std::endl;	<span class="comment">// 0x7fff646bf328</span></span><br></pre></td></tr></table></figure>
+<p>基于这样的原理，如果再往上拓展：我的指针指向的是一个深度学习权重文件，说白了就是一块大矩阵。如果我想要取到这个大矩阵的某个区域，我可否使用指针的偏移来取得？</p>
+<p>答案是可以的，而且这还是最常用最普遍的办法。实际开发中都是通过指针的偏移去取得相应内存资源的值的。比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">invokeGeneralT5LayerNorm</span>(normed_decoder_output_buf_ + hidden_units_offset,</span><br><span class="line">                        decoder_output_buf_ + hidden_units_offset,</span><br><span class="line">                        gpt_weights-&gt;post_decoder_layernorm.gamma,</span><br><span class="line">                        (<span class="keyword">const</span> T*)<span class="literal">nullptr</span>,</span><br><span class="line">                        layernorm_eps_,</span><br><span class="line">                        local_batch_size * beam_width,</span><br><span class="line">                        hidden_units_,</span><br><span class="line">                        stream_);</span><br></pre></td></tr></table></figure>
+<h3 id="4-访问对象成员">4. 访问对象成员</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; arr_;</span><br><span class="line">arr_.<span class="built_in">push_back</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// compare 1</span></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;* vec_arr = &amp;arr_;</span><br><span class="line">cout &lt;&lt; vec_arr-&gt;<span class="built_in">at</span>(<span class="number">0</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// compare 2</span></span><br><span class="line">arr_.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line">cout &lt;&lt; arr_.<span class="built_in">at</span>(<span class="number">1</span>) &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>注意这里的<code>-&gt;</code>箭头运算符，并不是说访问到vec_arr的第一个内容，而是直接访问到它所指向的空间：arr_的里面的元素，（成员变量或者成员函数）</p>
+<p>很好理解：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>;</span></span><br><span class="line">A a;</span><br><span class="line">A *aa = &amp;a;</span><br><span class="line">aa-&gt;xxx;</span><br></pre></td></tr></table></figure>
+<p>这里也是一样的，通过指针来访问a里面的成员。</p>
+<p>我觉得有这样一件事情：</p>
+<ul>
+<li><code>vec_arr[n]</code>才是在取哪个哪个具体的vector</li>
+<li>而<code>vec_arr-&gt;</code>已经在访问具体的内容了。</li>
+</ul>
+<p>但是对于指针的使用，有一个很基本的点，就是<strong>指针在未通过new分配内存空间之前，或者指向一个实际的内存地址之前，无法直接使用。</strong></p>
+<p>比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;* my_map = <span class="literal">nullptr</span>;</span><br><span class="line">my_map-&gt;<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span> ,<span class="keyword">int</span>&gt;(<span class="number">1</span>, <span class="number">2</span>));	<span class="comment">// 未初始化就使用，会报错：Segment Fault</span></span><br></pre></td></tr></table></figure>
+<p>这就是最典型的指针使用失败的案例。</p>
+<p><strong>任何一个指针，在未初始化之前，第一步必须是赋值，然后才能使用这个指针进行其他操作，否则会直接访问不存在的内存空间。</strong></p>
+<p><strong>案例</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ProcessReader::readDataBlock</span><span class="params">(<span class="keyword">uint32_t</span> address, 	<span class="comment">// __In__</span></span></span></span><br><span class="line"><span class="function"><span class="params">                                  <span class="keyword">uint16_t</span> count, 		<span class="comment">// __In__</span></span></span></span><br><span class="line"><span class="function"><span class="params">                                  std::vector&lt;T&gt;* out	<span class="comment">// __Out__</span></span></span></span><br><span class="line"><span class="function"><span class="params">                                 )</span></span>&#123;</span><br><span class="line">    T* t;</span><br><span class="line">    <span class="built_in">ReadProcessMemory</span>(pHandler, (LPVOID)address, t, count*(<span class="keyword">sizeof</span> T), <span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;count;i++)&#123;</span><br><span class="line">        out-&gt;<span class="built_in">push_back</span>(t[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ProcessReader::readDataByInterval</span><span class="params">(<span class="keyword">uint32_t</span> address, <span class="keyword">uint16_t</span> count, <span class="keyword">uint16_t</span> interval, std::vector&lt;T&gt;* out)</span></span>&#123;</span><br><span class="line">    <span class="comment">// this function is for reading data in a fixed interval</span></span><br><span class="line">    <span class="comment">// for example, player info struct in csgo.</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;count;i++)&#123;</span><br><span class="line">        T t;</span><br><span class="line">        <span class="built_in">ReadProcessMemory</span>(pHandler, (LPVOID)(address + i*interval), &amp;t, <span class="keyword">sizeof</span> T, <span class="literal">nullptr</span>);</span><br><span class="line">        out-&gt;<span class="built_in">push_back</span>(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-为什么要用指针">2.2 为什么要用指针</h2>
+<h3 id="2-2-1-避免维护一个数字">2.2.1 避免维护一个数字</h3>
+<p>一个很简单的道理，也是才悟到的。</p>
+<p>如果用一个数字来作为index，很容易失效，你总会要去判断有元素插入或者删除的时候，这个index应该怎么更新。</p>
+<p>但是如果有一个链表作为数据结构，而又有一个指针作为指向值的时候，根本不需要担心这个问题。</p>
+<p>所以就有，对于一个deque来说，最好的办法并不是把某个元素的index记录下来，作为一个ptr，而是<strong>直接把它的迭代器作为指针</strong>，<strong>通过迭代器来完成指向任务。从而不用在每次对元素进行更新的时候，老是要担心去维护那个数字。</strong></p>
+<h3 id="2-2-2-掌握与管理内存">2.2.2 掌握与管理内存</h3>
+<p>有关使用指针掌握内存资源的思路，此处就不做复述了。</p>
+<p>请移步智能指针部分。</p>
+<h1>3. 指针运算讲解</h1>
+<h2 id="3-1-指针大小">3.1 指针大小</h2>
+<p>无论是哪种类型的指针，默认大小都是<code>4 bytes</code> (32位系统)，因为一个指针存储的地址是<code>0xffffffff</code>.</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span>byte = <span class="number">8</span> bit -&gt; <span class="number">0</span>xff	// <span class="number">0</span>xf -&gt; <span class="number">4</span> bit</span><br><span class="line"><span class="symbol">4 </span>bytes = <span class="number">32</span> bit -&gt; <span class="number">0</span>xffffffff</span><br></pre></td></tr></table></figure>
+<p>**sizeof()**的单位是字节（byte），例如<code>sizeof(int)</code>返回4。</p>
+<p>而在64位系统上面，一个指针的大小是 <code>8 bytes</code>。</p>
+<p>我们大多数人用的电脑都是64位系统，理所当然指针的大小是8字节。</p>
+<h2 id="3-2-指针运算">3.2 指针运算</h2>
+<p>指针可以直接与整数进行运算。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> a = <span class="number">3.2f</span>;</span><br><span class="line"><span class="keyword">float</span>* a_ptr = &amp;a;</span><br><span class="line">cout&lt;&lt;a_ptr&lt;&lt;endl;	<span class="comment">// 0x7fff57bdb5d4</span></span><br><span class="line">a_ptr += <span class="number">5</span>;</span><br><span class="line">cout&lt;&lt;a_ptr&lt;&lt;endl;	<span class="comment">// 0x7fff57bdb5e8</span></span><br></pre></td></tr></table></figure>
+<p>$ e8-d4 $，差了$ 12+8=20 $ ，需要注意的是，指针本身最小的单位都是1字节。这个20，相当于是20 bytes</p>
+<p>5*4 = 20，加一个int就是+4, 5个int就是+20</p>
+<p>需要注意的是，<code>void*</code>指针类型不可以直接进行指针运算。如果需要对指针运算取偏移，那么必须要把这个指针转换为其他类型，才可以进行运算。</p>
+<h1>4. 智能指针</h1>
+<h2 id="4-1-unique-ptr">4.1 unique_ptr</h2>
+<p><strong>头文件：memory</strong></p>
+<p>当涉及到内存资源管理时，&quot;内存资源所有权&quot;是一个重要的概念。它指的是程序中某个实体（通常是指针）对于分配的内存资源的所有权，即负责管理该内存资源的生命周期。</p>
+<p>在传统的C++开发中，我们使用<code>new</code>和<code>delete</code>关键字手动分配和释放内存。这意味着我们需要手动跟踪每个内存资源的所有权，并确保在不再使用该资源时正确释放它，以避免内存泄漏和悬挂指针等问题。这种手动管理内存的方式容易出错，尤其是在复杂的代码中。</p>
+<p>为了简化内存管理并提高代码的安全性和可维护性，C++11引入了智能指针，其中包括<code>std::unique_ptr</code>。<code>std::unique_ptr</code>是一个独占所有权的智能指针，它负责管理分配的内存资源，并在不再需要时自动释放它。通过使用<code>std::unique_ptr</code>，我们可以将内存资源的所有权委托给一个特定的指针，从而消除了手动跟踪和释放内存的责任。</p>
+<p><code>std::unique_ptr </code>实现了独享所有权的语义。一个非空的 <code>std::unique_ptr </code>总是拥有它所指向的资源。转移一个<code>std::unique_ptr </code>将会把所有权也从源指针转移给目标指针（源指针被置空）。拷贝一个<code>std::unique_ptr </code>将不被允许，因为如果你拷贝一个 <code>std::unique_ptr </code>,那么拷贝结束后，这两个<code>std::unique_ptr </code>都会指向相同的资源，它们都认为自己拥有这块资源（所以都会企图释放）。因此<code>std::unique_ptr </code>是一个仅能移动（move_only）的类型。当指针析构时，它所拥有的资源也被销毁。默认情况下，资源的析构是伴随着调用<code>std::unique_ptr </code>内部的原始指针的 delete 操作的。</p>
+<p><img src="image-20230626131531081.png" alt="image-20230626131531081"></p>
+<p>示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">//创建一个指向int的空指针</span></span><br><span class="line">    std::unique_ptr&lt;<span class="keyword">int</span>&gt; fPtr1;</span><br><span class="line">    <span class="function">std::unique_ptr&lt;<span class="keyword">int</span>&gt; <span class="title">fPtr2</span><span class="params">(<span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">4</span>))</span></span>;</span><br><span class="line">    <span class="keyword">auto</span> fPtr3 = std::make_unique&lt;<span class="keyword">int</span>&gt;();</span><br><span class="line">    </span><br><span class="line"> 	<span class="comment">//fPtr2释放指向对象的所有权，并且被置为nullptr</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;fPtr2 release before:&quot;</span> &lt;&lt; fPtr2.<span class="built_in">get</span>() &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">int</span> *pF = fPtr2.<span class="built_in">release</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;fPtr2 release before:&quot;</span> &lt;&lt; fPtr2.<span class="built_in">get</span>() &lt;&lt; <span class="string">&quot; and pF value:&quot;</span> &lt;&lt; *pF &lt;&lt; std::endl;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//所有权转移，转移后fPtr3变为空指针</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;move before fPtr1 address:&quot;</span> &lt;&lt; fPtr1.<span class="built_in">get</span>() &lt;&lt; <span class="string">&quot; fPtr3 address:&quot;</span> &lt;&lt; fPtr3.<span class="built_in">get</span>() &lt;&lt; std::endl;</span><br><span class="line">    fPtr1 = std::<span class="built_in">move</span>(fPtr3);</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;move after fPtr1 address:&quot;</span> &lt;&lt; fPtr1.<span class="built_in">get</span>() &lt;&lt; <span class="string">&quot; fPtr3 address:&quot;</span> &lt;&lt; fPtr3.<span class="built_in">get</span>() &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;move before fPtr1 address:&quot;</span> &lt;&lt; fPtr1.<span class="built_in">get</span>() &lt;&lt; std::endl;</span><br><span class="line">    fPtr1.<span class="built_in">reset</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;move after fPtr1 address:&quot;</span> &lt;&lt; fPtr1.<span class="built_in">get</span>() &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fPtr2</span> release before:<span class="number">00</span>EFB<span class="number">120</span></span><br><span class="line"><span class="attribute">fPtr2</span> release before:<span class="number">00000000</span> and pF value:<span class="number">4</span></span><br><span class="line"><span class="attribute">move</span> before fPtr<span class="number">1</span> address:<span class="number">00000000</span> fPtr<span class="number">3</span> address:<span class="number">00</span>EFEC<span class="number">60</span></span><br><span class="line"><span class="attribute">move</span> after fPtr<span class="number">1</span> address:<span class="number">00</span>EFEC<span class="number">60</span> fPtr<span class="number">3</span> address:<span class="number">00000000</span></span><br><span class="line"><span class="attribute">move</span> before fPtr<span class="number">1</span> address:<span class="number">00</span>EFEC<span class="number">60</span></span><br><span class="line"><span class="attribute">move</span> after fPtr<span class="number">1</span> address:<span class="number">00000000</span></span><br></pre></td></tr></table></figure>
+<p>注意这里面的<code>.get()</code>, <code>.release()</code>， <code>.reset()</code>方法</p>
+<p><strong><code>reset()</code></strong></p>
+<p>指向新的对象，释放旧的对象的空间</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::shared_ptr&lt;AbstractTransformerModel&gt; ft_model;</span><br><span class="line">ft_model.<span class="built_in">reset</span>(...)</span><br></pre></td></tr></table></figure>
+<p><strong><code>reset(xx.release())</code></strong></p>
+<p>两个unique_ptr的所有权交换：需要另一个unique_ptr调用<code>release()</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ft_model_instance-&gt;<span class="built_in">reset</span>(model_instance.<span class="built_in">release</span>());</span><br></pre></td></tr></table></figure>
+<p>一个释放，另一个获取。</p>
+<h3 id="4-1-1-make-unique案例">4.1.1 <code>make_unique</code>案例</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IAmResource</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">IAmResource</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;IAmResource()&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">    ~<span class="built_in">IAmResource</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;~IAmResource()&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span> </span>&#123; std::cout &lt;&lt; <span class="string">&quot;I was called&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    IAmResource resource = <span class="built_in">IAmResource</span>();   <span class="comment">// store on stack </span></span><br><span class="line">    std::unique_ptr&lt;IAmResource&gt; _resource = std::make_unique&lt;IAmResource&gt;(resource);</span><br><span class="line">    _resource-&gt;<span class="built_in">doSomething</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码首先在栈上声明了一个对象，然后使用一个unique_ptr指向这个资源。</p>
+<p>最后析构的时候，发现析构函数调用了两次：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">IAmResource</span>()</span><br><span class="line"><span class="selector-tag">I</span> <span class="selector-tag">was</span> <span class="selector-tag">called</span></span><br><span class="line">~<span class="selector-tag">IAmResource</span>()</span><br><span class="line">~<span class="selector-tag">IAmResource</span>()</span><br></pre></td></tr></table></figure>
+<p><strong>原理解析</strong></p>
+<p>使用 <code>resource</code> 对象创建一个 <code>std::unique_ptr&lt;IAmResource&gt;</code> 类型的对象 <code>_resource</code>。</p>
+<p>这里发生了对象的拷贝，因为 <code>std::make_unique&lt;IAmResource&gt;</code> 实际上是调用了 <code>IAmResource</code> 的拷贝构造函数</p>
+<p>（这里没有显式定义，所以编译器生成了默认的拷贝构造函数）。</p>
+<p>但是，因为 <code>IAmResource</code> 类中没有输出语句在拷贝构造函数中，所以没有打印输出。</p>
+<p><code>main</code> 函数结束时，首先 <code>_resource</code> 的析构函数被调用，因为 <code>_resource</code> 是一个智能指针，它负责管理其所指向的对象。</p>
+<ul>
+<li>
+<p>这导致 <code>_resource</code> 所指向的 <code>IAmResource</code> 对象被销毁，并打印出 <code>~IAmResource()</code>。</p>
+</li>
+<li>
+<p>接着，<code>resource</code> 对象的生命周期也结束了。由于 <code>resource</code> 是在栈上创建的，它会在离开创建它的作用域时自动被销毁。因此，<code>resource</code> 的析构函数被调用，再次打印出 <code>~IAmResource()</code>。</p>
+</li>
+</ul>
+<hr>
+<p>写到这里，我似乎明白了：在C++开发过程中，<strong>不到迫不得已需要进行分文件管理的时候，一般都写在同一份文件内</strong>。C++的文件并不强调模块的思想，而是强调功能，一份文件实现一个功能。不能像python开发那样，总是喜欢把文件碎片化、模块化。</p>
+<hr>
+<p><strong>反思：有没有什么办法，能够不调用拷贝构造函数呢？</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IAmResource</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">IAmResource</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;IAmResource()&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">    ~<span class="built_in">IAmResource</span>() &#123; std::cout &lt;&lt; <span class="string">&quot;~IAmResource()&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span> </span>&#123; std::cout &lt;&lt; <span class="string">&quot;I was called&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::unique_ptr&lt;IAmResource&gt; _resource = std::make_unique&lt;IAmResource&gt;();</span><br><span class="line">    _resource-&gt;<span class="built_in">doSomething</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>std::make_unique&lt;IAmResource&gt;()</code> 直接创建了一个 <code>IAmResource</code> 实例，并且这个实例被 <code>std::unique_ptr&lt;IAmResource&gt;</code> 类型的 <code>_resource</code> 所管理。这避免了不必要的拷贝构造调用。</p>
+<p><code>make_unique</code>方法，本质上就是一个创建对象的语句。我们都是使用这个函数来<strong>创建</strong>一个资源的。</p>
+<p>我去查看了之前FT里面的代码，在之前有一个</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::make_shared&lt;ft::Llama&lt;T&gt;&gt; (</span><br><span class="line">	ft::Llama&lt;T&gt;(...)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>在这里，实际上先调用了一次构造函数，然后又调用了一次拷贝构造函数。</p>
+<p>理解这个拷贝构造函数，我认为也可以从内存的角度考虑。</p>
+<p>智能指针存放资源的位置是heap，而之前声明的这个对象的位置是在stack上面，两者根本无法互通，如果硬要获取资源对象，也只能是获取这个资源对象的拷贝构造实例。</p>
+<h2 id="4-2-shared-ptr">4.2 shared_ptr</h2>
+<p><strong>头文件：memory</strong></p>
+<p><strong>1. 智能指针的创建</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">std::cout &lt;&lt; <span class="string">&quot;Smart pointer: shared_ptr&quot;</span> &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用方式一，</span></span><br><span class="line">std::shared_ptr&lt;<span class="keyword">int</span>&gt; <span class="keyword">a_int_t</span> = std::make_shared&lt;<span class="keyword">int</span>&gt;(<span class="number">10</span>);	</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用方式二：拷贝构造</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="keyword">int</span>&gt; <span class="title">b_int_t</span><span class="params">(<span class="keyword">a_int_t</span>)</span></span>;		</span><br><span class="line"><span class="comment">//调用移动构造函数</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="keyword">int</span>&gt; <span class="title">p5</span><span class="params">(std::move(p4))</span></span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用方式三,其指向一块存有 `10` 这个 int 类型数据的 堆 内存空间。</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="keyword">int</span>&gt; <span class="title">c_int_t</span><span class="params">(<span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line"></span><br><span class="line">std::cout &lt;&lt; <span class="keyword">b_int_t</span>.<span class="built_in">use_count</span>() &lt;&lt; std::endl;  <span class="comment">// 2</span></span><br><span class="line">std::cout &lt;&lt; <span class="keyword">b_int_t</span> &lt;&lt; std::endl;  <span class="comment">// 0x55e57569d2d0</span></span><br><span class="line">std::cout &lt;&lt; *<span class="keyword">b_int_t</span> &lt;&lt; std::endl;  <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p>就是多个指针可以指向同一个地址。</p>
+<p><strong>2. 智能指针的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>成员方法名</th>
+<th>功 能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator=()</td>
+<td>重载赋值号，使得同一类型的 shared_ptr 智能指针可以相互赋值。</td>
+</tr>
+<tr>
+<td>operator*()</td>
+<td>重载 * 号，获取当前 shared_ptr 智能指针对象指向的数据。</td>
+</tr>
+<tr>
+<td>operator-&gt;()</td>
+<td>重载 -&gt; 号，当智能指针指向的数据类型为自定义的结构体时，通过 -&gt; 运算符可以获取其内部的指定成员。</td>
+</tr>
+<tr>
+<td>swap()</td>
+<td>交换 2 个相同类型 shared_ptr 智能指针的内容。</td>
+</tr>
+<tr>
+<td>reset()</td>
+<td>当函数没有实参时，该函数会使当前 shared_ptr 所指堆内存的引用计数减 1，同时将当前对象重置为一个空指针；当为函数传递一个新申请的堆内存时，则调用该函数的 shared_ptr 对象会获得该存储空间的所有权，并且引用计数的初始值为 1。</td>
+</tr>
+<tr>
+<td>get()</td>
+<td>获得 shared_ptr 对象内部包含的普通指针。</td>
+</tr>
+<tr>
+<td>use_count()</td>
+<td>返回同当前 shared_ptr 对象（包括它）指向相同的所有 shared_ptr 对象的数量。</td>
+</tr>
+<tr>
+<td>unique()</td>
+<td>判断当前 shared_ptr 对象指向的堆内存，是否不再有其它 shared_ptr 对象再指向它。</td>
+</tr>
+<tr>
+<td>operator bool()</td>
+<td>判断当前 shared_ptr 对象是否为空智能指针，如果是空指针，返回 false；反之，返回 true。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>除此之外，C++11 标准还支持同一类型的 shared_ptr 对象，或者 shared_ptr 和 nullptr 之间，进行 ==，!=，&lt;，&lt;=，&gt;，&gt;= 运算。</p>
+</blockquote>
+<p><strong>3. 自定义释放规则</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//指定 default_delete 作为释放规则</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="keyword">int</span>&gt; <span class="title">p6</span><span class="params">(<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>], std::default_delete&lt;<span class="keyword">int</span>[]&gt;())</span></span>;</span><br><span class="line"><span class="comment">//自定义释放规则</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">deleteInt</span><span class="params">(<span class="keyword">int</span>*p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> []p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化智能指针，并自定义释放规则</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="keyword">int</span>&gt; <span class="title">p7</span><span class="params">(<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>], deleteInt)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>4. Why Smart Pointer?</strong></p>
+<ol>
+<li><strong>所有权语义</strong>：<code>std::unique_ptr</code>通过其名字明确表示其管理的对象的所有权是唯一的。这可以在阅读代码时提供有关资源管理的有用信息。也就是能保证多个shared_ptr<strong>共享某一个对象资源的所有权</strong> 。</li>
+<li><strong>引用计数</strong>：<code>std::shared_ptr</code>允许多个智能指针共享同一个对象的所有权，它使用引用计数来确保只有最后一个对该对象的引用被销毁时，对象才被删除。</li>
+<li><strong>异常安全</strong>：如果函数因异常而提前退出，所有在该函数中构造的对象都会被析构。如果你使用原始指针，可能会因为异常而忘记释放内存，但如果使用智能指针，内存会被自动管理。</li>
+<li><strong>可自定义的删除器</strong>：你可以为<code>std::unique_ptr</code>和<code>std::shared_ptr</code>提供自定义的删除器，以处理特殊的资源释放需求。</li>
+<li><strong>与STL容器兼容</strong>：智能指针设计为可以与STL容器一起使用，这比原始指针更加安全。</li>
+<li><strong>提高代码的可读性</strong>：通过使用智能指针，你可以明确地在代码中表示资源所有权和生命周期，使代码的意图更加清晰。</li>
+</ol>
+<p><strong>5. Smart Pointer Usage</strong></p>
+<p>声明一个智能指针对象，它本身就是一个<strong>指针</strong>，而不是一个类！</p>
+<p>比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::shared_ptr&lt;std::unordered_map&lt;std::string, triton::Tensor&gt;&gt; *input_tensors</span><br></pre></td></tr></table></figure>
+<p>这个是 <strong>指向一个共享指针的指针</strong>。</p>
+<p>如果要取用这个对象的成员方法，应该是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(*input_tensors)</span><br><span class="line">        -&gt;<span class="built_in">insert</span>(&#123;std::<span class="built_in">string</span>(input_name),</span><br><span class="line">                  triton::Tensor&#123;TRITONSERVER_MEMORY_CPU, input_datatype,</span><br><span class="line">                                 batchn_shape, padded_input_ids_ptr&#125;&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>智能指针本身就是一个指针，使用<code>*</code>来取到pointer所存储的智能指针，然后再通过<code>-&gt;</code>进行取值，因为现在还是在用指针。</p>
+</li>
+<li>
+<p>因为本身是指针，取到的对象也是个指针，所以在调用<code>-&gt;insert()</code>方法的时候，需要使用括号把前面的括起来，<strong>否则编译器不知道到底是在调用哪个的方法</strong>。</p>
+</li>
+</ul>
+<p><strong>6. use_count</strong></p>
+<p><strong>use_count (使用计数)</strong>：表示有多少个 <code>shared_ptr</code> 实例当前正在共享同一资源（或指向同一个对象）。当你复制一个 <code>shared_ptr</code> 或使一个新的 <code>shared_ptr</code> 指向一个已经被其他 <code>shared_ptr</code> 所指向的对象时，<code>use_count</code> 会增加。每当一个 <code>shared_ptr</code> 被销毁或被重置，<code>use_count</code> 会减少。当 <code>use_count</code> 降到0时，指向的对象会被自动删除。</p>
+<p><code>use_count</code> 只在以下情况改变：</p>
+<ol>
+<li>当你复制一个 <code>std::shared_ptr</code>，如 <code>std::shared_ptr&lt;T&gt; ptr2 = ptr1;</code>。</li>
+<li>当你用一个已存在的 <code>std::shared_ptr</code> 初始化另一个 <code>std::shared_ptr</code>。</li>
+<li>当一个 <code>std::shared_ptr</code> 被销毁，如超出作用域或被重置。</li>
+<li>当你将一个 <code>std::shared_ptr</code> 分配给另一个已存在的 <code>std::shared_ptr</code>。</li>
+</ol>
+<p>简单地使用一个指向 <code>std::shared_ptr</code> 的指针，不会导致 <code>use_count</code> 的改变。<strong>比如函数传参，传递一个指向智能指针的指针进去。</strong></p>
+<p>智能指针，尤其是shared_ptr的出现，解决了资源控制权的问题，同时也减少了野指针出现的可能。</p>
+<p><strong>7. make_shared()</strong></p>
+<p>语法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shared_ptr&lt;Class_name&gt; obj_ptr = std::make_shared&lt;Class_name&gt;(...);</span><br></pre></td></tr></table></figure>
+<p>这个<code>make_shared()</code>函数会自动在堆上创建一块内存，也就是申请的堆内存。在引用计数为0的时候，会自动释放这块内存。</p>
+<h3 id="4-2-1-实战">4.2.1 实战</h3>
+<p>我在实战过程中，就遇到了这样的案例：</p>
+<blockquote>
+<p>我现在有一个shared_ptr A，我通过make_shared分配了内存。这个时候，我在另外一个函数中，创建了一个shared_ptr B，我也通过make_shared分配了内存空间。在这个时候我把B赋值给A，也就是说A指向了B指向的内存空间。这个时候，A原来指向的那块内存空间会怎样呢？</p>
+</blockquote>
+<p>答案是会销毁。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建一个shared_ptr A，它指向一个int的新实例</span></span><br><span class="line">    std::shared_ptr&lt;<span class="keyword">int</span>&gt; A = std::make_shared&lt;<span class="keyword">int</span>&gt;(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建另一个shared_ptr B，它指向另一个int的新实例</span></span><br><span class="line">    std::shared_ptr&lt;<span class="keyword">int</span>&gt; B = std::make_shared&lt;<span class="keyword">int</span>&gt;(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出A和B指向的值</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;A points to: &quot;</span> &lt;&lt; *A &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;B points to: &quot;</span> &lt;&lt; *B &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使A指向B所指向的内存空间</span></span><br><span class="line">    A = B;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 再次输出A和B指向的值</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;After assignment:&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;A points to: &quot;</span> &lt;&lt; *A &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;B points to: &quot;</span> &lt;&lt; *B &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 现在A和B指向相同的内存空间</span></span><br><span class="line">    <span class="comment">// A原来指向的内存已经被自动释放</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A原来指向的那块内存空间，因为引用计数为0，所以自动被销毁了。</p>
+<p>所以很容易遇到指针悬挂的例子，也就是<strong>函数之外的一个指针，指向了函数里面的一个地址。结果这个函数结束了，这块栈内存直接被回收，这个时候函数之外的那个指针就悬挂了。</strong></p>
+<p><strong>shared_ptr，我的人生挚友。</strong></p>
+<h2 id="4-3-unique-ptr资源控制权">4.3 unique_ptr资源控制权</h2>
+<p>在使用unique_ptr的时候，会有控制权的转换。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::unique_ptr&lt;InflightBatchScheduler&gt; <span class="title">sched</span><span class="params">(inflight_sched)</span></span>;</span><br><span class="line"><span class="comment">// other logic ...</span></span><br><span class="line">scheduler-&gt;<span class="built_in">reset</span>(sched.<span class="built_in">release</span>());</span><br></pre></td></tr></table></figure>
+<p>这个release() ,并不是Scheduler封装的方法，而是unique pointer内部的方法，它表示一个资源的控制权的转换。</p>
+<p><strong>语法总结</strong></p>
+<p><strong>1. 控制权转移给另一个unique_ptr</strong></p>
+<p>我们在对unique_ptr进行资源转换的之后，一般的语法是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::unique_ptr&lt;std::object&gt; <span class="title">ptr1</span><span class="params">(xx)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// other logic ...</span></span><br><span class="line">std::unique_ptr&lt;std::object&gt; ptr2;		<span class="comment">// 在这里不进行初始化</span></span><br><span class="line">ptr2.<span class="built_in">reset</span>(ptr1.<span class="built_in">release</span>());</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，在这里仅仅是在做 <strong>从一个unique_ptr转移资源控制权到另一个unique_ptr</strong> 。</p>
+<p><strong>2. 控制权转移给一个容器</strong></p>
+<p>如果我们要做unique_ptr的入队操作，应该使用<code>std::move()</code></p>
+<p>例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Status</span><br><span class="line">PriorityQueue::PolicyQueue::<span class="built_in">Enqueue</span>(std::unique_ptr&lt;InferenceRequest&gt;&amp; request)</span><br><span class="line">&#123;</span><br><span class="line">    queue_.<span class="built_in">emplace_back</span>(std::<span class="built_in">move</span>(request));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-4-函数传参">4.4 函数传参</h2>
+<p>在函数传参的时候，有时候甚至能看到“智能指针的引用”或者“智能指针的指针”。</p>
+<p>这是因为，智能指针本身就是一个对象。如果按照值传递，就会拷贝这个对象一次。</p>
+<ol>
+<li>
+<p><strong>以值传递 (<code>pass by value</code>)</strong>: 传入 <code>std::shared_ptr</code> 的拷贝。这会增加共享对象的引用计数。函数内部对拷贝的 <code>shared_ptr</code> 进行的操作<strong>不会影响原始的 <code>shared_ptr</code></strong>，但是会<strong>影响它所管理的对象</strong>（除非你修改拷贝的 <code>shared_ptr</code> 使其指向另一个对象）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(std::shared_ptr&lt;T&gt; ptr)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这里的 ptr 是原始 shared_ptr 的拷贝</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>以引用传递 (<code>pass by reference</code>)</strong>: 传入对 <code>std::shared_ptr</code> 的引用。这不会增加引用计数。函数内部对 <code>shared_ptr</code> 的任何操作都会影响到原始的 <code>shared_ptr</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(std::shared_ptr&lt;T&gt;&amp; ptr)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这里的 ptr 是原始 shared_ptr 的引用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>以常量引用传递 (<code>pass by const reference</code>)</strong>: 传入对 <code>std::shared_ptr</code> 的常量引用。这不会增加引用计数。函数可以读取 <code>shared_ptr</code> 但不能修改它。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">evoid <span class="title">foo</span><span class="params">(<span class="keyword">const</span> std::shared_ptr&lt;T&gt;&amp; ptr)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这里的 ptr 是原始 shared_ptr 的常量引用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1>5. const修饰指针</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">test_A</span>&#123;</span></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> *a = <span class="literal">nullptr</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> *b = <span class="literal">nullptr</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> v_a = <span class="number">5</span>;</span><br><span class="line">t.a = &amp;v_a;	<span class="comment">//合法</span></span><br></pre></td></tr></table></figure>
+<p><code>const int* a</code> 和 <code>const int* b</code> 是指向常量整型的指针。这意味着它们可以指向一个 <code>int</code> 类型的常量，但不能通过它们修改所指向的值。</p>
+<p>也就是说，可以修改指针的赋值，但是不能通过指针，去修改上层内存的值。</p>
+<p>更进一步：<strong>可以赋值，但是只能读取值，无法通过指针取修改。</strong></p>
+<p>在指针前面声明const，<strong>仅仅代表你不会通过这个指针去修改原来内存上面的值</strong>，而不代表<strong>不去给这个指针赋值</strong>。</p>
+<p>我们可以看一个实战的例子:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">TRITONBACKEND_InputProperties</span>(TRITONBACKEND_Input *input, <span class="keyword">const</span> <span class="keyword">char</span> **name, TRITONSERVER_DataType *datatype, <span class="keyword">const</span> <span class="keyword">int64_t</span> **shape, <span class="keyword">uint32_t</span> *dims_count, <span class="keyword">uint64_t</span> *byte_size, <span class="keyword">uint32_t</span> *buffer_count);</span><br></pre></td></tr></table></figure>
+<p>这个函数的 <code>name</code> 参数的类型为 <code>const char**</code>，意思是它想要一个指向 <code>const char*</code> 的指针。函数内部会设置这个指针指向一个常量字符串。这种设计是为了保证使用者不会尝试修改这个字符串的内容，因为这可能是内部静态字符串或其他不应该被改变的内存。</p>
+<p>在调用这个函数的时候，你不必显式地在外部使用 <code>const</code> 来定义 <code>property_name</code>。无论你使用 <code>const char* property_name</code> 还是 <code>char* property_name</code>，都可以正常工作，因为指针本身（不是它指向的内容）是可以修改的。然而，使用 <code>const char*</code> 更有意义，因为这明确表示你不打算修改这个字符串的内容。</p>
+<h1>6. 二重指针：修改指针本身 和 通过指针修改值</h1>
+<p><strong>1. 操作指针数组</strong></p>
+<p>在backend开发过程中看到这样的写法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRITONBACKEND_Request** requests</span><br></pre></td></tr></table></figure>
+<p>requests本来就是一系列请求，这些请求被放到一个数组中，现在要拿到的就是这些个数组的地址。</p>
+<p>比如：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">request_seq_1</span> =<span class="meta"> [req1, req2, req3]</span></span><br><span class="line"><span class="attribute">request_seq_2</span> =<span class="meta"> [req4, req5, req6]</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">request_set</span>[<span class="number">0</span>] = &amp;request_seq_<span class="number">1</span>[<span class="number">0</span>]</span><br><span class="line"><span class="attribute">request_set</span>[<span class="number">1</span>] = &amp;request_seq_<span class="number">2</span>[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>就是取一个request的二维数组。一个维度就是一个batch</p>
+<p><strong>2. 操作指针本身</strong></p>
+<ol>
+<li><strong>指针</strong>: 指针是一个变量，它存储了另一个变量的地址。通过指针，我们可以间接地访问和修改这个地址所指向的变量。</li>
+<li><strong>二重指针</strong>: 当我们谈论二重指针（或称为指针的指针）时，我们实际上是指一个指针，它存储了另一个指针的地址。这意味着，通过解引用这个二重指针，我们得到了一个普通的指针，然后再次解引用这个普通的指针，我们得到了这个指针所指向的实际数据。</li>
+</ol>
+<p><strong>创建时使用二重指针</strong>：在初始化或创建对象时<strong>使用二重指针是为了能够修改传入函数的指针本身</strong>。例如，当您希望在函数内部为一个对象分配内存时，您需要传入一个二重指针，这样函数就可以修改这个指针，使其指向新分配的内存。</p>
+<p><strong>使用时使用单指针</strong>：一旦对象被创建并初始化，对于大多数使用场景，您只需要对该对象进行读取或修改，而不需要再改变指针本身。因此，只传递一个指向该对象的单指针就足够了。</p>
+<p>e.g.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">TRITONBACKEND_ModelBatcherInitialize</span>(TRITONBACKEND_Batcher** batcher, TRITONBACKEND_Model* model);	<span class="comment">// 创建batcher</span></span><br><span class="line"><span class="built_in">TRITONBACKEND_ModelBatchInitialize</span>(<span class="keyword">const</span> TRITONBACKEND_Batcher* batcher, <span class="keyword">void</span>** userp); 			<span class="comment">// 使用batcher，创建userp</span></span><br><span class="line"><span class="built_in">TRITONBACKEND_ModelBatchIncludeRequest</span>(TRITONBACKEND_Request* request, <span class="keyword">void</span>* userp, <span class="keyword">bool</span>* should_include)	<span class="comment">// 使用userp</span></span><br></pre></td></tr></table></figure>
+<p>我梳理了一个图表，帮助理解为什么会有二重指针：</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Chexo-git-source%5Csource_posts%5C%E6%8C%87%E9%92%88%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93%5Cimage-20230817110434707.png" alt="image-20230817110434707"></p>
+<hr>
+<p>10.27新感悟</p>
+<p>有关二重指针，往往是作为函数的参数传入。</p>
+<p>例如一个函数的定义：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ImmutableInput</span><span class="params">(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> Input** input)</span></span>&#123;</span><br><span class="line">    *input = ... ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上在使用的时候，是这样的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> InferenceRequest::Input* input_ptr = <span class="literal">nullptr</span>;</span><br><span class="line"><span class="keyword">auto</span> status = request.<span class="built_in">ImmutableInput</span>(std::<span class="built_in">string</span>(<span class="string">&quot;lora_name&quot;</span>), &amp;input_ptr);</span><br></pre></td></tr></table></figure>
+<p>然后使用这个指针的时候，是这样的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input_ptr-&gt;<span class="built_in">xxx</span>();</span><br></pre></td></tr></table></figure>
+<h1>7. new关键字与堆内存</h1>
+<p><strong>注意</strong></p>
+<p>实际上，直接声明一个变量，和声明一个变量指针，是有区别的。在开发win32程序的过程中，遇到了一个名为<code>PROCESSENTRY32</code>的变量类型，用于读取系统进程。</p>
+<ul>
+<li>如果我声明了一个<code>PROCESSENTRY32 process_iter</code>，那就是声明了一个具有实际意义的变量，可以任意使用。</li>
+<li>如果我这样声明：<code>PROCESSENTRY32* process_iter</code>，那就是声明了一个指向PROCESSENTRY32类型的指针，需要注意的是，我在这里并没有通过new关键字来进行初始化，或者把指针指向某个地方，它实际上是一个空值、没有初始化过的值。使用这样的指针<strong>会报错</strong></li>
+</ul>
+<p>到这里，我真正理解了<code>new</code>关键字的含义：<strong>new的本意本身就是用来在heap上开辟一块空间，至于这个空间到底有没有人管理，这个是由程序员考虑的。</strong> 一般来说，我们都会通过一个指针去指向这块堆空间的起始位置，再在程序结束的时候对其进行释放。</p>
+<p>案例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*userp = <span class="keyword">new</span> <span class="keyword">unsigned</span> <span class="built_in"><span class="keyword">int</span></span>(*<span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">int</span>*&gt;(batcher));</span><br></pre></td></tr></table></figure>
+<p>这个句子应该从左往右看，申请了一块内存，用于初始化的是：把batcher指针强转为const uint32_t*类型，然后<strong>再通过<code>*</code> 符号取这个指针里面的数据</strong>，说白了，括号里面的，是一块数据，而不是指针。只是说，这个<code>new</code>关键字返回的，是一个地址，可以被指针所接受。</p>
+<p>在声明一个容器指针的时候，如果没有元素存入，它会调用它的默认构造函数。无论是声明对象还是通过new申请内存。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="keyword">int</span>&gt; a;	<span class="comment">// 调用默认构造函数，后面可以直接存入元素</span></span><br><span class="line">std::vector&lt;<span class="keyword">int</span>&gt; * b = <span class="keyword">new</span> std::vector&lt;<span class="keyword">int</span>&gt;();</span><br></pre></td></tr></table></figure>
+<p><strong>申请堆空间：声明数组大小</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10000</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span>[] a;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，这仅仅只是申请了一片内存，而<strong>并没有进行初始化！</strong></p>
+<p>如果要进行初始化，应该按照如下方法来解决：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10000</span>]();		<span class="comment">// initialize</span></span><br></pre></td></tr></table></figure>
+<p>之后，如果想要访问特定索引的数据，依然可以通过<code>[n]</code>运算符来访问。</p>
+<h1>8. 指针资源控制权</h1>
+<p>我从堆内存的释放代码中，看到这样的写法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TRITONSERVER_Error*</span><br><span class="line"><span class="built_in">TRITONBACKEND_ModelFinalize</span>(TRITONBACKEND_Model* model)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">void</span>* vstate;</span><br><span class="line">  <span class="built_in">RETURN_IF_ERROR</span>(<span class="built_in">TRITONBACKEND_ModelState</span>(model, &amp;vstate));</span><br><span class="line">  ModelState* model_state = <span class="keyword">reinterpret_cast</span>&lt;ModelState*&gt;(vstate);</span><br><span class="line">  <span class="keyword">delete</span> model_state;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">nullptr</span>;  <span class="comment">// success</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码首先声明了一个空指针，然后用这个空指针去记录ModelState，然后再创建一个新指针，强转为ModelState*类型，最后释放这个新指针。</p>
+<p>有关这段代码，我有几个疑问：</p>
+<ul>
+<li>为什么要用空指针去接收这个状态？而且好像传入的是指针的引用，也就是这个指针本身的地址。它仅仅被声明了，系统都还没有给他初始化，也就是分配内存空间，它怎么办到的？</li>
+<li>为什么不直接用ModelState*类型的指针传入，而是要从空指针来强转？</li>
+<li>通过delete这个新建的指针，可以释放原来空间的内存吗？</li>
+</ul>
+<p>有关这个<code>TRITONBACKEND_ModelState()</code>函数的实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TRITONAPI_DECLSPEC TRITONSERVER_Error*</span><br><span class="line"><span class="built_in">TRITONBACKEND_ModelState</span>(TRITONBACKEND_Model* model, <span class="keyword">void</span>** state)</span><br><span class="line">&#123;</span><br><span class="line">  TritonModel* tm = <span class="keyword">reinterpret_cast</span>&lt;TritonModel*&gt;(model);</span><br><span class="line">  *state = tm-&gt;<span class="built_in">State</span>();</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">nullptr</span>;  <span class="comment">// success</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一个问题的解答：实际上，就算是声明了，没分配内存空间也没关系。它会在函数里面进行赋值、分配内存空间的。并且传入指针的引用，意思就是在函数内部对这个指针进行赋值。</p>
+<p>第二个问题的解答：那是因为这个函数的定义，参数就是空二级指针。</p>
+<p>第三个问题的解答：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *a = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">int</span> *b = a;</span><br><span class="line">    <span class="keyword">delete</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>如果两个指针都指向同一块内存空间，那么delete其中任何一个，都可以释放原内存空间。</strong></p>
+<p><code>vstate</code>是一个<code>void*</code>类型的指针。<code>void*</code>是一个通用指针类型，可以指向任何数据类型的对象。但是，当您使用<code>delete</code>操作符来释放内存时，C++ 需要知道被删除对象的确切类型，这样它就可以正确地调用该对象的析构函数（如果有的话）。<code>void*</code>并没有提供这些信息，因此直接对<code>void*</code>类型的指针使用<code>delete</code>是非法的。</p>
+<p>通过使用<code>reinterpret_cast</code>，您实际上是告诉编译器：“我知道这个<code>void*</code>指针实际上指向一个<code>ModelState</code>对象，请相应地处理它。”经过类型转换后，<code>delete</code>操作知道它应该如何正确地释放内存并调用任何必要的析构函数。</p>
+<p>从这里，可以知晓一个道理：不管是谁在使用指针、创建了多少指针，指针的核心目的就是操纵那一片内存空间的资源。如果所有指针都指向同一块堆空间，那么对谁使用<code>delete</code>都是一样的。</p>
+<p><strong>不过值得注意的是，这种方案会产生大量的野指针。<strong>不建议使用。如果一定要使用，建议使用</strong>智能指针</strong>进行资源管理。</p>
+<h1>9. void * 的应用</h1>
+<p><code>void*</code>，即void指针，是C和C++编程中一个特殊的指针类型，它可以指向任何数据类型的地址，包括函数。使用void指针有一些特定的目的和考虑：</p>
+<ol>
+<li><strong>通用性</strong>：void指针在某些情况下被用作通用数据类型。例如，在C的标准库函数（如<code>malloc</code>和<code>free</code>）中，<code>malloc</code>返回一个void指针，这意味着它可以被分配给任何类型的指针。</li>
+<li><strong>回调函数与用户数据</strong>：在很多API或库中，当提供一个回调函数时，通常还允许用户提供一个<code>void*</code>类型的参数，该参数可以指向用户定义的数据。这使得在回调函数被调用时可以访问这些数据。这种设计模式增加了API的灵活性，使其可以处理各种数据类型。</li>
+<li><strong>抽象与封装</strong>：有时，库或API希望隐藏或封装其内部数据结构的具体细节。通过仅公开void指针接口，它可以防止用户直接访问或修改内部数据。</li>
+<li><strong>类型转换</strong>：在某些复杂的情况下，你可能需要进行各种类型的转换。使用void指针可以作为一个中间转换步骤，然后再转换为目标类型。</li>
+<li><strong>与其他语言的兼容性</strong>：在与其他编程语言的接口中，有时使用void指针来表示一个不确定类型的引用。</li>
+</ol>
+<p>尽管<code>void*</code>提供了很大的灵活性，但它也有一些限制：</p>
+<ul>
+<li><strong>类型安全</strong>：由于void指针不提供关于其所指向内容的任何类型信息，所以编译器不能提供类型检查。这可能会导致运行时错误，如果开发者没有正确地处理void指针。</li>
+<li><strong>指针运算</strong>：不能直接在void指针上执行指针运算，因为系统不知道应该增加或减少多少来移动到下一个元素。</li>
+</ul>
+<p>总的来说，void指针是一个强大且灵活的工具，但也需要谨慎使用。在现代C++编程中，模板和其他类型安全的机制往往是更好的选择，但在C和某些特定的C++场景中，void指针仍然很有用。</p>
+<p>我们可以通过实战的案例来进行解读：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">TRITONSERVER_Error*</span><br><span class="line"><span class="built_in">TRITONBACKEND_ModelBatchIncludeRequest</span>(TRITONBACKEND_Request* request, <span class="keyword">void</span>* userp, <span class="keyword">bool</span>* should_include)&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span>* remaining_volume = <span class="keyword">static_cast</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">int</span>*&gt;(userp);</span><br><span class="line">*remaining_volume = *remaining_volume - pending_volume;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不能直接通过 <code>*userp</code>来解引用，因为编译器不知道这个变量的类型，因此也不知道应该解引用多少字节，所以就无法通过<code>void*</code>类型进行解引用。</p>
+<p>在这里有一个解引用的实例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*userp = <span class="keyword">new</span> <span class="keyword">unsigned</span> <span class="built_in"><span class="keyword">int</span></span>(*<span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">int</span>*&gt;(batcher));</span><br></pre></td></tr></table></figure>
+<p>在这里，仅仅是说<code>*userp</code>指向了一个usigned int类型的地址，<strong>并不是说userp变成了unsigned int</strong>。所以还需要再次强转</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> value = *<span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">int</span>*&gt;(*userp);</span><br></pre></td></tr></table></figure>
+<p>这样才能取到。</p>
+<h1>10. 基于指针特性的编程开发思想</h1>
+<p>我们对于程序的执行顺序概念，要进行进化与更新。现目前对于执行顺序的概念以及指针使用的概念，还局限于”声明-使用-弹栈析构“的阶段，还无法做到跨越很多执行空间联想执行的地步。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A.cpp</span></span><br><span class="line"><span class="built_in">SetInputWeight</span>(weight_ptr, file_directory);</span><br><span class="line"></span><br><span class="line"><span class="comment">// B.cpp</span></span><br><span class="line"><span class="comment">// 转换这个指针</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// C.cpp</span></span><br><span class="line"><span class="comment">// 使用这个指针</span></span><br></pre></td></tr></table></figure>
+<p>一个内存资源，在程序中只要没被析构，就是可以再次使用的。</p>
+<p>对于这个板块的内容，就是：</p>
+<ul>
+<li>在一处声明指针，并且给予初始指向空间。</li>
+<li>在另一处创建b指针，并且b指针指向这个指针的空间。</li>
+<li>b指针进行一系列修改</li>
+<li>a指针再来使用。</li>
+</ul>
+<p>从某种层面上来想，这何尝不是一种**异步编程？**只不过使用的工具是指针。</p>
+<h1>11. 内存管理与引用</h1>
+<h2 id="11-0-引用基础">11.0 引用基础</h2>
+<p>在C++中，引用和拷贝非常常见，只是从前并没有意识到。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> _queue = ite-&gt;second;		<span class="comment">// 这样会把原来的deque复制一份，复制它的拷贝给到_queue，浪费资源空间</span></span><br><span class="line"><span class="keyword">auto</span>&amp; _queue = ite-&gt;second;		<span class="comment">// 这样会直接把原来的deque复制给_queue，避免拷贝一份</span></span><br></pre></td></tr></table></figure>
+<p>C++在进行赋值操作、函数传参的时候，如果没有使用引用符号，实际上接受的都是<strong>对象的拷贝</strong>。</p>
+<p>有下面这个简单的例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">class <span class="title">b</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">auto</span> a = b;		<span class="comment">// 接受的是b的拷贝，而不是b</span></span><br></pre></td></tr></table></figure>
+<p>同样，在函数传参的时候，看似接受的是参数，实际上都是接受的拷贝后的参数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">class <span class="title">A</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">class <span class="title">B</span><span class="params">()</span></span>;</span><br><span class="line"><span class="built_in">func</span>(A, B);	<span class="comment">// 实际上是先拷贝了A和B，然后再传入参数</span></span><br></pre></td></tr></table></figure>
+<p>也就是说，在函数里面对参数进行改变，丝毫影响不了外部的变量。<strong>因为改变的内容始终是对象的拷贝</strong>。</p>
+<p>如果传入的参数是指针呢？</p>
+<p>答案是：函数会拷贝这个指针，然后传入函数内部。只不过这个拷贝后的指针，依然会指向原来的地址。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* a = &amp;b;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> *p)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// use</span></span><br><span class="line"><span class="built_in">func</span>(a);</span><br></pre></td></tr></table></figure>
+<p>在这个过程中，函数会先复制a指针给到一份拷贝出来的参数，但是并不改变a本身指向的位置，然后传递给函数内部。</p>
+<p>同样，在函数内部对a进行更改，丝毫影响不了外部的a指针丝毫。</p>
+<p><strong>那么我该如何定义引用呢？</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> &amp;a)</span></span>&#123;</span><br><span class="line">    std::cout&lt;&lt; a&lt;&lt;std&lt;&lt;endl;</span><br><span class="line">    a = <span class="number">6</span>;		<span class="comment">// 此时外部的a也会变成6,</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用引用符号，并且在函数内部并不改变赋值的原理，就是因为在传递参数的时候，<strong>不会传递一份拷贝，而是会直接把参数传递进来</strong>。这就是为什么现在在函数内部改变a，可以影响外面的变量。</p>
+<p><strong>我应该如何接受一个引用呢？</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 拷贝接受</span></span><br><span class="line"><span class="function">class <span class="title">A</span><span class="params">()</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> =</span> A;	<span class="comment">// 拷贝A，再赋值给B</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用接受</span></span><br><span class="line"><span class="function">class <span class="title">A</span><span class="params">()</span></span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span>&amp; <span class="title">B</span> - <span class="title">A</span>;</span>	<span class="comment">// 接受A的引用。</span></span><br></pre></td></tr></table></figure>
+<p><strong>指针有引用吗？</strong></p>
+<p>当然有。指针在作为函数参数传递的时候，传递的就是自身作为指针的拷贝。</p>
+<p>有这样的函数定义：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span>* &amp;p)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这样，传递进来的就是指针的引用了。</p>
+<p><strong>应用案例</strong></p>
+<p>包括在遍历以thread为元素的vector时，为了避免拷贝，也是使用了引用符号。</p>
+<p>包括，在使用<code>.at()</code>方法的时候，也是一样的。通过在赋值的时候就声明拷贝，获取并更改元素的值。</p>
+<p>C++在赋值的时候，就要经常考虑到底是不是在取元素的引用还是在取拷贝，这是一个操作者内存管理的功底。</p>
+<h2 id="11-1-std-move">11.1 std::move()</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::string test_str = <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> args, <span class="keyword">char</span>* argv[])</span></span>&#123;</span><br><span class="line">    std::cout&lt;&lt; <span class="string">&quot;Origin: &quot;</span> &lt;&lt; test_str &lt;&lt; std::endl;	<span class="comment">// hello world</span></span><br><span class="line">    <span class="keyword">auto</span> temp = std::<span class="built_in">move</span>(test_str);	<span class="comment">// temp: 还是string类型</span></span><br><span class="line">    std::cout&lt;&lt; <span class="string">&quot;After move: &quot;</span> &lt;&lt; test_str &lt;&lt; std::endl;	<span class="comment">// 什么也不打印</span></span><br><span class="line">    std::cout&lt;&lt; <span class="string">&quot;After move: &quot;</span> &lt;&lt; temp &lt;&lt; std::endl;		<span class="comment">// hello world</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>std::move()</code> 将对象的状态或者所有权从一个对象转移到另一个对象，只是转移，没有内存的搬迁或者内存拷贝，所以可以提高效率，改善性能。</p>
+<p>应用：</p>
+<ul>
+<li>函数传参的时候可以这样写，避免产生内存拷贝</li>
+</ul>
+<h2 id="11-2-std-memcpy">11.2 std::memcpy</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memcpy</span><span class="params">(<span class="keyword">void</span> *dst, <span class="keyword">const</span> <span class="keyword">void</span> *src, <span class="keyword">size_t</span> n)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>没说要复制字符串</strong>，就是对着两个指针地址一顿复制。</p>
+<p>如果是<code>char * + offset(int)</code>，那就是在选择<strong>从哪个字符开始复制</strong></p>
+<h2 id="11-3-std-sort-a-a-N-cmp">11.3 std::sort(a, a+N, cmp)</h2>
+<p><strong>头文件：&lt; memory &gt;</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[] = &#123;<span class="number">5</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">-2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line">std::<span class="built_in">sort</span>(a, a+<span class="number">5</span>, cmp);	<span class="comment">// 这样即可完成排序</span></span><br></pre></td></tr></table></figure>
+<h2 id="11-4-拷贝与引用">11.4 拷贝与引用</h2>
+<h3 id="11-4-1-指针的引用">11.4.1 指针的引用</h3>
+<p>对一片数组进行排序的过程中，在遇到<strong>指针的引用</strong> 的情况：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 待排序数组：</span></span><br><span class="line">TRITONBACKEND_Request** requests; 	<span class="comment">// 它的每一个元素都是一个request，而这个二重指针，就是由这些指针元素构成的地址</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_request</span><span class="params">(TRITONBACKEND_Request* &amp;a, TRITONBACKEND_Request* &amp;b)</span></span>&#123;</span><br><span class="line">    TRITONBACKEND_Request* tmp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="11-4-2-引用的定义与接收">11.4.2 引用的定义与接收</h3>
+<p>我问了GPT一个问题：</p>
+<blockquote>
+<p>请问，<a target="_blank" rel="noopener" href="http://xn--STL-q25e26v4o7b.at">STL容器的.at</a>()方法，返回的值，我看文档写的是引用，</p>
+<p>比如：“inline uthread_tcb *&amp;std::deque&lt;uthread_tcb *&gt;::at(std::size_t __n)”</p>
+<p>那请问我调用这个方法的时候，我是否需要在左值加上引用符号？</p>
+<p>比如：“auto&amp; executing_thread = ready_queue.at(0);”  和 “auto executing_thread = ready_queue.at(0);”是否是一样的？</p>
+</blockquote>
+<p>STL容器的 <code>.at()</code> 方法返回的确是一个引用。你所给出的例子中使用了 <code>std::deque&lt;uthread_tcb *&gt;</code>，该容器中的 <code>.at()</code> 方法返回的是对 <code>uthread_tcb *</code> 的引用。</p>
+<ul>
+<li>当你使用 <code>auto&amp; executing_thread = ready_queue.at(0);</code>，<code>executing_thread</code> 会是对容器中的实际元素（指针）的引用。这意味着如果你修改 <code>executing_thread</code>，你实际上也修改了容器中的元素。</li>
+<li>而当你使用 <code>auto executing_thread = ready_queue.at(0);</code>，由于返回值是引用，而此处是用普通变量接收，所以会发生复制。这意味着 <code>executing_thread</code> 将是容器中该元素的一个副本（指针的副本）。所以对 <code>executing_thread</code> 的任何修改都不会影响容器中的元素。</li>
+</ul>
+<p>总结：这两者不同。前者得到的是容器元素的引用，后者得到的是容器元素的副本。</p>
+<p><strong>总结</strong></p>
+<p>这个问题从本质上告诉我：如果你想要你的自定义方法能够是获取的引用。<strong>那么从定义返回值类型，和接收这个返回值，都需要定义引用。</strong></p>
+<p>比如：</p>
+<ul>
+<li>定义侧：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">inline</span> uthread_tcb *&amp;std::deque&lt;uthread_tcb *&gt;::<span class="built_in">at</span>(std::<span class="keyword">size_t</span> __n);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>接收侧：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span>&amp; executing_thread = ready_queue.<span class="built_in">at</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<p>两边都需要使用引用符号。</p>
+<h2 id="11-5-对象引用与指针引用">11.5 对象引用与指针引用</h2>
+<p>如果是指针在传值，就不需要考虑这么多。</p>
+<p>在对线程进行操作时，之所以要使用引用，是害怕浅拷贝会先复制一份原来的值，再赋值给新的对象，这样就会<strong>创建新的对象，也就是新的线程。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> gid = <span class="number">0</span>; gid &lt; <span class="number">10</span>; gid++) &#123;</span><br><span class="line">    threads.<span class="built_in">push_back</span>(std::<span class="built_in">thread</span>(&amp;AbstractTransformerModel::createSharedWeights,</span><br><span class="line">                                  ft_model, gid, rank));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; t : threads) &#123;</span><br><span class="line">    t.<span class="built_in">join</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>但是，如果操作的对象是指针，就不需要考虑指针的引用。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uthread *a, b = &amp;c, &amp;d;</span><br><span class="line">b = a;		<span class="comment">// 屁事都不会发生，也不会创建一个新的线程。</span></span><br></pre></td></tr></table></figure>
+<p><em>是以前多虑了。</em></p>
+<h2 id="11-5-右值引用">11.5 右值引用</h2>
+<p>当我们在赋值的时候a=b，能够被放到=号左边的值即为左值，反则为右值。</p>
+<p>在这里，a就是左值，b就是右值。</p>
+<p>总结：</p>
+<ol>
+<li>左值：<strong>可以长时间保存</strong>，可以存在于=左边的值，<strong>可以取地址</strong>；</li>
+<li>右值：<strong>临时值</strong>，不能存在于=左边的值，<strong>不可以取地址</strong>。</li>
+</ol>
+<p>左值引用：对左值的引用即为左值引用：<code>int &amp;t = a;</code> , <code>auto&amp; _queue = ite-&gt;second</code>，使用单个引用符号引用左值。</p>
+<p>右值引用：对右值的引用即为右值引用：<code>Data&amp;&amp; data</code> 使用双重引用，应用右值。</p>
+<h1>12. 指针偏移与资源读取切割方案</h1>
+<p>在实战中，遇到了这样的问题：我需要对一块大矩阵进行切割，我应该如何利用指针来做到这一点呢？</p>
+<p><strong>内存资源底层原理解析</strong></p>
+<p>首先明确的是，其实在内存的最底层，根本就没有一维和二维的概念。所有的数据都是被打平了之后，<strong>线性</strong> 地存储在一块连续的内存空间。</p>
+<p>以一个二维数组为例，我们的理解是：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">0.25</span>, <span class="number">0.23</span>, <span class="number">0.75</span>, <span class="number">0.584</span>],</span><br><span class="line"> [<span class="number">0.45</span>, <span class="number">0.371</span>, <span class="number">0.568</span>, <span class="number">0.2</span>]]</span><br></pre></td></tr></table></figure>
+<p>但是实际上在内存中，这块内容的分布是：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0.25</span>, <span class="number">0.23</span>, <span class="number">0.75</span>, <span class="number">0.584</span>, <span class="number">0.45</span>, <span class="number">0.371</span>, <span class="number">0.568</span>, <span class="number">0.2</span>]</span><br></pre></td></tr></table></figure>
+<p>展平了之后 线性存储在一块连续的内存空间。</p>
+<p>所以，我们可以通过 <strong>指针 + 偏移</strong> 的方式，取得一块矩阵中的子矩阵。</p>
+<p><strong>使用案例</strong></p>
+<p>这是其他人在使用指针时候的案例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// local_hidden_units: 4096( 1 gpu )</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; batch_size; i++) &#123;</span><br><span class="line">    <span class="built_in">invokeT5AddResidual</span>(qkv_buf_ + i * <span class="number">3</span> * local_hidden_units_, q_lora_output_ + i * local_hidden_units_, local_hidden_units_, <span class="number">1</span>, q_lora_layer_-&gt;<span class="built_in">getStream</span>());</span><br><span class="line">    <span class="built_in">invokeT5AddResidual</span>(qkv_buf_ + (i * <span class="number">3</span> + <span class="number">1</span>) * local_hidden_units_, k_lora_output_ + i * local_hidden_units_, local_hidden_units_, <span class="number">1</span>, k_lora_layer_-&gt;<span class="built_in">getStream</span>());</span><br><span class="line">    <span class="built_in">invokeT5AddResidual</span>(qkv_buf_ + (i * <span class="number">3</span> + <span class="number">2</span>) * local_hidden_units_, v_lora_output_ + i * local_hidden_units_, local_hidden_units_, <span class="number">1</span>, v_lora_layer_-&gt;<span class="built_in">getStream</span>());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，<em><em>能够被进行运算的指针，一定不是void</em> 类型的指针</em>*， <code>void*</code> 是一个通用指针类型，表示指向任何数据类型的指针。然而，<code>void*</code> 本身不知道它指向的数据的大小，所以对 <code>void*</code> 进行算术运算是非法的。</p>
+<p>在这个例子中，第一个参数是outpt，第二个参数是input。</p>
+<p>如果，我们要对一个<code>void*</code>进行取偏移的操作，那么就必须要对其进行类型转换之后，才可以对其进行运算操作。</p>
+<p>比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">void</span>* p = &amp;a;</span><br><span class="line"><span class="keyword">char</span>* char_ptr = <span class="keyword">static_cast</span>&lt;<span class="keyword">char</span>*&gt;(p);</span><br><span class="line">char_ptr++;</span><br></pre></td></tr></table></figure>
+<p><code>static_cast</code> 是 C++ 提供的一种更安全、更具表现力的类型转换机制。与早期的 C 风格类型转换（如 <code>(char*)</code>）相比，<code>static_cast</code> 有以下优势：</p>
+<ol>
+<li><strong>可读性</strong>：<code>static_cast</code> 明确地表明了你正在进行类型转换。当你在代码中看到 <code>static_cast</code> 时，你可以立即意识到这里发生了类型转换，而不需要仔细查看括号和星号等其他符号。</li>
+<li><strong>安全性</strong>：<code>static_cast</code> 是编译时类型转换，编译器会进行一些基本的类型检查。虽然它不如其他类型的转换（如 <code>dynamic_cast</code>）安全，但它比 C 风格的转换更加安全。如果转换不可能或不安全，编译器会报错。</li>
+<li><strong>限制性</strong>：<code>static_cast</code> 只能用于某些类型的转换。这意味着你不能随意地进行任何类型的转换，这增加了类型安全性。例如，你不能使用 <code>static_cast</code> 来转换不相关的类型（例如，一个类的指针转换为完全不同的类的指针，除非它们有继承关系）。</li>
+</ol>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/gdb使用指南/" data-toggle="tooltip" data-placement="top" title="gdb Reference">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/贪心/" data-toggle="tooltip" data-placement="top" title="贪心算法">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=C++ Pointer&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/指针技术总结/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Aug 20 2023 00:28:32 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/SamuraiBUPT">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/诺宝御用coder">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Yazhu Dong
+          2024
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

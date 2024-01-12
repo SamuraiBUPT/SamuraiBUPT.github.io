@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/cn/Cplusplus-Reference/">
+  <title>
+    
+      C++ Reference - Programming life
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Technique Blogs</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>C++ Reference</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yazhu Dong on
+              2023-07-02
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">75</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">19.4k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>0. VSCode 配置开发环境</h1>
+<h2 id="0-1-C-IntelliSense-代码检查">0.1 C++ IntelliSense 代码检查</h2>
+<p>这是<code>.vscode</code>中的<code>c_cpp_properties.json</code>文件：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Linux&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/be_workspace/InstalledLibs/rapidjson/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/be_workspace/InstalledLibs/core/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/be_workspace/InstalledLibs/common/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/be_workspace/InstalledLibs/backend/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/be_workspace/FasterTransformer&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/be_workspace/InstalledLibs/cutlass/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/usr/local/cuda/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/usr/include&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;defines&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;_DEBUG&quot;</span>,</span><br><span class="line">                <span class="string">&quot;UNICODE&quot;</span>,</span><br><span class="line">                <span class="string">&quot;_UNICODE&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span>: <span class="string">&quot;c11&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span>: <span class="string">&quot;c++14&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span>: <span class="string">&quot;linux-gcc-x64&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span>: <span class="string">&quot;/usr/bin/g++&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>放在这里，可供以后多次使用。</p>
+<p>记得：<strong>关闭VSCode代码格式化工具</strong>，具体在设置: C/C++里面 直接搜format应该就有，把那个框点击取消了。</p>
+<p>windows:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Win32&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span>,</span><br><span class="line">                <span class="string">&quot;D:/Code_Space/Cplusplus/cpp_projects/InstalledLibs/rapidjson/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;D:/Code_Space/Cplusplus/cpp_projects/InstalledLibs/core/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;D:/Code_Space/Cplusplus/cpp_projects/InstalledLibs/common/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;D:/Code_Space/Cplusplus/cpp_projects/InstalledLibs/backend/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;D:/Code_Space/Cplusplus/cpp_projects/Workspace/FasterTransformer&quot;</span>,</span><br><span class="line">                <span class="string">&quot;D:/Code_Space/Cplusplus/cpp_projects/Workspace/InstalledLibs/cutlass/include&quot;</span>,</span><br><span class="line">                <span class="string">&quot;D:/Hardware_NVIDIA/Cuda/Doc_Dev/include&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;defines&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;_DEBUG&quot;</span>,</span><br><span class="line">                <span class="string">&quot;UNICODE&quot;</span>,</span><br><span class="line">                <span class="string">&quot;_UNICODE&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span>: <span class="string">&quot;c11&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span>: <span class="string">&quot;c++14&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span>: <span class="string">&quot;windows-gcc-x64&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span>: <span class="string">&quot;D:/Code_Space/Compiler/MinGW-windows/mingw64/bin/g++.exe&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意一个很重要的点，如果查找的库就是自己本身，就不要去索引到InstalledLibs下面。</p>
+<p><strong>Libs中的库是只读，并且通过代码索引指向Libs后，如果要更改工作代码，很有可能会改错地方。这样就非常不方便。</strong></p>
+<p>FasterTransformer库我就直接指引到我自己使用的地方即可。</p>
+<h2 id="0-2-编译命令行">0.2 编译命令行</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake -G <span class="string">&quot;MinGW Makefiles&quot;</span> ..	<span class="comment"># 注意，一定要选这个生成器！</span></span><br><span class="line">mingw32-make	<span class="comment"># 注意应该用的是这个！而不是普通的make指令</span></span><br></pre></td></tr></table></figure>
+<h2 id="0-3-配置CMake环境和代码检查环境">0.3 配置CMake环境和代码检查环境</h2>
+<p>CMake环境和代码检查环境是两码事。比如使用rapid库，它必须要在<code>c_cpp_properties.json</code>中设置includePath，像上面的一样，才可以让文件在检查的时候不报错。否则还是会报错的，即便是在CMakeLists.txt中添加了include_directories也没用。</p>
+<p>以后同样也是一样的，<strong>CMake编译</strong> 和 <strong>代码检查</strong> 是两回事，一方面，需要在<code>c_cpp_properties.json</code>当中设置相关路径；另一方面，需要在CMake中设置好include_directories之类的东西，才能建立好一个好的项目。</p>
+<h2 id="0-4-Werror-reorder">0.4 -Werror=reorder</h2>
+<p>在编译的时候加上了这个指令，就要求在类的初始化的时候，列表初始化的顺序必须与成员变量的声明顺序一样。</p>
+<h1>1. Compile</h1>
+<h2 id="1-1-Constexpr">1.1 Constexpr</h2>
+<p><code>static</code>和<code>constexpr</code>都是C++中的修饰符，它们可以用于变量和函数。当它们一起使用时，它们的含义是合并的。</p>
+<ul>
+<li><code>static</code>关键字在这里的含义是该变量或者函数是在编译时分配空间的，而不是在运行时。在类的成员变量中，<code>static</code>关键字表明该变量是类的所有实例共享的，不属于任何单个实例。</li>
+<li><code>constexpr</code>关键字告诉编译器，这个变量或者函数的值可以在编译时计算出来。换句话说，它的值是常量，可以在编译时确定。</li>
+</ul>
+<p>当<code>static</code>和<code>constexpr</code>一起使用时，<code>static constexpr</code>的含义是这个变量或者函数在编译时分配空间，并且它的值在编译时就可以计算出来。这在需要在编译时使用常量，或者在编译时进行某种计算时非常有用。</p>
+<p><code>constexpr</code>是一种编译型语句，并且编译器会把被<code>constexpr</code>修饰的函数视作<strong>内联函数</strong>。</p>
+<p>const具有两种语义：</p>
+<ul>
+<li>常量</li>
+<li>只读（后面有关const指针会用到）</li>
+</ul>
+<p>为了区别这两种语义，就有了<code>constexpr</code>，目的在于告诉编译器，这些东西在编译器就可以被<strong>计算</strong>。</p>
+<p>**注意！**这里用词是“计算”，而不是“被算出来”，这是两码事。</p>
+<p>算出来，是指能够有一个确切的数字生成。</p>
+<p>计算，是指能够提前构造一个算术通道，在运行时直接走这个通道即可。</p>
+<blockquote>
+<p>注意，获得在编译阶段计算出结果的能力，并不代表 constexpr 修饰的表达式一定会在程序编译阶段被执行，具体的计算时机还是编译器说了算。</p>
+</blockquote>
+<p>constexpr 还可以用于修饰函数的返回值，这样的函数又称为“常量表达式函数”。</p>
+<p>注意，constexpr 并非可以修改任意函数的返回值。换句话说，一个函数要想成为常量表达式函数，必须满足如下 4 个条件。</p>
+<ol>
+<li>
+<p>整个函数的函数体中，除了可以包含 using 指令、typedef 语句以及 static_assert 断言外，只能包含一条 return 返回语句。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="keyword">int</span> <span class="title">display</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span> + <span class="number">2</span> + x;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;	<span class="comment">// 无法通过，因为该函数的返回值用 constexpr 修饰，但函数内部包含多条语句。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>该函数必须有返回值，即函数的返回值类型不能是 void。</p>
+</li>
+<li>
+<p>constexpr修饰的函数，会被编译器当做<strong>内联函数</strong>，所以最好在声明时就进行定义。</p>
+</li>
+<li>
+<p>return 返回的表达式必须是常量表达式。</p>
+</li>
+</ol>
+<p>从今以后养成习惯：const表示只读，而<code>constexpr</code>才表示常量。</p>
+<h2 id="1-2-error-ld-returned-1-exit-status">1.2 error: ld returned 1 exit status</h2>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: ld returned <span class="number">1</span> <span class="keyword">exit</span> status</span><br></pre></td></tr></table></figure>
+<p><strong>显式实例化</strong>的概念：</p>
+<p>显式实例化（Explicit Instantiation）是 C++ 中的一个概念，用于告诉编译器要为特定的模板进行实例化，并生成对应的函数定义。它可以在编译器在编译期间生成模板的具体实现，以便在链接时能够找到相应的定义。</p>
+<p>C++ 中的模板是一种通用的代码结构，可以根据不同的类型参数生成不同的代码。当使用模板时，编译器通常会根据实际使用的类型来生成相应的代码。这被称为隐式实例化（Implicit Instantiation），它在需要时自动进行。</p>
+<p>然而，对于某些模板，特别是那些只在特定的类型上使用的模板，编译器可能无法自动推断需要实例化的类型。在这种情况下，显式实例化提供了一种方式，让开发者明确指示编译器要为特定的模板进行实例化。</p>
+<h2 id="1-3-progma-once">1.3 #progma once</h2>
+<p>保证只被include一次。有时候会出现编译器找不到具体实现的情况，有个<code>progma once</code>之后就可以避免编译方面的问题，同时提升编译速度。</p>
+<h2 id="1-4-C-宏-预处理器">1.4 C++宏 预处理器</h2>
+<h3 id="1-4-1-ifdef字句">1.4.1 #ifdef字句</h3>
+<p><code>#ifdef</code>是C++预处理器的一部分，它代表“如果已定义”。C++预处理器在编译器开始运行之前预处理源代码。预处理器可以包括宏定义、条件编译指令等。</p>
+<p>当你在代码中看到<code>#ifdef SPARSITY_ENABLED</code>，这意味着“如果SPARSITY_ENABLED被定义了，那么就编译和执行下面的代码块”。否则，如果SPARSITY_ENABLED没有被定义，那么编译器将跳过该代码块。</p>
+<p>比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SPARSITY_ENABLED</span></span><br><span class="line">    <span class="comment">// 一些只在SPARSITY_ENABLED被定义时才会执行的代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">// 在SPARSITY_ENABLED未被定义时执行的代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>这种技术被广泛用于条件编译，即在编译时根据条件决定是否要编译某段代码。它可以用来处理平台相关的代码（例如，对Windows和Linux有不同的代码）、调试与发布版本的代码（例如，一些debug信息只在DEBUG版本中出现）等等。</p>
+<p>需要注意的是：这个<code>SPARSITY_ENABLED</code>可以在不止一个地方被定义，甚至可以在编译的时候，通过命令行进行定义：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -DSPARSITY_ENABLED -o output_file source_file.cpp</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-2-define中定义函数">1.4.2 #define中定义函数</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> THROW_IF_TRITON_ERROR(X)                                       \</span></span><br><span class="line">  <span class="keyword">do</span> &#123;                                                                 \</span><br><span class="line">    TRITONSERVER_Error* tie_err__ = (X);                               \</span><br><span class="line">    <span class="keyword">if</span> (tie_err__ != <span class="literal">nullptr</span>) &#123;                                        \</span><br><span class="line">      <span class="keyword">throw</span> <span class="built_in">BLSBackendException</span>(<span class="built_in">TRITONSERVER_ErrorMessage</span>(tie_err__)); \</span><br><span class="line">    &#125;                                                                  \</span><br><span class="line">  &#125; <span class="keyword">while</span> (<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<p>那个X参数，就是一个函数。</p>
+<p>代码里面第二句话，<code>(X)</code>就是执行这个函数。</p>
+<p>整个define 被一个do…while(false)包裹，这样的实现既可以保证这个macro被运行起来，又可以保证仅运行一次。</p>
+<h2 id="1-5-编译参数">1.5 编译参数</h2>
+<p>CMake的<code>-D</code>选项用于设置变量的值，你可以用<code>-DVariable=Value</code>的形式来设置变量。对于CMake，<code>-DVariable=Value</code>和<code>-D Variable=Value</code>的效果是一样的，即在<code>-D</code>和变量之间有无空格并不会影响最终的结果。</p>
+<p>然而，如果你在<code>-D</code>选项和其后面的变量之间有空格，那么你可能需要确保整个<code>-D Variable=Value</code>表达式被引号括起来（如<code>&quot;-D Variable=Value&quot;</code>），否则shell可能会将空格作为参数分隔符，这可能导致错误。</p>
+<p>此外，对于GCC和Clang等编译器的<code>-D</code>选项（用于定义宏），<code>-DVariable=Value</code>和<code>-D Variable=Value</code>是不同的，后者将会导致错误。对于这些编译器，<code>-D</code>选项和其后面的宏定义之间不应有空格。</p>
+<p>总结一下，对于CMake，<code>-DVariable=Value</code>和<code>-D Variable=Value</code>的效果是一样的，只要在后者中你正确地使用了引号。但是对于GCC和Clang等编译器，<code>-D</code>选项和其后面的宏定义之间不能有空格。</p>
+<h2 id="1-6-CMake重置">1.6 CMake重置</h2>
+<p>如果CMake工具出现异常，可以尝试点击CLion的：</p>
+<ul>
+<li>Tools</li>
+<li>CMake</li>
+<li>Reset Cache and Reload Project</li>
+</ul>
+<h2 id="1-7-动态库与静态库">1.7 动态库与静态库</h2>
+<h3 id="1-7-1-基本概念与区别">1.7.1 基本概念与区别</h3>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/05/16201601-66b55a2f0ec74c5b8a773a0e1904e812.png" alt="img"></p>
+<p>在CMake中，</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(xx SHARED xx)</span><br></pre></td></tr></table></figure>
+<p>这就是动态库 <strong>（.so/.dll）</strong></p>
+<p>如果是静态库 <strong>（.a/.lib）</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(xx STATIC xx)</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，<code>add_library</code>实际上什么也不干，最多只是个声明，如果要组织代码，还需要<code>target_link_libraries()</code></p>
+<p><code>.lib</code>里面并不包含任何代码，只是一个给链接器提供信息的文件，真正的代码内容在dll中。</p>
+<p>静态库比较浪费资源空间，因为在编译时会被链接到主程序中，而面对代码更新的时候，也不得不重新生成静态库，在这样的基础上，动态库就诞生了。比如windows的dll文件、linux的.so文件，都是动态库，可以同时被多个程序共享，节省内存。</p>
+<p>如何导出为<code>.dll</code> / <code>.so</code> ?</p>
+<p>在函数前面声明<code>__declspec(dllexport)</code>即可。</p>
+<h3 id="1-7-2-CALLBACK：回调函数">1.7.2 CALLBACK：回调函数</h3>
+<p><img src="https://pic1.zhimg.com/0ef3106510e2e1630eb49744362999f8_r.jpg?source=1940ef5c" alt="img"></p>
+<p>在程序当中，定义了一个<code>CALLBACK function</code>，<strong>这个函数不是被自己的程序调用的，而是会被某个lib中的某个函数调用</strong>，这就是为什么会有回调函数。</p>
+<p>探究：Triton的API是如何实现的？如何调用用户定义的函数？</p>
+<h3 id="1-7-3-CMake使用静态库">1.7.3 CMake使用静态库</h3>
+<p>在开发的时候报错：有一个函数没找到，但是却已经包含了这个头文件。</p>
+<blockquote>
+<p>即使你已经包含了 <code>&lt;dwmapi.h&gt;</code>，这只是提供了函数的声明，但编译器在链接阶段还需要找到这些函数的定义，这些定义通常在库文件中。在这种情况下，你还需要链接到 <code>dwmapi.lib</code>，这个库文件包含了 <code>DwmExtendFrameIntoClientArea</code> 函数的定义。</p>
+</blockquote>
+<p>所以还需要在<code>CMakeLists.txt</code>中声明好这个dwmapi.lib在哪，才可以完成编译。</p>
+<p>以下是CMake代码：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_library</span>(D3D9_LIBRARY NAMES d3d9 PATHS <span class="string">&quot;C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.22621.0\\um\\x64&quot;</span>)</span><br><span class="line"><span class="keyword">find_library</span>(DWMAPI_LIBRARY NAMES dwmapi PATHS <span class="string">&quot;C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.22621.0\\um\\x64&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(SOURCE</span><br><span class="line">    main.cpp</span><br><span class="line">    processbinder.cpp</span><br><span class="line">    utils.cpp</span><br><span class="line">    datareader.cpp windowbinder.cpp windowbinder.h)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add main executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(csgocheat <span class="variable">$&#123;SOURCE&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(csgocheat <span class="variable">$&#123;D3D9_LIBRARY&#125;</span> <span class="variable">$&#123;DWMAPI_LIBRARY&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>有两个细节需要注意：</p>
+<ul>
+<li><code>find_library()</code>可以帮助cmake工具找到对应的库的相关位置，路径信息用两个反斜杠隔开才行</li>
+<li><code>find_library()</code>里面定义的是变量，也就是在<code>target_link_libraries()</code>里面需要使用<code>$&#123;&#125;</code>符号进行取用才行，否则会报错。</li>
+<li><code>target_link_libraries()</code>是在<code>add_executable()</code>之后再执行的，顺序不能错。</li>
+</ul>
+<h2 id="1-8-cc-or-cpp">1.8 .cc or .cpp?</h2>
+<p>无论在Windows还是其他操作系统上，你都可以使用 <code>.cc</code> 作为C++源文件的扩展名。实际上， <code>.cpp</code>、<code>.cc</code>、<code>.cxx</code>、<code>.c++</code> 等都是常见的C++源文件扩展名，不同的组织或项目可能会选择不同的扩展名，但这并不影响编译器的处理。</p>
+<p>你的编译器（无论是GCC，Clang，还是MSVC）都可以处理任何合理的源文件扩展名，只要文件的内容是合法的C++代码。在命令行中编译 <code>.cc</code> 文件的方法与编译 <code>.cpp</code> 文件基本相同。</p>
+<h2 id="1-9-extern-“C”">1.9 extern “C”</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//incvxworks.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __INCvxWorksh</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __INCvxWorksh</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*...*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* __INCvxWorksh */</span></span></span><br></pre></td></tr></table></figure>
+<p>前面的题目中的 <code>__cplusplus</code> 宏，是用来识别编译器的，也就是说，将当前代码编译的时候，是否将代码作为 <code>C++</code> 进行编译。如果是，则定义了 <code>__cplusplus</code> 宏。更多内容，这里就不详细说明了。</p>
+<p><code>extern</code> 是 <code>C/C++</code> 语言中表明函数和全局变量作用范围（可见性）的关键字，该关键字告诉编译器，其声明的函数和变量可以在本模块或其它模块中使用。</p>
+<p>注意，语句 <code>extern int a;</code> 仅仅是对变量的声明，其并不是在定义变量 <code>a</code> ，声明变量并未为 <code>a</code> 分配内存空间。</p>
+<p>变量 <code>a</code> 在所有模块中作为一种全局变量只能被定义一次，否则会出现连接错误。</p>
+<p><code>extern &quot;C&quot;</code>不是让你的代码完全以C的方式编译，而是告诉链接器按照C的方式链接这些函数，从而可以让C代码调用这些函数，或者让C++代码在不考虑函数重载的情况下调用这些函数。在函数体内，你仍然可以使用C++的所有特性。</p>
+<h2 id="1-10-头文件-源文件-linking-bug">1.10 头文件/源文件: linking bug</h2>
+<p><code>redefine,</code> <code>first defined here</code></p>
+<p>遇到<code>重复定义</code>报错，是因为头文件被多次引用，并且没有添加宏的缘故。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MODEL_INSTANCE_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MODEL_INSTANCE_H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>在大型项目中，一个源文件可能会间接地多次包含同一个头文件。如果没有头文件保护，这会导致同一个头文件中的内容被重复包含，从而可能导致如下的问题：</strong></p>
+<ol>
+<li><strong>重复的定义</strong>：例如，相同的结构体、类或变量被定义多次。</li>
+<li><strong>编译时间增加</strong>：同一个头文件被重复包含，增加了编译的工作量。</li>
+<li><strong>不必要的依赖</strong>：间接包含不相关的头文件可能会导致不必要的编译依赖。</li>
+</ol>
+<p>如果在linking的时候，遇到<code>first defined here</code>，多半是因为头文件中直接定义了<strong>函数</strong>。正确地做法是：</p>
+<ul>
+<li>在头文件中声明函数</li>
+<li>在源文件中定义/实现函数。</li>
+</ul>
+<p>这样有个问题，就是在<strong>头文件中</strong>的函数<strong>如果有默认参数值，而源文件中的定义就不用带</strong>，否则会<strong>报错</strong>。</p>
+<p>比如下面这个例子：</p>
+<p><strong>backend_utils.h (头文件)：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cppCopy codestd::string <span class="title">param_get</span><span class="params">(common::TritonJson::Value &amp;param,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">const</span> <span class="keyword">char</span>*                field,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">const</span> std::string         &amp;fallback = <span class="string">&quot;&quot;</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<p><strong>backend_utils.cc (源文件)：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cppCopy codestd::string <span class="title">param_get</span><span class="params">(common::TritonJson::Value &amp;param,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">const</span> <span class="keyword">char</span>*                field,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">const</span> std::string         &amp;fallback)</span>	<span class="comment">// 注意在这里已经删除了默认参数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  common::TritonJson::Value key;</span><br><span class="line">  std::string value = fallback;</span><br><span class="line">  param.<span class="built_in">MemberAsObject</span>(field, &amp;key);</span><br><span class="line">  key.<span class="built_in">MemberAsString</span>(<span class="string">&quot;string_value&quot;</span>, &amp;value);</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意在源文件中的函数定义中，已经删除了第三个参数的默认值。</p>
+<h2 id="1-11-define-header-pragma-one">1.11 #define header &amp; #pragma one</h2>
+<p>是的，<code>#pragma once</code>和传统的头文件保护宏（include guards）都是为了解决头文件多次包含的问题。但它们的工作方式和广泛性有些不同。</p>
+<ol>
+<li><strong>工作方式</strong>：
+<ul>
+<li><code>#pragma once</code>：这是一个编译器指令，告诉编译器只需要包含这个文件一次，即使它在多个地方被引用。</li>
+<li><code>#ifndef</code>/<code>#define</code>：这是预处理器的指令，基于宏名称来避免文件内容的重复包含。</li>
+</ul>
+</li>
+<li><strong>广泛性和可移植性</strong>：
+<ul>
+<li><code>#pragma once</code>：虽然大多数现代编译器都支持这个指令，但它并不是C++标准的一部分。所以理论上它不是可移植的，尽管在实际中大多数编译器都支持它。</li>
+<li><code>#ifndef</code>/<code>#define</code>：这是C和C++预处理器的标准指令，因此它们在所有C++编译器上都是可移植的。</li>
+</ul>
+</li>
+<li><strong>效率</strong>：
+<ul>
+<li><code>#pragma once</code>：通常认为这个指令比传统的宏定义方法更快，因为编译器可以直接检查文件路径，而不需要处理预处理器的条件逻辑。</li>
+<li><code>#ifndef</code>/<code>#define</code>：可能会稍微慢一点，尤其是在有大量头文件时。</li>
+</ul>
+</li>
+<li><strong>其他注意事项</strong>：
+<ul>
+<li>使用<code>#pragma once</code>可能会在某些特殊情况下遇到问题，例如当有两个物理不同但内容完全相同的文件时。</li>
+<li>有些项目中可能会同时使用<code>#pragma once</code>和传统的include guards，以确保最大的可移植性和效率。</li>
+</ul>
+</li>
+</ol>
+<p>综上所述，你可以根据项目的需要和目标平台来选择使用哪种方法。如果你确定目标平台的编译器都支持<code>#pragma once</code>，并且想要稍微加快编译速度，那么可以使用它。否则，为了保证最大的可移植性，使用传统的include guards是更好的选择。</p>
+<h1>2. Syntax</h1>
+<h2 id="2-1-是什么：lambda函数">2.1 [&amp;]是什么：lambda函数</h2>
+<p>![image-20230626095133208](D:\Code_Space\Cplusplus\dev reference.assets\image-20230626095133208-1687744293797-1.png)</p>
+<p>这其实是C++中的lambda函数。</p>
+<ul>
+<li>[capture] ：捕捉列表。捕捉列表总是作为lambda的开始，即出现于lambda的开始处。它是lambda的引出符（即开始标志）。编译器可以根据该“标志”来作出判断出该函数是否为lambda函数。同时“捕捉列表”能够捕捉上下文中的变量以作为lambda函数使用</li>
+<li>(parameters)：参数列表。和C/C++中的普通函数参数意义一样。该部分是可选的，意味着如果我们不需要进行参数传递时，可以连同括号“（）”一起省略掉。</li>
+</ul>
+<h2 id="2-2-三目运算符">2.2 三目运算符</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::string model_type = <span class="built_in">param_get</span>(<span class="string">&quot;model_type&quot;</span>) == <span class="string">&quot;&quot;</span> ? <span class="string">&quot;GPT&quot;</span> : <span class="built_in">param_get</span>(<span class="string">&quot;model_type&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>三目运算符规则：</p>
+<p><code>expr ? a : b</code></p>
+<p>第一个是表达式，如果是真，返回a；否则返回b</p>
+<p><code>param_get(&quot;model_type&quot;) == &quot;&quot;</code> 是一个判断条件，它检查 <code>param_get(&quot;model_type&quot;)</code> 返回的字符串是否等于空字符串 <code>&quot;&quot;</code>。</p>
+<ul>
+<li>如果 <code>param_get(&quot;model_type&quot;)</code> 返回的字符串确实是空字符串，那么整个三目运算符的结果就是 <code>&quot;GPT&quot;</code>。</li>
+<li>如果 <code>param_get(&quot;model_type&quot;)</code> 返回的字符串不是空字符串，那么整个三目运算符的结果就是 <code>param_get(&quot;model_type&quot;)</code> 返回的字符串。</li>
+</ul>
+<h2 id="2-3-reinterpret-cast-T">2.3 reinterpret_cast<code>&lt;T&gt;</code>()</h2>
+<p>转换时，执行的是逐个比特复制的操作。</p>
+<p>记得一定要使用括号，不能直接干巴巴的转换</p>
+<h2 id="2-4-std-format">2.4 std::format()</h2>
+<p>C++中，使用<code>cout&lt;&lt;xx&lt;&lt;xx&lt;&lt;endl</code>的过程中，重载<code>&lt;&lt;</code>运算符可能会引起线程不安全的问题，同时endl非常耗时，会刷新缓存区。</p>
+<p>C++ 20有了<code>std::format()</code>, 让整个过程变得容易。</p>
+<p>不过我感觉直接用printf也不是不行</p>
+<h2 id="2-5-syntax-switch-case">2.5 syntax: switch_case</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in"><span class="keyword">switch</span></span> (<span class="built_in">getActivationType</span>()) &#123;</span><br><span class="line">    <span class="keyword">case</span> ActivationType::Gelu:</span><br><span class="line">    <span class="keyword">case</span> ActivationType::GeGLU:</span><br><span class="line">        <span class="keyword">if</span> (inter_buf_2_ == <span class="literal">nullptr</span> &amp;&amp; int8_mode_ &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">invokeAddBiasGeluV2</span>(</span><br><span class="line">                inter_buf_, bias1, ia3_tasks, ia3_weights, padding_offset, seq_len, m, inter_size_, stream_);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">INVOKE_GENERIC_ACT</span>(GeluActivation);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> ActivationType::Relu:</span><br><span class="line">    <span class="keyword">case</span> ActivationType::ReGLU:</span><br><span class="line">        <span class="built_in">INVOKE_GENERIC_ACT</span>(ReluActivation);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> ActivationType::Silu:</span><br><span class="line">    <span class="keyword">case</span> ActivationType::SiGLU:</span><br><span class="line">        <span class="built_in">INVOKE_GENERIC_ACT</span>(SiluActivation);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> ActivationType::Identity:</span><br><span class="line">        <span class="built_in">INVOKE_GENERIC_ACT</span>(IdentityActivation);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，<code>case ActivationType::Silu:</code>分支<strong>其实是执行了的</strong>，执行的是跟下面的<code>case ActivationType::SiGLU:</code>一样的分支。</p>
+<h2 id="2-6-main-int-argc-char-argv">2.6 main(int argc, char *argv[])</h2>
+<p>argc保存的就是传入参数的个数，argv[i]保存每一个传入的参数的字符串</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./main<span class="number"> 1 </span>2<span class="number"> 3 </span>4<span class="number"> 5 </span>abcdefg</span><br><span class="line">argc=7</span><br><span class="line">./main</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">abcdefg</span><br></pre></td></tr></table></figure>
+<h1>4. Object-Oriented Programming</h1>
+<h2 id="4-0-Why-OOP-programming">4.0 Why OOP programming?</h2>
+<ol>
+<li><strong>封装</strong>：OOP 允许将数据和与之相关的操作封装到一个单独的实体中，即对象。这有助于隐藏内部实现的复杂性，并提供一个清晰的界面供其他代码使用。</li>
+<li><strong>继承</strong>：对象能够继承其他对象的属性和方法，这使得创建基于现有对象的新对象变得容易，而无需重复代码。这也支持了代码的复用。</li>
+<li><strong>多态</strong>：这是一个关键的OOP概念，允许一个接口表示多种数据类型的操作。例如，你可以有多个对象，它们都有一个<code>draw</code>方法，但每个对象的<code>draw</code>方法实现都是不同的。多态使得代码更加灵活和可扩展。</li>
+<li><strong>抽象</strong>：对象允许程序员定义“是什么”（数据）和“能做什么”（方法），而无需关心“如何做”。这有助于减少复杂性和提高代码的可读性。</li>
+<li><strong>更好的模块化</strong>：对象和类为代码提供了自然的组织结构，使得功能和数据更加模块化，易于维护。</li>
+<li><strong>设计模式</strong>：OOP引入了许多设计模式，这些模式为常见的编程问题提供了解决方案。这使得软件设计更加稳定和可靠。</li>
+</ol>
+<h2 id="4-1-类的构造函数与调用">4.1 类的构造函数与调用</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModelState::<span class="built_in">ModelState</span>(TRITONBACKEND_Model* triton_model): <span class="built_in">BackendModel</span>(triton_model, <span class="literal">true</span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>这是在调用父类的构造函数。</p>
+<p>执行顺序：<strong>父类的构造函数在子类构造函数之前调用</strong>，从而正确初始化父类的成员和行为。</p>
+<p>参数都是一样的。在子类这里，把triton_model作为参数传给了父类</p>
+<p>这里需要注意的是，如果子类继承了父类，就<strong>需要显式调用父类的构造函数</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">test_2_&lt;T&gt;::<span class="built_in">test_2_</span>(<span class="keyword">int</span> d):<span class="built_in">test</span>(d)</span><br><span class="line">&#123;</span><br><span class="line">    std::cout&lt;&lt;<span class="string">&quot;I am strcut test_2_, and I will print: &quot;</span>&lt;&lt;d&lt;&lt;std::endl;</span><br><span class="line">    T a;</span><br><span class="line">    std::cout&lt;&lt;a&lt;&lt;std::endl;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>否则会报错。</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/mnt/</span>d<span class="regexp">/Code_Space/</span>Cplusplus<span class="regexp">/hp_examples/</span>Tutorials/test.cc:<span class="number">9</span>:<span class="number">26</span>: error: no matching function <span class="keyword">for</span> <span class="keyword">call</span> to ‘test::test()’</span><br><span class="line">    <span class="number">9</span> | test_2_&lt;T&gt;::test_2_(<span class="keyword">int</span> d)</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-智能指针的对象所有权切换：从父类切换为子类">4.2 智能指针的对象所有权切换：从父类切换为子类</h2>
+<p><strong>ft_model的逻辑树：</strong></p>
+<p>ft_model原本是来自于各种<code>TritonModel</code>，而这些model本身是定义为<strong>结构体</strong>的。</p>
+<ul>
+<li>最初ft_model的产生：<code>std::shared_ptr&lt;AbstractTransformerModel&gt; ft_model;</code>可以看到是一个AbstractModel的指针。</li>
+<li>在后来的模型选择中，变成了：<code>ft_model.reset(new LlamaTritonModel&lt;half&gt;(...))</code>可以看到直接reset成了子类。</li>
+</ul>
+<p>在这里相当于，ft_model转而控制了另一个资源，而这另一个资源恰恰是子类，这是允许的。</p>
+<p>同理，在进行初始化的时候：<strong>在类成员变量声明的时候，可以声明基类，在进行赋值的时候，可以赋值为它的子类。</strong></p>
+<p>声明仅仅是声明：</p>
+<ul>
+<li>如果仅仅是声明了一个变量，它会直接在栈上分配内存。当这个函数结束的时候，栈会自动pop，所以这个变量也就自然地被销毁</li>
+<li>如果仅仅是声明了一个指针，那么它什么也不会做，因为没有指向任何一块内存空间
+<ul>
+<li>如果给指针一个赋值，这就是在初始化（initialize)，会指向一块固定的地址
+<ul>
+<li>指向nullptr，同上，一点用也没有</li>
+<li>通过new分配内存，则会存在一个实际的空间，并且可以使用指针访问内存。</li>
+<li>指向其他已经存在的对象（分配在栈上的内存空间），同样可以通过指针访问内存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-列表初始化">4.3 列表初始化</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">LlamaTritonModel&lt;T&gt;::<span class="built_in">LlamaTritonModel</span>(<span class="keyword">size_t</span>      tensor_para_size,</span><br><span class="line">                                      <span class="keyword">size_t</span>      pipeline_para_size,</span><br><span class="line">                                      <span class="keyword">int</span>         enable_custom_all_reduce,</span><br><span class="line">                                      std::string model_dir):</span><br><span class="line">    <span class="built_in">tensor_para_size_</span>(tensor_para_size),</span><br><span class="line">    <span class="built_in">pipeline_para_size_</span>(pipeline_para_size),</span><br><span class="line">    <span class="built_in">shared_weights_</span>(std::vector&lt;std::shared_ptr&lt;ft::LlamaWeight&lt;T&gt;&gt;&gt;(ft::<span class="built_in">getDeviceCount</span>())),</span><br><span class="line">    <span class="built_in">enable_custom_all_reduce_</span>(enable_custom_all_reduce)</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>这部分代码使用初始化列表的方式对<strong>成员变量</strong>进行初始化。</p>
+<p>所以<code>tensor_para_size_</code>, 和<code>pipeline_para_size_</code>都是这个结构体的<strong>成员变量</strong></p>
+<p>有关初始化方案的思考：</p>
+<p>在工程代码中，不难看到构造函数<strong>先列表初始化成员变量，然后再调用单独的initialize()函数进行初始化</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">DynamicDecodeLayer&lt;T&gt;::<span class="built_in">DynamicDecodeLayer</span>(<span class="keyword">size_t</span>           vocab_size,</span><br><span class="line">                                          <span class="keyword">size_t</span>           vocab_size_padded,</span><br><span class="line">                                          <span class="keyword">int</span>              end_id,</span><br><span class="line">                                          cudaStream_t     stream,</span><br><span class="line">                                          cublasMMWrapper* cublas_wrapper,</span><br><span class="line">                                          IAllocator*      allocator,</span><br><span class="line">                                          <span class="keyword">bool</span>             is_free_buffer_after_forward,</span><br><span class="line">                                          cudaDeviceProp*  cuda_device_prop):</span><br><span class="line">    <span class="built_in">BaseLayer</span>(stream, cublas_wrapper, allocator, is_free_buffer_after_forward),</span><br><span class="line">    <span class="built_in">vocab_size_</span>(vocab_size),</span><br><span class="line">    <span class="built_in">vocab_size_padded_</span>(vocab_size_padded),</span><br><span class="line">    <span class="built_in">cuda_device_prop_</span>(cuda_device_prop)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">FT_LOG_DEBUG</span>(__PRETTY_FUNCTION__);</span><br><span class="line">    <span class="built_in">initialize</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用单独的 initialize() 函数进行进一步初始化的目的可能是为了封装一些复杂的初始化逻辑，或者将多个成员变量的相关初始化操作组织在一个函数中。这样做有助于提高代码的可读性和可维护性，同时将构造函数的逻辑保持简洁和清晰。</p>
+<p>总结起来，构造函数中的成员变量在构造函数执行期间会被初始化，因此在构造函数中使用成员变量时，它们已经具有初始化的值。单独调用 initialize() 函数可能<strong>是为了更好地组织和封装初始化逻辑</strong>，而不是因为成员变量未初始化。</p>
+<p><strong>小括号与花括号的区别</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Example</span>(<span class="keyword">double</span> d) : <span class="built_in">value</span>(d) &#123;&#125;  <span class="comment">// 这是可以的，即使有数据丢失的风险</span></span><br><span class="line">    <span class="comment">// Example(double d) : value&#123;d&#125; &#123;&#125;  // 这是不允许的，因为存在窄化转换</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::vector&lt;<span class="keyword">int</span>&gt; <span class="title">v1</span><span class="params">(<span class="number">10</span>, <span class="number">20</span>)</span></span>;  <span class="comment">// 创建一个包含10个值为20的元素的vector</span></span><br><span class="line">std::vector&lt;<span class="keyword">int</span>&gt; v2&#123;<span class="number">10</span>, <span class="number">20</span>&#125;;  <span class="comment">// 创建一个包含两个元素10和20的vector</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-4-结构体与类的区别">4.4 结构体与类的区别</h2>
+<p>在C++语言中，结构体struct与类class的最本质区别即为：默认方式控制，<strong>结构体struct默认是公有的，而类class默认是私有的。</strong></p>
+<p>结构体同样可以继承。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">test_2_</span> :</span> test&#123;</span><br><span class="line">    <span class="built_in">test_2_</span>(<span class="keyword">int</span> d);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>即便是在继承别人的，并且在创建模板类时，也不用写<code>&lt;T&gt;</code></p>
+<p>而在实现的时候，就需要了，否则编译器无法推导：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">test_2_&lt;T&gt;::<span class="built_in">test_2_</span>(<span class="keyword">int</span> d):<span class="built_in">test</span>(d)&#123;</span><br><span class="line">    std::cout&lt;&lt;<span class="string">&quot;I am strcut test_2_, and I will print: &quot;</span>&lt;&lt;d&lt;&lt;std::endl;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-5-template：显式实例化">4.5 template：显式实例化</h2>
+<p>模板类确实可以对不同的类进行不同的函数实现，但是同样存在一定的问题。</p>
+<p>如果在代码中没有涉及构造，比如说直到用户端都还是<code>test&lt;T&gt;</code>,那么不需要进行显式实例化。</p>
+<p>但是如果在代码中就已经有相关的构造了，例如已经有一个<code>test&lt;int&gt;</code>出来了，那么就需要对这个模板类进行显式实例化：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">struct</span> <span class="title">MyTemplateClass</span>&lt;</span><span class="keyword">int</span>&gt;;</span><br></pre></td></tr></table></figure>
+<p>这将告诉编译器对 <code>MyTemplateClass&lt;int&gt;</code> 进行实例化，并生成对应的函数定义。</p>
+<p>显式实例化的主要用途是优化编译时间和减少生成的目标文件的大小。它可以防止编译器对所有可能的类型进行实例化，而只为开发者明确指定的类型生成代码。这对于模板特化和模板的内部实现隐藏非常有用。</p>
+<p>需要注意的是，<strong>显式实例化只能在源文件中进行</strong>，而不是在头文件中。这是为了防止多个源文件中对同一模板的多重实例化，导致重复定义的问题。</p>
+<p>显式实例化并<strong>不能递归</strong>进行，每一次进行模板类的构建，都要在<code>.cc</code>的下面进行显式实例化。</p>
+<p>显式实例化是很重要的步骤，不能忽视。</p>
+<p><strong>理解 v2.0</strong></p>
+<p>模板类编程，本身模板的实现只能放在头文件中。如果要放在源文件中，则必须进行<strong>显式实例化</strong>声明。</p>
+<h2 id="4-6-内存管理与对象声明">4.6 内存管理与对象声明</h2>
+<p>对象声明的时候，有两种不同的形式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T a;</span><br><span class="line">T *a = <span class="keyword">new</span> <span class="built_in">T</span>();	<span class="comment">// 需要使用delete手动释放内存，因为申请的位置是在堆空间上的</span></span><br></pre></td></tr></table></figure>
+<p>在堆上分配内存的优点是您可以手动控制内存的生命周期，并且可以动态地分配和释放内存。</p>
+<p>因为普通声明对象的时候，在函数结束的时候，这个对象就会自动析构。而如果是用new方式申请的堆空间，则不会析构，而是等着使用者手动释放空间。</p>
+<ol>
+<li>内存管理：栈上的变量由编译器自动管理内存，它们的内存分配和释放是自动进行的。而堆上的变量需要手动分配和释放内存，通过 <code>new</code> 进行分配，通过 <code>delete</code> 进行释放。</li>
+<li>生命周期：栈上的变量的生命周期与其所在的作用域相对应。当变量超出作用域时，其内存会自动释放。而堆上的变量的生命周期由程序员控制，必须手动释放内存，否则可能会导致内存泄漏。</li>
+<li>内存分配方式：栈上的内存分配速度较快，仅仅是移动栈指针。而堆上的内存分配需要在堆空间中寻找可用的内存块，并进行分配，速度相对较慢。</li>
+<li>变量的大小：栈空间有限，通常较小，因此栈上的变量大小有限制。而堆空间相对较大，可以分配更大的变量。</li>
+</ol>
+<p>**Basic：如果通过new声明一个对象，非但这个对象是在堆上分配空间，而且返回的是一个指针。并且delete也期望接收的是指针。**所以上面刚才写的<code>T a = new T()</code>其实是错的。</p>
+<h2 id="4-7-构造对象数组">4.7 构造对象数组</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>*&gt; weights = vector&lt;<span class="keyword">int</span>*&gt;(<span class="number">4</span>);	<span class="comment">// 这句话在构造一个vector数组，大小为4</span></span><br></pre></td></tr></table></figure>
+<p>这句话首先看清类：里面是<code>int *</code>类型的，说明这是一个vector   里面存的是指针类型的变量，然后是一个大小为4的数组。</p>
+<p>事实上，这种方式很常见：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// FT utils/Tensor.h</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">strcut Tensor&#123;</span><br><span class="line">    <span class="keyword">const</span> std::vector&lt;<span class="keyword">size_t</span>&gt; offsets = std::vector&lt;<span class="keyword">size_t</span>&gt;&#123;&#125;;	<span class="comment">// 直接初始化了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-8-virtual-关键字">4.8 virtual 关键字</h2>
+<p>virtual没说自己不能实现。如果用了virtual关键字，自己也可以实现这个函数的功能。</p>
+<p>只是说在被继承了之后，函数会被新的重载，而不会执行老的。</p>
+<p><strong>virtual func = 0</strong></p>
+<p><code>virtual void allocateBuffer() = 0;</code>：</p>
+<p>这是一个<strong>纯虚函数</strong>的声明。纯虚函数是指在基类中声明但没有提供实现的虚函数。</p>
+<p>纯虚函数通过在函数声明的结尾添加 <code>= 0</code> 来表示。</p>
+<p>纯虚函数<strong>必须</strong>在派生类中进行实现，派生类可以覆盖（override）基类中的纯虚函数并提供自己的实现。</p>
+<p>所以，<strong>如果不加0，就表示自己也可以实现，并且已经实现</strong>。加了0就变成了纯虚函数了</p>
+<h2 id="4-9-对象嵌套设计">4.9 对象嵌套设计</h2>
+<p>开发过程中看到这样一个例子：</p>
+<p>TritonModel掌握的资源：</p>
+<ul>
+<li>
+<p>server</p>
+<ul>
+<li>rate limiter</li>
+<li>payload</li>
+</ul>
+</li>
+<li>
+<p>scheduler</p>
+<ul>
+<li>
+<p>TritonModel （可以反向获得那个TritonModel资源），在初始化scheduler的时候，就是反向绑定了自己，传入了this。</p>
+</li>
+<li>
+<p>scheduler通过成员变量“curr_payload&quot;进而控制requests，而<code>curr_payload_</code>的初始化又是通过调用成员变量TritonModel，反向获得了Model的payload。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>在这个里面，基本上就是你中有我，我中有你。<strong>这样的设计思路是，为了获得对方的指针，进而能够灵活的操作双方的资源。</strong></p>
+<p>实现的方案：TritonModel有一个成员变量Scheduler，通过Set()函数赋值；而Scheduler则在构造函数里面就写明了需要TritonModel，在TritonModel传入的时候，需要传入<code>this</code></p>
+<h1>5. function</h1>
+<h2 id="5-1-函数定义的严谨性">5.1 函数定义的严谨性</h2>
+<p>在 C++ 中（以及 C 中），<strong>不能在一个函数内部直接定义另一个函数</strong>。必须在外部定义好，函数内部仅仅只能对其他函数进行调用。</p>
+<h2 id="5-2-static修饰函数">5.2 static修饰函数</h2>
+<p>一个函数被static修饰，它会有什么特性？</p>
+<p><strong>静态成员函数</strong>（在类内部）：</p>
+<ul>
+<li>可以在没有类实例的情况下调用。</li>
+<li>它只能访问类的静态成员（数据或函数），不能访问非静态的成员。</li>
+</ul>
+<h2 id="5-3-lambda匿名函数">5.3 lambda匿名函数</h2>
+<p>syntax:</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ capture ] ( params ) opt -&gt; &lt;ret <span class="keyword">type</span>&gt; &#123; body; &#125;;</span><br></pre></td></tr></table></figure>
+<p>作为右值的时候，也可以是：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[]</span>(<span class="built_in">int</span> a)&#123; <span class="keyword">return</span> a + <span class="number">1</span>; &#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>捕获</strong></p>
+<ul>
+<li>[] 不捕获任何变量。</li>
+<li>[&amp;] 捕获外部作用域中所有变量，并作为引用在函数体中使用（按引用捕获）。</li>
+<li>[=] 捕获外部作用域中所有变量，并作为副本在函数体中使用（按值捕获）。</li>
+<li>[=，&amp;foo] 按值捕获外部作用域中所有变量，并按引用捕获 foo 变量。</li>
+<li>[bar] 按值捕获 bar 变量，同时不捕获其他变量。</li>
+<li>[this] 捕获当前类中的 this <a target="_blank" rel="noopener" href="https://c.biancheng.net/c/80/">指针</a>，让 lambda 表达式拥有和当前类成员函数同样的访问权限。如果已经使用了 &amp; 或者 =，就默认添加此选项。捕获 this 的目的是可以在 lamda 中使用当前类的成员函数和成员变量。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> x1 = []&#123; <span class="keyword">return</span> i_; &#125;;                    <span class="comment">// error，没有捕获外部变量</span></span><br><span class="line">    <span class="keyword">auto</span> x2 = [=]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;           <span class="comment">// OK，捕获所有外部变量，拷贝</span></span><br><span class="line">    <span class="keyword">auto</span> x3 = [&amp;]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;           <span class="comment">// OK，捕获所有外部变量，引用</span></span><br><span class="line">    <span class="keyword">auto</span> x4 = [<span class="keyword">this</span>]&#123; <span class="keyword">return</span> i_; &#125;;                <span class="comment">// OK，捕获this指针</span></span><br><span class="line">    <span class="keyword">auto</span> x5 = [<span class="keyword">this</span>]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;        <span class="comment">// error，没有捕获x、y</span></span><br><span class="line">    <span class="keyword">auto</span> x6 = [<span class="keyword">this</span>, x, y]&#123; <span class="keyword">return</span> i_ + x + y; &#125;;  <span class="comment">// OK，捕获this指针、x、y</span></span><br><span class="line">    <span class="keyword">auto</span> x7 = [<span class="keyword">this</span>]&#123; <span class="keyword">return</span> i_++; &#125;;              <span class="comment">// OK，捕获this指针，并修改成员的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>案例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Status</span><br><span class="line">TritonModelInstance::TritonBackendThread::<span class="built_in">CreateBackendThread</span>(</span><br><span class="line">    <span class="keyword">const</span> std::string name, TritonModelInstance* model_instance, <span class="keyword">const</span> <span class="keyword">int</span> nice,</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int32_t</span> device_id,</span><br><span class="line">    std::unique_ptr&lt;TritonBackendThread&gt;* triton_backend_thread)</span><br><span class="line">&#123;</span><br><span class="line">  TritonBackendThread* raw_triton_backend_thread =</span><br><span class="line">      <span class="keyword">new</span> <span class="built_in">TritonBackendThread</span>(name, model_instance-&gt;<span class="built_in">Model</span>(), nice, device_id);</span><br><span class="line">    </span><br><span class="line">  <span class="function">std::unique_ptr&lt;TritonBackendThread&gt; <span class="title">runner</span><span class="params">(raw_triton_backend_thread)</span></span>;</span><br><span class="line"></span><br><span class="line">  runner-&gt;<span class="built_in">AddModelInstance</span>(model_instance);</span><br><span class="line">  runner-&gt;backend_thread_ = std::<span class="built_in">thread</span>([raw_triton_backend_thread]() &#123;</span><br><span class="line">    raw_triton_backend_thread-&gt;<span class="built_in">BackendThread</span>();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  triton_backend_thread-&gt;<span class="built_in">reset</span>(runner.<span class="built_in">release</span>());</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> Status::Success;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个里面，最重要的一句<code>std::thread([raw_triton_backend_thread]() &#123;raw_triton_backend_thread-&gt;BackendThread();&#125;);</code></p>
+<p>这句话我们一步步进行剖析：</p>
+<ul>
+<li>std::thread要求的就是传入一个 <strong>函数</strong> ，只是在这里传入了一个匿名函数。</li>
+<li>在这个匿名函数中，捕获了上下文的变量，在这里捕获的是几行之前创建的<code>raw_triton_backend_thread</code>指针，因为是指针，所以拷贝捕获也可。</li>
+<li>在这个匿名函数内部，使用这个指针进行操作。</li>
+</ul>
+<h1>6. 指针</h1>
+<p>有关指针的所有内容，已经全部转移到博客《C++ Pointer Reference》中，感兴趣的朋友可以移步查看。</p>
+<h1>7. 运算符</h1>
+<h2 id="7-1-位运算：按位与">7.1 位运算：按位与</h2>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">int</span> i=xxx;</span><br><span class="line"><span class="attribute">i</span> &amp; <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>这个的结果就是要么是0要么是1。</p>
+<p>还有与运算赋值：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a &amp;= b;	<span class="comment">// 先按位与然后再赋值</span></span><br></pre></td></tr></table></figure>
+<h2 id="7-2-位运算：-和">7.2 位运算：&gt;&gt; 和 &lt;&lt;</h2>
+<p><code>i&gt;&gt;2</code>就是i除4的意思。同理<code>i&lt;&lt;2</code>就是i乘4的意思。</p>
+<p>移动几位，就是乘或除 $2^i$ 次方</p>
+<h2 id="7-3-乘等于">7.3 乘等于</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cache_offset *= *t;	<span class="comment">// 乘等于 这个指针的值</span></span><br></pre></td></tr></table></figure>
+<h1>8. template模板类</h1>
+<h2 id="8-1-比较两个模板类">8.1 比较两个模板类</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::is_same&lt;T, T_IN&gt;::value == <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>常用在if判断语句中</p>
+<h2 id="8-2-显式实例化">8.2 显式实例化</h2>
+<p>模板类确实可以对不同的类进行不同的函数实现，但是同样存在一定的问题。</p>
+<p>如果在代码中没有涉及构造，比如说直到用户端都还是<code>test&lt;T&gt;</code>,那么不需要进行显式实例化。</p>
+<p>但是如果在代码中就已经有相关的构造了，例如已经有一个<code>test&lt;int&gt;</code>出来了，那么就需要对这个模板类进行显式实例化：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">struct</span> <span class="title">MyTemplateClass</span>&lt;</span><span class="keyword">int</span>&gt;;</span><br></pre></td></tr></table></figure>
+<p>这将告诉编译器对 <code>MyTemplateClass&lt;int&gt;</code> 进行实例化，并生成对应的函数定义。</p>
+<p>显式实例化的主要用途是优化编译时间和减少生成的目标文件的大小。它可以防止编译器对所有可能的类型进行实例化，而只为开发者明确指定的类型生成代码。这对于模板特化和模板的内部实现隐藏非常有用。</p>
+<p>需要注意的是，<strong>显式实例化只能在源文件中进行</strong>，而不是在头文件中。这是为了防止多个源文件中对同一模板的多重实例化，导致重复定义的问题。</p>
+<p>显式实例化并<strong>不能递归</strong>进行，每一次进行模板类的构建，都要在<code>.cc</code>的下面进行显式实例化。</p>
+<p>显式实例化是很重要的步骤，不能忽视。</p>
+<p><strong>理解 v2.0</strong></p>
+<p>模板类编程，本身模板的实现只能放在头文件中。如果要放在源文件中，则必须进行<strong>显式实例化</strong>声明。</p>
+<p>在显式实例化的时候，需要注意跟函数实现的联系，e.g.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> <span class="keyword">void</span> readDataByInterval&lt;<span class="keyword">uint32_t</span>&gt;(HANDLE handler, </span><br><span class="line">                                           <span class="keyword">uint32_t</span> address, </span><br><span class="line">                                           <span class="keyword">uint16_t</span> count, </span><br><span class="line">                                           <span class="keyword">uint16_t</span> interval, </span><br><span class="line">                                           std::vector&lt;<span class="keyword">uint32_t</span>&gt;* out);</span><br><span class="line"><span class="keyword">template</span> <span class="keyword">void</span> readDataByInterval&lt;<span class="keyword">float</span>&gt;(HANDLE handler, </span><br><span class="line">                                        <span class="keyword">uint32_t</span> address, </span><br><span class="line">                                        <span class="keyword">uint16_t</span> count, </span><br><span class="line">                                        <span class="keyword">uint16_t</span> interval, </span><br><span class="line">                                        std::vector&lt;<span class="keyword">float</span>&gt;* out);	<span class="comment">// 这里也要跟上，因为这里也是用的 T</span></span><br></pre></td></tr></table></figure>
+<p>需要注意！</p>
+<p><strong>在进行显式实例化的时候，参数中不能带有T，必须要把T切换为声明的变量类型！</strong></p>
+<h2 id="8-3-模板函数">8.3 模板函数</h2>
+<p>在Tensor类中看到了这样的实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T* <span class="title">getPtr</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">FT_LOG_DEBUG</span>(<span class="string">&quot;%s start&quot;</span>, __PRETTY_FUNCTION__);</span><br><span class="line">    <span class="keyword">if</span> (getTensorType&lt;T&gt;() != type) &#123;</span><br><span class="line">        <span class="built_in">FT_LOG_DEBUG</span>(<span class="string">&quot;getPtr with type %s, but data type is: %s&quot;</span>,</span><br><span class="line">                     <span class="built_in">getNumpyTypeDesc</span>(getTensorType&lt;T&gt;()).<span class="built_in">c_str</span>(),</span><br><span class="line">                     <span class="built_in">getNumpyTypeDesc</span>(type).<span class="built_in">c_str</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (T*)data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以看到，即便是函数也可以使用模板进行声明。它是这样使用的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">T*         decoder_input           = input_tensors-&gt;<span class="built_in">at</span>(<span class="string">&quot;decoder_input&quot;</span>).getPtr&lt;T&gt;();</span><br></pre></td></tr></table></figure>
+<p><code>input_tensors</code>是一个<code>unordered_map&lt;T&gt;*</code>类型的指针，通过<code>-&gt;</code>运算符访问内部的方法，通过<code>at(&quot;decoder_input&quot;)</code>来查找键为该键的<strong>值</strong>，这个值是<code>Tensor</code>类型。然后调用这个值Tensor类中的<code>getPtr&lt;T&gt;()</code>方法来得到最终的结果。</p>
+<h2 id="8-4-declare-and-implement">8.4 declare and implement</h2>
+<p>在这里记录，仅仅是因为想搭好扎实的工程基础，以后不至于卡壳。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// header .h</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test_vec</span>&#123;</span></span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    vector&lt;T&gt; vec_;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">test_vec</span>();</span><br><span class="line">    <span class="built_in">test_vec</span>(T *p, <span class="keyword">int</span> num);</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print_vec</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    ~<span class="built_in">test_vec</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//implement .cc</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">test_vec&lt;T&gt;::<span class="built_in">test_vec</span>(T *p, <span class="keyword">int</span> num)&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> test_vec&lt;T&gt;::<span class="built_in">print_vec</span>()&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">class</span> <span class="title">test_vec</span>&lt;</span><span class="keyword">int</span>&gt;;</span><br><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">class</span> <span class="title">test_vec</span>&lt;</span><span class="keyword">float</span>&gt;;</span><br></pre></td></tr></table></figure>
+<p>上面代码中有几个要注意的点：</p>
+<ul>
+<li>在声明的时候，前面有个template，就不用再做多余解释；但是在<strong>实现</strong>的时候，需要写上：<code>test_vec&lt;T&gt;</code>在前面以作为模板参数。这个<code>&lt;T&gt;</code>很重要</li>
+<li>成员方法需要在前面声明类型。</li>
+<li>最下方需要进行显式实例化，有关概念参阅4.5.</li>
+</ul>
+<h1>9. STL</h1>
+<h2 id="9-0-Abstract">9.0 Abstract</h2>
+<h3 id="9-0-1-容器分类">9.0.1 容器分类</h3>
+<ul>
+<li>基于连续内存的：在移动元素（删除/添加/移动)时会将整个内存块的元素移动，比较影响效率。
+<ol>
+<li><code>std::vector</code>: 它是一个动态数组，可以在尾部进行快速插入和删除操作，而在中间和头部的插入和删除操作则较慢。<strong>支持随机访问。</strong></li>
+<li><code>std::string</code>: 是一个字符数组，用于存储和操作字符串。</li>
+<li><code>std::array</code>（C++11 引入）: 它是一个大小固定的数组，支持快速的随机访问，但不能添加或删除元素。</li>
+<li><code>std::deque</code>: 是一个双端队列，允许在头部和尾部进行快速插入和删除，支持随机访问。</li>
+</ol>
+</li>
+<li>基于节点的：每一个（动态分配）的内存块中只存放一个元素。容器中元素的插入或删除只影响到指向节点的指针，而不影响节点本身的内容，所以当有插入或删除操作时候，元素的值不需要移动。
+<ol>
+<li><code>std::list</code>: 它是一个双向链表，可以在任何位置进行快速的插入和删除操作，<strong>但不支持随机访问。</strong></li>
+<li><code>std::forward_list</code>（C++11 引入）: 它是一个单向链表，只能进行单向迭代。</li>
+<li><code>std::set/multiset</code>: 它们是二叉搜索树（具体实现通常是红黑树），<strong>元素自动排序，插入和删除操作比较快速，但不如连续内存容器那样可以快速随机访问。</strong></li>
+<li><code>std::map/multimap</code>: 同样基于红黑树，存储键-值对，键自动排序。</li>
+<li><code>std::unordered_set/multiset</code>（C++11 引入）: 基于哈希表的无序集合，元素插入和访问的平均时间复杂度是常数。</li>
+<li><code>std::unordered_map/multimap</code>（C++11 引入）: 基于哈希表的无序映射，存储键-值对。</li>
+</ol>
+</li>
+</ul>
+<h3 id="9-0-2-Iteration">9.0.2 Iteration</h3>
+<p><strong>通过auto遍历</strong></p>
+<p>在通过auto遍历的时候，有一个很好的方法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;e: vec)&#123;</span><br><span class="line">    std::cout&lt;&lt; e &lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>auto</code>关键字后，加上<code>&amp;</code>符号，可以很好避免拷贝内存，尤其是在需要遍历大内存的对象时，直接使用引用，是一个很好的方案。</p>
+<p><strong>通过迭代器遍历</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> e = vec.<span class="built_in">begin</span>();e!= vec.<span class="built_in">end</span>(); e++)&#123;</span><br><span class="line">    std::cout&lt;&lt; *e &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9-1-std-vector">9.1 std::vector</h2>
+<h3 id="9-1-1-vector访问元素">9.1.1 vector访问元素</h3>
+<p>方法一：直接访问</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector[<span class="number">5</span>]; <span class="comment">// 它会返回 vector 中索引为 5 的元素。这种方式不会检查索引是否在 vector 的范围内，如果索引超出范围，其行为是未定义的，可能会导致程序崩溃。</span></span><br></pre></td></tr></table></figure>
+<p>方法二：通过<code>.at()</code>方法访问</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;Tensor&gt;*input_tensors;</span><br><span class="line"></span><br><span class="line">input_tensors-&gt;<span class="built_in">at</span>(<span class="number">5</span>);<span class="comment">// 这个是在通过指针，取vector的方法，进而取得数组中的元素</span></span><br><span class="line"><span class="comment">// 这种方式也会返回 vector 中索引为 5 的元素。但是，与 vector[5] 不同的是，它会检查索引是否在 vector 的范围内。如果索引超出范围，它会抛出一个 std::out_of_range 异常。</span></span><br></pre></td></tr></table></figure>
+<p>方法三：通过<code>.data()</code>访问</p>
+<p><code>vector.data()</code>：这个函数返回一个指向 vector 第一个元素的指针。</p>
+<p>你可以使用这个指针和偏移量来访问 vector 中的元素，就像访问一个普通的数组一样。比如，<code>vector.data()[5]</code> 就相当于 <code>vector[5]</code>。这种方式也不会检查索引是否在 vector 的范围内，如果索引超出范围，其行为是未定义的。</p>
+<p>它返回一个指向内存数组的直接指针，该内存数组由向量内部用于存储其拥有的元素。</p>
+<p>值得注意的是，vector是一个封装好了的类，<strong>但是它内部的元素实际上是存储在一个连续的内存空间的，跟一个数组一样。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; vec = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// memory pointer pointing to the</span></span><br><span class="line"><span class="comment">// first element</span></span><br><span class="line"><span class="keyword">int</span>* pos = vec.<span class="built_in">data</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// prints the vector</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;The vector elements are: &quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; vec.<span class="built_in">size</span>(); ++i)</span><br><span class="line">    cout &lt;&lt; *pos++ &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="9-1-2-allocate-push-back-与reserve">9.1.2 allocate: push_back()与reserve()</h3>
+<p>当且仅当新的vector大小超过当前vector容量时，会重新自动分配新的存储空间。</p>
+<p>对于vector来说，和数组最大的区别之一，就是不需要在初始化的时候声明vector的大小。如果初始化的时候没有指明vector的大小，那么会根据实际的使用情况，在内存中为vector分配的大小分别<code>2 -&gt; 4 -&gt; 8 -&gt; 16 … </code>。</p>
+<p>重新分配空间，并不是接着原来的地址进行分配，而是会<strong>将前面的所有元素统一移动到一个新的地方</strong>，再重新进行内存分配，这样就会导致很大的时间开销。</p>
+<p>为了避免重新分配内存带来的问题，<strong>vector提供了reserve函数</strong>。</p>
+<p><strong>reserve的作用是更改vector的容量（capacity），使vector至少可以容纳n个元素</strong>。</p>
+<p>如果n大于vector当前的容量，<code>reserve</code>会对vector进行扩容。其他情况下都不会重新分配vector的存储空间。</p>
+<p><strong>a clear workflow:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">int</span>&gt; my_vec;</span><br><span class="line"></span><br><span class="line">my_vec.<span class="built_in">reserve</span>(n);	<span class="comment">// 指定分配空间的大小</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// your code..</span></span><br></pre></td></tr></table></figure>
+<h3 id="9-1-3-reserve-or-resize">9.1.3 reserve or resize</h3>
+<p><code>void resize(size_type n, value_type val = value_type());</code></p>
+<ul>
+<li>如果n&lt;当前容器的size，则将元素减少到前n个，移除多余的元素(并销毁）</li>
+<li>如果n&gt;当前容器的size，则在容器中追加元素，如果val指定了，则追加的元素为val的拷贝，否则，默认初始化</li>
+<li>如果n&gt;当前容器容量，内存会自动重新分配</li>
+</ul>
+<p><code>void reserve(size_type n)</code></p>
+<ul>
+<li>如果n&gt;容器的当前capacity，该函数会使得容器重新分配内存使capacity达到n</li>
+<li>任何其他情况，该函数调用不会导致内存重新分配，并且容器的capacity不会改变</li>
+<li>该函数不会影响向量的size而且不会改变任何元素</li>
+</ul>
+<h2 id="9-2-std-unordered-map">9.2 std::unordered_map</h2>
+<h3 id="9-2-1-count">9.2.1 count()</h3>
+<p>由于unordered_map不允许存储具有重复键的元素，因此count()函数本质上检查unordered_map中是否存在具有给定键的元素。</p>
+<p>如果有则返回1，否则返回0.这在<code>三目运算符</code>或者<code>if语句</code>中应用较多。</p>
+<h3 id="9-2-2-at-方法">9.2.2 at()方法</h3>
+<p>一个指向unordered_map的指针，通过<code>-&gt;</code>调用unordered_map中的方法</p>
+<p>详情查阅<a href="./#6.0.3.2">6.0.3.2 通过指针访问对象成员</a>中的方法</p>
+<h2 id="9-3-std-deque-for-application">9.3 std::deque: for application</h2>
+<p>deque是一个在实际开发中经常用到的STL容器，值得详细学习。</p>
+<h3 id="9-3-1-initialize">9.3.1 initialize</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// empty container</span></span><br><span class="line">std::deque&lt;<span class="keyword">int</span>&gt; d;</span><br><span class="line"></span><br><span class="line"><span class="comment">// determine the size</span></span><br><span class="line"><span class="function">std::deque&lt;<span class="keyword">int</span>&gt; <span class="title">d</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// size and value</span></span><br><span class="line"><span class="function">std::deque&lt;<span class="keyword">int</span>&gt; <span class="title">d</span><span class="params">(<span class="number">10</span>, <span class="number">5</span>)</span></span>;	<span class="comment">// /5 5 5 5 5 5 5 5 5 5/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// copy</span></span><br><span class="line"><span class="function">std::deque&lt;<span class="keyword">int</span>&gt; <span class="title">d2</span><span class="params">(d)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// copy: iterator</span></span><br><span class="line"><span class="keyword">int</span> a[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">std::deque&lt;<span class="keyword">int</span>&gt; <span class="title">d3</span><span class="params">(a, a+<span class="number">5</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">std::vector&lt;<span class="keyword">int</span>&gt; vec&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line"><span class="function">std::deque&lt;<span class="keyword">int</span>&gt; <span class="title">d4</span><span class="params">(vec.begin()+<span class="number">3</span>, vec.end())</span></span>;</span><br></pre></td></tr></table></figure>
+<h3 id="9-3-2-iterators">9.3.2 iterators</h3>
+<p>取迭代器：</p>
+<table>
+<thead>
+<tr>
+<th>函数成员</th>
+<th>函数功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin()</td>
+<td>返回指向容器中第一个元素的<strong>迭代器</strong>。</td>
+</tr>
+<tr>
+<td>end()</td>
+<td>返回指向容器最后一个元素所在位置后一个位置的<strong>迭代器</strong>，通常和 begin() 结合使用。</td>
+</tr>
+<tr>
+<td>rbegin()</td>
+<td>返回指向最后一个元素的<strong>迭代器</strong>。这个r取<code>reverse</code>的意思</td>
+</tr>
+<tr>
+<td>rend()</td>
+<td>返回指向第一个元素所在位置前一个位置的<strong>迭代器</strong>。</td>
+</tr>
+<tr>
+<td>cbegin()</td>
+<td>和 begin() 功能相同，只不过在其基础上，增加了 const 属性，不能用于修改元素。</td>
+</tr>
+<tr>
+<td>cend()</td>
+<td>和 end() 功能相同，只不过在其基础上，增加了 const 属性，不能用于修改元素。</td>
+</tr>
+<tr>
+<td>crbegin()</td>
+<td>和 rbegin() 功能相同，只不过在其基础上，增加了 const 属性，不能用于修改元素。</td>
+</tr>
+<tr>
+<td>crend()</td>
+<td>和 rend() 功能相同，只不过在其基础上，增加了 const 属性，不能用于修改元素。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="9-3-3-访问元素">9.3.3 访问元素</h3>
+<p>一般通过<code>.at()</code>方法访问，因为有<strong>边界检查</strong>，比较安全。</p>
+<h3 id="9-3-4-内存操作">9.3.4 内存操作</h3>
+<table>
+<thead>
+<tr>
+<th>front()</th>
+<th>返回第一个元素的引用。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>back()</td>
+<td>返回最后一个元素的引用。</td>
+</tr>
+<tr>
+<td>assign()</td>
+<td>用新元素替换原有内容。</td>
+</tr>
+<tr>
+<td>push_back()</td>
+<td>在序列的尾部添加一个元素。</td>
+</tr>
+<tr>
+<td>push_front()</td>
+<td>在序列的头部添加一个元素。</td>
+</tr>
+<tr>
+<td>pop_back()</td>
+<td>移除容器尾部的元素。</td>
+</tr>
+<tr>
+<td>pop_front()</td>
+<td>移除容器头部的元素。</td>
+</tr>
+<tr>
+<td>insert()</td>
+<td>在指定的位置插入一个或多个元素。</td>
+</tr>
+<tr>
+<td>erase()</td>
+<td>移除一个元素或一段元素。</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>移出所有的元素，容器大小变为 0。</td>
+</tr>
+<tr>
+<td>swap()</td>
+<td>交换两个容器的所有元素。</td>
+</tr>
+<tr>
+<td>emplace()</td>
+<td>在指定的位置直接生成一个元素。</td>
+</tr>
+<tr>
+<td>emplace_front()</td>
+<td>在容器头部生成一个元素。和 push_front() 的区别是，该函数直接在容器头部构造元素，省去了复制移动元素的过程。</td>
+</tr>
+<tr>
+<td>emplace_back()</td>
+<td>在容器尾部生成一个元素。和 push_back() 的区别是，该函数直接在容器尾部构造元素，省去了复制移动元素的过程。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>和 vector 相比，额外增加了实现在容器头部添加和删除元素的成员函数，同时删除了 capacity()、reserve() 和 data() 成员函数。</p>
+</blockquote>
+<ul>
+<li>push_back() 向容器尾部添加元素时，首先会创建这个元素，然后再将这个元素拷贝或者移动到容器中（如果是拷贝的话，事后会自行销毁先前创建的这个元素）；</li>
+<li>而 emplace_back() 在实现时，则是直接在容器尾部创建这个元素，省去了拷贝或移动元素的过程。</li>
+</ul>
+<h2 id="9-4-std-map">9.4 std::map</h2>
+<p>map的设计目标之一就是快速根据键来查找元素。所以在自定义排序规则上，不能根据value进行排序。</p>
+<h3 id="9-4-1-initialize-初始化">9.4.1 initialize 初始化</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::map&lt;std::string, std::deque&lt;TRITONBACKEND_Request*&gt;&gt; * lora_deque_manager;	<span class="comment">// declare</span></span><br><span class="line">lora_deque_manager = <span class="keyword">new</span> std::map&lt;std::string, std::deque&lt;TRITONBACKEND_Request*&gt;&gt;();	<span class="comment">// allocate heap memory (initialize)</span></span><br></pre></td></tr></table></figure>
+<p>初始化的时候，通过自定义排序方法进行排序。map默认按照key进行升序排列。如果想要按照key进行降序排列，可以：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::map&lt;<span class="keyword">uint32_t</span>, <span class="keyword">uint32_t</span>, std::greater&lt;<span class="keyword">uint32_t</span>&gt;&gt;* requests_map = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，这就是一个非常固定的声明，也就是说如果这个指针是函数的参数的话，函数在声明这个形参的时候，必须也要加上这个<code>greater&lt;int&gt;</code></p>
+<h3 id="9-4-2-iterate-遍历方法">9.4.2 iterate 遍历方法</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pair : myMap) &#123;    </span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;Key: &quot;</span> &lt;&lt; pair.first &lt;&lt; <span class="string">&quot;, Value: &quot;</span> &lt;&lt; pair.second &lt;&lt; std::endl; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方法有时候会报错，我们也可以使用迭代器，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ite = container.<span class="built_in">begin</span>(); ite != container.<span class="built_in">end</span>(); ite++)&#123;</span><br><span class="line">    cout&lt;&lt;ite-&gt;first&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="9-4-3-find-返回迭代器">9.4.3 find (返回迭代器)</h3>
+<p>map.find()函数返回指向那个元素的迭代器。使用这个迭代器使用<code>-&gt;first(), -&gt; second()</code>来取元素。</p>
+<p>如果要取到元素本身，而不是元素的拷贝，赋值的时候应该使用<code>&amp;</code>符号。</p>
+<h3 id="9-4-4-insert">9.4.4 insert</h3>
+<p>在C++中的<code>std::map</code>容器中，每个键必须是唯一的。当你尝试插入一个新的键值对时，如果键已经存在于map中，那么新的键值对将不会被插入，而是保持原来的键值对不变。</p>
+<p>也就是说，如果插入了三个key是一样的pair：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">std::map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; myMap;</span><br><span class="line"></span><br><span class="line">myMap.<span class="built_in">insert</span>(&#123;<span class="number">1</span>, <span class="number">1</span>&#125;);</span><br><span class="line">myMap.<span class="built_in">insert</span>(&#123;<span class="number">1</span>, <span class="number">2</span>&#125;);</span><br><span class="line">myMap.<span class="built_in">insert</span>(&#123;<span class="number">1</span>, <span class="number">3</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>最后这个map里面只会保存：{1, 1}</p>
+<p><strong>逻辑与玩法</strong></p>
+<p>在写代码的时候看到了这样一段注释：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get corresponding PolicyQueue if it exists, otherwise insert it</span></span><br><span class="line"><span class="comment">// via emplace with the default policy</span></span><br><span class="line"><span class="keyword">auto</span> it = queues_.<span class="built_in">insert</span>(std::<span class="built_in">make_pair</span>(priority_level, default_policy_));</span><br></pre></td></tr></table></figure>
+<p>这个it会返回执行结果。其中it.first会指向insert之后的对应元素的<strong>位置</strong>，也就是说，可能这个pair没有被insert，但是it仍然指向队首。it.first-&gt;second仍然指向那个policy queue。</p>
+<h2 id="9-5-std-pair">9.5 std::pair</h2>
+<p>STL中经常会用到pair，下面是创建pair的方法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> ipair = std::<span class="built_in">make_pair</span>(a, b);</span><br></pre></td></tr></table></figure>
+<p>一般来说，能够<code>make_pair</code>的，肯定都是预知了相应类型的，不需要再写冗长的前缀，直接auto，这可以直接得到一个指定的pair。</p>
+<h2 id="9-6-std-string">9.6 std::string</h2>
+<h3 id="9-6-1-c-str">9.6.1 c_str()</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::<span class="built_in">string</span>(<span class="string">&quot;loading llama [fp16]...&quot;</span>).<span class="built_in">c_str</span>()</span><br></pre></td></tr></table></figure>
+<p>C++字符串（<code>std::string</code>）和C字符串（以null结尾的字符数组）在表示和操作上有一些不同之处。</p>
+<ol>
+<li>表示方式：C++字符串是一个<strong>类对象</strong>，由C++标准库提供，使用<code>std::string</code>类型表示。它内部封装了一个动态分配的字符数组，并提供了丰富的成员函数用于字符串操作。而C字符串是一个以null结尾的<strong>字符数组</strong>，使用字符指针（<code>char*</code>）来表示，没有对应的类型。</li>
+<li>存储方式：C++字符串自动处理内存分配和释放，可以动态调整字符串的长度。它使用动态内存分配（如<code>new</code>和<code>delete</code>）或者使用标准库提供的内存管理机制。而C字符串需要手动管理内存，需要使用函数如<code>malloc</code>和<code>free</code>进行内存的分配和释放。</li>
+<li>字符串长度：C++字符串对象（<code>std::string</code>）包含一个成员变量来记录字符串的长度，可以通过成员函数<code>length()</code>或<code>size()</code>来获取。而C字符串没有内置的长度信息，需要使用函数如<code>strlen</code>来计算字符串的长度。</li>
+<li>字符串操作：C++字符串提供了丰富的成员函数和操作符重载，用于字符串的连接、查找、截取、替换等常见操作。而C字符串需要使用C标准库中的函数（如<code>strcpy</code>、<code>strcat</code>、<code>strcmp</code>等）来执行类似的操作。</li>
+</ol>
+<p>C++字符串相对于C字符串具有更高的安全性和方便性，可以动态调整长度、自动处理内存分配和释放，提供了更多的操作函数和运算符重载。因此，在使用C++编程时，推荐使用<code>std::string</code>来处理字符串，特别是涉及到字符串操作和动态长度的场景。但是在与C语言代码交互、调用C库函数等情况下，可能需要进行C字符串和C++字符串之间的转换。</p>
+<h2 id="9-7-std-set">9.7 std::set</h2>
+<p><code>set</code>就是一个单独的容器，在数理逻辑上可以理解为一个<strong>集合</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std:set&lt;<span class="keyword">int</span>&gt; </span><br></pre></td></tr></table></figure>
+<h1>10. extern</h1>
+<p>开发过程中遇到了这样的问题：</p>
+<p>在utils.h中，定义了一个变量，然后在其他文件中想使用这个变量，以免每一次都得重复定义、重复开辟空间、重复使用。</p>
+<p>声明一次，多处使用。</p>
+<p>在错误的方案中，我在main.cpp和processreader.h中都使用了这个logManager，结果报错：重复定义。</p>
+<p>在C++中，应该使用extern关键字来声明：这个物品已经在别处定义。</p>
+<p>正确地方案是：<strong>在utils.h中使用extern LogManager logManager</strong>，然后其他文件直接使用。</p>
+<p>始终要记住：<strong>#include</strong>的作用，仅仅是单纯的把写好了的东西Ctrl CV进来。如果在utils.h里面写好了东西（包括实现），那么在include的时候，这个实现也会被粘贴到文件里面。这种情况发生在utils.h被多个文件共同include的过程的时候，就会报错：<strong>已经被定义</strong>。</p>
+<p>所以，头文件就是拿来声明的，而cpp文件就是拿来实现相关函数的，以避免这种重复定义的问题，这是C++的规矩。</p>
+<p>变量、类，可以声明extern，而函数就没有必要了。</p>
+<h1>11. 引用</h1>
+<p>有关讲解《引用》的内容，已经全部移动到《C++ Pointer Reference》中，感兴趣的朋友可以移步查看。</p>
+<h1>12. Thread</h1>
+<h2 id="12-1-std-thread-创建与遍历">12.1 std::thread 创建与遍历</h2>
+<p>在C++开发的时候，比较重要的一个点就是，<strong>随时都要有对内存的概念</strong>。因为cpp的每一个操作，都是涉及对内存的操作，是拷贝还是直接使用值？</p>
+<p>举个例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;std::thread&gt; threads;</span><br><span class="line"><span class="built_in">LOG_MESSAGE</span>(TRITONSERVER_LOG_INFO, (std::<span class="built_in">string</span>(<span class="string">&quot;Before Loading Weights:&quot;</span>)).<span class="built_in">c_str</span>());</span><br><span class="line">ft::<span class="built_in">print_mem_usage</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> gid = <span class="number">0</span>; gid &lt; total_weight_gpu_size; gid++) &#123;</span><br><span class="line">    <span class="keyword">int</span> rank = node_id * gpu_size + gid % tp_pp_size;</span><br><span class="line">    threads.<span class="built_in">push_back</span>(std::<span class="built_in">thread</span>(&amp;AbstractTransformerModel::createSharedWeights,</span><br><span class="line">                                  ft_model, gid, rank));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span>&amp; t : threads) &#123;</span><br><span class="line">    t.<span class="built_in">join</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在for循环中，为什么这里的auto后面，会跟一个 &amp;呢？这是GPT的解答：</p>
+<p><strong>引用（Reference）的使用</strong>：使用引用 <code>&amp;t</code>是为了确保我们在循环体中直接操作<code>threads</code>中的每一个线程对象，而不是它们的复制品。如果不使用引用，那么每次迭代时都会创建一个线程对象的临时副本，这在大多数情况下是不我们希望的，并且对于<code>std::thread</code>来说，它是不可复制的，所以不使用引用会导致编译错误。</p>
+<p>所以在遍历这个thread vector的时候，要时刻警惕它的遍历方案，是直接遍历还是构造了一个内存的拷贝？如果要避免，那就要使用引用。</p>
+<p>这段代码十分经典，经典在它是在实战中使用的习惯。首先vector在push_back的时候，就开始执行这个线程了。后面 再通过遍历vector引用对象的方式，等待线程执行完毕。</p>
+<p>我们可以看到，在创建model的时候，同样是通过多线程进行处理的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">threads.<span class="built_in">push_back</span>(std::<span class="built_in">thread</span>(</span><br><span class="line">    ThreadLoadModel, model_state, <span class="built_in">ArtifactFilename</span>(), node_id, gid,</span><br><span class="line">    model_instance_device_id_start_,</span><br><span class="line">    model_instance_id_ * model_instance_gpu_size_ + gid,  nccl_params_,</span><br><span class="line">    custom_all_reduce_comms_[gid - model_instance_device_id_start_],</span><br><span class="line">    &amp;model_path_, &amp;ft_model_instance_[gid - model_instance_device_id_start_]));</span><br></pre></td></tr></table></figure>
+<p><strong>多线程最普通的思想，在于线程中的函数所交互的数据</strong>。所以才有锁等等知识。</p>
+<p>在这里，这个threads vector已经resize过了，并且每一个线程所操作的内容，都是不同的vector元素，所以才不会有什么影响。</p>
+<h2 id="12-2-thread-func-object-params-参数的生命周期">12.2 thread(func, object, [params]) 参数的生命周期</h2>
+<p>这是<code>ThreadForward()</code>的定义：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span></span><br><span class="line"><span class="built_in">ThreadForward</span>(</span><br><span class="line">    std::unique_ptr&lt;AbstractTransformerModelInstance&gt;* ft_model_instance,</span><br><span class="line">    std::shared_ptr&lt;std::unordered_map&lt;std::string, Tensor&gt;&gt;* input_tensors,</span><br><span class="line">    std::shared_ptr&lt;std::unordered_map&lt;std::string, Tensor&gt;&gt;* output_tensors,</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> LORA_ENABLED</span></span><br><span class="line">    std::map&lt;<span class="keyword">uint32_t</span>, <span class="keyword">uint32_t</span>, std::greater&lt;<span class="keyword">uint32_t</span>&gt;&gt;* requests_info,	<span class="comment">// 注意，这一行是错误的</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    std::exception_ptr* exception_ptr,</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> device_id, <span class="keyword">const</span> <span class="keyword">int</span> use_stream_cb,</span><br><span class="line">    <span class="keyword">stream_callback_ctx_t</span>* context);</span><br></pre></td></tr></table></figure>
+<p>我们可以观察到，前人的代码中，传入的参数特点：<strong>不是用智能指针管理的，就是在当前文件中的全局变量</strong>。</p>
+<p>而我在使用单纯的STL时，却报错：<code>std::map&lt;unsigned int, unsigned int, std::greater&lt;unsigned int&gt;, std::allocator&lt;std::pair&lt;const unsigned int, unsigned int&gt; &gt; &gt;*&amp;</code>指出你传递给它的参数必须是可调用的（invocable），并且在转换为右值引用（rvalue）后仍然是可调用的。</p>
+<p><strong>thread构造函数只能以复制的值传递形式传递参数</strong> ,<strong>内部代码会将拷贝的参数以右值的方式进行传递</strong></p>
+<blockquote>
+<p>当你传递指针或引用给 <code>std::thread</code> 的构造函数时，需要确保线程的生命周期内这些指针或引用所指向的对象仍然是有效的。</p>
+</blockquote>
+<p>这句话的意思是：随着线程的创建，变量有可能直接结束生命周期了。所以很多时候要传入变量的<strong>引用</strong> ，那么为什么要用智能指针进行管理呢？下面是GPT的回答：</p>
+<p>当你在多线程环境中使用对象时，确保对象的生命周期是关键的。智能指针，特别是 <code>std::shared_ptr</code>，提供了一种确保多个线程之间安全地共享对象的方式。它们通过引用计数来确保对象在所有线程中仍然有效，<strong>只有当最后一个持有该对象的 <code>shared_ptr</code> 被销毁时，该对象才会被删除。</strong> 这个非常重要，可以避免在线程之间共享一个数据的时候，数据提前销毁的情况。</p>
+<p>让我们来看一下为什么在多线程环境中使用智能指针而不是裸指针或直接传递容器是有意义的：</p>
+<ol>
+<li><strong>生命周期管理</strong>：如前所述，使用 <code>std::shared_ptr</code> 可以确保对象在所有线程中都是有效的，直到最后一个线程不再需要它。</li>
+<li><strong>避免数据竞争</strong>：多个线程可能会尝试同时修改一个容器，这可能导致数据竞争和未定义的行为。虽然智能指针本身不能解决数据竞争问题，但它们通常与其它线程安全的方法结合使用，如互斥锁。</li>
+<li><strong>避免裸指针问题</strong>：裸指针可能会导致悬挂指针、双重删除等问题。智能指针通过管理对象的生命周期来避免这些问题。</li>
+</ol>
+<p>关于传递STL容器的问题：</p>
+<p>直接传递STL容器（例如 <code>std::vector</code> 或 <code>std::map</code>）给线程可能会导致复制该容器，这可能不是你想要的（尤其是当容器很大时）。另外，如果主线程和新创建的线程都修改这个容器，那么你实际上会有两个不同的容器副本，这可能会导致混淆和不可预测的行为。</p>
+<p>与引用问题有关系吗？</p>
+<p>你之前遇到的问题是与传递给 <code>std::thread</code> 的参数的生命周期和引用语义有关的。传递STL容器的引用可能导致悬挂引用，因为容器可能在线程开始之前或线程运行期间被销毁。而传递STL容器的拷贝可能不是你想要的，因为这会创建容器的一个新副本。使用 <code>std::shared_ptr</code> 提供了一种避免这些问题的方法，同时还确保了对象的生命周期。</p>
+<h2 id="12-3-thread-funciton-pointer">12.3 thread: funciton pointer</h2>
+<p><code>createSharedWeights</code>是一个成员函数，特定于某个类（看起来是<code>AbstractTransformerModel</code>类的成员）。当你为一个类的成员函数创建一个线程时，<strong>你需要传递一个对象实例的指针或引用给该成员函数，因为成员函数需要知道它是为哪个对象实例运行的。</strong></p>
+<p>这里，<code>ft_model</code>很可能是<code>AbstractTransformerModel</code>类型的一个指针或引用。</p>
+<p>在C++中，成员函数指针和普通函数指针是有所不同的。使用 <code>&amp;</code> 前缀来获取成员函数的地址是必要的，这样编译器知道你是想获取成员函数的地址而不是调用这个函数。</p>
+<p>如果你不使用 <code>&amp;</code> 前缀，编译器会尝试调用该成员函数，但由于在这个上下文中你没有提供足够的参数来调用它（尤其是类的实例），因此编译器会产生一个错误。</p>
+<p>简而言之，当你想获取一个成员函数的地址（而不是调用它）时，必须使用 <code>&amp;</code> 前缀。</p>
+<h2 id="12-4-std-future-与-std-promise">12.4 std::future 与 std::promise</h2>
+<ol>
+<li><strong>std::promise</strong>:
+<ul>
+<li><code>std::promise</code> 用于在某个线程中“承诺”将在将来某个时间点为其他线程提供一个值。</li>
+<li>你可以想象它为一个发送端，它提供一个值或异常。</li>
+<li>使用 <code>set_value</code> 或 <code>set_exception</code> 方法在 <code>std::promise</code> 对象上设置值或异常。</li>
+</ul>
+</li>
+<li><strong>std::future</strong>:
+<ul>
+<li><code>std::future</code> 用于从与之关联的 <code>std::promise</code> 中获取值或异常。</li>
+<li>你可以将它视为接收端，它可以等待值或异常变得可用，或查询值或异常是否已经准备好。</li>
+<li>使用 <code>get</code> 方法从 <code>std::future</code> 获取值或异常。这个调用可能是阻塞的，如果关联的值或异常还未设置，它将会阻塞直到变得可用。</li>
+<li>使用 <code>wait</code> 方法等待值或异常变得可用，但不获取它们。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;future&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">async_task</span><span class="params">(std::promise&lt;<span class="keyword">int</span>&gt;&amp;&amp; prom)</span> </span>&#123;</span><br><span class="line">    std::this_thread::<span class="built_in">sleep_for</span>(std::chrono::<span class="built_in">seconds</span>(<span class="number">2</span>));  <span class="comment">// 模拟一些工作</span></span><br><span class="line">    prom.<span class="built_in">set_value</span>(<span class="number">42</span>);  <span class="comment">// 设置结果</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::promise&lt;<span class="keyword">int</span>&gt; prom;  </span><br><span class="line">    std::future&lt;<span class="keyword">int</span>&gt; fut = prom.<span class="built_in">get_future</span>();  <span class="comment">// 关联一个 future</span></span><br><span class="line">    <span class="function">std::thread <span class="title">t</span><span class="params">(async_task, std::move(prom))</span></span>;  <span class="comment">// 在新线程中运行任务</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> result = fut.<span class="built_in">get</span>();  <span class="comment">// 这里会阻塞，直到线程设置了一个值</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Result is: &quot;</span> &lt;&lt; result &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    t.<span class="built_in">join</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="12-5-传入pointer与传入shared-ptr的区别">12.5 传入pointer与传入shared_ptr的区别</h2>
+<p>在开发多线程程序中，无意中发现使用<code>raw pointer</code> 与使用 <code>shared pointer</code> 的异同。</p>
+<p><code>shared_ptr</code>更安全，并且<strong>建议在传入线程参数的时候，都使用shared_ptr</strong> ，具体原因如下：</p>
+<ol>
+<li><strong>内存管理</strong>：<code>shared_ptr</code> 确保自动管理内存。当最后一个 <code>shared_ptr</code>（拥有指向特定对象的引用）被销毁或被重置时，它所指向的对象会被自动删除。这避免了可能因忘记释放内存而导致的内存泄漏。</li>
+<li><strong>引用计数</strong>：<code>shared_ptr</code> 使用引用计数机制来追踪有多少个 <code>shared_ptr</code> 实例指向同一个对象。这个引用计数是线程安全的，这意味着在多线程环境中，你不需要额外的同步机制来更新这个计数。</li>
+<li><strong>线程安全</strong>：虽然 <code>shared_ptr</code> 本身的引用计数操作是线程安全的，但是你需要确保不同时对其所指向的对象进行写入操作，除非你使用了适当的同步机制。</li>
+<li><strong>所有权语义清晰</strong>：使用 <code>shared_ptr</code> 能够清晰地表达对象的所有权和生命周期。当你看到一个函数接受 <code>shared_ptr</code> 作为参数或返回 <code>shared_ptr</code> 时，你可以清晰地知道对象的所有权如何传递和管理。</li>
+</ol>
+<h2 id="12-6-thread-local关键字">12.6 thread_local关键字</h2>
+<p>C++ 中有 4 种存储周期：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">automatic</span><br><span class="line">static</span><br><span class="line">dynamic</span><br><span class="line">thread</span><br></pre></td></tr></table></figure>
+<p>有且只有 thread_local 关键字修饰的变量具有线程（thread）周期，这些变量在线程开始的时候被生成，在线程结束的时候被销毁，并且每一个线程都拥有一个独立的变量实例。</p>
+<p>thread_local 一般用于需要保证线程安全的函数中。</p>
+<p>需要注意的一点是，如果类的成员函数内定义了 thread_local 变量，则对于同一个线程内的该类的多个对象都会共享一个变量实例，并且只会在第一次执行这个成员函数时初始化这个变量实例，这一点是跟类的静态成员变量类似的。</p>
+<h1>13. File IO</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以写模式打开文件</span></span><br><span class="line">std::ofstream outfile;</span><br><span class="line">outfile.<span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Writing to the file&quot;</span> &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> data = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* str = std::<span class="built_in">string</span>(<span class="string">&quot;I am a string.&quot;</span>).<span class="built_in">c_str</span>();</span><br><span class="line">outfile &lt;&lt; data &lt;&lt; std::endl;</span><br><span class="line">outfile&lt;&lt; str&lt;&lt;std::endl;</span><br><span class="line">outfile.<span class="built_in">close</span>();</span><br></pre></td></tr></table></figure>
+<h1>14. 数据类型-Cast</h1>
+<ol>
+<li><strong>static_cast</strong>:
+<ul>
+<li>最通用的转换操作符。</li>
+<li>可以用于基本数据类型之间的转换，例如从 <code>int</code> 到 <code>float</code>，或反之。</li>
+<li>可以用于转换指向派生类和基类之间的指针或引用。</li>
+<li>进行上述转换时不进行运行时类型检查，所以需要程序员确保转换是安全的。</li>
+<li>如果用于不安全的类指针转换，可能会导致未定义的行为。</li>
+<li>示例： <code>int x = static_cast&lt;int&gt;(4.5);</code> 或 <code>Derived* d = static_cast&lt;Derived*&gt;(basePtr);</code></li>
+</ul>
+</li>
+<li><strong>dynamic_cast</strong>:
+<ul>
+<li>主要用于在类的继承体系中进行安全的向下转型。</li>
+<li>只能用于包含虚函数的类的指针或引用。</li>
+<li>进行转换时会进行运行时类型检查。如果转换不是安全的，则指针转换会返回 <code>nullptr</code>，而引用转换会抛出异常。</li>
+<li>由于涉及到运行时检查，可能比其他转换稍慢。</li>
+<li>示例：<code>Derived* d = dynamic_cast&lt;Derived*&gt;(basePtr);</code> 如果 <code>basePtr</code> 确实指向 <code>Derived</code> 类型的对象，则转换成功，否则 <code>d</code> 为 <code>nullptr</code>。</li>
+</ul>
+</li>
+<li><strong>reinterpret_cast</strong>:
+<ul>
+<li>提供低级别的类型转换，基本上可以转换任何指针类型到其他任何指针类型。</li>
+<li>也可以用于整数和指针之间的转换。</li>
+<li>它仅仅重新解释原始的二进制位模式，而不会做任何特定的转换。</li>
+<li>使用 <code>reinterpret_cast</code> 需要特别小心，因为它可能导致未定义的行为，除非你完全确定你知道你在做什么。</li>
+<li>示例：<code>int* ptr = reinterpret_cast&lt;int*&gt;(someObject);</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>const修饰符不可去掉！</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fused_lora = <span class="keyword">static_cast</span>&lt;half*&gt;(fused_lora);	<span class="comment">// error</span></span><br><span class="line">fused_lora = <span class="keyword">static_cast</span>&lt;<span class="keyword">const</span> half*&gt;(fused_lora);	<span class="comment">// right</span></span><br></pre></td></tr></table></figure>
+<p>因为<code>fused_lora</code>本身是const类型的指针，所以在进行类型转换的时候，就无法转换为普通类型，必须也跟上const。</p>
+<h1>15. <code>&lt;functional&gt;</code></h1>
+<p>C++的函数指针使用方法。</p>
+<h2 id="15-1-函数指针案例">15.1 函数指针案例</h2>
+<p>纯C风格的函数指针：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">int</span> <span class="params">(*func)</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">print1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, print1 \n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">print2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, print2 \n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[])</span></span>&#123;</span><br><span class="line">    func fp = print1;</span><br><span class="line">    <span class="built_in">fp</span>();</span><br><span class="line"></span><br><span class="line">    fp = print2;</span><br><span class="line">    <span class="built_in">fp</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，就是声明了一个int类型的函数指针，通过<code>func</code>作为他的类型，在后面进行使用。</p>
+<p>如果加上了<code>&lt;functional&gt;</code>头文件，他就可以变成这样：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;hello, print1&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;hello, print2&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">std::function&lt;<span class="title">void</span><span class="params">()</span>&gt; <span class="title">func</span><span class="params">(&amp;print1)</span></span>;</span><br><span class="line">    <span class="built_in">func</span>();</span><br><span class="line"></span><br><span class="line">    func = &amp;print2;</span><br><span class="line">    <span class="built_in">func</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>[头文件Reference]</h1>
+<h2 id="stdint-h与cstdint">stdint.h与cstdint</h2>
+<p><code>stdint.h</code> 和 <code>cstdint</code> 都是标准库的头文件，它们提供了一组固定大小的整型。这些固定大小的整型允许你在各种平台上有确定的整数宽度，这样代码的移植性会更好。</p>
+<p>两者的主要区别在于它们所属的编程语言和命名空间：</p>
+<ol>
+<li><strong>stdint.h</strong>：
+<ul>
+<li>属于C语言标准库。</li>
+<li>在C语言中使用 <code>#include &lt;stdint.h&gt;</code> 来引入。</li>
+<li>定义的类型（如 <code>int32_t</code>, <code>uint32_t</code> 等）在全局命名空间中。</li>
+</ul>
+</li>
+<li><strong>cstdint</strong>：
+<ul>
+<li>属于C++语言标准库。</li>
+<li>在C++中使用 <code>#include &lt;cstdint&gt;</code> 来引入。</li>
+<li>定义的类型默认在 <code>std</code> 命名空间中，因此，你可能需要使用 <code>std::int32_t</code> 或者 <code>using namespace std;</code>。不过，为了与C语言兼容，这些类型也可以在全局命名空间中找到，但这种情况不总是保证的，取决于编译器和标准库的实现。</li>
+</ul>
+</li>
+</ol>
+<p>感觉几乎不会有人在申请数字变量的时候还要写个<code>std::</code>，果断采用<code>stdint.h</code></p>
+<p>有关uint8_t和char类型的区别：</p>
+<p><code>uint8_t</code> 是一个标准的整型类型，用于存储8位（或1字节）的无符号整数，其值的范围是0到255。它通常用于存储数字。</p>
+<p>然而，在C和C++中，<code>char</code> 类型实际上也只占用8位。因此，你可以将一个<code>uint8_t</code>变量当作一个字符来使用，但要确保它的值在字符集的有效范围内。</p>
+<p>例如，如果你使用的是ASCII字符集，那么值为65的<code>uint8_t</code>变量可以代表字符’A’。</p>
+<p>总之，<code>uint8_t</code>主要用于存储数字，但可以在特定上下文中用作字符。你的使用取决于你的具体需求。</p>
+<h1>[Clean Code]</h1>
+<h2 id="C-文档书写规范">C++文档书写规范</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Set the user-specified state associated with the model. The</span></span><br><span class="line"><span class="comment">/// state is completely owned and managed by the backend.</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// \param model The model.</span></span><br><span class="line"><span class="comment">/// \param state The user state, or nullptr if no user state.</span></span><br><span class="line"><span class="comment">/// \return a TRITONSERVER_Error indicating success or failure.</span></span><br><span class="line"><span class="function">TRITONBACKEND_DECLSPEC TRITONSERVER_Error* <span class="title">TRITONBACKEND_ModelSetState</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    TRITONBACKEND_Model* model, <span class="keyword">void</span>* state)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在函数之前，使用三个下划线，首先简述该函数的作用。</li>
+<li>空行，准备解析每一个参数</li>
+<li>使用<code>\param [param-name] [description]</code>的格式，进行参数描述</li>
+<li>使用<code>\return [param-name] [description]</code>的格式，进行返回值描述</li>
+</ul>
+<h1>[Linux Debug]</h1>
+<h2 id="常见指令">常见指令</h2>
+<p>gdb --tui</p>
+<p>b: 添加断点</p>
+<h1>[Library]</h1>
+<h2 id="chrono">chrono</h2>
+<p>这是一个测量时间的库（linux）</p>
+<p>用法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 获取当前时间点</span></span><br><span class="line">    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 执行需要计时的代码</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取当前时间点</span></span><br><span class="line">    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算时间差</span></span><br><span class="line">    <span class="keyword">auto</span> duration = std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(end - start);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出执行时间</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Execution time: &quot;</span> &lt;&lt; duration.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot; microseconds&quot;</span> &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，命名空间是可以嵌套的，这个就是嵌套在std中的命名空间。</p>
+<h2 id="RapidJson">RapidJson</h2>
+<h3 id="Installation">Installation</h3>
+<h3 id="Usage">Usage</h3>
+<p>先从github上clone下来源码，我clone到了<code>InstalledLibs</code>目录下面，</p>
+<p>然后在CMakeLists.txt中添加：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(<span class="string">&quot;D:\\Code_Space\\Cplusplus\\cpp_projects\\InstalledLibs\\rapidjson\\include&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>然后在源码中使用：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;rapidjson/rapidjson.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p>它仓库的路径是：</p>
+<ul>
+<li>rapidjson（仓库名称）
+<ul>
+<li>include
+<ul>
+<li>rapidjson
+<ul>
+<li>header1.h</li>
+<li>header2.h</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>在CMakeLists.txt中，仅仅需要设置到include路径即可，然后再在cpp文件中进行引入，这样做是为了重名处理和包管理。</p>
+<h1>[Code Develop]</h1>
+<h2 id="3rdparty">3rdparty</h2>
+<p>在开发中的github仓库，会有一个文件夹名为<code>3rdparty</code>或者<code>third party</code>，这个的意思是<strong>第三方仓库/代码</strong>，我们在使用git submodule的时候会将其他仓库的代码fork至该仓库中，以完成本仓库的代码编译。</p>
+<h2 id="科学上网">科学上网</h2>
+<p>用google引擎搜东西，而不是国内的网络。很多东西国内都没有，你的解决问题的能力赶不上别人</p>
+<h2 id="变量命名">变量命名</h2>
+<p>参考他人代码，变量名一般有如下特点：</p>
+<ul>
+<li>类中的成员变量，<strong>以下划线结尾</strong>，<strong>以区分其他变量</strong>，例如：<code>tensor_para_size_</code></li>
+<li>类中构造函数/其他函数的参数，<strong>以下划线开头</strong>，<strong>以区分其他变量</strong>，例如：<code>_weights</code>, <code>_where</code></li>
+</ul>
+<h1>[CMake Reference]</h1>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34796146/article/details/108877159">CMake Helloworld</a></p>
+<p>一个很好的学习CMake的文档：<a target="_blank" rel="noopener" href="https://gitee.com/yanmu_ym/cpp/blob/master/cmake/cmake.md#%E7%BB%83%E4%B9%A02-%E6%8C%87%E5%AE%9Ac%E6%A0%87%E5%87%86">https://gitee.com/yanmu_ym/cpp/blob/master/cmake/cmake.md#练习2-指定c标准</a></p>
+<h2 id="构建CMake项目：入门">构建CMake项目：入门</h2>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Chexo-git-source%5Csource_posts%5CCplusplus-Reference.assets%5Cimage-20230627170352364.png" alt="image-20230627170352364"></p>
+<p>CMake中的内容：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.12</span>)</span><br><span class="line"><span class="keyword">project</span>(test_project)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 C++ 标准</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">17</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置输出目录为 build/bin</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_RUNTIME_OUTPUT_DIRECTORY <span class="variable">$&#123;CMAKE_BINARY_DIR&#125;</span>/bin)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加源文件</span></span><br><span class="line"><span class="comment"># 头文件不需要被显式地包含</span></span><br><span class="line"><span class="keyword">set</span>(SOURCES</span><br><span class="line">    main.cc</span><br><span class="line">    <span class="keyword">test</span>.cc</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="keyword">test</span> <span class="variable">$&#123;SOURCES&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>有以下步骤：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir build &amp;&amp; <span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make -j<span class="string">&quot;<span class="subst">$(grep -c ^processor /proc/cpuinfo)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>有以下几个经验：</p>
+<ul>
+<li>一般的习惯都是创建一个build文件夹，然后进入路径中再使用<code>cmake ..</code></li>
+<li><code>CMAKE_BINARY_DIR</code>是一个只读路径，因为在build路径下执行cmake，cmake会自动绑定build就是<code>CMAKE_BINARY_DIR</code></li>
+<li>set指令应当在<code>add_executable</code>前面，<strong>如果在后面的话，不起作用</strong></li>
+</ul>
+<h2 id="构建CMake项目：大型项目">构建CMake项目：大型项目</h2>
+<h3 id="编译为库：add-library-与-target-link-library"><strong>编译为库：add_library 与 target_link_library</strong></h3>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(LlamaDecoderLayerWeight STATIC LlamaDecoderLayerWeight.cc)</span><br><span class="line"><span class="keyword">set_property</span>(<span class="keyword">TARGET</span> LlamaDecoderLayerWeight PROPERTY POSITION_INDEPENDENT_CODE  <span class="keyword">ON</span>)</span><br><span class="line"><span class="keyword">set_property</span>(<span class="keyword">TARGET</span> LlamaDecoderLayerWeight PROPERTY CUDA_RESOLVE_DEVICE_SYMBOLS  <span class="keyword">ON</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(LlamaDecoderLayerWeight PUBLIC memory_utils cuda_utils logger)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p><code>add_library</code>：用于创建一个库目标，可以是静态库（<code>STATIC</code>）或共享库（<code>SHARED</code>）。它指定了库的名称、类型以及库的源文件列表。在给定的案例中，<code>add_library(LlamaDecoderLayerWeight STATIC LlamaDecoderLayerWeight.cc)</code> 创建了一个名为 “LlamaDecoderLayerWeight” 的静态库目标，并将 “<a target="_blank" rel="noopener" href="http://LlamaDecoderLayerWeight.cc">LlamaDecoderLayerWeight.cc</a>” 文件添加到该目标的源文件列表中。</p>
+</li>
+<li>
+<p><code>set_property</code>：用于设置目标（target）的属性。目标可以是库目标、可执行目标等。</p>
+<ul>
+<li>
+<p><code>set_property(TARGET LlamaDecoderLayerWeight PROPERTY POSITION_INDEPENDENT_CODE ON)</code> 设置了 “LlamaDecoderLayerWeight” 目标的 <code>POSITION_INDEPENDENT_CODE</code> 属性为 <code>ON</code>，表示生成的目标代码是位置无关的，可用于生成共享库。</p>
+</li>
+<li>
+<p>类似地，<code>set_property(TARGET LlamaDecoderLayerWeight PROPERTY CUDA_RESOLVE_DEVICE_SYMBOLS ON)</code> 设置了 <code>CUDA_RESOLVE_DEVICE_SYMBOLS</code> 属性为 <code>ON</code>，表示使用 CUDA 解析设备符号。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>target_link_libraries</code>：用于指定目标需要链接的其他库。<code>target_link_libraries(LlamaDecoderLayerWeight PUBLIC memory_utils cuda_utils logger)</code> 将 “LlamaDecoderLayerWeight” 目标与名为 “memory_utils”、“cuda_utils” 和 “logger” 的库进行链接。这样，当构建 “LlamaDecoderLayerWeight” 目标时，CMake 会自动解析这些依赖关系并链接相应的库。</p>
+</li>
+</ol>
+<p>所以，在构建项目的时候，不仅要在头文件中写好相应文件的位置，还要在CMake中，把自己写进去。</p>
+<ul>
+<li>这里就是把自己编译为一个库，便于其他库使用</li>
+<li>同时与其他库链接，便于自己的代码中使用其他库的代码</li>
+</ul>
+<h3 id="编译参数：option-与-add-definition"><strong>编译参数：option 与 add_definition</strong></h3>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">option</span>(BUILD_PYT <span class="string">&quot;Build in PyTorch TorchScript class mode&quot;</span> <span class="keyword">OFF</span>)</span><br><span class="line"><span class="keyword">option</span>(SPARSITY_SUPPORT <span class="string">&quot;Build project with Ampere sparsity feature support&quot;</span> <span class="keyword">OFF</span>)</span><br></pre></td></tr></table></figure>
+<p>这种Option，是CMake中的属性之一。</p>
+<p>这句话的语法是：<code>option(参数名 &quot;备注&quot; default)</code>，最后的值是该参数的 <strong>default</strong>，实际的值可以在<strong>编译时</strong>指定：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -DSM=86 -DCMAKE_BUILD_TYPE=Release -DBUILD_PYT=ON -DBUILD_MULTI_GPU=ON -D SPARSITY_SUPPORT=ON -D PYTHON_PATH=/usr/bin/python3 ..</span><br></pre></td></tr></table></figure>
+<p>这里的所有 <code>-D</code>参数，都是在其中通过<code>option()</code>指定好的参数内容。</p>
+<p>在很多代码中，我们经常会遇见 <strong>宏定义</strong>，这些宏其实并不仅仅能够在代码中规定好，在编译的时候也可以临时传入，例如：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_definitions</span>(-DSPARSITY_ENABLED=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>这个内容就是在<code>SPARSITY_SUPPORT=ON</code>的情况下执行的脚本句，它会引起代码中对某些代码块的编译：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SPARSITY_ENABLED</span></span><br><span class="line">        cublas_wrapper_-&gt;<span class="built_in">SpGemm</span>(CUBLAS_OP_N,</span><br><span class="line">                                CUBLAS_OP_N,);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>在此处，宏<code>SPARSITY_ENABLED</code>就是在cmake里面指定好的一个definition，这个在编译中会被编译器识别，进而编译这其中的代码块。</p>
+<p>既然都到这里，干脆整理一下append路径的问题。</p>
+<p>因为在这里编译的时候，显示没找到头文件的路径，我想应该是库文件缺失导致的。</p>
+<p>观察其他库：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(APPEND CMAKE_MODULE_PATH <span class="variable">$&#123;CUDA_PATH&#125;</span>/lib64)</span><br></pre></td></tr></table></figure>
+<p>都是通过一个list()，在里面再通过<code>append</code>关键词把相关的路径添加进去。</p>
+<p>这个<strong>被添加的路径</strong>，都是提前通过<code>set()</code>命令指定好了的。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/cuda/cusparselt/index.html">有关cuSPARSElt的介绍</a></p>
+<p>在这里：</p>
+<h2 id="输出日志">输出日志</h2>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cmake \</span><br><span class="line">      -D CMAKE_EXPORT_COMPILE_COMMANDS=<span class="number">1</span> \</span><br><span class="line">      -D CMAKE_BUILD_TYPE=Debug \   </span><br><span class="line">      -D ENABLE_FP8=<span class="keyword">OFF</span> \</span><br><span class="line">      -D CMAKE_INSTALL_PREFIX=/opt/tritonserver \</span><br><span class="line">      -D TRITON_COMMON_REPO_TAG=<span class="string">&quot;r$&#123;NVIDIA_TRITON_SERVER_VERSION&#125;&quot;</span> \</span><br><span class="line">      -D TRITON_CORE_REPO_TAG=<span class="string">&quot;r$&#123;NVIDIA_TRITON_SERVER_VERSION&#125;&quot;</span> \</span><br><span class="line">      -D TRITON_BACKEND_REPO_TAG=<span class="string">&quot;r$&#123;NVIDIA_TRITON_SERVER_VERSION&#125;&quot;</span> \</span><br><span class="line">      .. &gt; output.txt <span class="number">2</span>&gt;&amp;<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>这段代码中，就是一个cmake指令，把编译的log输出到一份<code>output.txt</code>中，以便查阅error位置。</p>
+<p>实际上，这个cmake指令是在dockerfile进行的，保存的output.txt也是在docker镜像中。</p>
+<p>这种情况，可以在编译docker的时候，把docker的输出日志重定向：</p>
+<p><code>docker build xxx . &gt; build_output.txt 2&gt;&amp;1</code></p>
+<p>这样也可以达到目的</p>
+<h2 id="linux命令行">linux命令行</h2>
+<p><code>grep -rn &quot;xxx&quot;</code>可以快速找想要找到的东西，比如在很多代码文件里面找一行代码在哪里</p>
+<h2 id="windows-cmake">windows-cmake</h2>
+<ul>
+<li>安装cmake</li>
+<li>安装msbuild</li>
+</ul>
+<p>首先<code>cmake ..</code>编译好中间文件，然后通过<code>msbuild xx.sln</code>编译好exe程序</p>
+<h1>git</h1>
+<h2 id="1-仓库级别的git设置">1. 仓库级别的git设置</h2>
+<p>在多人空间使用git：</p>
+<p><strong>step 1:</strong></p>
+<p>首先设置<strong>仓库级别</strong>的git config：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dongyazhu</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/CharlesFang207/FasterTransformer</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> FasterTransformer</span><br><span class="line"></span><br><span class="line">git config user.name <span class="string">&quot;SamuraiBUPT&quot;</span></span><br><span class="line">git config user.email <span class="string">&quot;31409163@bupt.edu.cn&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>step 2:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加commit</span></span><br><span class="line">git add ./README.md</span><br><span class="line">git add ./docs/llama_guide.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加commit信息</span></span><br><span class="line">git commit -m <span class="string">&quot;add llama_guide.md&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在添加完这个信息之后，一切都会commit，你会看到vscode也不会有高亮项目</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># git push：本地main提交到仓库main</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+<h2 id="2-pull">2. pull</h2>
+<p>如果需要拉取仓库的更新，需要确保自己在正确地分支，然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>
+<p>即可完成仓库更新</p>
+<h2 id="3-roll-back">3. roll back</h2>
+<p>使用<code>git reset &lt;SHA&gt;</code>即可进行ROLLBACK操作，也就是回滚。</p>
+<p>SHA的值可以在提交记录里面直接copy</p>
+<h2 id="4-checkout">4. checkout</h2>
+<p>切换到其他分支</p>
+<p>需要再仓库路径下使用<code>git checkout &lt;branch name&gt;</code>即可</p>
+<h1>Docker</h1>
+<p>清楚docker build缓存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker builder prune</span><br></pre></td></tr></table></figure>
+<h1>[Valgrind]</h1>
+<p>宇宙唯一真神Valgrind:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind ./your_program</span><br></pre></td></tr></table></figure>
+<p>Valgrind 提供了一系列的工具来帮助你分析各种问题：</p>
+<ul>
+<li><code>memcheck</code>：默认工具，检测内存泄漏和无效的内存访问。</li>
+<li><code>helgrind</code>：用于检测多线程程序中的并发问题。</li>
+<li><code>cachegrind</code>：用于缓存使用分析。</li>
+<li><code>callgrind</code>：用于代码剖析（性能分析）。</li>
+</ul>
+<p>例如，要使用 <code>helgrind</code> 工具检查多线程问题，可以这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=helgrind ./your_program</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/指针实战解读/" data-toggle="tooltip" data-placement="top" title="【ptr】指针实战解读">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/【python-vtk】二维序列图像进行三维重建/" data-toggle="tooltip" data-placement="top" title="【python-vtk】二维序列图像进行三维重建">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=C++ Reference&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Cplusplus-Reference/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Jul 02 2023 23:22:57 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/SamuraiBUPT">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/诺宝御用coder">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Yazhu Dong
+          2024
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

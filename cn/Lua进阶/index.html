@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/cn/Lua进阶/">
+  <title>
+    
+      Lua Reference - Programming life
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Technique Blogs</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>Lua Reference</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yazhu Dong on
+              2023-07-27
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">21</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">5.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>最近在工程中接触到了lua脚本语言，在这里对所学内容做出总结。</p>
+<h1>0. Installation &amp; Env</h1>
+<h2 id="0-1-build-Lua-from-source">0.1  build Lua from source</h2>
+<p><strong>linux:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -R -O http://www.lua.org/ftp/lua-5.3.0.tar.gz</span><br><span class="line">tar zxf lua-5.3.0.tar.gz</span><br><span class="line"><span class="built_in">cd</span> lua-5.3.0</span><br><span class="line">make linux <span class="built_in">test</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p><strong>windows:</strong></p>
+<p>强烈建议build from source:</p>
+<ul>
+<li>下载tar.gz压缩包</li>
+<li>进入<code>src</code>路径，并且开始编译：<code>mingw32-make PLAT=mingw</code></li>
+<li>更新环境变量，就指引到<code>src</code>路径即可。</li>
+</ul>
+<p><strong>检查是否安装成功</strong></p>
+<p>使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lua -i</span><br></pre></td></tr></table></figure>
+<p>进入交互页面，查看是否安装成功。</p>
+<p>在我电脑上的路径:(头文件、可执行文件、编译出来的库文件)</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>ompiler<span class="symbol">\L</span>ua<span class="symbol">\l</span>ua-5.4.6<span class="symbol">\s</span>rc</span><br></pre></td></tr></table></figure>
+<h2 id="0-2-LuaRocks">0.2 LuaRocks</h2>
+<p>Luarocks 是 Lua 编程语言的包管理器。它允许开发人员自动安装、管理和升级 Lua 模块（也称为“rocks”），这些模块可以是库、工具或是扩展。</p>
+<p>安装LuaRocks:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://luarocks.org/releases/luarocks-3.9.2.tar.gz</span><br><span class="line">$ tar zxpf luarocks-3.9.2.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> luarocks-3.9.2</span><br><span class="line">$ ./configure &amp;&amp; make &amp;&amp; sudo make install</span><br><span class="line">$ sudo luarocks install luasocket</span><br><span class="line">$ lua</span><br><span class="line">Lua 5.3.5 Copyright (C) 1994-2018 Lua.org, PUC-Rio</span><br><span class="line">&gt; require <span class="string">&quot;socket&quot;</span></span><br></pre></td></tr></table></figure>
+<p>安装luamysql:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luarocks install luasql-mysql MYSQL_INCDIR=<span class="string">&quot;C:/Program Files/MySQL/MySQL Server 8.0/include&quot;</span> MYSQL_LIBDIR=<span class="string">&quot;C:/Program Files/MySQL/MySQL Server 8.0/lib&quot;</span></span><br></pre></td></tr></table></figure>
+<h1>1. 变量</h1>
+<p>Lua 变量有三种类型：全局变量、局部变量、表中的域。</p>
+<p>Lua 中的变量全是全局变量，哪怕是语句块或是函数里，除非用 local 显式声明为局部变量。</p>
+<ul>
+<li>一般而言，对于全局变量来说，我们一般将其首字母大写，以作为标识，<strong>这是Lua开发中约定俗成的习惯</strong></li>
+<li>对于局部变量来说，使用<code>local</code>在前方作为声明，其中<code>local</code>是lua的一个关键字。</li>
+</ul>
+<p>局部变量的作用域为从声明位置开始到所在语句块结束。</p>
+<p>例如：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="literal">nil</span>		<span class="comment">-- 注意这里其实不标准，因为应该大写a</span></span><br><span class="line">b = <span class="string">&quot;hello&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test_func</span><span class="params">(input_x)</span></span></span><br><span class="line">    <span class="built_in">print</span>(b)</span><br><span class="line">    <span class="keyword">local</span> c = input_x</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">test_func(<span class="string">&quot;world&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>全局变量不需要声明，给一个变量赋值后即创建了这个全局变量，访问一个没有初始化的全局变量也不会出错，只不过得到的结果是：nil。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(b)	<span class="comment">-- 未声明</span></span><br><span class="line"><span class="comment">-- nil</span></span><br></pre></td></tr></table></figure>
+<p><strong>删除变量</strong></p>
+<p>如果要删除一个变量，将这个变量赋值为nil即可。</p>
+<h2 id="1-1-string">1.1 string</h2>
+<p><strong>声明</strong></p>
+<p>声明字符串，使用单引号或者双引号进行声明。</p>
+<p>也可以用 2 个方括号 <code>[[]]</code> 来表示&quot;一块&quot;字符串。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">html = <span class="string">[[</span></span><br><span class="line"><span class="string">&lt;html&gt;</span></span><br><span class="line"><span class="string">&lt;head&gt;&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;http://www.runoob.com/&quot;&gt;菜鸟教程&lt;/a&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br><span class="line"><span class="string">]]</span></span><br><span class="line"><span class="built_in">print</span>(html)</span><br></pre></td></tr></table></figure>
+<p><strong>字符串直接算术操作</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">print</span>(<span class="string">&quot;2&quot;</span> + <span class="number">6</span>)</span><br><span class="line"><span class="number">8.0</span></span><br><span class="line">&gt; <span class="built_in">print</span>(<span class="string">&quot;2&quot;</span> + <span class="string">&quot;6&quot;</span>)</span><br><span class="line"><span class="number">8.0</span></span><br><span class="line">&gt; <span class="built_in">print</span>(<span class="string">&quot;2 + 6&quot;</span>)</span><br><span class="line"><span class="number">2</span> + <span class="number">6</span></span><br><span class="line">&gt; <span class="built_in">print</span>(<span class="string">&quot;-2e2&quot;</span> * <span class="string">&quot;6&quot;</span>)</span><br><span class="line"><span class="number">-1200.0</span></span><br></pre></td></tr></table></figure>
+<p><strong>字符串相加</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;a&quot;</span>..<span class="string">&quot;b&quot;</span>  <span class="comment">-- &quot;ab&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>字符串长度</strong></p>
+<p>使用 # 来计算字符串的长度，放在字符串前面:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">&quot;I am a student&quot;</span></span><br><span class="line"><span class="built_in">print</span>(#str)</span><br></pre></td></tr></table></figure>
+<p><strong>字符串函数</strong></p>
+<ul>
+<li>
+<p><code>string.upper(argument):</code>字符串全部转为大写字母。</p>
+</li>
+<li>
+<p><code>string.lower(arg)</code>字符串全部转为小写字母。</p>
+</li>
+<li>
+<p><code>string.gsub(mainString, find, replace, num)</code>:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">string</span>.<span class="built_in">gsub</span>(<span class="string">&quot;aaaa&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;z&quot;</span>,<span class="number">3</span>);</span><br><span class="line">zzza    <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>string.find (str, substr, [init, [plain]])</code>:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">string</span>.<span class="built_in">find</span>(<span class="string">&quot;Hello Lua user&quot;</span>, <span class="string">&quot;Lua&quot;</span>, <span class="number">1</span>) </span><br><span class="line"><span class="number">7</span>    <span class="number">9</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>string.reverse(arg)</code>:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">string</span>.<span class="built_in">reverse</span>(<span class="string">&quot;Lua&quot;</span>)</span><br><span class="line">auL</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>string.format()</code>:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">string</span>.<span class="built_in">format</span>(<span class="string">&quot;the value is:%d&quot;</span>,<span class="number">4</span>)</span><br><span class="line">the value is:<span class="number">4</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1>2. table</h1>
+<h2 id="2-1-入门">2.1 入门</h2>
+<p>Lua 中的表（table）其实是一个&quot;关联数组&quot;（associative arrays），数组的索引可以是<strong>数字</strong>或者是<strong>字符串</strong>。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;&#125;</span><br><span class="line">a[<span class="string">&quot;key&quot;</span>] = <span class="string">&quot;value&quot;</span></span><br><span class="line">key = <span class="number">10</span></span><br><span class="line">a[key] = <span class="number">22</span></span><br><span class="line">a[key] = a[key] + <span class="number">11</span></span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">pairs</span>(a) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(k .. <span class="string">&quot; : &quot;</span> .. v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>不同于其他语言的数组把 0 作为数组的初始索引，<strong>在 Lua 里表的默认初始索引一般以 1 开始</strong>。</p>
+<p>其中，使用<code>pairs(xx)</code>方法对一个table进行遍历。返回它的key和value。</p>
+<p><strong>数组</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建一个数组</span></span><br><span class="line"><span class="keyword">local</span> myArray = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 循环遍历数组</span></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, #myArray <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(myArray[i])</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>作为结构体</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MyTable = &#123;name = <span class="string">&quot;MyTable&quot;</span>, age = <span class="number">20</span>, test_func = <span class="function"><span class="keyword">function</span><span class="params">()</span></span> <span class="built_in">print</span>(<span class="string">&quot;test_func&quot;</span>) <span class="keyword">end</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">pairs</span>(MyTable) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(k, v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span>(MyTable.name)</span><br><span class="line"><span class="built_in">print</span>(MyTable[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(MyTable.age)</span><br><span class="line"><span class="built_in">print</span>(MyTable[<span class="string">&#x27;age&#x27;</span>])</span><br><span class="line"></span><br><span class="line">MyTable[<span class="string">&quot;dyz&quot;</span>] = <span class="string">&quot;love yxn&quot;</span></span><br><span class="line"><span class="built_in">print</span>(MyTable.dyz)</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">age</span>     <span class="number">20</span></span><br><span class="line"><span class="attribute">name</span>    MyTable</span><br><span class="line"><span class="attribute">test_func</span>       function: <span class="number">000000000062</span>d<span class="number">6</span>e<span class="number">0</span></span><br><span class="line"><span class="attribute">MyTable</span></span><br><span class="line"><span class="attribute">MyTable</span></span><br><span class="line"><span class="attribute">20</span></span><br><span class="line"><span class="attribute">20</span></span><br><span class="line"><span class="attribute">love</span> yxn</span><br></pre></td></tr></table></figure>
+<p>所以在这里，一切都明了了：</p>
+<ul>
+<li>table本身的key，既可以作为字符串进行访问，例如<code>MyTable['dyz']</code>，也可以作为成员变量进行访问：<code>MyTable.dyz</code>，本身这个key值就是灵活的。</li>
+<li>不仅仅是调用灵活，table在赋值的时候，也是可以通过上面两种办法进行赋值：既可以在括号中进行<code>key=value</code>的赋值，也可以在括号外面通过<code>table['key']</code>进行赋值</li>
+</ul>
+<h2 id="2-2-进阶：self与冒号">2.2 进阶：self与冒号</h2>
+<p>在Lua中，冒号 (<code>:</code>) 用于方法调用是一种语法糖，使得函数调用更加贴近面向对象的风格。</p>
+<p>当你使用冒号调用一个方法时，Lua会自动将调用该方法的表（通常可以被视为对象或实例）作为第一个参数传递给该方法，这个第一个参数通常在方法定义中被称为 <code>self</code>。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> myTable = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myTable.myFunction</span><span class="params">(self, arg1, arg2)</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">self</span>, arg1, arg2)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><strong>使用点号 (<code>.</code>) 并显式传递 <code>self</code></strong>：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myTable.myFunction(myTable, <span class="string">&quot;arg1&quot;</span>, <span class="string">&quot;arg2&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>使用冒号 (<code>:</code>) 并隐式传递 <code>self</code></strong>：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myTable:myFunction(<span class="string">&quot;arg1&quot;</span>, <span class="string">&quot;arg2&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样就隐式地把self传入给了函数中。</p>
+<p>Lua虽然不是一种传统的面向对象语言，但它提供了机制来模拟面向对象风格的编程。在这种情况下，<code>self</code> 通常用来引用表（table）本身，这在Lua中用来模拟“对象”。这就是self的作用。</p>
+<h1>3. 函数式编程</h1>
+<p><strong>基本语法</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test_func</span><span class="params">(a, b, ...)</span></span></span><br><span class="line">    <span class="comment">-- pass</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>尾部那个<code>...</code>表示省略的意思，冗余的参数可以传进来。这个冗余的参数也可以在函数中以<code>...</code>的形式调用。</p>
+<p>函数接收参数的时候，也是接收一个变量的拷贝，而不是变量的引用。</p>
+<p><strong>可赋值性</strong></p>
+<p>Lua中函数可以被赋值给其他变量，</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test_func = <span class="function"><span class="keyword">function</span><span class="params">(a, b, c)</span></span></span><br><span class="line">    <span class="comment">-- do something</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这种函数可以被赋值的操作，让整个lua语言活跃了起来，单纯为脚本而生。在很多实战中传参的地方，也可以看到传参的时候直接是：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DelayedCalls:Add(<span class="string">&quot;My_delayed_call&quot;</span>, <span class="number">2.5</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span> <span class="built_in">print</span>(<span class="string">&quot;Delayed call this func&quot;</span>) <span class="keyword">end</span>)</span><br></pre></td></tr></table></figure>
+<p>这让整个语言非常方便。</p>
+<p><strong>作为右值与执行</strong></p>
+<p><code>test_func</code>和<code>test_func()</code>是两个完全不同的概念。</p>
+<ul>
+<li>前者是会把这个函数对象传出去，</li>
+<li>后者是会传一个函数的执行结果，也就是返回值</li>
+</ul>
+<p>这是两个全然不同的东西。第一个是传递这个函数本身，就像赋值一样的操作；而第二个是在执行这个函数。这也是函数式编程的特点。</p>
+<h1>4. 控制流</h1>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(condition)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   statements</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>for</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> var=exp1,exp2,exp3 </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line">    &lt;执行体&gt;  </span><br><span class="line"><span class="keyword">end</span>  </span><br><span class="line"><span class="comment">-- var 从 exp1 变化到 exp2，每次变化以 exp3 为步长递增 var，并执行一次 &quot;执行体&quot;。</span></span><br><span class="line"><span class="comment">-- exp3 是可选的，如果不指定，默认为1。</span></span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i=<span class="number">1</span>,f(x) </span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> i=<span class="number">10</span>,<span class="number">1</span>,<span class="number">-1</span> </span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>其中，<code>f(x)</code>只会在循环开始前执行一次，其结果用在后面的循环中。</p>
+<p>Lua中，提供<code>break</code>关键字以跳出循环，但是没有<code>continue</code>。</p>
+<p><strong>if…else</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式)</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="comment">--[ 在布尔表达式为 true 时执行的语句 --]</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(布尔表达式)</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="comment">--[ 布尔表达式为 true 时执行该语句块 --]</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   <span class="comment">--[ 布尔表达式为 false 时执行该语句块 --]</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>总结：循环后面是<code>do</code>，if后面跟<code>then</code></p>
+<h1>5. 内存管理</h1>
+<h2 id="5-1-Lua-内存基础">5.1 Lua 内存基础</h2>
+<p>Lua与Python的内存管理不同，Lua仍然是<strong>将值赋给变量</strong>的模式，例如：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="string">&quot;hello&quot;</span></span><br><span class="line">c = b</span><br><span class="line">c = <span class="string">&quot;changed&quot;</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
+<p>输出分别是：hello, changed.这就说明仍然采用朴素的赋值方式。</p>
+<p>由于lua中有内存回收机制，所以本质上说lua与C/C++中的内存泄漏是不一样的，lua中有GC，理论上说是不会有内存泄漏的。</p>
+<p>当它进行GC的时候，会从根部开始扫描所有的对象，如果某个地方对这个对象还有引用，那么就不会把这个对象collect，所以lua中的内存泄漏是指已经没有使用，但是外部依然还存在引用的对象。</p>
+<p>Lua的GC算法使用的所谓的“Mark And Sweep”算法，简单理解，这个算法GC分为两个阶段，一个是标记（mark）阶段，这一阶段将所有系统中的引用的对象都逐一标记，而在清理（Sweep）阶段，把在mark阶段没有被标记的数据删除。</p>
+<p><strong>优化方法</strong></p>
+<ul>
+<li>尽量少使用全局变量，由于Lua默认是全局变量，所以很容易造成内存泄漏，尽量使用local限定。</li>
+<li>在可能内存泄漏的地方先调用<code>collectgarbage(“count”)</code>获取内存的最初使用，然后在函数调用后进行<code>collectgarbage(“collect”)</code>收集，并使用<code>collectgarbage(“count”)</code>检测两次内存使用的差。或者手动进行显示的垃圾回收<code>collectgarbage(&quot;step&quot;)</code></li>
+</ul>
+<h2 id="5-2-Garbage-Collection">5.2 Garbage Collection</h2>
+<p>Lua使用垃圾收集器它在后台会时不时地运行，收集和销毁Lua程序访问的死对象。包括表，用户数据，函数，线程，字符串等在内的所有对象都需要进行自动内存管理。</p>
+<p>Lua 实现了一个增量标记-扫描收集器。 它使用这<strong>两个数字</strong>来控制垃圾收集循环： <strong>垃圾收集器间歇率</strong>和<strong>垃圾收集器步进倍率</strong>。 这两个数字都使用百分数为单位，例如，100表示为1.</p>
+<ul>
+<li>垃圾收集器间歇率控制着收集器需要在开启新的循环前要等待多久。 增大这个值会减少收集器的积极性。
+<ul>
+<li>当这个值比 100 小的时候（低于100%），收集器在开启新的循环前不会有等待。</li>
+<li>设置这个值为 200 （200%）就会让收集器等到总内存使用量达到之前的两倍时才开始新的循环。</li>
+</ul>
+</li>
+<li>垃圾收集器步进倍率控制着收集器运作速度相对于内存分配速度的倍率。 增大这个值不仅会让收集器更加积极，还会增加每个增量步骤的长度。 不要把这个值设得小于 100 ， 那样的话收集器就工作的太慢了以至于永远都干不完一个循环。 默认值是 200 ，这表示收集器以内存分配的&quot;两倍&quot;速工作。</li>
+</ul>
+<p>Lua 提供了以下函数**collectgarbage ([opt [, arg]])**用来控制自动内存管理:</p>
+<ul>
+<li><strong>collectgarbage(“collect”):</strong> 做一次完整的垃圾收集循环。通过**参数 opt ** （表示option）它提供了一组不同的功能：</li>
+<li><strong>collectgarbage(“count”):</strong> 以 KB为单位返回 Lua 使用的总内存数。 这个值有小数部分，所以只需要乘上 1024 就能得到 Lua 使用的准确字节数（除非溢出）。</li>
+<li><strong>collectgarbage(“restart”):</strong> 重启垃圾收集器的自动运行。</li>
+<li><strong>collectgarbage(“setpause”):</strong> 将 arg 设为收集器的 间歇率。 返回 间歇率 的前一个值。</li>
+<li><strong>collectgarbage(“setstepmul”):</strong> 返回 步进倍率 的前一个值。</li>
+<li><strong>collectgarbage(“step”):</strong> 单步运行垃圾收集器。 步长&quot;大小&quot;由 arg 控制。 传入 0 时，收集器步进（不可分割的）一步。 传入非 0 值， 收集器收集相当于 Lua 分配这些多（K 字节）内存的工作。 如果收集器结束一个循环将返回 true 。</li>
+<li><strong>collectgarbage(“stop”):</strong> 停止垃圾收集器的运行。 在调用重启前，收集器只会因显式的调用运行。</li>
+</ul>
+<h1>6. 模块与包</h1>
+<h2 id="6-1-Lua模块">6.1 Lua模块</h2>
+<p>Lua中构建模块，可以通过表与return来完成。</p>
+<p>首先新建一份<code>my_mod.lua</code>，注意，<strong>要返回的表名和文件名最好一致</strong>：</p>
+<p><code>my_mod.lua</code></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建一份module</span></span><br><span class="line">my_mod = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- table中可以有函数成员。访问这个成员，通过`.`访问</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_mod.foo</span><span class="params">()</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;foo&quot;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">private_func</span><span class="params">()</span></span> <span class="comment">-- 表示在该脚本内可访问，外部不可访问</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;private_func&quot;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_mod.bar</span><span class="params">()</span></span> <span class="comment">-- module的函数都是全局的，但是可以调用脚本内的local函数</span></span><br><span class="line">    private_func()</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> my_mod <span class="comment">-- 返回module 要记住，在模块内部lua的末尾，必须要做return，表示这个lua脚本对外导出的东西</span></span><br></pre></td></tr></table></figure>
+<p><code>tmpile.lua</code></p>
+<p>Lua提供了一个名为require的函数用来加载模块。要加载一个模块，只需要简单地调用就可以了。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;my_mod&quot;</span>)</span><br><span class="line"></span><br><span class="line">my_mod.foo()</span><br><span class="line">my_mod.bar()</span><br></pre></td></tr></table></figure>
+<h2 id="6-2-C包">6.2 C包</h2>
+<p><strong>step 1: 编写C++函数</strong></p>
+<p>在<code>cpp/print_lua.cpp</code>路径下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lua.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lauxlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lualib.h&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">my_print</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">lua_gettop</span>(L);  <span class="comment">// 参数的数量</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">lua_isnumber</span>(L, i)) &#123;</span><br><span class="line">                <span class="keyword">int</span> val = <span class="built_in">lua_tointeger</span>(L, i);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 返回值的数量</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    __declspec(dllexport) <span class="function"><span class="keyword">int</span> <span class="title">luaopen_mylib</span><span class="params">(lua_State *L)</span> </span>&#123;	<span class="comment">// 注意在这里一定要声明</span></span><br><span class="line">        <span class="built_in">lua_register</span>(L, <span class="string">&quot;my_print&quot;</span>, my_print);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="comment">// extern &quot;C&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>step 2(Core): 编译为动态链接库</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -shared -o mylib.dll print_lua.cpp -ID:\Code_Space\Compiler\Lua\lua-5.4.6\src -LD:\Code_Space\Compiler\Lua\lua-5.4.6\src -llua</span><br></pre></td></tr></table></figure>
+<p><strong>step 3: 在Lua中调用：</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> paht = <span class="string">&quot;D:\\Code_Space\\Lua\\lua-demo\\cpp\\mylib.dll&quot;</span>	<span class="comment">-- 声明dll所在的位置</span></span><br><span class="line"><span class="keyword">local</span> f = <span class="built_in">assert</span>(<span class="built_in">package</span>.<span class="built_in">loadlib</span>(paht, <span class="string">&quot;luaopen_mylib&quot;</span>))		<span class="comment">-- 打开dll</span></span><br><span class="line">f()																<span class="comment">-- 真正的打开，这里是执行这个luaopen_mylib函数</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">pcall</span>(my_print, <span class="number">5</span>)										<span class="comment">--调用my_print</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;error&quot;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h1>7. 异常处理</h1>
+<h2 id="7-1-assert与error">7.1 assert与error</h2>
+<p>使用assert进行检查，其中assert的语法是：第一个为执行体，第二个是报错的内容。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(a,b)</span></span></span><br><span class="line">   <span class="built_in">assert</span>(<span class="built_in">type</span>(a) == <span class="string">&quot;number&quot;</span>, <span class="string">&quot;a 不是一个数字&quot;</span>)</span><br><span class="line">   <span class="built_in">assert</span>(<span class="built_in">type</span>(b) == <span class="string">&quot;number&quot;</span>, <span class="string">&quot;b 不是一个数字&quot;</span>)</span><br><span class="line">   <span class="keyword">return</span> a+b</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">add(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lu</span><span class="variable">a:</span> test.<span class="keyword">lu</span><span class="variable">a:3</span>: <span class="keyword">b</span> 不是一个数字</span><br><span class="line">stack traceback:</span><br><span class="line">    [C]: in <span class="function"><span class="keyword">function</span> &#x27;<span class="title">assert</span>&#x27;</span></span><br><span class="line">    test.<span class="keyword">lu</span><span class="variable">a:3</span>: in local <span class="string">&#x27;add&#x27;</span></span><br><span class="line">    test.<span class="keyword">lu</span><span class="variable">a:6</span>: in main chunk</span><br><span class="line">    [C]: in ?</span><br></pre></td></tr></table></figure>
+<h2 id="7-2-pcall与xpcall">7.2 <code>pcall</code>与<code>xpcall()</code></h2>
+<p><strong>pcall()</strong></p>
+<p>使用函数<code>pcall</code>(protected call)来包装需要执行的代码。<code>pcall</code>接收一个函数和要传递给后者的参数，并执行，执行结果：有错误、无错误；返回值true或者或false, errorinfo。</p>
+<p>语法：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">pcall</span>(function_name, ….) <span class="keyword">then</span></span><br><span class="line"><span class="comment">-- 没有错误</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment">-- 一些错误</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fucntion test_func()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">pcall</span>(test_func) <span class="keyword">then</span></span><br><span class="line">    <span class="comment">-- do something</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>pcall</code>在实际开发的过程中非常常见，可以考虑多多使用。</p>
+<p><strong>xpcall(func, err, arg1, arg2, …)</strong></p>
+<p>但是<code>pcall</code>仅仅只会返回状态，也就是成功与否，至于具体的报错位置，还需要使用<code>xpcall()</code>来判定。</p>
+<p>xpcall和pcall的区别最大的地方是，可以传递一个出错的函数。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addNumbers</span><span class="params">(a, b)</span></span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;number is&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> a + b</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">errorFunction</span><span class="params">(err)</span></span></span><br><span class="line">	<span class="built_in">print</span>(err)</span><br><span class="line">	<span class="built_in">print</span>(<span class="built_in">debug</span>.<span class="built_in">traceback</span>())</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> res, info = <span class="built_in">xpcall</span>(addNumbers, errorFunction, <span class="number">1</span>, <span class="number">2</span>)	<span class="comment">-- 先传递处理异常的函数，再传递参数</span></span><br><span class="line"><span class="built_in">print</span>(res)</span><br><span class="line"><span class="built_in">print</span>(info)</span><br></pre></td></tr></table></figure>
+<h1>8. 运算符</h1>
+<p>这里仅仅做一些提示：</p>
+<ul>
+<li>Lua中的<strong>不等于符号是<code>-=</code></strong>，所以说Lua中没有<code>!=</code>，也没有<code>+=</code>这种加法运算符</li>
+<li>大于、大于等于这些都跟往常一样。</li>
+<li><code>..</code>连接两个字符串，<code>#</code>查看字符串长度</li>
+</ul>
+<h1>9. 协程</h1>
+<p>Lua 协同程序(coroutine)与线程比较类似：拥有独立的堆栈，独立的局部变量，独立的指令指针，同时又与其它协同程序共享全局变量和其它大部分东西。</p>
+<p>协同程序可以理解为一种特殊的线程，可以暂停和恢复其执行。也就是说，一个时间段内，只能运行一个协程，在之后会进行协程的切换。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">coroutine.create()</td>
+<td style="text-align:left">创建 coroutine，返回 coroutine， 参数是一个函数，当和 resume 配合使用的时候就唤醒函数调用</td>
+</tr>
+<tr>
+<td style="text-align:left">coroutine.resume()</td>
+<td style="text-align:left">重启 coroutine，和 create 配合使用</td>
+</tr>
+<tr>
+<td style="text-align:left">coroutine.yield()</td>
+<td style="text-align:left">挂起 coroutine，将 coroutine 设置为挂起状态，这个和 resume 配合使用能有很多有用的效果</td>
+</tr>
+<tr>
+<td style="text-align:left">coroutine.status()</td>
+<td style="text-align:left">查看 coroutine 的状态 注：coroutine 的状态有三种：dead，suspended，running，具体什么时候有这样的状态请参考下面的程序</td>
+</tr>
+<tr>
+<td style="text-align:left">coroutine.wrap()</td>
+<td style="text-align:left">创建 coroutine，返回一个函数，一旦你调用这个函数，就进入 coroutine，和 create 功能重复</td>
+</tr>
+<tr>
+<td style="text-align:left">coroutine.running()</td>
+<td style="text-align:left">返回正在跑的 coroutine，一个 coroutine 就是一个线程，当使用running的时候，就是返回一个 coroutine 的线程号</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;协同程序 foo 开始执行&quot;</span>)</span><br><span class="line">    <span class="keyword">local</span> value = <span class="built_in">coroutine</span>.<span class="built_in">yield</span>(<span class="string">&quot;暂停 foo 的执行&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;协同程序 foo 恢复执行，传入的值为: &quot;</span> .. <span class="built_in">tostring</span>(value))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;协同程序 foo 结束执行&quot;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建协同程序</span></span><br><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(foo)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 启动协同程序</span></span><br><span class="line"><span class="keyword">local</span> <span class="built_in">status</span>, result = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)</span><br><span class="line"><span class="built_in">print</span>(result) <span class="comment">-- 输出: 暂停 foo 的执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 恢复协同程序的执行，并传入一个值</span></span><br><span class="line"><span class="built_in">status</span>, result = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">42</span>)</span><br><span class="line"><span class="built_in">print</span>(result) <span class="comment">-- 输出: 协同程序 foo 恢复执行，传入的值为: 42</span></span><br></pre></td></tr></table></figure>
+<p>如果这个协程有参数，那么传参是在resume的第二个参数开始进行传入的。</p>
+<p>对于参数的接收：</p>
+<ul>
+<li>既可以是在函数定义之初就进行接收。</li>
+<li>也可以是在yield方法之中进行接收。（上面的例子就是）</li>
+</ul>
+<h1>Lua Optimize</h1>
+<h2 id="1-Frequent-local-variable">1. Frequent &amp; local variable</h2>
+<p><strong>高频访问的对象，应先赋值给一个local变量再进行访问</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> testRepeatCount = <span class="number">10000000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> startTime = <span class="built_in">os</span>.<span class="built_in">clock</span>()</span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, testRepeatCount</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">local</span> randVal = <span class="built_in">math</span>.<span class="built_in">random</span>(<span class="number">1</span>, <span class="number">10000</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Not optimized: %f&quot;</span>, <span class="built_in">os</span>.<span class="built_in">clock</span>() - startTime)	<span class="comment">-- 0.312</span></span><br><span class="line"></span><br><span class="line">startTime = <span class="built_in">os</span>.<span class="built_in">clock</span>()</span><br><span class="line"><span class="keyword">local</span> rando = <span class="built_in">math</span>.<span class="built_in">random</span></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, testRepeatCount</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> randVal = rando(<span class="number">1</span>, <span class="number">10000</span>)  <span class="comment">-- 0.253</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Optimized: %f&quot;</span>, <span class="built_in">os</span>.<span class="built_in">clock</span>() - startTime)</span><br></pre></td></tr></table></figure>
+<p>这个高频访问的对象，不仅仅是变量、还更多的是函数、table等。</p>
+<p><strong>原因分析</strong></p>
+<p>非local局部变量，即<strong>UpValue</strong>的访问通常需要更多的指令操作（需要进入<code>_G</code>进行查询），如果对应的UpValue是个Table的话，还需要进入Table的复杂的数据查询流程。</p>
+<p>而local变量的访问，只需要一条简单寄存器读取指令，所以能节省出数据查询带来的性能开销。</p>
+<p>需要注意的是，这个是针对超高频访问的内容。而且优化效果也有限。</p>
+<h2 id="2-String-concat">2. String concat</h2>
+<p><strong>要拼接的字符串如果比较多，应使用table.conat函数</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> testRepeatCount = <span class="number">100000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> startTime = <span class="built_in">os</span>.<span class="built_in">clock</span>()</span><br><span class="line"><span class="keyword">local</span> rando = <span class="built_in">math</span>.<span class="built_in">random</span></span><br><span class="line"><span class="keyword">local</span> sumStr = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, testRepeatCount</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    sumStr = sumStr .. <span class="built_in">tostring</span>(rando(<span class="number">1</span>, <span class="number">10000</span>))	<span class="comment">-- 硬连接</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Not Optimized: %f&quot;</span>, <span class="built_in">os</span>.<span class="built_in">clock</span>() - startTime)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">collectgarbage</span>(<span class="string">&quot;count&quot;</span>))</span><br><span class="line"><span class="built_in">collectgarbage</span>(<span class="string">&quot;collect&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">collectgarbage</span>(<span class="string">&quot;count&quot;</span>))</span><br><span class="line"></span><br><span class="line">sumStr = <span class="string">&quot;&quot;</span></span><br><span class="line">startTime = <span class="built_in">os</span>.<span class="built_in">clock</span>()</span><br><span class="line"><span class="keyword">local</span> strTable = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, testRepeatCount</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">table</span>.<span class="built_in">insert</span>(strTable, <span class="built_in">tostring</span>(rando(<span class="number">1</span>, <span class="number">10000</span>)))	<span class="comment">-- 连接table</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">sumStr = <span class="built_in">table</span>.<span class="built_in">concat</span>(strTable)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Optimized: %f&quot;</span>, <span class="built_in">os</span>.<span class="built_in">clock</span>() - startTime)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">collectgarbage</span>(<span class="string">&quot;count&quot;</span>))</span><br><span class="line"><span class="built_in">collectgarbage</span>(<span class="string">&quot;collect&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">collectgarbage</span>(<span class="string">&quot;count&quot;</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="3-Function-recursion-call">3. Function: recursion call</h2>
+<p><strong>函数递归调用时尽量使用尾调用的方式</strong></p>
+<p>错误写法</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">BadRecursionFunc</span><span class="params">(n)</span></span></span><br><span class="line">  <span class="keyword">if</span> n &gt; <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">return</span> n + BadRecursionFunc(n - <span class="number">1</span>)	<span class="comment">-- 这里并不是尾调用</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span> </span><br></pre></td></tr></table></figure>
+<p>正确写法</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">GoodRecursionFunc</span><span class="params">(sum, n)</span></span></span><br><span class="line">  <span class="keyword">if</span> n &gt; <span class="number">1</span> <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">return</span> GoodRecursionFunc(sum + n, n - <span class="number">1</span>)	<span class="comment">-- 这里就是尾调用</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> sum, <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span> </span><br></pre></td></tr></table></figure>
+<p>函数调用在return的时候，若直接单纯调用另外一个函数，则会使用<strong>尾调用</strong>的方式</p>
+<p>在尾调用模式下，会复用之前的<strong>CallInfo</strong>与<strong>函数堆栈</strong>。所以无论样例中的n多大、递归层次多深，都不会造成堆栈溢出。</p>
+<h1>Appendix</h1>
+<h2 id="1-G">1. _G</h2>
+<p>G 是Global的意思。</p>
+<p>定义在所有函数外部的变量我们可以称之为全局变量(Global Variable)，它的作用域默认是整个程序。但Lua作为一种嵌入式语言，代码段(chunk)都是由宿主应用调用的，它自身都不知道会被嵌入到哪个应用程序中。为了解决这个问题，它并没有使用全局变量，而是通过table对全局变量进行模拟。我们可以认为Lua语言把所有的全局变量保存在一个称为全局环境(Global Environment)的普通表中。</p>
+<p><strong>_G.CloneClass()</strong></p>
+<p>这个不是_G里面的函数，应该是payday库里面自定义的函数。</p>
+<h2 id="2-rawset-table-index-value">2. <strong>rawset(table, index, value)</strong></h2>
+<p>e.g.</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">rawget</span>(<span class="built_in">_G</span>, <span class="string">&quot;dmg_turret_module&quot;</span>) <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">rawset</span>(<span class="built_in">_G</span>, <span class="string">&quot;dmg_turret_module&quot;</span>, &#123;</span><br><span class="line">        [<span class="string">&quot;toggle_module&quot;</span>] = <span class="literal">false</span>,</span><br><span class="line">        [<span class="string">&quot;turret_names&quot;</span>] = &#123;</span><br><span class="line">            <span class="string">&quot;Idstring(@ID3c4730f4268ada38@)&quot;</span>, <span class="comment">--vit celling</span></span><br><span class="line">            <span class="string">&quot;Idstring(@ID56c162b293c88d8d@)&quot;</span>, <span class="comment">--hell island</span></span><br><span class="line">            <span class="string">&quot;Idstring(@ID132676041d28bad4@)&quot;</span>, <span class="comment">--turret van</span></span><br><span class="line">            <span class="string">&quot;Idstring(@IDe6bfc34a5c60c351@)&quot;</span>  <span class="comment">--scarface celling</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>个人认为这是个好习惯。如果在_G里面查不到，再定义如下内容。如果查到了，就不执行以下内容。</p>
+<h2 id="3-math库">3. math库</h2>
+<p><strong>math.random ([m [, n]])</strong></p>
+<p>此函数是 ANSI C 提供的简单伪随机生成器函数 rand 的接口。当不带参数调用时，返回范围 [0,1) 内的统一伪随机实数。 当使用整数 m 调用时，math.random 返回范围 [1, m] 内的统一伪随机整数。 当使用两个整数 m 和 n 调用时，math.random 返回范围 [m, n] 内的统一伪随机整数。</p>
+<h2 id="4-os库">4. os库</h2>
+<p><strong>os.clock ()</strong></p>
+<p>返回程序使用的 CPU 时间的近似值（以秒为单位）。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/payday-mod-develop/" data-toggle="tooltip" data-placement="top" title="Payday2 MOD开发">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/双指针、离散化、区间合并/" data-toggle="tooltip" data-placement="top" title="双指针、离散化、区间合并">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Lua Reference&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Lua进阶/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Thu Jul 27 2023 16:19:21 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/SamuraiBUPT">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/诺宝御用coder">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Yazhu Dong
+          2024
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

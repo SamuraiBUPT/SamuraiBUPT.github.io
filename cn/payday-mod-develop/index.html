@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/cn/payday-mod-develop/">
+  <title>
+    
+      Payday2 MOD开发 - Programming life
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Technique Blogs</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>Payday2 MOD开发</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yazhu Dong on
+              2023-07-28
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">16</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.8k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h3 id="1-what-is-unit">1. what is unit?</h3>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> alive(unit) <span class="keyword">then</span></span><br><span class="line">    <span class="comment">-- code ..</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这个unit困扰许久，从上下文推测，这个unit应该就是一个物体的实物本身。比如说camera，传入的就是unit实物（ENTITY）。</p>
+<p>还有一个问题就是，managers是从哪来的？我应该在哪里看managers的源码？</p>
+<p>在payday2源码里面看，源码中定义得有。</p>
+<h3 id="2-payday-mod实现函数重写（override）两种方法">2. payday mod实现函数重写（override）两种方法</h3>
+<h4 id="2-1-soft-impl">2.1 soft impl</h4>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> old_add_server_job = CrimeNetGui.add_server_job</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CrimeNetGui:add_server_job</span><span class="params">(data)</span></span></span><br><span class="line">	<span class="keyword">if</span> data.job_id <span class="keyword">and</span> managers.job:is_job_ghostable(data.job_id) <span class="keyword">then</span></span><br><span class="line">		old_add_server_job(<span class="built_in">self</span>, data)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这段代码首先拿到了orig_func，在新函数中执行了orig_func之后，再开始执行自己的逻辑，这样被称为软实现</p>
+<h4 id="2-2-hook">2.2 hook</h4>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Hooks:PostHook(CrimeNetGui, <span class="string">&#x27;add_server_job&#x27;</span>, <span class="string">&#x27;hideloudjobs_crimenetgui&#x27;</span>,</span><br><span class="line"><span class="function"><span class="keyword">function</span><span class="params">(self, data)</span></span></span><br><span class="line">	<span class="keyword">if</span> data.job_id <span class="keyword">and</span> <span class="keyword">not</span> managers.job:is_job_ghostable(data.job_id) <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">self</span>:remove_job(data.id, <span class="literal">true</span>)</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure>
+<p>有关hook的相关文档介绍：</p>
+<p><code>Hooks:PostHook( object, func, id, post_call )</code></p>
+<p>Automatically hooks a function to be called after the specified function on a specified object.</p>
+<ul>
+<li><code>object</code> The object for the post-hook to search for the func to hook.</li>
+<li><code>func</code> A function name, as a string, on the object to be post-hooked.</li>
+<li><code>id</code> The unique identifier for this post-hook.</li>
+<li><code>pre_call</code> The function that should be called after func is called on object.</li>
+</ul>
+<h3 id="3-从Ultimate-Trainer学习Mod开发">3. 从Ultimate-Trainer学习Mod开发</h3>
+<p>待会整理，在这里先进行学习并制作开发。</p>
+<p>首先是对<code>mod.txt</code>的解读。</p>
+<p><code>mod.txt</code>主要有以下几个部分：</p>
+<ul>
+<li>前置内容，包括模组名称、模组信息、模组cover等信息</li>
+<li>keybinds: 用于进行按键绑定的设置，有如下内容：  <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">            <span class="string">&quot;keybind_id&quot;</span>: <span class="string">&quot;UTKeybindMenuMain&quot;</span>,</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;主菜单&quot;</span>,</span><br><span class="line">            <span class="string">&quot;description&quot;</span>: <span class="string">&quot;打开主菜单&quot;</span>,</span><br><span class="line">            <span class="string">&quot;script_path&quot;</span>: <span class="string">&quot;keybinds/menus/main.lua&quot;</span>,</span><br><span class="line">            <span class="string">&quot;run_in_menu&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="string">&quot;run_in_game&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="string">&quot;localized&quot;</span>: <span class="literal">false</span></span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li>persist_scripts: 持续运作的脚本文件，以下是官方的解释：</li>
+</ul>
+<blockquote>
+<p>A script in <code>script_path</code> which is run every frame until the global variable specified in global is set to anything other than false or nil.</p>
+</blockquote>
+<ul>
+<li><code>persist_scripts</code>: The array of objects containing a global and a script_path.</li>
+<li><code>global</code>: The global value to associate with script_path.</li>
+<li><code>script_path</code> The script to continuously run until the global variable global is set to a value other than false or nil.</li>
+</ul>
+<p>不难看见每一个persist_script的最下方有一个标识，这个标识往往被设置为True，就比如<code>UTClassUT = true</code>，<code>UTMenuMain = true</code>。这个标识就是要被放在<code>global</code>字段里面的值，mod loader也会根据这个来判断是否要执行这个script。</p>
+<p>我推测，可能是先进行hook，然后才加载persist_scripts。</p>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>需要注册的任何类、变量、函数，都可以通过hook的方式来进行。不是说把脚本设置成persist_scripts就可以一直使用了，那还是有不可使用的情况。正确的理解应该是，hook进原函数了之后，才可以完成注册，才可以在后续进行使用。以前的理解是错误的。</p>
+</blockquote>
+<p><strong>UT类的生存周期</strong></p>
+<p>Lua在执行的过程中，变量就只有全局变量和局部变量之分。我们看到<code>UTClassUT</code>被设置为True，这就表示那个脚本会一直运行，也就表示那个脚本里面的<code>UT</code>类会一直存在。</p>
+<p>所以，在其他的脚本中，有直接对UT类进行操作的，这就是因为UT已经通过persist_script，成了全局变量，不需要再import什么的，直接使用即可。</p>
+<p>从更新的理解来看，是因为UT类所在的script被设置为了<code>persist_script</code>，也就是一个可以持续运转的脚本，所以这个UT才会一直存在在生存周期中。如果说没有设置这个的话，估计也无法直接调用UT。</p>
+<p><strong>UT.menu的设计</strong><br>
+UT.menu的设计，主要在两个地方。首先是在<code>mod/menus/main.lua</code>中，对这个菜单进行实现。这个菜单是通过绑定快捷键进行触发，负责触发的函数在<code>mod/keybind/menus/main.lua</code>中。</p>
+<p>这样的设计逻辑在其他的文件中也清晰可见：</p>
+<p>menus/main.lua:</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UT.menus.main</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        custom = <span class="literal">true</span>,</span><br><span class="line">        title = <span class="string">&quot;终极教练&quot;</span> .. UT.version,</span><br><span class="line">        text = <span class="string">&quot;By ChildOfSorrow&quot;</span>,</span><br><span class="line">        button_list = &#123;</span><br><span class="line">            &#123;text = <span class="string">&quot;文档&quot;</span>, callback_func = UT.documentation&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;配置&quot;</span>, open_menu = UT.menus.configuration()&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;关于&quot;</span>, open_menu = UT.menus.about()&#125;,</span><br><span class="line">            &#123;no_text = <span class="literal">true</span>, no_selection = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;工作菜单&quot;</span>, open_menu = UT.menus.job(), out_game = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;游戏者菜单&quot;</span>, open_menu = UT.menus.player()&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;游戏菜单&quot;</span>, open_menu = UT.menus.game(), in_game = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;时间菜单&quot;</span>, open_menu = UT.menus.<span class="built_in">time</span>()&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;生成菜单&quot;</span>, open_menu = UT.menus.spawn(), host = <span class="literal">true</span>, in_game = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;驾驶菜单&quot;</span>, open_menu = UT.menus.driving(), host = <span class="literal">true</span>, in_game = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;建设菜单&quot;</span>, open_menu = UT.menus.construction(), host = <span class="literal">true</span>, in_game = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;no_text = <span class="literal">true</span>, no_selection = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;关&quot;</span>, cancel_button = <span class="literal">true</span>&#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">UTMenuMain = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>keybind/menus/main.lua: （当按下绑定键的时候，执行这份脚本）</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> managers.system_menu:is_active() <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">do</span> <span class="keyword">return</span> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">UT.openMenu(UT.menus.main())</span><br></pre></td></tr></table></figure>
+<p>UT.openmenu实现：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UT.openMenu</span><span class="params">(menu)</span></span></span><br><span class="line">    managers.system_menu:show_buttons(menu)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-1-菜单功能实现逻辑">3.1 菜单功能实现逻辑</h4>
+<p>我们以<code>主菜单-游戏菜单-触发警报</code>为例。</p>
+<p><strong>code structure</strong></p>
+<p>首先是一个菜单的架构：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UT.menus.main</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        custom = <span class="literal">true</span>,</span><br><span class="line">        title = <span class="string">&quot;终极教练&quot;</span> .. UT.version,</span><br><span class="line">        text = <span class="string">&quot;By ChildOfSorrow&quot;</span>,</span><br><span class="line">        button_list = &#123;</span><br><span class="line">            &#123;text = <span class="string">&quot;文档&quot;</span>, callback_func = UT.documentation&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;游戏菜单&quot;</span>, open_menu = UT.menus.game(), in_game = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;建设菜单&quot;</span>, open_menu = UT.menus.construction(), host = <span class="literal">true</span>, in_game = <span class="literal">true</span>&#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这里仅仅是举一个例子，这个table中记录了一些菜单的基本实现框架，实际上这个函数也仅仅是返回一个table。具体有些什么可以被实现，还需要参考底层的接口，暂时没有查到相关的文档，此处略过，仅仅从实现功能层面往下推导。</p>
+<p>open_menu这个键记录的是一个UT类中函数，而这个类函数返回的也是一个table：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UT.menus.game</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        custom = <span class="literal">true</span>,</span><br><span class="line">        title = <span class="string">&quot;游戏菜单&quot;</span>,</span><br><span class="line">        button_list = &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                text = <span class="string">&quot;播放器状态菜单&quot;</span>,</span><br><span class="line">                open_menu = &#123;</span><br><span class="line">                    custom = <span class="literal">true</span>,</span><br><span class="line">                    title = <span class="string">&quot;播放器状态菜单&quot;</span>,</span><br><span class="line">                    button_list = &#123;</span><br><span class="line">                        &#123;text = <span class="string">&quot;平民&quot;</span>, callback_func = UT.Game.setPlayerState, callback_data = <span class="string">&quot;平民&quot;</span>&#125;,</span><br><span class="line">                        &#123;text = <span class="string">&quot;关闭&quot;</span>, callback_func = UT.Game.setPlayerState, callback_data = <span class="string">&quot;关闭&quot;</span>&#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                text = <span class="string">&quot;交互菜单&quot;</span>,</span><br><span class="line">                open_menu = &#123;</span><br><span class="line">                    custom = <span class="literal">true</span>,</span><br><span class="line">                    title = <span class="string">&quot;交互菜单&quot;</span>,</span><br><span class="line">                    button_list = &#123;</span><br><span class="line">                        &#123;text = <span class="string">&quot;开门&quot;</span>, callback_func = UT.Game.interact, callback_data = UT.Tables.interactions.doors&#125;,</span><br><span class="line">                        &#123;text = <span class="string">&quot;开窗&quot;</span>, callback_func = UT.Game.interact, callback_data = UT.Tables.interactions.windows&#125;,</span><br><span class="line">                        &#123;text = <span class="string">&quot;打开存款箱&quot;</span>, callback_func = UT.Game.interact, callback_data = UT.Tables.interactions.depositBoxes&#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;访问摄像机&quot;</span>, callback_func = UT.Game.accessCameras, close_button = <span class="literal">true</span>&#125;,</span><br><span class="line">            &#123;text = <span class="string">&quot;触发警报&quot;</span>, callback_func = UT.Game.triggerAlarm, host = <span class="literal">true</span>&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>到这里可以做一个基本的总结：</p>
+<ul>
+<li>如果还有子菜单，只需要在这个子table中，设置一个<code>open_menu=</code>即可。</li>
+<li>如果需要直接点击这个button就执行功能，就在<code>callback_func=</code>中进行设置需要被调用的函数即可。</li>
+</ul>
+<p>往下探索<code>UT.Game.triggerAlarm</code>函数：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UT.Game.triggerAlarm</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">if</span> UT.Game.preventAlarmTriggering <span class="keyword">then</span></span><br><span class="line">        UT.showMessage(<span class="string">&quot;prevent alarm triggering is enabled&quot;</span>, UT.colors.<span class="built_in">error</span>)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        managers.groupai:state():on_police_called(<span class="string">&quot;empty&quot;</span>)</span><br><span class="line">        UT.showMessage(<span class="string">&quot;alarm triggered&quot;</span>, UT.colors.info)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-2-菜单的按钮点击功能实现">3.2 菜单的按钮点击功能实现</h4>
+<p>实现来自于<code>hook/genericdialog.lua</code>中。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">core:<span class="built_in">module</span>(<span class="string">&quot;SystemMenuManager&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;lib/managers/dialogs/Dialog&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--[[</span></span><br><span class="line"><span class="comment">首先这个脚本hook了lib中的genericdialog.lua，</span></span><br><span class="line"><span class="comment">然后在init中判断是否是custom，</span></span><br><span class="line"><span class="comment">如果是的话就把FADE_IN_DURATION设置为0.0001，FADE_OUT_DURATION设置为0.2，然后把layer设置为100，</span></span><br><span class="line"><span class="comment">这样就可以让自定义的dialog在其他dialog之上了</span></span><br><span class="line"><span class="comment">]]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 因为这个类GeneriDialog是已知存在的，所以直接clone并且复用。</span></span><br><span class="line"><span class="built_in">_G</span>.CloneClass(GenericDialog)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GenericDialog:init</span><span class="params">(...)</span></span></span><br><span class="line">    <span class="built_in">self</span>.orig.init(<span class="built_in">self</span>, ...) <span class="comment">-- clone了之后，通过调用orig.init来调用原始的init函数</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">self</span>._data.custom <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">self</span>.FADE_IN_DURATION = <span class="number">0.0001</span></span><br><span class="line">        <span class="built_in">self</span>.FADE_OUT_DURATION = <span class="number">0.2</span></span><br><span class="line">        <span class="built_in">self</span>._panel_script:set_layer(<span class="number">100</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>我感觉从这里也找到了怎么写自己mod的方法：它无非还不是调用<code>lib</code>中的代码来完成任务。</p>
+<ul>
+<li>首先找到要hook的脚本。</li>
+<li>在<code>mod.txt</code>中写明hook</li>
+<li>_G.CloneClass()，要么通过其他方法来继承原来的类，得到原来的函数，采用<code>soft override</code>方法</li>
+<li>实现自己的功能。</li>
+</ul>
+<h4 id="3-3-几种log方案">3.3 几种log方案</h4>
+<p>有的时候不能调用自己的DNC，就只能使用官方的接口了。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">managers.mission._fading_debug_output:script().<span class="built_in">log</span>(<span class="string">&quot;host only&quot;</span>, Color.red)</span><br></pre></td></tr></table></figure>
+<p>这种方法是在debug窗口添加消息。</p>
+<p>如果是hook的脚本，hook进官方的源码里面，但是又想使用自己的DNC库里面的东西，可以这样：</p>
+<p>在hook脚本前面加上：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dofile</span>(ModPath .. <span class="string">&quot;/classes/donotcheat.lua&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>就行了。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">DNC.logMessage</span><span class="params">(msg, color)</span></span></span><br><span class="line">    managers.chat:_receive_message(<span class="number">1</span>, <span class="string">&quot;DNC&quot;</span>, <span class="built_in">tostring</span>(msg), color)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这种是在游戏的聊天窗口添加消息。第二个参数DNC是聊天者的ID</p>
+<h3 id="4-有关几种call方案">4. 有关几种call方案</h3>
+<p>官方文档：</p>
+<ul>
+<li><code>Hooks:</code> <a target="_blank" rel="noopener" href="https://payday-2-blt-docs.readthedocs.io/en/latest/lua/hooks/">https://payday-2-blt-docs.readthedocs.io/en/latest/lua/hooks/</a></li>
+<li><code>DelayedCalls:</code> <a target="_blank" rel="noopener" href="https://payday-2-blt-docs.readthedocs.io/en/latest/lua/delayed_calls/">https://payday-2-blt-docs.readthedocs.io/en/latest/lua/delayed_calls/</a></li>
+</ul>
+<p>这个<code>DelayedCalls:Add()</code>函数非常有用。在这里节选三个比较常用的函数：</p>
+<p><strong>DelayedCalls:Add( id, time, func )</strong></p>
+<blockquote>
+<p>Adds a delayed call that will automatically be ran after the time has expired.</p>
+</blockquote>
+<ul>
+<li><code>id</code> The unique identifier of this delayed call.</li>
+<li><code>time</code> A time value, in seconds, that the function func should run after.</li>
+<li><code>func</code> The function that should be ran if time passes.</li>
+</ul>
+<p>有关这个delayedcall，我发现它实际上是开了一个协程在进行操作的，因为下一句马上就打印出来了，而没有等待2.5s。所以推测它的底层应该是协程函数。</p>
+<p><strong>Hooks:PreHook( object, func, id, pre_call )</strong></p>
+<blockquote>
+<p>Automatically hooks a function to be called before the specified function on a specified object.</p>
+</blockquote>
+<ul>
+<li><code>object</code> The object for the pre-hook to search for the func to hook.</li>
+<li><code>func</code> A function name, as a string, on the object to be pre-hooked.</li>
+<li><code>id</code> The unique identifier for this pre-hook.</li>
+<li><code>pre_call</code> The function that should be called before func is called on object.</li>
+</ul>
+<p>也就是说，这个就是作用在<strong>某一个类</strong>的<strong>某一个函数</strong>里面的，pre_call才是放进去自己写的函数。</p>
+<p><strong>Hooks:PostHook( object, func, id, post_call )</strong></p>
+<p>同理。</p>
+<p>我们可以从实战中找到相应的案例来进行分析：TODO</p>
+<h3 id="5-从kill-and-tie学习模组制作">5. 从kill_and_tie学习模组制作</h3>
+<h4 id="5-1-dmg-camera-unit">5.1 dmg_camera(unit)</h4>
+<p>这个函数被调用的时候是这样的：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> _, unit <span class="keyword">in</span> <span class="built_in">pairs</span>(SecurityCamera.cameras) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">pcall</span>(dmg_cam, unit)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>pcall是处理异常的函数，在这里就不解释了，更多信息可以看Lua Developing Reference。</p>
+<p>函数的实现是这样的：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">dmg_cam</span><span class="params">(unit)</span></span></span><br><span class="line">    <span class="keyword">local</span> position = unit:position()</span><br><span class="line">    <span class="keyword">local</span> body</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> i = <span class="number">-1</span></span><br><span class="line">        <span class="keyword">repeat</span></span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">            body = unit:body(i)</span><br><span class="line">        <span class="keyword">until</span> (body <span class="keyword">and</span> body:extension()) <span class="keyword">or</span> i &gt;= <span class="number">5</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> body <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    body:extension().damage:damage_melee(unit, <span class="literal">nil</span>, position, <span class="literal">nil</span>, <span class="number">10000</span>)</span><br><span class="line">    managers.network:session():send_to_peers_synched(<span class="string">&quot;sync_body_damage_melee&quot;</span>, body, unit, <span class="literal">nil</span>, position, <span class="literal">nil</span>, <span class="number">10000</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>从lib代码中查到了类似的应用：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UnitNetworkHandler:sync_body_damage_melee</span><span class="params">(body, attacker, normal, position, direction, damage, sender)</span></span></span><br><span class="line">    body:extension().damage:damage_melee(attacker, normal, position, direction, damage)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>几个疑问：</p>
+<ul>
+<li>unit</li>
+<li>sync: sync就是同步，async就是异步</li>
+<li>body</li>
+<li>melee</li>
+<li>extension()</li>
+</ul>
+<h4 id="5-2-toggle">5.2 toggle</h4>
+<p>在很多按键绑定的模组中，经常看到这个函数，实际上这个toggle就是说，按下按键的时候，执行这个函数。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">CarryScript:_toggle</span><span class="params">()</span></span></span><br><span class="line">		<span class="keyword">local</span> unit = managers.player:player_unit()</span><br><span class="line">		<span class="keyword">if</span> alive(unit) <span class="keyword">then</span></span><br><span class="line">			<span class="keyword">if</span> CarryScript.menu_mode <span class="keyword">then</span></span><br><span class="line">				CarryScript:menu(CarryScript.BagList)</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="keyword">if</span> (Application:<span class="built_in">time</span>() - <span class="built_in">self</span>.carrystack_lastpress) &lt; <span class="number">0.2</span> <span class="keyword">then</span></span><br><span class="line">					CarryScript.menu_mode = <span class="keyword">not</span> CarryScript.menu_mode</span><br><span class="line">					CarryScript:menu(CarryScript.BagList)</span><br><span class="line">					managers.mission._fading_debug_output:script().<span class="built_in">log</span>(<span class="built_in">string</span>.<span class="built_in">format</span>(<span class="string">&quot;一对一 - 停用&quot;</span>), Color.red)</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					CarryScript:InteractBySpecificBag(CarryScript.BagList[<span class="number">1</span>])</span><br><span class="line">				<span class="keyword">end</span></span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">			<span class="built_in">self</span>.carrystack_lastpress = Application:<span class="built_in">time</span>()</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	CarryScript:_toggle()</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	CarryScript:_toggle()</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>所以从这个代码逻辑来看，被执行的入口就是这个toggle。</p>
+<h3 id="6-Logs-Way">6. Logs Way</h3>
+<h4 id="6-1-在debug-console里面进行log信息">6.1 在debug console里面进行log信息</h4>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">managers.mission._fading_debug_output:script().<span class="built_in">log</span>(<span class="built_in">string</span>.<span class="built_in">format</span>(<span class="string">&quot;Carry All Activated&quot;</span>),Color.green)</span><br></pre></td></tr></table></figure>
+<h4 id="6-2-调用游戏中悬挂栏呈现信息（高级）">6.2 调用游戏中悬挂栏呈现信息（高级）</h4>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">managers.hud:show_hint(&#123; text = active <span class="keyword">and</span> <span class="string">&quot;子弹追踪开启&quot;</span> <span class="keyword">or</span> <span class="string">&quot;子弹追踪关闭&quot;</span> &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Error-logs">Error logs</h3>
+<p>第一次开发mod，拼接玩打开游戏的时候，游戏比往常卡得多，原因待查找。</p>
+<p>并且菜单也呼唤不出来，不知道原因。</p>
+<h4 id="Thread-Blocking">Thread Blocking</h4>
+<p>原因找到了，就是<strong>因为那个persist_scripts一直报错，所以就持续阻塞线程，导致游戏卡顿。</strong> 所以与persist_script有关的一定不能出问题，否则会持续阻塞线程。</p>
+<p>对比UT，是代码的问题。我省略了中间步骤。</p>
+<p>Lua中的成员创建也得是按部就班的来，我没有创建中间类<code>menu</code>，直接就创建了menu里面的方法，这肯定是会报错的。</p>
+<p>第二个问题，也是被持续loading，所以一直block thread。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">08</span>:<span class="number">58</span>:<span class="number">59</span> PM FATAL ERROR:  (C:\projects\payday2-superblt\src\InitiateState.cpp:<span class="number">320</span>) mods\DoNotCheat\menu_impl\attack\kill_and_tie.lua:<span class="number">1</span>: attempt to index field <span class="string">&#x27;enemy&#x27;</span> (a nil value)</span><br><span class="line">stack traceback:</span><br><span class="line">        mods\DoNotCheat\menu_impl\attack\kill_and_tie.lua:<span class="number">1</span>: <span class="keyword">in</span> main chunk</span><br><span class="line">        [C]: <span class="keyword">in</span> <span class="keyword">function</span> <span class="string">&#x27;dofile&#x27;</span></span><br><span class="line">        mods<span class="regexp">/base/</span>req/BLTPersistScripts.lua:<span class="number">35</span>: <span class="keyword">in</span> <span class="keyword">function</span> <span class="string">&#x27;update_persists&#x27;</span></span><br><span class="line">        mods<span class="regexp">/base/</span>req/BLTPersistScripts.lua:<span class="number">10</span>: <span class="keyword">in</span> <span class="keyword">function</span> <span class="string">&#x27;func&#x27;</span></span><br><span class="line">        mods<span class="regexp">/base/</span>req<span class="regexp">/core/</span>Hooks.lua:<span class="number">86</span>: <span class="keyword">in</span> <span class="keyword">function</span> <span class="string">&#x27;Call&#x27;</span></span><br><span class="line">        mods<span class="regexp">/base/</span>lua/MenuSetup.lua:<span class="number">3</span>: <span class="keyword">in</span> <span class="keyword">function</span> <span class="string">&#x27;func&#x27;</span></span><br><span class="line">        mods<span class="regexp">/base/</span>req<span class="regexp">/core/</span>Hooks.lua:<span class="number">272</span>: <span class="keyword">in</span> <span class="keyword">function</span> <span class="string">&#x27;update&#x27;</span></span><br><span class="line">        [string <span class="string">&quot;core/lib/setups/coresetup.lua&quot;</span>]:<span class="number">559</span>: <span class="keyword">in</span> <span class="keyword">function</span> &lt;[string <span class="string">&quot;core/lib/setups/coresetup.lua&quot;</span>]:<span class="number">481</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这个报错，是说找不到managers.enemy，原来的代码逻辑是persist循环，现在我把他改成了通过<code>dofile()</code>调用，然后仅仅执行一次。</p>
+<h4 id="dofile-path">dofile() path</h4>
+<p>这个dofile()的路径有问题，第二次报错显示<code>No such file or directory</code>，这就说明在进行dofile()的时候，需要设置好路径，<strong>并且这个路径跟开发时候的脚本路径不是一回事</strong>。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mods<span class="regexp">/DoNotCheat/m</span>enu_impl<span class="regexp">/attack/</span>kill_and_tie.lua</span><br></pre></td></tr></table></figure>
+<p>这是执行file的一个完整的路径。</p>
+<h4 id="添加模组功能后游戏闪退">添加模组功能后游戏闪退</h4>
+<p>我发现这实际上一定程度是代码的问题，因为代码比较零散，如果改了一个地方，另一个地方忘了改了，到时候就会直接崩溃，到了游戏里面就直接crash，排查了半天也排查不出来东西。</p>
+<p>所以要修改代码逻辑。</p>
+<p>闪退的crash.log:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Application has crashed: C++ <span class="keyword">exception</span></span><br><span class="line">Could <span class="keyword">not</span> <span class="keyword">load</span> texture because IDirect3D9::CreateTexture <span class="keyword">call</span> failed.</span><br><span class="line">Direct3D could <span class="keyword">not</span> allocate sufficient memory <span class="keyword">to</span> complete the <span class="keyword">call</span>.</span><br></pre></td></tr></table></figure>
+<p>那说明不是我mod的问题，纯是游戏本身的问题。</p>
+<h4 id="与UT共用了一个接口-genericdialog">与UT共用了一个接口:genericdialog</h4>
+<p>我的mod点击button之后还能往下走，而移除了UT之后就不行了。我终于知道我的Mod为什么闪退了，可能就是因为mod不兼容的问题。UT自带了一些setup.lua，还有待探索。</p>
+<p>现在的首要目标是修复UT的菜单继续点击问题，找到他是怎么实现的。</p>
+<p>在<code>UT/hooks/genericdialog.lua</code>中，找到了类似的实现。</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;hook_id&quot;</span> : <span class="string">&quot;lib/managers/dialogs/genericdialog&quot;</span>,</span><br><span class="line">    <span class="string">&quot;script_path&quot;</span> : <span class="string">&quot;hooks/genericdialog.lua&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>这份脚本hook进genericdialog中，并不是persistent脚本。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">core:<span class="built_in">module</span>(<span class="string">&quot;SystemMenuManager&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;lib/managers/dialogs/Dialog&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--[[</span></span><br><span class="line"><span class="comment">首先这个脚本hook了lib中的genericdialog.lua，</span></span><br><span class="line"><span class="comment">然后在init中判断是否是custom，</span></span><br><span class="line"><span class="comment">如果是的话就把FADE_IN_DURATION设置为0.0001，FADE_OUT_DURATION设置为0.2，然后把layer设置为100，</span></span><br><span class="line"><span class="comment">这样就可以让自定义的dialog在其他dialog之上了</span></span><br><span class="line"><span class="comment">]]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 因为这个类GeneriDialog是已知存在的，所以直接clone并且复用。</span></span><br><span class="line"><span class="built_in">_G</span>.CloneClass(GenericDialog)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GenericDialog:init</span><span class="params">(...)</span></span></span><br><span class="line">    <span class="built_in">self</span>.orig.init(<span class="built_in">self</span>, ...) <span class="comment">-- clone了之后，通过调用orig.init来调用原始的init函数</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">self</span>._data.custom <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">self</span>.FADE_IN_DURATION = <span class="number">0.0001</span></span><br><span class="line">        <span class="built_in">self</span>.FADE_OUT_DURATION = <span class="number">0.2</span></span><br><span class="line">        <span class="built_in">self</span>._panel_script:set_layer(<span class="number">100</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="cancel-button">cancel_button()</h4>
+<p>这个的意思是，按下ESC就会启动这个。</p>
+<p>怪不得会连带产生很多效果。</p>
+<p>如果仅仅是想完成： <code>点击这个按钮-执行 并且 自动关闭菜单</code></p>
+<p>应该设置<code>close_button = true</code>，而不是cancel_button，这个是通过ESC触发的。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/Payday-player-utils/" data-toggle="tooltip" data-placement="top" title="Payday-player-utils">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/Lua进阶/" data-toggle="tooltip" data-placement="top" title="Lua Reference">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Payday2 MOD开发&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/payday-mod-develop/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Fri Jul 28 2023 16:30:07 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/SamuraiBUPT">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/诺宝御用coder">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Yazhu Dong
+          2024
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
