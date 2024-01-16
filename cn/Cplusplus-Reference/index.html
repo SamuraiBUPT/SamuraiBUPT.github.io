@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">75</span> Minutes
+              Estimated Reading Time <span class="post-count">76</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">19.4k</span> In Total
+              Words <span class="post-count">19.5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -482,6 +482,22 @@
 <p>以后同样也是一样的，<strong>CMake编译</strong> 和 <strong>代码检查</strong> 是两回事，一方面，需要在<code>c_cpp_properties.json</code>当中设置相关路径；另一方面，需要在CMake中设置好include_directories之类的东西，才能建立好一个好的项目。</p>
 <h2 id="0-4-Werror-reorder">0.4 -Werror=reorder</h2>
 <p>在编译的时候加上了这个指令，就要求在类的初始化的时候，列表初始化的顺序必须与成员变量的声明顺序一样。</p>
+<h2 id="0-5-戳辣，我用VS2022-CMake完成项目">0.5 戳辣，我用VS2022 + CMake完成项目</h2>
+<p>不用配置编译器，不用配环境，装好了直接跑，代码分析还比VSC要快速全面得多。</p>
+<h3 id="0-5-1-前置设置">0.5.1 前置设置</h3>
+<p><strong>配置代码颜色</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ysoftwarer/article/details/108295887">https://blog.csdn.net/ysoftwarer/article/details/108295887</a></p>
+<h2 id="0-6-终极方案：CMake-VSCode">0.6 终极方案：CMake + VSCode</h2>
+<p>安装了VS2022，仅仅只是为了那些SDK。</p>
+<p>实际上我们还是可以使用CMake来打包项目。</p>
+<p>在完成CMake的构建之后，直接：</p>
+<ul>
+<li>新建一个目录，名为<code>build</code></li>
+<li><code>cd build</code></li>
+<li><code>cmake ..</code></li>
+<li><code>cmake --build .</code></li>
+</ul>
+<p>这样就会借助VS的工具链，来完成我们的打包工作，生成的文件也非常小。</p>
 <h1>1. Compile</h1>
 <h2 id="1-1-Constexpr">1.1 Constexpr</h2>
 <p><code>static</code>和<code>constexpr</code>都是C++中的修饰符，它们可以用于变量和函数。当它们一起使用时，它们的含义是合并的。</p>

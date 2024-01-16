@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/archives/archives/3/">
+  <link rel="canonical" href="http://yoursite-url/cn/dll-development/">
   <title>
     
-      Programming life
+      dll developing - Programming life
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -300,25 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="archives/archives/3/index.html">
-      
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -380,9 +362,9 @@
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
       
     }
 
@@ -400,10 +382,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Technique Blogs</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Maintained by SamuraiBUPT</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>dll developing</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yazhu Dong on
+              2024-01-16
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">3</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">892</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -444,648 +456,288 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+        <p>工作中遇到了dll开发。</p>
+<h1>DLL原理</h1>
+<ol>
+<li><strong>定位进程</strong>：首先，注入程序必须找到或启动目标进程（在您的案例中是 <code>main.exe</code>）。</li>
+<li><strong>分配内存</strong>：注入程序在目标进程的地址空间中分配内存，用于存放 DLL 的路径。</li>
+<li><strong>写入DLL路径</strong>：注入程序将 DLL 的路径写入之前分配的内存。</li>
+<li><strong>远程线程创建</strong>：注入程序在目标进程中创建一个远程线程，这个线程调用 <code>LoadLibrary</code>（或类似的函数），这个函数负责加载 DLL。</li>
+<li><strong>加载 DLL</strong>：一旦 <code>LoadLibrary</code> 被调用，操作系统会加载指定的 DLL 到目标进程的地址空间，并调用 DLL 的 <code>DllMain</code> 函数。</li>
+</ol>
+<h1>DllMain函数解读</h1>
+<h3 id="DllMain-函数的角色"><code>DllMain</code> 函数的角色</h3>
+<p><code>DllMain</code> 是一个特殊的函数，它是每个 DLL 的入口点。当 DLL 被加载和卸载，或者当它所在的进程和线程开始和结束执行时，操作系统会调用这个函数。<code>DllMain</code> 函数的参数 <code>ul_reason_for_call</code> 表示调用的原因，它可以是以下几种之一：</p>
+<ul>
+<li><code>DLL_PROCESS_ATTACH</code>：当 DLL 被加载到进程空间时发生。</li>
+<li><code>DLL_THREAD_ATTACH</code>：当进程创建一个新线程时发生。</li>
+<li><code>DLL_THREAD_DETACH</code>：当进程中的线程正常结束或异常终止时发生。</li>
+<li><code>DLL_PROCESS_DETACH</code>：当 DLL 从进程空间卸载时发生。</li>
+</ul>
+<p>在您的示例代码中，当 DLL 被加载到进程（<code>DLL_PROCESS_ATTACH</code>）时，会显示一个消息框（<code>MessageBox</code>），说明 DLL 已被注入。</p>
+<h1>阻塞问题与开发思路</h1>
+<ol>
+<li><strong>远程线程和主线程</strong>：
+<ul>
+<li>当您创建一个远程线程来加载 DLL 时，这个线程运行在目标进程的上下文中，但它与主线程是分开的。</li>
+<li>然而，由于 DLL 是在同一个进程中加载的，DLL 中的代码（包括 <code>MessageBox</code>）会影响整个进程。</li>
+</ul>
+</li>
+<li><strong>模态对话框的行为</strong>：
+<ul>
+<li><code>MessageBox</code> 创建的是一个模态对话框，它会阻塞创建它的线程，直到对话框关闭。</li>
+<li>在您的案例中，由于 <code>MessageBox</code> 是在由远程线程调用的 <code>DllMain</code> 中创建的，它实际上阻塞了整个进程，包括主线程，直到消息框被关闭。</li>
+</ul>
+</li>
+<li><strong>影响主线程的执行</strong>：
+<ul>
+<li>因此，虽然 <code>main.exe</code> 的主线程是独立于远程线程的，但由于整个进程被模态对话框</li>
+</ul>
+</li>
+</ol>
+<p>阻塞，<code>main.exe</code> 中的主线程也被阻塞了。这意味着，即使远程线程是分开的，它通过 <code>MessageBox</code> 调用间接阻塞了主线程。</p>
+<p>要解决这个问题，您可以：</p>
+<ol>
+<li><strong>使用非模态方法</strong>：使用非模态或异步的方式来显示通知或执行操作，这样就不会阻塞整个进程。例如，可以创建一个非模态对话框或使用其他方法（如日志记录）来指示 DLL 已被注入。</li>
+<li><strong>更改 DLL 代码</strong>：修改 DLL 中的 <code>DllMain</code> 以避免执行阻塞操作。记住 <code>DllMain</code> 应该尽可能地轻量，避免复杂的操作或可能引起阻塞的调用。</li>
+<li><strong>在独立线程中执行操作</strong>：如果您需要在 DLL 中执行较复杂的操作，可以考虑从 <code>DllMain</code> 中启动一个新的线程来执行这些操作，而不是直接在 <code>DllMain</code> 中执行。这样，<code>DllMain</code> 可以快速返回，不会阻塞主线程或其他线程的执行。</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD WINAPI <span class="title">ThreadFunc</span><span class="params">(LPVOID lpParam)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">MessageBox</span>(<span class="literal">NULL</span>, <span class="string">L&quot;DLL Injected&quot;</span>, <span class="string">L&quot;Success&quot;</span>, MB_OK);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL APIENTRY <span class="title">DllMain</span><span class="params">(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved)</span> </span>&#123;</span><br><span class="line">    <span class="built_in"><span class="keyword">switch</span></span> (ul_reason_for_call) &#123;</span><br><span class="line">    <span class="keyword">case</span> DLL_PROCESS_ATTACH:</span><br><span class="line">        <span class="built_in">CreateThread</span>(<span class="literal">NULL</span>, <span class="number">0</span>, ThreadFunc, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DLL_THREAD_ATTACH:</span><br><span class="line">    <span class="keyword">case</span> DLL_THREAD_DETACH:</span><br><span class="line">    <span class="keyword">case</span> DLL_PROCESS_DETACH:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/C-trouble-shoot/" data-toggle="tooltip" data-placement="top" title="C++ trouble shoot">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=dll developing&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/dll-development/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Tue Jan 16 2024 17:18:32 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
 
-      
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
           
           <li>
-            01-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/dll-development/" style="color: #0085a1">
-              <span>
-                dll developing
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-trouble-shoot/" style="color: #0085a1">
-              <span>
-                C++ trouble shoot
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/FastAPI-SQL_backend/" style="color: #0085a1">
-              <span>
-                FastAPI-SQL backend
-                
-                -- cn
-                
-              </span>
-            </a>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
           </li>
           
         </ul>
+        
       </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            11-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/torch-lib/" style="color: #0085a1">
-              <span>
-                torch-lib
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            11-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Python-Reference/" style="color: #0085a1">
-              <span>
-                Python Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Xiyou-Reading/" style="color: #0085a1">
-              <span>
-                西游记读后感
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-编程思想杂录/" style="color: #0085a1">
-              <span>
-                C++ 编程思想杂录
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cuda-kernel-dev/" style="color: #0085a1">
-              <span>
-                cuda_kernel_dev
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cudaStream/" style="color: #0085a1">
-              <span>
-                Cuda Stream 实战记录
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-07
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/shoka-test/" style="color: #0085a1">
-              <span>
-                shoka_test
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-04
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/element-ui-notebook/" style="color: #0085a1">
-              <span>
-                element-ui-notebook
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/ES6_Notebook/" style="color: #0085a1">
-              <span>
-                Javascript Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Vue_notebook/" style="color: #0085a1">
-              <span>
-                Vue Notebook
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/MIT-6828-Notebook/" style="color: #0085a1">
-              <span>
-                MIT.6828.Notebook
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/gdb使用指南/" style="color: #0085a1">
-              <span>
-                gdb Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/指针技术总结/" style="color: #0085a1">
-              <span>
-                C++ Pointer
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/贪心/" style="color: #0085a1">
-              <span>
-                贪心算法
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/动态规划/" style="color: #0085a1">
-              <span>
-                动态规划
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-多线程开发/" style="color: #0085a1">
-              <span>
-                C++ Threading
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/逆向开发日志/" style="color: #0085a1">
-              <span>
-                Reverse Engineering Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/有关方向选择与总结/" style="color: #0085a1">
-              <span>
-                有关方向选择与总结
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Payday-player-utils/" style="color: #0085a1">
-              <span>
-                Payday-player-utils
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/payday-mod-develop/" style="color: #0085a1">
-              <span>
-                Payday2 MOD开发
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-27
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Lua进阶/" style="color: #0085a1">
-              <span>
-                Lua Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/双指针、离散化、区间合并/" style="color: #0085a1">
-              <span>
-                双指针、离散化、区间合并
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/前缀和与差分/" style="color: #0085a1">
-              <span>
-                前缀和与差分
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/二分/" style="color: #0085a1">
-              <span>
-                二分
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/代码开发学习经验/" style="color: #0085a1">
-              <span>
-                Developing Life LTS
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/CMake工具使用/" style="color: #0085a1">
-              <span>
-                CMake Reference LTS
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-07
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/工程规划管理/" style="color: #0085a1">
-              <span>
-                代码开发工程管理 LTS
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/指针实战解读/" style="color: #0085a1">
-              <span>
-                【ptr】指针实战解读
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Cplusplus-Reference/" style="color: #0085a1">
-              <span>
-                C++ Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【python-vtk】二维序列图像进行三维重建/" style="color: #0085a1">
-              <span>
-                【python-vtk】二维序列图像进行三维重建
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
-          
-          <li>
-            12-04
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/hello-world/" style="color: #0085a1">
-              <span>
-                Hexo guide
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
     </div>
   </div>
-</div>
+</article>
 
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
 
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
 
-    
-    <img id="avatar_pic" src="/img/scenery/sandiego.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
+<!-- anchorjs end -->
 
-    
-    <p>不大的网，收着又怎样，不如就放。</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/SamuraiBUPT">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../cn/dll-development/">
-      <li>dll developing</li>
-    </a>
-    
-    <a href="../../../cn/C-trouble-shoot/">
-      <li>C++ trouble shoot</li>
-    </a>
-    
-    <a href="../../../cn/FastAPI-SQL_backend/">
-      <li>FastAPI-SQL backend</li>
-    </a>
-    
-    <a href="../../../cn/torch-lib/">
-      <li>torch-lib</li>
-    </a>
-    
-    <a href="../../../cn/Python-Reference/">
-      <li>Python Reference</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Cplusplus">
-      <li>Cplusplus</li>
-    </a>
-    
-    <a href="/categories/#Javascript">
-      <li>Javascript</li>
-    </a>
-    
-    <a href="/categories/#Python">
-      <li>Python</li>
-    </a>
-    
-    <a href="/categories/#Lua">
-      <li>Lua</li>
-    </a>
-    
-    <a href="/categories/#Coding-life">
-      <li>Coding-life</li>
-    </a>
-    
-    <a href="/categories/#hexo">
-      <li>hexo</li>
-    </a>
-    
-    <a href="/categories/#ACM">
-      <li>ACM</li>
-    </a>
-    
-    <a href="/categories/#Reverse-Engineering">
-      <li>Reverse-Engineering</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
-  </div>
-</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->

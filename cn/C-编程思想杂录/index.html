@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">9</span> Minutes
+              Estimated Reading Time <span class="post-count">11</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">2.2k</span> In Total
+              Words <span class="post-count">2.6k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -464,8 +464,10 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>1. C++ 面向对象</h1>
-<h2 id="1-1-类间的链接设计">1.1 类间的链接设计</h2>
+        <h1>1. 系统构建</h1>
+<p>只有在涉及到需要构建一个系统的时候，才会用到cpp的大部分语法与工具。比如说各种STL，各种C++14的智能指针（因为涉及到资源的管理），在这个时候，cpp是一门系统编程语言。</p>
+<h2 id="1-1-C-面向对象">1.1 C++ 面向对象</h2>
+<h3 id="1-1-1-类间的链接设计">1.1.1 类间的链接设计</h3>
 <p>在开发过程中，注意到A类中有B类作为成员变量，而B类中又有A类作为成员变量。并且在赋值的时候也是相互赋值。</p>
 <p>这样的设计思路，可以理解为两个大类之间，有一个桥梁，可以连接你我、触及你我。在实际的代码开发中，经常需要两个类互相调度使用资源，这个时候就有了这样的相互式的、反向的指针，指回对方类，以控制对方资源。</p>
 <p><strong>案例</strong> :</p>
@@ -495,7 +497,7 @@
 <li>在初始化的时候就进行赋值与绑定</li>
 <li>Register()成员函数，可以负责进行赋值与绑定。</li>
 </ul>
-<h2 id="1-2-从OnRelease-谈RAII">1.2 从OnRelease()谈RAII</h2>
+<h3 id="1-1-2-从OnRelease-谈RAII">1.1.2 从OnRelease()谈RAII</h3>
 <p>在代码开发过程中，我经常看到一些类的 <strong>状态切换方法</strong> ，诸如 <code>reset</code>, <code>Release</code>, <code>OnRelease</code>等等，下面对这些方法的设计思想进行探索。</p>
 <ol>
 <li><strong>OnRelease()</strong>：这种命名可能不如其他两个常见，但它通常是一个回调或虚函数，当资源被释放时会被调用。例如，在某些自定义引用计数对象中，当引用计数降为0时，<code>OnRelease()</code>可能被调用。</li>
@@ -515,7 +517,7 @@
 <p>这些函数的核心设计思想是<strong>资源管理</strong>。在C++和其他需要手动或半自动资源管理的语言中，正确地分配和释放资源是非常重要的。不正确地管理资源可能导致内存泄漏、文件描述符泄漏或其他类型的资源泄漏。</p>
 <p>这种编程思想与RAII（Resource Acquisition Is Initialization）紧密相关，这是C++中的一个关键概念，意味着资源的获取（例如，分配内存、打开文件等）与对象的初始化紧密绑定，资源的释放与对象的销毁紧密绑定。</p>
 <p>总之，当你看到这些函数时，应该立即意识到它们与资源管理、对象生命周期和可能的引用计数有关。如果你正在使用或设计这样的类，确保你了解其资源管理策略，以防止资源泄漏或其他问题。</p>
-<h2 id="1-3-单例模式">1.3 单例模式</h2>
+<h3 id="1-1-3-单例模式">1.1.3 单例模式</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InflightBatchScheduler</span> :</span> <span class="keyword">public</span> Scheduler &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="built_in">InflightBatchScheduler</span>(...);</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  ~<span class="built_in">InflightBatchScheduler</span>();</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">static</span> Status <span class="title">Create</span><span class="params">(..., std::unique_ptr&lt;Scheduler&gt;* scheduler)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这个类里面，它的构造函数被声明为private，然后后面有一个static修饰的create函数。</p>
 <p>这种设计模式通常被称为“工厂方法”模式或“单例模式”的一种变种。通过使用静态的<code>Create</code>方法来创建类的实例，并将构造函数声明为私有，这种设计实现了对对象创建过程的严格控制。</p>
@@ -530,11 +532,45 @@
 </ul>
 <p><strong>why static ?</strong></p>
 <p><code>static</code>关键字用于类的成员函数表示这个函数不依赖于类的具体实例。也就是说，一个<code>static</code>成员函数可以在没有创建类的对象的情况下被调用。</p>
-<h1>2. while逻辑</h1>
+<h2 id="1-2-while逻辑">1.2 while逻辑</h2>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (pending_cursor_.curr_it_ != queues_.<span class="built_in">end</span>()) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!(pending_cursor_.curr_it_-&gt;second.<span class="built_in">ApplyPolicy</span>(</span><br><span class="line">        pending_cursor_.queue_idx_, &amp;rejected_count, &amp;rejected_batch_size,</span><br><span class="line">        &amp;cancelled_count, &amp;cancelled_batch_size))) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (size_ &gt; pending_cursor_.pending_batch_count_ + rejected_count +</span><br><span class="line">            cancelled_count) &#123;</span><br><span class="line">            pending_cursor_.curr_it_++;</span><br><span class="line">            pending_cursor_.queue_idx_ = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Control reach here if the cursor points to a request that is candidate</span></span><br><span class="line">    <span class="comment">// for pending batch, or if all requests are in pending batch.</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这段代码的while逻辑非常不错。默认情况下仅仅运行一次。如果中间出现了异常，则会更新迭代器并且continue，去再次进行校验。</p>
-<h1>3. 整洁的代码</h1>
-<h2 id="3-1-从错落有致开始">3.1 从错落有致开始</h2>
+<h1>2. 应用开发: 编译为一个完整的应用</h1>
+<p>经过一系列metric，对比了lua、luajit、C++三种语言的效率。luajit已经无限逼近于C++，但是还是不够。</p>
+<ul>
+<li>本身的缺陷，尤其是生态与工具不完善</li>
+<li>编译的问题，至今没有找到一个完整的方法，把lua编译为可执行文件。</li>
+</ul>
+<p>相较来说，还不如使用C++。</p>
+<p>在这个时候，也用不到很多C++的东西，甚至连面向对象都用不到，在这个时候仅仅把C++当做脚本来使用就行。</p>
+<p><strong>当做脚本的意思是：</strong></p>
+<ul>
+<li>简化一切可以简化的地方，不需要做这么多花活</li>
+<li>函数式编程，一切都尽量用函数或者结构体，能简化就简化</li>
+</ul>
+<h2 id="2-1-逆向内容">2.1 逆向内容</h2>
+<p>其实逆向的内容并不多，技术栈也并不深，只是需要花时间去堆：</p>
+<ul>
+<li>逆向分析技术，重点在分析，比如说寻址、找偏移（unknowncheats）</li>
+<li>汇编技术，懂汇编在做什么</li>
+<li>一些cpp最基础的编程能力</li>
+</ul>
+<p>我觉得往下就是两条路：</p>
+<ul>
+<li>懂得汇编知识，知道汇编代码到底在做什么</li>
+<li>懂得如何逆向寻址，找到具体的某个功能的位置（人物血量、坐标等内容）</li>
+</ul>
+<p>掌握了上面两个内容之后，可以往下：</p>
+<ul>
+<li>掌握绘制imgui的技术</li>
+<li>掌握编写dll和注入的技术</li>
+</ul>
+<p>再往下有：</p>
+<ul>
+<li>掌握获取机器码与卡密的技术</li>
+</ul>
+<h1>trick: 整洁的C++代码</h1>
+<h2 id="关键：从错落有致开始">关键：从错落有致开始</h2>
 <p>我最近总是发现我的代码与成熟的代码有很大差距，找不出原因。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(status.<span class="built_in">IsOk</span>()) &#123;</span><br><span class="line">  <span class="comment">// fetch the lora name from input</span></span><br><span class="line">  std::string lora_str = <span class="built_in">buffer2lora</span>(input_ptr);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">auto</span> it = loaded_loras-&gt;<span class="built_in">find</span>(lora_str);</span><br><span class="line">  <span class="keyword">if</span> (it == loaded_loras-&gt;<span class="built_in">end</span>()) &#123;</span><br><span class="line">    <span class="comment">// not found the existing lora, the request start_ns has been</span></span><br><span class="line">    <span class="comment">// recorded in Scheduler::Enqueue(), so there is no need to</span></span><br><span class="line">    <span class="comment">// override.</span></span><br><span class="line">    <span class="comment">// for the reason that the request was pushed in the next step,</span></span><br><span class="line">    <span class="comment">// now we assume the request has been enqueued.</span></span><br><span class="line">    <span class="keyword">if</span>(!pending_cursor_.recorded) &#123;</span><br><span class="line">      pending_cursor_.recorded = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pending_cursor_.unloaded_lora_req_idx_++;</span><br><span class="line">    </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// we found the existing lora, check the time.</span></span><br><span class="line">    <span class="keyword">auto</span> now_ns = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(std::chrono::steady_clock::<span class="built_in">now</span>().<span class="built_in">time_since_epoch</span>()).<span class="built_in">count</span>();</span><br><span class="line">    <span class="keyword">auto</span> duration = now_ns - pending_cursor_.curr_it_-&gt;second.<span class="built_in">StartNsAt</span>(pending_cursor_.unloaded_lora_req_idx_);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">uint64_t</span> wait_delay = <span class="number">20000000000</span>;</span><br><span class="line">    <span class="keyword">if</span> (duration &lt; wait_delay) &#123;</span><br><span class="line">      req_push_front = <span class="literal">true</span>;</span><br><span class="line">      pending_cursor_.unloaded_lora_req_idx_++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>这段代码还好，貌似可读。</p>

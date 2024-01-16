@@ -470,6 +470,74 @@
   <!-- top end -->
   
 
+  <a href="/cn/FastAPI-SQL_backend/">
+    <h2 class="post-title">
+      FastAPI-SQL backend
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      1. FastAPI
+1.1 Start: 命令行
+start server
+1uvicorn main:app --reload
+main就是main.py，app就是文件中，使用FastAPI()创建的一个application。
+1.2 async def 与 def
+async def存在，只是因为这个路由函数，需要异步地等待一个任务的完成（比如IO之类的），总之那个里面会有涉及到a......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yazhu Dong on
+    2024-01-05
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/torch-lib/">
+    <h2 class="post-title">
+      torch-lib
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      ...
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yazhu Dong on
+    2023-11-26
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/Xiyou-Reading/">
     <h2 class="post-title">
       西游记读后感
@@ -520,12 +588,12 @@
       
     </h3>
     <div class="post-content-preview">
-      1. C++ 面向对象
-1.1 类间的链接设计
+      1. 系统构建
+只有在涉及到需要构建一个系统的时候，才会用到cpp的大部分语法与工具。比如说各种STL，各种C++14的智能指针（因为涉及到资源的管理），在这个时候，cpp是一门系统编程语言。
+1.1 C++ 面向对象
+1.1.1 类间的链接设计
 在开发过程中，注意到A类中有B类作为成员变量，而B类中又有A类作为成员变量。并且在赋值的时候也是相互赋值。
-这样的设计思路，可以理解为两个大类之间，有一个桥梁，可以连接你我、触及你我。在实际的代码开发中，经常需要两个类互相调度使用资源，这个时候就有了这样的相互式的、反向的指针，指回对方类，以控制对方资源。
-案例 :
-TritonModel掌握的......
+这样的设计思路，可以理解为两个大类之间......
     </div>
   </a>
   
@@ -763,84 +831,6 @@ b: breakpoint，添加断点。方式......
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/贪心/">
-    <h2 class="post-title">
-      贪心算法
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      贪心问题，主要就是每一步取最优解，到了最后就会取得一个合并的最优解。
-贪心问题的难点主要在证明：为什么这么做就是局部最优？所以没有固定的代码模板。
-...
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yazhu Dong on
-    2023-08-20
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/动态规划/">
-    <h2 class="post-title">
-      动态规划
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      0. 综述
-DP问题，是基础算法中比较难的部分，因为它不像其他算法，有个代码模板可以用于记忆。DP问题更偏向于数学问题，它没有一套代码模板，但是有一种思考方式。遇到DP问题，通常我们可以从2个方面进行思考：
-
-
-状态表示
-
-考虑是一维还是二维（f[i] 或者 f[i][j]）
-考虑这个状态表示的是哪些集合
-考虑f[i][j]的值，代表的是这个集合的什么属性
-
-
-
-状态计算（状态转移方程）
-
-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yazhu Dong on
-    2023-08-09
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -924,6 +914,14 @@ DP问题，是基础算法中比较难的部分，因为它不像其他算法，
 <div class="widget">
   <ul>
     
+    <a href="../../cn/dll-development/">
+      <li>dll developing</li>
+    </a>
+    
+    <a href="../../cn/C-trouble-shoot/">
+      <li>C++ trouble shoot</li>
+    </a>
+    
     <a href="../../cn/FastAPI-SQL_backend/">
       <li>FastAPI-SQL backend</li>
     </a>
@@ -934,14 +932,6 @@ DP问题，是基础算法中比较难的部分，因为它不像其他算法，
     
     <a href="../../cn/Python-Reference/">
       <li>Python Reference</li>
-    </a>
-    
-    <a href="../../cn/Xiyou-Reading/">
-      <li>西游记读后感</li>
-    </a>
-    
-    <a href="../../cn/C-%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E6%9D%82%E5%BD%95/">
-      <li>C++ 编程思想杂录</li>
     </a>
     
   </ul>

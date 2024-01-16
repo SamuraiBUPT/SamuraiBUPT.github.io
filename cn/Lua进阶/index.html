@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">29</span> Minutes
+              Estimated Reading Time <span class="post-count">32</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">7.2k</span> In Total
+              Words <span class="post-count">7.9k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -488,6 +488,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://luarocks.org/releases/luarocks-3.9.2.tar.gz</span><br><span class="line">$ tar zxpf luarocks-3.9.2.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> luarocks-3.9.2</span><br><span class="line">$ ./configure &amp;&amp; make &amp;&amp; sudo make install</span><br><span class="line">$ sudo luarocks install luasocket</span><br><span class="line">$ lua</span><br><span class="line">Lua 5.3.5 Copyright (C) 1994-2018 Lua.org, PUC-Rio</span><br><span class="line">&gt; require <span class="string">&quot;socket&quot;</span></span><br></pre></td></tr></table></figure>
 <p>安装luamysql:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luarocks install luasql-mysql MYSQL_INCDIR=<span class="string">&quot;C:/Program Files/MySQL/MySQL Server 8.0/include&quot;</span> MYSQL_LIBDIR=<span class="string">&quot;C:/Program Files/MySQL/MySQL Server 8.0/lib&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="0-3-安装luajit（以后都用这个）">0.3 安装luajit（以后都用这个）</h2>
+<p><a target="_blank" rel="noopener" href="https://luajit.org/install.html">https://luajit.org/install.html</a></p>
+<p>直接看windows部分的即可。</p>
 <h1>1. 变量</h1>
 <p>Lua 变量有三种类型：全局变量、局部变量、表中的域。</p>
 <p>Lua 中的变量全是全局变量，哪怕是语句块或是函数里，除非用 local 显式声明为局部变量。</p>
@@ -637,7 +640,7 @@
 <li>后者是会传一个函数的执行结果，也就是返回值</li>
 </ul>
 <p>这是两个全然不同的东西。第一个是传递这个函数本身，就像赋值一样的操作；而第二个是在执行这个函数。这也是函数式编程的特点。</p>
-<h1>4. 控制流</h1>
+<h1>4. if…else, for循环</h1>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(condition)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   statements</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p><strong>for</strong></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> var=exp1,exp2,exp3 </span><br><span class="line"><span class="keyword">do</span>  </span><br><span class="line">    &lt;执行体&gt;  </span><br><span class="line"><span class="keyword">end</span>  </span><br><span class="line"><span class="comment">-- var 从 exp1 变化到 exp2，每次变化以 exp3 为步长递增 var，并执行一次 &quot;执行体&quot;。</span></span><br><span class="line"><span class="comment">-- exp3 是可选的，如果不指定，默认为1。</span></span><br></pre></td></tr></table></figure>
@@ -648,7 +651,7 @@
 <p><strong>if…else</strong></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式)</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="comment">--[ 在布尔表达式为 true 时执行的语句 --]</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(布尔表达式)</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="comment">--[ 布尔表达式为 true 时执行该语句块 --]</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   <span class="comment">--[ 布尔表达式为 false 时执行该语句块 --]</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>总结：循环后面是<code>do</code>，if后面跟<code>then</code></p>
-<h1>5. 内存管理</h1>
+<h1>5. Memory Management</h1>
 <h2 id="5-1-Lua-内存基础">5.1 Lua 内存基础</h2>
 <p>Lua与Python的内存管理不同，Lua仍然是<strong>将值赋给变量</strong>的模式，例如：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="string">&quot;hello&quot;</span></span><br><span class="line">c = b</span><br><span class="line">c = <span class="string">&quot;changed&quot;</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
@@ -683,8 +686,8 @@
 <li><strong>collectgarbage(“step”):</strong> 单步运行垃圾收集器。 步长&quot;大小&quot;由 arg 控制。 传入 0 时，收集器步进（不可分割的）一步。 传入非 0 值， 收集器收集相当于 Lua 分配这些多（K 字节）内存的工作。 如果收集器结束一个循环将返回 true 。</li>
 <li><strong>collectgarbage(“stop”):</strong> 停止垃圾收集器的运行。 在调用重启前，收集器只会因显式的调用运行。</li>
 </ul>
-<h1>6. 模块与包</h1>
-<h2 id="6-1-Lua模块">6.1 Lua模块</h2>
+<h1>6. 模块与包的制作</h1>
+<h2 id="6-1-直接导入lua文件">6.1 直接导入lua文件</h2>
 <p>Lua中构建模块，可以通过表与return来完成。</p>
 <p>首先新建一份<code>my_mod.lua</code>，注意，<strong>要返回的表名和文件名最好一致</strong>：</p>
 <p><code>my_mod.lua</code></p>
@@ -692,7 +695,14 @@
 <p><code>tmpile.lua</code></p>
 <p>Lua提供了一个名为require的函数用来加载模块。要加载一个模块，只需要简单地调用就可以了。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;my_mod&quot;</span>)</span><br><span class="line"></span><br><span class="line">my_mod.foo()</span><br><span class="line">my_mod.bar()</span><br></pre></td></tr></table></figure>
-<h2 id="6-2-C包">6.2 C包</h2>
+<p><strong>require(“xx”)的返回值？</strong></p>
+<p>实际上这个返回值是一个布尔值。</p>
+<p>如果要进行引用，最好还是像上面那种方法一样，定义好一个table，这个table实际上就是一个module。</p>
+<ul>
+<li><strong>在脚本的末尾，要把这个module return出去才行</strong></li>
+<li>凡是要被return出这个脚本的，都要是全局变量，而不能是局部变量。</li>
+</ul>
+<h2 id="6-3-C包">6.3 C包</h2>
 <p><strong>step 1: 编写C++函数</strong></p>
 <p>在<code>cpp/print_lua.cpp</code>路径下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lua.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lauxlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lualib.h&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">my_print</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">lua_gettop</span>(L);  <span class="comment">// 参数的数量</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">lua_isnumber</span>(L, i)) &#123;</span><br><span class="line">                <span class="keyword">int</span> val = <span class="built_in">lua_tointeger</span>(L, i);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 返回值的数量</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    __declspec(dllexport) <span class="function"><span class="keyword">int</span> <span class="title">luaopen_mylib</span><span class="params">(lua_State *L)</span> </span>&#123;	<span class="comment">// 注意在这里一定要声明</span></span><br><span class="line">        <span class="built_in">lua_register</span>(L, <span class="string">&quot;my_print&quot;</span>, my_print);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="comment">// extern &quot;C&quot;</span></span><br></pre></td></tr></table></figure>
@@ -722,7 +732,7 @@
 <h1>8. 运算符</h1>
 <p>这里仅仅做一些提示：</p>
 <ul>
-<li>Lua中的<strong>不等于符号是<code>-=</code></strong>，所以说Lua中没有<code>!=</code>，也没有<code>+=</code>这种加法运算符</li>
+<li>Lua中的<strong>不等于符号是<code>~=</code></strong>，所以说Lua中没有<code>!=</code>，也没有<code>+=</code>这种加法运算符</li>
 <li>大于、大于等于这些都跟往常一样。</li>
 <li><code>..</code>连接两个字符串，<code>#</code>查看字符串长度</li>
 </ul>
@@ -799,6 +809,36 @@
 </ul>
 </li>
 </ol>
+<h1>11. LuaJIT与编译</h1>
+<h2 id="11-1-编译与运行">11.1 编译与运行</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">luajit -b test.lua test.obj                 <span class="comment"># Generate object file</span></span><br><span class="line">luajit -b test.lua test.out                 <span class="comment"># Save bytecode to test.out</span></span><br></pre></td></tr></table></figure>
+<p>当你使用 LuaJIT 的 <code>-b</code> 选项来编译 Lua 脚本时，生成的 <code>.out</code> 和 <code>.obj</code> 文件实际上都包含 LuaJIT 可以理解的字节码，但它们的格式和用途有所不同：</p>
+<ol>
+<li><strong><code>.out</code> 文件</strong>：这是一个包含 Lua 字节码的文件。这个字节码文件是为了被 LuaJIT 直接执行而生成的。你可以直接使用 LuaJIT 运行这个 <code>.out</code> 文件，就像运行一个普通的 Lua 脚本一样。这种格式主要用于分发或部署时隐藏原始源代码，或者加快代码加载时间。</li>
+<li><strong><code>.obj</code> 文件</strong>：这是一个更特殊的格式，通常被称为“对象文件”。这种文件格式通常用于嵌入字节码到 C 应用程序中。通过生成 <code>.obj</code> 文件，你可以将 Lua 代码以字节码的形式嵌入到一个 C 语言编写的程序中。然后，这个程序可以使用 LuaJIT 的 API 来加载和执行这些字节码。这种做法通常用于将 Lua 代码集成到更大的项目中，尤其是那些用 C 或其他低级语言编写的项目。</li>
+</ol>
+<p><strong>至高方法：</strong></p>
+<ul>
+<li>使用luajit进行编译文件，输出为<code>.obj</code>文件</li>
+<li>然后使用高级语言进行调用，或者就是lua里面直接require就行。</li>
+</ul>
+<h2 id="11-2-编译为可执行文件">11.2 编译为可执行文件</h2>
+<p>最终方案：</p>
+<ul>
+<li>
+<p>使用<code>luajit</code>编译所有lua文件为<code>.o</code>文件 （在windows上编译为<code>.obj</code>）文件</p>
+</li>
+<li>
+<p>使用shell脚本编译所有<code>.o</code>文件为<code>.a</code>文件 （转换为静态链接库）:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> *.lua; <span class="keyword">do</span></span><br><span class="line">    luajit -b <span class="variable">$f</span> `basename <span class="variable">$f</span> .lua`.o</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">ar rcus libmyluafiles.a *.o</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>与一份<code>main.cc</code>联合编译：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lua.h&quot;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lualib.h&quot;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lauxlib.h&quot;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    lua_State *L = <span class="built_in">luaL_newstate</span>();  <span class="comment">// 创建一个新的Lua环境</span></span><br><span class="line">    <span class="built_in">luaL_openlibs</span>(L);               <span class="comment">// 打开所有标准的Lua库</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在这里，因为main函数的逻辑都写好了，我们仅仅需要直接执行那份脚本就可以了</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">luaL_dofile</span>(L, <span class="string">&quot;main.lua&quot;</span>)) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;Error: %s\n&quot;</span>, <span class="built_in">lua_tostring</span>(L, <span class="number">-1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">lua_close</span>(L);  <span class="comment">// 关闭Lua环境</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后是编译的代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ main.cc -o main -L/usr/<span class="built_in">local</span>/lib -lluajit-5.1 -I/usr/<span class="built_in">local</span>/include/luajit-2.1 ./libmyluafiles.a -ldl</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h1>Lua Optimize</h1>
 <h2 id="1-Frequent-local-variable">1. Frequent &amp; local variable</h2>
 <p><strong>高频访问的对象，应先赋值给一个local变量再进行访问</strong></p>

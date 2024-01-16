@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite-url/cn/dll-development/</loc>
+    <lastmod>2024-01-16</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite-url/cn/C-trouble-shoot/</loc>
+    <lastmod>2024-01-16</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite-url/cn/FastAPI-SQL_backend/</loc>
     <lastmod>2024-01-05</lastmod>
   </url>
