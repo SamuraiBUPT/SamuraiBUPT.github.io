@@ -142,7 +142,7 @@
   <link rel="canonical" href="http://yoursite-url/cn/逆向开发日志/">
   <title>
     
-      Reverse Engineering Reference - Programming life
+      Reverse Engineering - Programming life
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -386,7 +386,7 @@
             <div class="tags">
               
             </div>
-            <h1>Reverse Engineering Reference</h1>
+            <h1>Reverse Engineering</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by Yazhu Dong on
@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">7</span> Minutes
+              Estimated Reading Time <span class="post-count">15</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.9k</span> In Total
+              Words <span class="post-count">4.2k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -464,15 +464,10 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="1-reproduce">1. reproduce</h3>
-<h4 id="1-1-CMakeLists-txt">1.1 CMakeLists.txt</h4>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># require cmake version</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.16</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># declare project</span></span><br><span class="line"><span class="keyword">project</span>(GameCheatingTool)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set c++ standard</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">11</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># set output directory</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_RUNTIME_OUTPUT_DIRECTORY <span class="variable">$&#123;CMAKE_BINARY_DIR&#125;</span>/bin)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># add main executable</span></span><br><span class="line"><span class="keyword">add_executable</span>(GameCheatingTool main.cpp)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> GameCheatingTool/build</span><br><span class="line">cmake ..</span><br><span class="line">msbuild GameCheatingTool.sln</span><br></pre></td></tr></table></figure>
-<h4 id="1-2-Source">1.2 Source</h4>
-<p>其实不用非要找到个什么MSDN，直接在BING搜，能搜到Microsoft的文档就看文档，否则就去看CSDN是一样的。</p>
-<h3 id="2-WIN32-API">2. WIN32 API</h3>
-<h4 id="2-1-【functions】">2.1 【functions】</h4>
-<h5 id="2-1-1-ReadProcessMemory">2.1.1 ReadProcessMemory</h5>
+        <h1>1. Pre</h1>
+<h1>2. WIN32 API</h1>
+<h2 id="2-1-【functions】">2.1 【functions】</h2>
+<h3 id="2-1-1-ReadProcessMemory">2.1.1 ReadProcessMemory</h3>
 <p>template:</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BOOL ReadProcessMemory(</span><br><span class="line"><span class="string">  [in]</span>  HANDLE  hProcess,	</span><br><span class="line"><span class="string">  [in]</span>  LPCVOID lpBaseAddress,</span><br><span class="line"><span class="string">  [out]</span> LPVOID  lpBuffer,</span><br><span class="line"><span class="string">  [in]</span>  SIZE_T  nSize,</span><br><span class="line"><span class="string">  [out]</span> SIZE_T  *lpNumberOfBytesRead</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p><strong>LP: What is LP?</strong></p>
@@ -485,7 +480,7 @@
 <p>指向要从中读取的指定进程中基址的指针。</p>
 <p><strong>[out] LPVOID lpBuffer</strong></p>
 <p>指向从指定进程的地址空间接收内容的缓冲区的指针。</p>
-<h5 id="2-1-2-CreateToolhelp32Snapshot">2.1.2 CreateToolhelp32Snapshot</h5>
+<h3 id="2-1-2-CreateToolhelp32Snapshot">2.1.2 CreateToolhelp32Snapshot</h3>
 <blockquote>
 <p>获取指定进程的快照，以及这些进程使用的堆、模块和线程。</p>
 </blockquote>
@@ -543,7 +538,7 @@
 <p>此参数可以为零以指示当前进程。</p>
 <p>指定 <strong>TH32CS_SNAPHEAPLIST</strong>、 <strong>TH32CS_SNAPMODULE</strong>、 <strong>TH32CS_SNAPMODULE32</strong>或 <strong>TH32CS_SNAPALL</strong> 值时，将使用此参数。</p>
 <p>否则，它将被忽略，所有进程都包含在快照中。(TH32CS_SNAPPROCESS)</p>
-<h5 id="2-1-3-Process32First">2.1.3 Process32First</h5>
+<h3 id="2-1-3-Process32First">2.1.3 Process32First</h3>
 <p>检索有关系统快照中遇到的第一个进程的信息。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">Process32First</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">  [in]      HANDLE           hSnapshot,</span></span></span><br><span class="line"><span class="function"><span class="params">  [in, out] LPPROCESSENTRY32 lppe</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
@@ -553,14 +548,14 @@
 <p>指向 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/tlhelp32/ns-tlhelp32-processentry32">PROCESSENTRY32</a> 结构的指针。 它包含进程信息，例如可执行文件的名称、进程标识符和父进程的进程标识符。</p>
 <p><strong>返回值</strong></p>
 <p>如果进程列表的第一个条目已复制到缓冲区或 <strong>FALSE</strong>，则返回 <strong>TRUE</strong>。 如果不存在进程或快照不包含进程信息，<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror">则 GetLastError</a> 函数将返回<strong>ERROR_NO_MORE_FILES</strong>错误值。</p>
-<h4 id="2-2-【struct-or-class】">2.2  【struct or class】</h4>
-<h5 id="2-2-1-HANDLE">2.2.1 HANDLE</h5>
+<h2 id="2-2-【Struct】">2.2  【Struct】</h2>
+<h3 id="2-2-1-HANDLE">2.2.1 HANDLE</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> * HANDLE</span><br></pre></td></tr></table></figure>
 <p>不管是什么东西，我们统一用HANDLE来访问。</p>
 <p>1、HANDLE提供了一种统一的方式去获得系统资源，并对其进行操作。<br>
 2、HANDLE使得程序设计的细节得以被隐藏，从而能够更加方便地对细节的实现进行修改。<br>
 3、由于不知道HANDLE所指向的具体的数据结构，所以我们必须根据源码提供者的API使用HANDLE，而且不同种类的HANDLE是无法混用的。例如：<code>GetModuleHandle</code>返回的HANDLE和<code>GetFileHandle</code>返回的HANDLE是不同的，只能在他们对应的函数中使用。</p>
-<h5 id="2-2-2-PROCESSENTRY32">2.2.2 PROCESSENTRY32</h5>
+<h3 id="2-2-2-PROCESSENTRY32">2.2.2 PROCESSENTRY32</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagPROCESSENTRY32</span> &#123;</span></span><br><span class="line">  DWORD     dwSize;</span><br><span class="line">  DWORD     cntUsage;</span><br><span class="line">  DWORD     th32ProcessID;</span><br><span class="line">  ULONG_PTR th32DefaultHeapID;</span><br><span class="line">  DWORD     th32ModuleID;</span><br><span class="line">  DWORD     cntThreads;</span><br><span class="line">  DWORD     th32ParentProcessID;</span><br><span class="line">  LONG      pcPriClassBase;</span><br><span class="line">  DWORD     dwFlags;</span><br><span class="line">  CHAR      szExeFile[MAX_PATH];</span><br><span class="line">&#125; PROCESSENTRY32;</span><br></pre></td></tr></table></figure>
 <p><strong>dwSize</strong></p>
 <p>结构大小（以字节为单位）。 在调用 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/tlhelp32/nf-tlhelp32-process32first">Process32First</a> 函数之前，请将此成员设置为 <code>sizeof(PROCESSENTRY32)</code>。 如果不初始化 <strong>dwSize</strong>， <strong>Process32First</strong> 将失败。</p>
@@ -575,10 +570,10 @@
 <p><strong>szExeFile[MAX_PATH]</strong></p>
 <p>进程的可执行文件的名称。 若要检索可执行文件的完整路径，请调用 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/tlhelp32/nf-tlhelp32-module32first">Module32First</a> 函数并检查返回的 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/tlhelp32/ns-tlhelp32-moduleentry32">MODULEENTRY32</a> 结构的 <strong>szExePath</strong> 成员。 但是，如果调用进程是 32 位进程，则必须调用 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/desktop/api/winbase/nf-winbase-queryfullprocessimagenamea">QueryFullProcessImageName</a> 函数，才能检索 64 位进程的可执行文件的完整路径。</p>
 <p>其他参数，均被弃用，且置为0。</p>
-<h5 id="2-2-3-MODULEENTRY32">2.2.3 MODULEENTRY32</h5>
+<h3 id="2-2-3-MODULEENTRY32">2.2.3 MODULEENTRY32</h3>
 <p>windows中，进程就是一整个process，模块就是dll文件。</p>
-<h3 id="3-lib">3. lib</h3>
-<h4 id="3-1-stdint-h-or-cstdint">3.1 stdint.h or cstdint</h4>
+<h1>3. lib &amp; header</h1>
+<h2 id="3-1-stdint-h-or-cstdint">3.1 stdint.h or cstdint</h2>
 <p>&lt;stdint.h&gt; 中集成了很多字符长度规定：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>           <span class="keyword">uint8_t</span>;    </span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="keyword">int</span>      <span class="keyword">uint16_t</span>;    </span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span>            <span class="keyword">uint32_t</span>;    </span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">int</span>       <span class="keyword">uint64_t</span>;    </span><br></pre></td></tr></table></figure>
 <p>在需要使用的时候，直接包含这个头文件，使用即可。</p>
@@ -586,37 +581,224 @@
 <blockquote>
 <p>这个类型是一个整数类型，它的大小足以存储一个指针，因此你可以安全地将指针转换为它，而不会丢失精度。这是在处理包含指针的数值计算（如指针算术或比较指针）时通常用到的类型。</p>
 </blockquote>
-<h4 id="3-2-stdexcept">3.2 stdexcept</h4>
+<h2 id="3-2-stdexcept">3.2 stdexcept</h2>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdexcept&gt;</span></span></span><br><span class="line"><span class="keyword">throw</span> std::<span class="built_in">runtime_error</span>(<span class="string">&quot;Process not found&quot;</span>);</span><br></pre></td></tr></table></figure>
 <p>这才是对的，不能直接<code>throw std::exception(&quot;xxx&quot;)</code>，会报错。以前没报错，仅仅是因为没有执行到这一个句子来。</p>
-<h3 id="4-Cheat-Engine">4. Cheat Engine</h3>
-<h4 id="4-1-CSGO">4.1 CSGO</h4>
-<p>基本游戏内指令：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sv_cheats</span> <span class="number">1</span></span><br><span class="line"><span class="attribute">bot_stop</span> <span class="number">1</span></span><br><span class="line"><span class="attribute">mp_roundtime_defuse</span> <span class="number">60</span></span><br></pre></td></tr></table></figure>
-<p><strong>from blood change to player info struct</strong></p>
-<p>首先是找到一个血量地址，看到了偏移的痕迹 +0x100</p>
-<p>有一个：</p>
-<blockquote>
-<p>the value of the pointer needed to find this address is probably 8976A420</p>
-</blockquote>
-<p>于是查找<code>8976A420</code></p>
-<p>找到了四个绿颜色的地址，这就是静态的。</p>
-<p>使用Crtl+B，打开<code>4 bytes hex</code>，查看指针数组</p>
-<p>查到：</p>
-<p><img src="D:%5CCode_Space%5Cgithub_blog%5Chexo-git-source%5Csource_posts%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97.assets%5Cimage-20230802231207664.png" alt="image-20230802231207664"></p>
-<p>验证一一下第二个地址+0x100会不会是血量，验证结果为并不是。</p>
-<p>首先，8976A420确实是人物信息的struct起点，但是有一个问题：存储这个8976A420的地址，并不会是连续的。</p>
-<p><strong>所以不应该在8976A420周围找，而是应该找存储8976A420指针的地址的  指针</strong></p>
-<p>顺带一提：client.dll地址很好找：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">client</span>.dll + DEA<span class="number">98</span>C = <span class="number">8976</span>A<span class="number">420</span>  直接算出来即可</span><br></pre></td></tr></table></figure>
-<p>还有一个地址，第一个偏移是3850FF7C，第二个偏移是8976A420，而3850FF7C里面存的也是8976A420</p>
-<p>推测结构：</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3850</span>FF78 &#123;</span><br><span class="line">	<span class="number">3850</span>FF7C: <span class="number">8976A420</span></span><br><span class="line">	<span class="number">8976A420</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后找到了。没找到的原因是CE开大了，没摸到规律。</p>
-<p>如果把CE的窗口开小一点，估计立马就能找到。</p>
-<p>它的结构体就是：</p>
-<p><img src="D:%5CCode_Space%5Cgithub_blog%5Chexo-git-source%5Csource_posts%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97.assets%5Cimage-20230803000822112.png" alt="image-20230803000822112"></p>
-<p>刚好10个，找到存A420的地址即可，那就是最上层的，现在它形成了一个数组的样子，这就是对的。</p>
+<h1>4. CE与汇编基础</h1>
+<h2 id="4-1-汇编基础">4.1 汇编基础</h2>
+<p><strong>基本语法</strong></p>
+<p>左边就是<strong>目标</strong>操作数，右边是<strong>源</strong>操作数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov rax, rcx</span><br></pre></td></tr></table></figure>
+<p>这个其实就是<code>rax = rcx</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add rax, rcx</span><br></pre></td></tr></table></figure>
+<p>等价于<code>rax = rax + rcx</code></p>
+<p><strong>加法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add rax, 64</span><br></pre></td></tr></table></figure>
+<p>给rax加上0x64</p>
+<p><strong>减法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sub rsp, 8</span><br></pre></td></tr></table></figure>
+<p>等价于<code>rsp = rsp - 8</code></p>
+<p><strong>自增</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inc rax</span><br></pre></td></tr></table></figure>
+<p>等价于<code>rax = rax + 1</code></p>
+<p><strong>自减</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dec rax</span><br></pre></td></tr></table></figure>
+<p>等价于<code>rax = rax - 1</code></p>
+<p><strong>重点：解引用，也就是取值</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov, eax, [ecx]</span><br></pre></td></tr></table></figure>
+<p><code>[]</code>就是取值。</p>
+<p>比如说<code>ecx=0x40000</code>，而这个地址里面存储的数据是<code>0x6</code>，那么实际上上面的语句等价为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov eax, 0x6</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-CE找基址方法-（内含实战案例）">4.2 CE找基址方法 （内含实战案例）</h2>
+<ul>
+<li>不要相信CE的推测</li>
+<li>一般都是有两道三层以上的偏移，每一层都要取地址。</li>
+</ul>
+<p><strong>查找的基本原则</strong></p>
+<ul>
+<li>
+<p>查找访问和写入：是谁访问了这个地址、是谁写入了这个地址</p>
+</li>
+<li>
+<p>分析寄存器的来源：分析寄存器的运算是怎样一个过程</p>
+<ul>
+<li>
+<p>利用上面的汇编知识，脑子里面一定要清楚：<strong>地址与值，地址里面存储的数据，也可能是一个地址，也可能是一个值</strong></p>
+</li>
+<li>
+<p>脑子里面要思考一些可能的操作，比如：</p>
+<ul>
+<li>血量减少的时候就是sub，增加的时候就是add</li>
+<li>有时候会偏移很多次，要按照那个计算流程，一步步往上计算推测</li>
+</ul>
+</li>
+<li>
+<p>注意避开push、pop的指令，分析了也没用，这是堆栈操作。</p>
+</li>
+<li>
+<p>不要相信CE的推测</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>1. CE扫描出来的是什么？</strong></p>
+<p>CE扫描出来的是一堆地址，这些地址全部都存放了我们想要查找的数据。</p>
+<ul>
+<li>
+<p>如果查找的是一个具体的值，比如说子弹、血量等，直接找地址即可。</p>
+<p>需要注意的是，这个地址也许是错误的，就是说也许有很多个地址都显示的是这个数值，<strong>如果这个时候对这个地址进行修改里面的值，对游戏中没有影响，这就是找错了地址，要多次实验找到一个正确的。</strong></p>
+</li>
+<li>
+<p>如果查找的是一个地址，比如说，我想知道到底是什么地方存放了这个地址？</p>
+<ul>
+<li>
+<p>首先要勾选（十六进制Hex扫描），然后进行扫描。</p>
+</li>
+<li>
+<p>这个时候会查找出来一系列地址：</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240118131717311.png" alt="image-20240118131717311"></p>
+<p>这个时候，对着这些扫描出来的地址，选择“<strong>查找访问</strong>”，而不是再东看西看</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-1-案例一：cmp-mov语句，层层寻址">4.2.1 案例一：cmp mov语句，层层寻址</h3>
+<p><strong>1.1 Epoch 1</strong></p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240118131122471.png" alt="image-20240118131122471"></p>
+<p>首先，我们查找的依据是一个地址，比如说<code>008A5710</code>，然后在这里<code>008B2444</code>地址 存放的数据就是<code>008A5710</code> ，我们直接点击这个地址的查找访问即可。</p>
+<p>在这里，弹出来了两条指令，这两条指令都是访问了<code>008B2444</code>这个地址的。</p>
+<p>这个时候随便双击一个即可，我们先双击第一个。</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240118132012416.png" alt="image-20240118132012416"></p>
+<p>在这里，esi就是存放的8B20E0，我们看到那个计算的式子：<br>
+$$<br>
+8B20E0 + 364 = 8B2444<br>
+$$<br>
+就是这样一条句子，加上了<code>[]</code>符号，那就是访问了这个地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ebx, [esi + 364]</span><br></pre></td></tr></table></figure>
+<p>这句话有几个意思：</p>
+<ul>
+<li>esi + 634 = 8B2444</li>
+<li>[8B2444] = 8A5710</li>
+<li>mov ebx, 8A5710</li>
+</ul>
+<p>这里就可以看出来，ebx里面的数值，也就是我们想要的数值，就是来自于esi的。此时可以记录：偏移364</p>
+<p><strong>1.2 Epoch 2</strong></p>
+<p>现在我们开始找esi的值。已经分析出来了esi是8B20E0</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240118134256317.png" alt="image-20240118134256317"></p>
+<p>这次运气比较好，一来就找到了基地址。</p>
+<p>在拿到了基地址之后，我们可以往上面进行验证。</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240118134407756.png" alt="image-20240118134407756"></p>
+<p>CE有工具，可以提供验证。第一层取到8B20E0，偏移364取到8B2444，<strong>注意这个时候是取到的地址，CE会自动进行取值的！</strong> 在这一层结束之后，他就会取值。</p>
+<p>所以本来8B20E0+364取到的是8B2444，但是因为要取一层的值，所以就取到了8A5710.</p>
+<p>再往上，读8A5710的+14地址：取值到8B2220。</p>
+<p>再取值一层0.</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240118134904774.png" alt="image-20240118134904774"></p>
+<p><strong>阶段性总结</strong></p>
+<ul>
+<li>
+<p>找基地址，就要一层一层看偏移，比如说：</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240118134942455.png" alt="image-20240118134942455"></p>
+<p>在这里就是先看到cmp语句，找到了<strong>依据寄存器</strong>是eax，再找esi=8A5710，再找到了ebx，又找esi=8B20E0</p>
+<p>反正就是一层一层往上看，追根溯源。</p>
+</li>
+</ul>
+<h3 id="4-2-2-案例二：找血量">4.2.2 案例二：找血量</h3>
+<ul>
+<li>有时候，找到的血量也不一定是真实的值。在找到一个值之后，一定要修改一下指针里面的值，看看游戏里面是否发生了<strong>实质性</strong>变化。</li>
+</ul>
+<p>​		比如说，血量的显示，与血量的计算，有可能是两个不同的值。如果仅仅是改了<strong>显示</strong>的值，可能就没用。</p>
+<ul>
+<li>
+<p>有时候，<strong>查找访问也不一定灵</strong>，有可能点开指针的分析，发现是空的：没有任何东西在访问这个值。这是很正常的，只需要自己再去做一点动作修改一下那个值就可以了。</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240119004904760.png" alt="image-20240119004904760"></p>
+<p><strong>原则：尽量避开push操作，这个时候我们就可以从上下两个来分析</strong></p>
+</li>
+<li>
+<p>分析减法操作：</p>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240119005212627.png" alt="image-20240119005212627"></p>
+<p>在这里，esi就是0xC，也就是-12滴血。[ebx+04]就是存放的血量的数据。所以要找的就是ebx的值：CF68BBC</p>
+<p>结果去搜这个指针的值，搜不到</p>
+<p><strong>搜不到太正常了，那就换下面的那一条，cmp语句那一条再来看看</strong></p>
+</li>
+<li>
+<p><img src="D:%5CCode_Space%5Cgithub_blog%5Clivemylive-blog%5Csource_posts%5Ccn%5C%E9%80%86%E5%90%91%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%5Cimage-20240119005654636.png" alt="image-20240119005654636"></p>
+<p>在对指针进行查找的过程中，找到了很多有操作的操作语句，依然不要慌，一个一个来，或者随便找一个也可以。</p>
+</li>
+</ul>
+<h3 id="4-2-3-总结">4.2.3 总结</h3>
+<ol>
+<li>
+<p>找到一个地址，这里可能有的坑是：有很多个匹配的值，但是仅仅只有几个是有用的，有些是显示值，有些才是实际值。要找<strong>实际值</strong></p>
+</li>
+<li>
+<p>查找访问，对于查找出来的多个语句，这里随便挑一个就可以，直接入手进行分析，分析的时候也要有思路，汇编语句结合动作场景，比如说血量减少，那就应该是sub；也有可能是cmp，因为比如子弹为0、血量为0的时候，都要进行一系列操作，比如说触发换弹之类的，所以这个时候就要重视<code>cmp</code>语句了。</p>
+<p>如果<strong>一条语句往下无法分析了：搜不到指针了，那就是表明这条路走不通，要继续往下走，看下面的查找访问的指令</strong></p>
+</li>
+</ol>
+<h3 id="4-2-4-搜坐标：模糊搜索的技巧">4.2.4 搜坐标：模糊搜索的技巧</h3>
+<p>点击（未初始化的值-单精度浮点数）</p>
+<p>搜索了之后，改变味（增加的值）</p>
+<p>再搜索之后，还可以改变为 （不变的值）</p>
+<p>这样层层筛选地址。</p>
+<h3 id="4-2-5-内存中相邻的布局">4.2.5 内存中相邻的布局</h3>
+<p>比如说xyz坐标，一定是相邻的，不可能说会随意变动。</p>
+<h3 id="4-2-6-懒狗方案：指针扫描仪">4.2.6 懒狗方案：指针扫描仪</h3>
+<p>直接定义好指针的偏移，然后直接开始扫描就完事</p>
+<p>验证方案一：改数值，然后再扫描一遍</p>
+<p>验证方案二：出游戏，重新进来，加载那份数据，看看是不是还能找到</p>
+<p>逆向了一下forest，对于这种游戏，指针偏移有7级，勉强能找到soda的地址。</p>
+<p>反正就是上面两个方案，反复的弄反复的尝试就完了</p>
+<h1>4.3 模拟</h1>
+<h2 id="4-4-调用游戏call">4.4 调用游戏call</h2>
+<p>也就是调用游戏本身的函数直接执行。</p>
+<p>CE里面有一个Code Filter，直接找call。</p>
+<h1>5. DLL原理</h1>
+<ol>
+<li><strong>定位进程</strong>：首先，注入程序必须找到或启动目标进程（在您的案例中是 <code>main.exe</code>）。</li>
+<li><strong>分配内存</strong>：注入程序在目标进程的地址空间中分配内存，用于存放 DLL 的路径。</li>
+<li><strong>写入DLL路径</strong>：注入程序将 DLL 的路径写入之前分配的内存。</li>
+<li><strong>远程线程创建</strong>：注入程序在目标进程中创建一个远程线程，这个线程调用 <code>LoadLibrary</code>（或类似的函数），这个函数负责加载 DLL。</li>
+<li><strong>加载 DLL</strong>：一旦 <code>LoadLibrary</code> 被调用，操作系统会加载指定的 DLL 到目标进程的地址空间，并调用 DLL 的 <code>DllMain</code> 函数。</li>
+</ol>
+<h2 id="5-1-DllMain函数解读">5.1 DllMain函数解读</h2>
+<p><strong><code>DllMain</code> 函数的角色</strong></p>
+<p><code>DllMain</code> 是一个特殊的函数，它是每个 DLL 的入口点。当 DLL 被加载和卸载，或者当它所在的进程和线程开始和结束执行时，操作系统会调用这个函数。<code>DllMain</code> 函数的参数 <code>ul_reason_for_call</code> 表示调用的原因，它可以是以下几种之一：</p>
+<ul>
+<li><code>DLL_PROCESS_ATTACH</code>：当 DLL 被加载到进程空间时发生。</li>
+<li><code>DLL_THREAD_ATTACH</code>：当进程创建一个新线程时发生。</li>
+<li><code>DLL_THREAD_DETACH</code>：当进程中的线程正常结束或异常终止时发生。</li>
+<li><code>DLL_PROCESS_DETACH</code>：当 DLL 从进程空间卸载时发生。</li>
+</ul>
+<p>在您的示例代码中，当 DLL 被加载到进程（<code>DLL_PROCESS_ATTACH</code>）时，会显示一个消息框（<code>MessageBox</code>），说明 DLL 已被注入。</p>
+<h2 id="5-2-阻塞问题与开发思路">5.2 阻塞问题与开发思路</h2>
+<ol>
+<li><strong>远程线程和主线程</strong>：
+<ul>
+<li>当您创建一个远程线程来加载 DLL 时，这个线程运行在目标进程的上下文中，但它与主线程是分开的。</li>
+<li>然而，由于 DLL 是在同一个进程中加载的，DLL 中的代码（包括 <code>MessageBox</code>）会影响整个进程。</li>
+</ul>
+</li>
+<li><strong>模态对话框的行为</strong>：
+<ul>
+<li><code>MessageBox</code> 创建的是一个模态对话框，它会阻塞创建它的线程，直到对话框关闭。</li>
+<li>在您的案例中，由于 <code>MessageBox</code> 是在由远程线程调用的 <code>DllMain</code> 中创建的，它实际上阻塞了整个进程，包括主线程，直到消息框被关闭。</li>
+</ul>
+</li>
+<li><strong>影响主线程的执行</strong>：
+<ul>
+<li>因此，虽然 <code>main.exe</code> 的主线程是独立于远程线程的，但由于整个进程被模态对话框</li>
+</ul>
+</li>
+</ol>
+<p>阻塞，<code>main.exe</code> 中的主线程也被阻塞了。这意味着，即使远程线程是分开的，它通过 <code>MessageBox</code> 调用间接阻塞了主线程。</p>
+<p>要解决这个问题，您可以：</p>
+<ol>
+<li><strong>使用非模态方法</strong>：使用非模态或异步的方式来显示通知或执行操作，这样就不会阻塞整个进程。例如，可以创建一个非模态对话框或使用其他方法（如日志记录）来指示 DLL 已被注入。</li>
+<li><strong>更改 DLL 代码</strong>：修改 DLL 中的 <code>DllMain</code> 以避免执行阻塞操作。记住 <code>DllMain</code> 应该尽可能地轻量，避免复杂的操作或可能引起阻塞的调用。</li>
+<li><strong>在独立线程中执行操作</strong>：如果您需要在 DLL 中执行较复杂的操作，可以考虑从 <code>DllMain</code> 中启动一个新的线程来执行这些操作，而不是直接在 <code>DllMain</code> 中执行。这样，<code>DllMain</code> 可以快速返回，不会阻塞主线程或其他线程的执行。</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD WINAPI <span class="title">ThreadFunc</span><span class="params">(LPVOID lpParam)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">MessageBox</span>(<span class="literal">NULL</span>, <span class="string">L&quot;DLL Injected&quot;</span>, <span class="string">L&quot;Success&quot;</span>, MB_OK);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL APIENTRY <span class="title">DllMain</span><span class="params">(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved)</span> </span>&#123;</span><br><span class="line">    <span class="built_in"><span class="keyword">switch</span></span> (ul_reason_for_call) &#123;</span><br><span class="line">    <span class="keyword">case</span> DLL_PROCESS_ATTACH:</span><br><span class="line">        <span class="built_in">CreateThread</span>(<span class="literal">NULL</span>, <span class="number">0</span>, ThreadFunc, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DLL_THREAD_ATTACH:</span><br><span class="line">    <span class="keyword">case</span> DLL_THREAD_DETACH:</span><br><span class="line">    <span class="keyword">case</span> DLL_PROCESS_DETACH:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
         <hr>
@@ -678,7 +860,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Reverse Engineering Reference&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/逆向开发日志/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Reverse Engineering&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/逆向开发日志/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>

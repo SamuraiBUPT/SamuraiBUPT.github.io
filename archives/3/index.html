@@ -550,15 +550,18 @@ DP问题，是基础算法中比较难的部分，因为它不像其他算法，
 
   <a href="/cn/逆向开发日志/">
     <h2 class="post-title">
-      Reverse Engineering Reference
+      Reverse Engineering
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      1. reproduce
-1.1 CMakeLists.txt
-12345678910111213141516# require cmake versioncmake_minimum_required(VERSION 3.16)# declare projectproject(GameCheatingTool)# set c++ standardset(CMAKE_CXX_STANDARD ......
+      1. Pre
+2. WIN32 API
+2.1 【functions】
+2.1.1 ReadProcessMemory
+template:
+1234567BOOL ReadProcessMemory(  [in]  HANDLE  hProcess,	  [in]  LPCVOID lpBaseAddress,  [out] LPVOID  lpBuffer,  [in]  SIZE_T  ......
     </div>
   </a>
   
@@ -923,7 +926,7 @@ $$
     </a>
     
     <a href="../../cn/C-trouble-shoot/">
-      <li>C++ trouble shoot</li>
+      <li>Visual Studio trouble shoot</li>
     </a>
     
     <a href="../../cn/FastAPI-SQL_backend/">

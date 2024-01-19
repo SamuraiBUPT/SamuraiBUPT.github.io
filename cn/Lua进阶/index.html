@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">32</span> Minutes
+              Estimated Reading Time <span class="post-count">34</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">7.9k</span> In Total
+              Words <span class="post-count">8.4k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -696,11 +696,18 @@
 <p>Lua提供了一个名为require的函数用来加载模块。要加载一个模块，只需要简单地调用就可以了。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;my_mod&quot;</span>)</span><br><span class="line"></span><br><span class="line">my_mod.foo()</span><br><span class="line">my_mod.bar()</span><br></pre></td></tr></table></figure>
 <p><strong>require(“xx”)的返回值？</strong></p>
-<p>实际上这个返回值是一个布尔值。</p>
+<p>当没有return实际值的时候，这个返回值是一个布尔值。</p>
 <p>如果要进行引用，最好还是像上面那种方法一样，定义好一个table，这个table实际上就是一个module。</p>
 <ul>
 <li><strong>在脚本的末尾，要把这个module return出去才行</strong></li>
 <li>凡是要被return出这个脚本的，都要是全局变量，而不能是局部变量。</li>
+</ul>
+<h3 id="终极解决方案">终极解决方案</h3>
+<ul>
+<li>在module里面自己放置一个<code>my_module</code></li>
+<li>最后return出去</li>
+<li>在外面<code>local my_m = require(&quot;module.my_module&quot;)</code> 在这里，如果有路径，比如说在这里的路径就是module，直接添加在前面就完事，后面直接<code>.</code>隔开</li>
+<li>使用：<code>my_m.hello()</code></li>
 </ul>
 <h2 id="6-3-C包">6.3 C包</h2>
 <p><strong>step 1: 编写C++函数</strong></p>
@@ -837,8 +844,36 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lua.h&quot;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lualib.h&quot;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lauxlib.h&quot;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    lua_State *L = <span class="built_in">luaL_newstate</span>();  <span class="comment">// 创建一个新的Lua环境</span></span><br><span class="line">    <span class="built_in">luaL_openlibs</span>(L);               <span class="comment">// 打开所有标准的Lua库</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在这里，因为main函数的逻辑都写好了，我们仅仅需要直接执行那份脚本就可以了</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">luaL_dofile</span>(L, <span class="string">&quot;main.lua&quot;</span>)) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;Error: %s\n&quot;</span>, <span class="built_in">lua_tostring</span>(L, <span class="number">-1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">lua_close</span>(L);  <span class="comment">// 关闭Lua环境</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后是编译的代码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ main.cc -o main -L/usr/<span class="built_in">local</span>/lib -lluajit-5.1 -I/usr/<span class="built_in">local</span>/include/luajit-2.1 ./libmyluafiles.a -ldl</span><br></pre></td></tr></table></figure>
+<p>更好的办法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lua.h&quot;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lualib.h&quot;</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;lauxlib.h&quot;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* lua_main = <span class="string">R&quot;(</span></span><br><span class="line"><span class="string">local bool_import = require(&quot;compute_bil&quot;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">local function main()</span></span><br><span class="line"><span class="string">    local start_time = os.clock()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    for i = 1, 5 do</span></span><br><span class="line"><span class="string">        print(&quot;Epoch &quot; .. i)</span></span><br><span class="line"><span class="string">        M.compute_billion()</span></span><br><span class="line"><span class="string">    end</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    local end_time = os.clock()</span></span><br><span class="line"><span class="string">    print(&quot;elapsed time: &quot; .. (end_time - start_time) .. &quot;s&quot;)</span></span><br><span class="line"><span class="string">end</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">main()</span></span><br><span class="line"><span class="string">)&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    lua_State *L = <span class="built_in">luaL_newstate</span>();  <span class="comment">// 创建一个新的Lua环境</span></span><br><span class="line">    <span class="built_in">luaL_openlibs</span>(L);               <span class="comment">// 打开所有标准的Lua库</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果您要运行Lua脚本文件，使用以下代码：</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">luaL_dostring</span>(L, lua_main)) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;Error: %s\n&quot;</span>, <span class="built_in">lua_tostring</span>(L, <span class="number">-1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">lua_close</span>(L);  <span class="comment">// 关闭Lua环境</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就用不着main.lua文件了。</p>
 </li>
 </ul>
+<p>windows: 写一份Makefile，把当前路径下所有<code>*.lua</code>文件编译为<code>*.obj</code>文件</p>
+<p>我已经修改了你的文件像这样：“# 定义编译器和标志<br>
+CC=g++<br>
+CFLAGS=-I/usr/local/include/luajit-2.1<br>
+LDFLAGS=-L/usr/local/lib -lluajit-5.1 -ldl</p>
+<h1>源文件和目标文件</h1>
+<p>LUA_FILES=$(wildcard *.lua)<br>
+OBJ_FILES=$(LUA_FILES:.lua=.obj)<br>
+TARGET=main</p>
+<h1>默认目标</h1>
+<p>all: $(TARGET)</p>
+<h1>编译.lua为.obj，这里需要你提供具体的转换命令</h1>
+<p>%.obj: %.lua<br>
+luajit -b $&lt; $@</p>
+<h1>从.obj文件创建.a文件</h1>
+<p>liblua.lib: $(OBJ_FILES)<br>
+ar rcs $@ $(OBJ_FILES)</p>
+<h1>编译main.cc和链接</h1>
+<p>$(TARGET): <a target="_blank" rel="noopener" href="http://main.cc">main.cc</a> liblua.lib<br>
+$(CC) $(CFLAGS) <a target="_blank" rel="noopener" href="http://main.cc">main.cc</a> -o $@ $(LDFLAGS) ./liblua.lib</p>
+<h1>清理目标</h1>
+<p>clean:<br>
+rm -f $(OBJ_FILES) liblua.lib $(TARGET)</p>
+<h1>伪目标</h1>
+<p>.PHONY: all clean”  不过有一个问题，我这是在windows路径下完成这个工作，我的flags路径需要重新编辑。我的CFLAGS在D:\Code_Space\Compiler\luajit-windows\src下面，而我的LDFLAGS在</p>
 <h1>Lua Optimize</h1>
 <h2 id="1-Frequent-local-variable">1. Frequent &amp; local variable</h2>
 <p><strong>高频访问的对象，应先赋值给一个local变量再进行访问</strong></p>
