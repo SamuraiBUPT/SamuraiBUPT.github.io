@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">34</span> Minutes
+              Estimated Reading Time <span class="post-count">37</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">8.4k</span> In Total
+              Words <span class="post-count">9k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -554,16 +554,22 @@
 <p><strong>数组</strong></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建一个数组</span></span><br><span class="line"><span class="keyword">local</span> myArray = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 循环遍历数组</span></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, #myArray <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(myArray[i])</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>注意！！！ <strong>lua的数组下标是从1开始的！！！</strong></p>
-<p><strong>方法大全</strong></p>
-<p><strong>table.insert (table, [pos,] value):</strong></p>
+<h4 id="1-table-insert-table-pos-value">1. <strong>table.insert (table, [pos,] value):</strong></h4>
 <p>在table的数组部分指定位置(pos)插入值为value的一个元素. pos参数可选, <strong>默认为数组部分末尾.</strong></p>
-<p><strong>#table</strong></p>
+<h4 id="2-长度：-table">2. 长度：<strong>#table</strong></h4>
 <p>通过加<code>#</code>来查询table里面到底有多少个元素。</p>
-<p><strong>遍历table</strong></p>
+<h4 id="3-遍历table">3. <strong>遍历table</strong></h4>
 <p>table实际上就是一个字典类，不过这个key当你不指定的时候，就是普通的数字，而指定了之后，就是你自己定义的key。我们可以通过<code>ipairs()</code>函数来遍历一个table:</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> inventory_table_headers = check_table_info(connect, <span class="string">&quot;UserInventory&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">ipairs</span>(inventory_table_headers) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i, v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>1、ipairs会按照key的顺序输出数据，遇到不连续的数据停止输出；</p>
 <p>2、pairs会无序输出所有数据；</p>
+<h4 id="4-table-remove-table-pos">4. table.remove(table, [pos])</h4>
+<p>从table中移除一个数据，会返回移出去的数据。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fruits = &#123;<span class="string">&quot;banana&quot;</span>,<span class="string">&quot;orange&quot;</span>,<span class="string">&quot;apple&quot;</span>&#125;</span><br><span class="line">remove1 = <span class="built_in">table</span>.<span class="built_in">remove</span>(fruits)  <span class="comment">-- remove &quot;apple&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果不给<code>pos</code>参数，默认移除尾部的数据。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remove2 = <span class="built_in">table</span>.<span class="built_in">remove</span>(fruits, <span class="number">1</span>)  <span class="comment">-- 强制移除“banana”</span></span><br></pre></td></tr></table></figure>
+<p>如果给了<code>pos</code>参数，移除该参数对应位置的数据。</p>
+<p><strong>一定要注意table的下标是从0开始的！</strong></p>
 <h3 id="2-1-2-table的内存管理">2.1.2 table的内存管理</h3>
 <p>在开发中遇到一个场景：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">check_table_info</span><span class="params">(conn, table_name)</span></span></span><br><span class="line">    <span class="keyword">local</span> cur = conn:<span class="built_in">execute</span>(<span class="string">&quot;PRAGMA table_info(&quot;</span> .. table_name .. <span class="string">&quot;)&quot;</span>)</span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">table</span> = cur:fetch(&#123;&#125;, <span class="string">&quot;a&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;===== Table info =====&quot;</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">table</span> <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">table</span>.name, <span class="built_in">table</span>.<span class="built_in">type</span>, <span class="built_in">table</span>.notnull, <span class="built_in">table</span>.dflt_value, <span class="built_in">table</span>.pk)</span><br><span class="line">        <span class="built_in">table</span> = cur:fetch(<span class="built_in">table</span>, <span class="string">&quot;a&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    cur:<span class="built_in">close</span>()</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
@@ -651,7 +657,8 @@
 <p><strong>if…else</strong></p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式)</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="comment">--[ 在布尔表达式为 true 时执行的语句 --]</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(布尔表达式)</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   <span class="comment">--[ 布尔表达式为 true 时执行该语句块 --]</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   <span class="comment">--[ 布尔表达式为 false 时执行该语句块 --]</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>总结：循环后面是<code>do</code>，if后面跟<code>then</code></p>
-<h1>5. Memory Management</h1>
+<p><strong>如果有多个条件语句，请使用and进行连接</strong></p>
+<h1>5. Lua的内存管理方案</h1>
 <h2 id="5-1-Lua-内存基础">5.1 Lua 内存基础</h2>
 <p>Lua与Python的内存管理不同，Lua仍然是<strong>将值赋给变量</strong>的模式，例如：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="string">&quot;hello&quot;</span></span><br><span class="line">c = b</span><br><span class="line">c = <span class="string">&quot;changed&quot;</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
@@ -686,6 +693,21 @@
 <li><strong>collectgarbage(“step”):</strong> 单步运行垃圾收集器。 步长&quot;大小&quot;由 arg 控制。 传入 0 时，收集器步进（不可分割的）一步。 传入非 0 值， 收集器收集相当于 Lua 分配这些多（K 字节）内存的工作。 如果收集器结束一个循环将返回 true 。</li>
 <li><strong>collectgarbage(“stop”):</strong> 停止垃圾收集器的运行。 在调用重启前，收集器只会因显式的调用运行。</li>
 </ul>
+<h2 id="5-3-神奇的local关键字">5.3 神奇的<code>local</code>关键字</h2>
+<blockquote>
+<p>如果要创建实例，在lua中不需要new关键字，直接像下面这样写即可：</p>
+<p><a target="_blank" rel="noopener" href="http://1.sb">1.sb</a> = CS.System.Text.StringBuilder();</p>
+<p>注：可以将C#类型缓存，这样既方便使用，也可以提高性能：</p>
+<p>1.local strbuilder = CS.System.Text.StringBuilder;</p>
+<p><a target="_blank" rel="noopener" href="http://2.sb">2.sb</a> = strbuilder();</p>
+</blockquote>
+<p>在 Lua 中使用 <code>local</code> 关键字进行变量声明有助于提高性能，主要是因为 <code>local</code> 关键字限定了变量的作用域在局部范围内，从而减少了变量查找的开销。这在与 Unity 或其他环境集成时特别有用。具体到您提到的情况，理解这一点需要考虑以下几个方面：</p>
+<ol>
+<li><strong>局部变量的访问速度更快</strong>：在 Lua 中，局部变量（使用 <code>local</code> 声明的变量）比全局变量（没有使用 <code>local</code> 声明的变量）拥有更快的访问速度。这是因为局部变量存储在栈上，而全局变量存储在一个全局的表中。当访问局部变量时，Lua 可以直接通过栈进行访问，而访问全局变量则需要通过表查找，这个过程相对来说更慢。</li>
+<li><strong>减少全局环境的污染</strong>：使用 <code>local</code> 还有一个重要的好处是减少了对全局环境的污染。在 Lua 中，如果不使用 <code>local</code> 声明变量，那么这些变量默认是全局的，这可能会导致意外的冲突和错误。局部变量的作用域限定在它被声明的区块内，这有助于维护代码的清晰和可维护性。</li>
+<li><strong>提高性能</strong>：在您的例子中，将 <code>CS.System.Text.StringBuilder</code> 类缓存到一个局部变量中，意味着每次创建 <code>StringBuilder</code> 实例时，Lua 不需要再去全局环境中查找这个类。这样可以减少查找时间，特别是在频繁创建实例的情况下，这种差异会更加明显。</li>
+</ol>
+<p>所以有需要大量用到某个 <strong>外部部件</strong>、或者需要高频访问某个变量的时候，最好先把他用<code>local</code>变量缓存一下子（作为函数赋值），然后再进行后续的使用。</p>
 <h1>6. 模块与包的制作</h1>
 <h2 id="6-1-直接导入lua文件">6.1 直接导入lua文件</h2>
 <p>Lua中构建模块，可以通过表与return来完成。</p>

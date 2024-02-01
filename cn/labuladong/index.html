@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/archives/archives/2/">
+  <link rel="canonical" href="http://yoursite-url/cn/labuladong/">
   <title>
     
-      Programming life
+      labuladong算法笔记 - Programming life
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -300,25 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="archives/archives/2/index.html">
-      
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -380,9 +362,9 @@
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
       
     }
 
@@ -400,10 +382,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Technique Blogs</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Maintained by SamuraiBUPT</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>labuladong算法笔记</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Yazhu Dong on
+              2024-02-01
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">5</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -444,661 +456,368 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>刷题的框架思维</h1>
+<p>所有的题目的数据结构都只有两种：</p>
+<ul>
+<li>数组 （顺序存储）</li>
+<li>链表（链式存储）</li>
+</ul>
+<p>刷题的顺序应该是：先链表、再二叉树，再是其他的<strong>算法</strong>。</p>
+<h1>双指针：链表题</h1>
+<blockquote>
+<p>这里的指针，指的是真的<strong>指针</strong> (<code>*p</code>)</p>
+</blockquote>
+<p><strong>leetcode 21: 合并两个链表</strong></p>
+<p>遍历推进<code>dummy *p</code>即可，顺手推进<code>p1</code>, <code>p2</code>两个指针。</p>
+<p>在这里<code>p</code>是新建的指针，<code>p1</code>, <code>p2</code>是指向两个已有的链表的工作指针。</p>
+<blockquote>
+<p>技巧：使用虚拟头结点指针dummy</p>
+</blockquote>
+<blockquote>
+<p>重要教训：dummy指针仅仅是一个用于指向的工具，<strong>必须要为它分配具有实际意义的内存空间才行。</strong> 所以要使用<code>new dummy(-1);</code>分配堆空间</p>
+</blockquote>
+<p><strong>leetcode 86: 分隔链表</strong></p>
+<p><code>p1</code>, <code>p2</code>指向两个<code>dummy1</code>，<code>dummy2</code>指针，<code>*p</code>指向公共链表。</p>
+<blockquote>
+<p>要点：要断开原链表中的 <code>p.next</code>指针，否则会导致成环</p>
+</blockquote>
+<p>操作方法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ListNode* tmp = p-&gt;next;</span><br><span class="line">p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">p = tmp;</span><br></pre></td></tr></table></figure>
+<p>如果要查看到底是怎么成环的，可以看看<a target="_blank" rel="noopener" href="https://labuladong.online/algo/di-ling-zh-bfe1b/shuang-zhi-0f7cc/#%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E5%88%86%E8%A7%A3">代码动态演示</a></p>
+<p>这是我的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">partition</span><span class="params">(ListNode* head, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        ListNode* dummy1 = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">-1</span>);</span><br><span class="line">        ListNode* dummy2 = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">-2</span>);</span><br><span class="line">        ListNode* p1 = dummy1, * p2 = dummy2;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        <span class="keyword">while</span>(p!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;val &lt; x) &#123;</span><br><span class="line">                p1-&gt;next = p;</span><br><span class="line">                p1 = p1-&gt;next;  <span class="comment">// 等候下一步赋值，此时此刻这里应该是空值。但是现在并不是，</span></span><br><span class="line">                                <span class="comment">// 不要慌，会在后面进行处理</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                p2-&gt;next = p;</span><br><span class="line">                p2 = p2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 删除连接</span></span><br><span class="line">            ListNode* tmp = p-&gt;next;</span><br><span class="line">            p-&gt;next = <span class="literal">NULL</span>;     <span class="comment">// 这一步，就是在对上面的补充：p1来到了p-&gt;next的位置，</span></span><br><span class="line">                                <span class="comment">// 现在把这个位置砍断了</span></span><br><span class="line">            p = tmp;            <span class="comment">// p原来是指向的p1所在的地方，现在就指向断了之后的地方了。</span></span><br><span class="line">        &#125;</span><br><span class="line">        p1-&gt;next = dummy2-&gt;next;</span><br><span class="line">        <span class="keyword">return</span> dummy1-&gt;next;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>leetcode 23: 合并k个链表</strong></p>
+<blockquote>
+<p><strong>1</strong> - 4 - 5</p>
+<p><strong>1</strong> - 3 - 4</p>
+<p><strong>2</strong> - 6</p>
+</blockquote>
+<p>实际上，用优先队列做即可，这道题的难点就是如何快速找出来各个头结点里面最小的那个。直接用优先队列找就完了。</p>
+<p>规定好优先规则，<code>pq.top()</code>就是最小的。同样<code>pq.pop()</code>出队的也是这个最小的。</p>
+<p><code>priority_queue&lt;ListNode*, vector&lt;ListNode*&gt; func&gt; pq;</code></p>
+<ul>
+<li>头结点都push进<code>pq</code>，<code>pq.top()</code>返回最小值。</li>
+<li>不断把<code>pq.top()</code>通过<code>pq.pop()</code>出队，不断把<code>node-&gt;next</code> push进去。</li>
+</ul>
+<p><strong>leetcode 19: 单链表的倒数第k个结点</strong></p>
+<p>这道题就有意思了。如何在遍历一遍的情况下，找到倒数第K个？答案是<strong>双指针</strong></p>
+<ul>
+<li>第一个指针先走K步，这样它距离终点剩下<code>n-k</code>步</li>
+<li>第二个指针在这个时候就开始走，跟着第一个指针一起走。
+<ul>
+<li>第一个指针走了<code>n-k</code>步，到底了，它就走了<code>n-k</code>步，这就停在了倒数第<code>k</code>个结点上面。</li>
+</ul>
+</li>
+</ul>
+<p><strong>leetcode 876: 单链表中点</strong></p>
+<p>如何找到中点？还是双指针。</p>
+<ul>
+<li>快指针一次走两步。</li>
+<li>慢指针一次走一步。</li>
+<li>快指针到底的时候，慢指针就是中点。</li>
+</ul>
+<p><strong>leetcode 142: 环形链表</strong></p>
+<p>跟上面是一样的：一旦快指针撞上了慢指针，那就是环。</p>
+<p><strong>leetcode 160: 相交链表</strong></p>
+<p><img src="image-20240201214433261.png" alt="image-20240201214433261"></p>
+<ul>
+<li>p1遍历完之后遍历p2的</li>
+<li>p2遍历完之后遍历p1的</li>
+</ul>
+<p>因为他们是会相撞的。到时候再判断。</p>
+<h1>二叉树与递归 traverse</h1>
+<h2 id="1-纲领篇">1. 纲领篇</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(Node* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 前序位置</span></span><br><span class="line">    <span class="built_in">traverse</span>(root-&gt;left);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 中序位置</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">traverse</span>(root-&gt;right);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//后序位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="image-20240201214710624.png" alt="image-20240201214710624"></p>
+<p><img src="image-20240201214730103.png" alt="image-20240201214730103"></p>
+<p><strong>如果要倒序打印单链表呢？</strong></p>
+<p>这是个举一反三的问题。链表也可以遍历进行打印。要倒序打印，那就在后序的位置打印就完了。<strong>因为那是函数在退栈。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">travPrint</span><span class="params">(Node* root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">travPrint</span>(root-&gt;next);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(root-&gt;val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-1-两种重要思路">1.1 两种重要思路</h3>
+<ol>
+<li>
+<p><strong>遍历思路</strong>：只遍历一次二叉树，解出答案。</p>
+<blockquote>
+<p>这种思路往往在外部有一个全局变量，在递归函数中，维护这个全局变量。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>分解思路</strong>：把问题交给二叉子树。</p>
+<blockquote>
+<p>这就要在返回值上下功夫了。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="1-2-后序位置有什么不同？">1.2 后序位置有什么不同？</h3>
+<p>有。</p>
+<p><strong>前序位置</strong>只能拿到来自函数参数的数据。<code>(root, param1, param2, ...)</code></p>
+<p><strong>后序位置</strong>可以拿到来自<strong>子树通过返回值</strong>传递过来的数据。</p>
+<blockquote>
+<p>如果这个问题跟子树没什么关系，用<code>遍历思路</code>-&gt;前序位置即可。</p>
+<p>如果这个问题跟子树有关系，用<code>分解思路</code>-&gt;后序位置。</p>
+</blockquote>
+<h3 id="1-3-精华：二叉树解题总纲">1.3 精华：二叉树解题总纲</h3>
+<ol>
+<li>是否可以用一次遍历求出结果？ <code>-&gt;遍历思路</code></li>
+<li>是否可以把问题交给子树解决？ <code>-&gt;分解思路</code></li>
+<li>无论哪种，都要考虑：在前/中/后哪个地方做？怎么做？</li>
+</ol>
+<h2 id="2-思路篇：总结">2. 思路篇：总结</h2>
+<p>在思路篇中，作者带我们做了三道题，阐述该怎么用上面这个<code>二叉树刷题总纲</code></p>
+<p>其中，有一点值得记录。</p>
+<p><img src="image-20240201215719224.png" alt="image-20240201215719224"></p>
+<blockquote>
+<p>把二叉树抽象成三叉树，一个结点两个元素</p>
+</blockquote>
+<p>这样的思维，值得学习。</p>
+<p>抽象完了之后，就可以直接把一个结点中的两个元素连起来，就完了。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trav</span><span class="params">(Node* node1, Node* node2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node1 == <span class="literal">NULL</span> || node2 == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    node1-&gt;next = node2;</span><br><span class="line">    <span class="built_in">trav</span>(node1-&gt;left, node1-&gt;right);</span><br><span class="line">    <span class="built_in">trav</span>(node1-&gt;right, node2-&gt;left);</span><br><span class="line">    <span class="built_in">trav</span>(node2-&gt;left, node2-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/dll-development/" data-toggle="tooltip" data-placement="top" title="dll developing">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=labuladong算法笔记&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/labuladong/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Thu Feb 01 2024 21:27:25 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">刷题的框架思维</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">双指针：链表题</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">二叉树与递归 traverse</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E7%BA%B2%E9%A2%86%E7%AF%87"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1. 纲领篇</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E4%B8%A4%E7%A7%8D%E9%87%8D%E8%A6%81%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">1.1 两种重要思路</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-%E5%90%8E%E5%BA%8F%E4%BD%8D%E7%BD%AE%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">1.2 后序位置有什么不同？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-3-%E7%B2%BE%E5%8D%8E%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91%E8%A7%A3%E9%A2%98%E6%80%BB%E7%BA%B2"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">1.3 精华：二叉树解题总纲</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%80%9D%E8%B7%AF%E7%AF%87%EF%BC%9A%E6%80%BB%E7%BB%93"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2. 思路篇：总结</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
 
-      
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-          <span class="tag-text">2024</span>
-        </span>
-        <ul>
           
           <li>
-            02-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/labuladong/" style="color: #0085a1">
-              <span>
-                labuladong算法笔记
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/dll-development/" style="color: #0085a1">
-              <span>
-                dll developing
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-16
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-trouble-shoot/" style="color: #0085a1">
-              <span>
-                Visual Studio trouble shoot
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            01-05
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/FastAPI-SQL_backend/" style="color: #0085a1">
-              <span>
-                FastAPI-SQL backend
-                
-                -- cn
-                
-              </span>
-            </a>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
           </li>
           
         </ul>
+        
       </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2023">
-          <span class="tag-text">2023</span>
-        </span>
-        <ul>
-          
-          <li>
-            11-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/torch-lib/" style="color: #0085a1">
-              <span>
-                torch-lib
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            11-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Python-Reference/" style="color: #0085a1">
-              <span>
-                Python Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-26
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Xiyou-Reading/" style="color: #0085a1">
-              <span>
-                西游记读后感
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-编程思想杂录/" style="color: #0085a1">
-              <span>
-                C++ 编程思想杂录
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-11
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cuda-kernel-dev/" style="color: #0085a1">
-              <span>
-                cuda_kernel_dev
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cudaStream/" style="color: #0085a1">
-              <span>
-                Cuda Stream 实战记录
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-07
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/shoka-test/" style="color: #0085a1">
-              <span>
-                shoka_test
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-04
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/element-ui-notebook/" style="color: #0085a1">
-              <span>
-                element-ui-notebook
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/ES6_Notebook/" style="color: #0085a1">
-              <span>
-                Javascript Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Vue_notebook/" style="color: #0085a1">
-              <span>
-                Vue Notebook
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/MIT-6828-Notebook/" style="color: #0085a1">
-              <span>
-                MIT.6828.Notebook
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            09-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/gdb使用指南/" style="color: #0085a1">
-              <span>
-                gdb Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/指针技术总结/" style="color: #0085a1">
-              <span>
-                C++ Pointer
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/贪心/" style="color: #0085a1">
-              <span>
-                贪心算法
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-09
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/动态规划/" style="color: #0085a1">
-              <span>
-                动态规划
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/C-多线程开发/" style="color: #0085a1">
-              <span>
-                C++ Threading
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/逆向开发日志/" style="color: #0085a1">
-              <span>
-                Reverse Engineering
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            08-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/有关方向选择与总结/" style="color: #0085a1">
-              <span>
-                有关方向选择与总结
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Payday-player-utils/" style="color: #0085a1">
-              <span>
-                Payday-player-utils
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-28
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/payday-mod-develop/" style="color: #0085a1">
-              <span>
-                Payday2 MOD开发
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-27
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Lua进阶/" style="color: #0085a1">
-              <span>
-                Lua Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-24
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/双指针、离散化、区间合并/" style="color: #0085a1">
-              <span>
-                双指针、离散化、区间合并
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-23
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/前缀和与差分/" style="color: #0085a1">
-              <span>
-                前缀和与差分
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-21
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/二分/" style="color: #0085a1">
-              <span>
-                二分
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-12
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/代码开发学习经验/" style="color: #0085a1">
-              <span>
-                Developing Life LTS
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-10
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/CMake工具使用/" style="color: #0085a1">
-              <span>
-                CMake Reference LTS
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-07
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/工程规划管理/" style="color: #0085a1">
-              <span>
-                代码开发工程管理 LTS
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-06
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/指针实战解读/" style="color: #0085a1">
-              <span>
-                【ptr】指针实战解读
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-02
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Cplusplus-Reference/" style="color: #0085a1">
-              <span>
-                C++ Reference
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-08
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/【python-vtk】二维序列图像进行三维重建/" style="color: #0085a1">
-              <span>
-                【python-vtk】二维序列图像进行三维重建
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
-          
-          <li>
-            12-04
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/hello-world/" style="color: #0085a1">
-              <span>
-                Hexo guide
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
     </div>
   </div>
-</div>
+</article>
 
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
 
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">关于自己</a></h5>
-  <div class="short-about">
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
 
-    
-    <img id="avatar_pic" src="/img/scenery/sandiego.png" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
+<!-- anchorjs end -->
 
-    
-    <p>不大的网，收着又怎样，不如就放。</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/SamuraiBUPT">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../../cn/labuladong/">
-      <li>labuladong算法笔记</li>
-    </a>
-    
-    <a href="../../../cn/dll-development/">
-      <li>dll developing</li>
-    </a>
-    
-    <a href="../../../cn/C-trouble-shoot/">
-      <li>Visual Studio trouble shoot</li>
-    </a>
-    
-    <a href="../../../cn/FastAPI-SQL_backend/">
-      <li>FastAPI-SQL backend</li>
-    </a>
-    
-    <a href="../../../cn/torch-lib/">
-      <li>torch-lib</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Cplusplus">
-      <li>Cplusplus</li>
-    </a>
-    
-    <a href="/categories/#Javascript">
-      <li>Javascript</li>
-    </a>
-    
-    <a href="/categories/#Python">
-      <li>Python</li>
-    </a>
-    
-    <a href="/categories/#Lua">
-      <li>Lua</li>
-    </a>
-    
-    <a href="/categories/#Coding-life">
-      <li>Coding-life</li>
-    </a>
-    
-    <a href="/categories/#hexo">
-      <li>hexo</li>
-    </a>
-    
-    <a href="/categories/#ACM">
-      <li>ACM</li>
-    </a>
-    
-    <a href="/categories/#Reverse-Engineering">
-      <li>Reverse-Engineering</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
-  </div>
-</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
