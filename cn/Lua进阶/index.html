@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">37</span> Minutes
+              Estimated Reading Time <span class="post-count">39</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">9k</span> In Total
+              Words <span class="post-count">9.5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -488,7 +488,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://luarocks.org/releases/luarocks-3.9.2.tar.gz</span><br><span class="line">$ tar zxpf luarocks-3.9.2.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> luarocks-3.9.2</span><br><span class="line">$ ./configure &amp;&amp; make &amp;&amp; sudo make install</span><br><span class="line">$ sudo luarocks install luasocket</span><br><span class="line">$ lua</span><br><span class="line">Lua 5.3.5 Copyright (C) 1994-2018 Lua.org, PUC-Rio</span><br><span class="line">&gt; require <span class="string">&quot;socket&quot;</span></span><br></pre></td></tr></table></figure>
 <p>安装luamysql:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luarocks install luasql-mysql MYSQL_INCDIR=<span class="string">&quot;C:/Program Files/MySQL/MySQL Server 8.0/include&quot;</span> MYSQL_LIBDIR=<span class="string">&quot;C:/Program Files/MySQL/MySQL Server 8.0/lib&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="0-3-安装luajit（以后都用这个）">0.3 安装luajit（以后都用这个）</h2>
+<h2 id="0-3-安装luajit">0.3 安装luajit</h2>
 <p><a target="_blank" rel="noopener" href="https://luajit.org/install.html">https://luajit.org/install.html</a></p>
 <p>直接看windows部分的即可。</p>
 <h1>1. 变量</h1>
@@ -542,9 +542,9 @@
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">string</span>.<span class="built_in">format</span>(<span class="string">&quot;the value is:%d&quot;</span>,<span class="number">4</span>)</span><br><span class="line">the value is:<span class="number">4</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="1-2-数据类型转换：-string-to-int">1.2 数据类型转换： string to int</h2>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> a =<span class="string">&quot;10&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="keyword">local</span> num = <span class="built_in">tonumber</span>(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num))</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> str2 = <span class="built_in">tostring</span>(num)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(str2))</span><br></pre></td></tr></table></figure>
-<h1>2. 多元一体：table</h1>
+<h2 id="1-2-数据类型转换：-string-to-int-or-int-to-string">1.2 数据类型转换： <code>string to int</code> or <code>int to string</code></h2>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> a =<span class="string">&quot;10&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"><span class="keyword">local</span> num = <span class="built_in">tonumber</span>(a)  <span class="comment">-- 封装方法，可以把string转换为number</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num))</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> str2 = <span class="built_in">tostring</span>(num)	<span class="comment">-- 封装方法，可以把number转换为string</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(str2))</span><br></pre></td></tr></table></figure>
+<h1>2. 数据结构：table</h1>
 <h2 id="2-1-作为普通数据结构的table">2.1 作为普通数据结构的table</h2>
 <h3 id="2-1-1-基础使用">2.1.1 基础使用</h3>
 <p>Lua 中的表（table）其实是一个&quot;关联数组&quot;（associative arrays），数组的索引可以是<strong>数字</strong>或者是<strong>字符串</strong>。</p>
@@ -724,14 +724,14 @@
 <li><strong>在脚本的末尾，要把这个module return出去才行</strong></li>
 <li>凡是要被return出这个脚本的，都要是全局变量，而不能是局部变量。</li>
 </ul>
-<h3 id="终极解决方案">终极解决方案</h3>
+<h3 id="终极解决方案">=&gt; 终极解决方案</h3>
 <ul>
 <li>在module里面自己放置一个<code>my_module</code></li>
 <li>最后return出去</li>
 <li>在外面<code>local my_m = require(&quot;module.my_module&quot;)</code> 在这里，如果有路径，比如说在这里的路径就是module，直接添加在前面就完事，后面直接<code>.</code>隔开</li>
 <li>使用：<code>my_m.hello()</code></li>
 </ul>
-<h2 id="6-3-C包">6.3 C包</h2>
+<h2 id="6-2-C包">6.2 C包</h2>
 <p><strong>step 1: 编写C++函数</strong></p>
 <p>在<code>cpp/print_lua.cpp</code>路径下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lua.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lauxlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lualib.h&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">my_print</span><span class="params">(lua_State *L)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">lua_gettop</span>(L);  <span class="comment">// 参数的数量</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">lua_isnumber</span>(L, i)) &#123;</span><br><span class="line">                <span class="keyword">int</span> val = <span class="built_in">lua_tointeger</span>(L, i);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 返回值的数量</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    __declspec(dllexport) <span class="function"><span class="keyword">int</span> <span class="title">luaopen_mylib</span><span class="params">(lua_State *L)</span> </span>&#123;	<span class="comment">// 注意在这里一定要声明</span></span><br><span class="line">        <span class="built_in">lua_register</span>(L, <span class="string">&quot;my_print&quot;</span>, my_print);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="comment">// extern &quot;C&quot;</span></span><br></pre></td></tr></table></figure>
@@ -765,7 +765,8 @@
 <li>大于、大于等于这些都跟往常一样。</li>
 <li><code>..</code>连接两个字符串，<code>#</code>查看字符串长度</li>
 </ul>
-<h1>9. 协程</h1>
+<h1>9. 协程 <code>coroutine</code></h1>
+<h2 id="9-1-basic">9.1 basic</h2>
 <p>Lua 协同程序(coroutine)与线程比较类似：拥有独立的堆栈，独立的局部变量，独立的指令指针，同时又与其它协同程序共享全局变量和其它大部分东西。</p>
 <p>协同程序可以理解为一种特殊的线程，可以暂停和恢复其执行。也就是说，一个时间段内，只能运行一个协程，在之后会进行协程的切换。</p>
 <table>
@@ -790,7 +791,7 @@
 </tr>
 <tr>
 <td style="text-align:left">coroutine.status()</td>
-<td style="text-align:left">查看 coroutine 的状态 注：coroutine 的状态有三种：dead，suspended，running，具体什么时候有这样的状态请参考下面的程序</td>
+<td style="text-align:left">查看 coroutine 的状态 注：coroutine 的状态有三种：<code>dead</code>，<code>suspended</code>，<code>running</code>，具体什么时候有这样的状态请参考下面的程序</td>
 </tr>
 <tr>
 <td style="text-align:left">coroutine.wrap()</td>
@@ -808,6 +809,48 @@
 <ul>
 <li>既可以是在函数定义之初就进行接收。</li>
 <li>也可以是在yield方法之中进行接收。（上面的例子就是）</li>
+</ul>
+<p>当你使用<code>coroutine.resume</code>来启动或恢复一个协程时，Lua的主线程会开始执行协程内的代码。</p>
+<p>这个过程本身是同步的：<code>coroutine.resume</code>的<strong>调用会阻塞</strong>，直到被恢复的协程到达其下一个挂起点（使用<code>coroutine.yield</code>），或者协程运行结束。</p>
+<p>在协程执行期间，<strong>主线程暂停执行，等待协程挂起或完成。</strong></p>
+<h2 id="9-2-深入协程">9.2 深入协程</h2>
+<h3 id="9-2-1-启动协程的要点">9.2.1 启动协程的要点</h3>
+<p>coroutine.running就可以看出来, coroutine在底层实现就是一个线程。</p>
+<p>当create一个coroutine的时候就是在新线程中<strong>注册</strong>了一个事件。</p>
+<p>这就意味着：</p>
+<ul>
+<li>要启动一个协程，必须先注册，也就是<code>create</code>函数。</li>
+<li>如果直接resume的话，会失败的，弹出<code>“你无法resume一个dead协程”</code>的报错。</li>
+</ul>
+<p>当使用resume触发事件的时候，create的coroutine函数就被执行了，当遇到yield的时候就代表挂起当前线程，等候再次resume触发事件。</p>
+<h3 id="9-2-2-resume和yield的要点">9.2.2 <code>resume</code>和<code>yield</code>的要点</h3>
+<p>resume和yield的配合强大之处在于：</p>
+<ul>
+<li><code>resume</code>处于主程中，它将<strong>外部</strong>数据传入到协同程序内部
+<ul>
+<li><code>resume</code>的时候，函数的第一个参数是被继续执行的协程，从第二个参数开始，就是可以被传进去给协程的值。</li>
+<li>被传入的地点，就是在<code>yield</code>的地方。因为下一次恢复协程也是从这里开始执行的。
+<ul>
+<li><code>yield</code>是负责return一个返回值出去。</li>
+<li>而<code>yield</code>前面还有返回值，就是<strong>下一次进来的时候传入的值</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>而<code>yield</code>则将<strong>内部</strong>的状态（数据）返回到主程中。</li>
+</ul>
+<h3 id="9-2-3-生产者-消费者模型的实现">9.2.3 <code>生产者-消费者</code>模型的实现</h3>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> newProductor</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">productor</span><span class="params">()</span></span></span><br><span class="line">     <span class="keyword">local</span> i = <span class="number">0</span></span><br><span class="line">     <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">          i = i + <span class="number">1</span></span><br><span class="line">          send(i)     <span class="comment">-- 将生产的物品发送给消费者</span></span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">consumer</span><span class="params">()</span></span></span><br><span class="line">     <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">          <span class="keyword">local</span> i = receive()     <span class="comment">-- 从生产者那里得到物品</span></span><br><span class="line">          <span class="built_in">print</span>(i)</span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">receive</span><span class="params">()</span></span></span><br><span class="line">     <span class="keyword">local</span> <span class="built_in">status</span>, value = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(newProductor)</span><br><span class="line">     <span class="keyword">return</span> value</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">send</span><span class="params">(x)</span></span></span><br><span class="line">     <span class="built_in">coroutine</span>.<span class="built_in">yield</span>(x)     <span class="comment">-- x表示需要发送的值，值返回以后，就挂起该协同程序</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 启动程序</span></span><br><span class="line">newProductor = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(productor)</span><br><span class="line">consumer()</span><br></pre></td></tr></table></figure>
+<p>更简化版本：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 用lua实现生产者和消费者模型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> prodInstance;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Producer</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">10</span> <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">coroutine</span>.<span class="built_in">yield</span>(i);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">prodInstance = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(Producer);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Consumer</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">10</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">local</span> <span class="built_in">status</span>, value = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(prodInstance);</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;I got the value: &quot;</span> .. <span class="built_in">tostring</span>(value));</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">Consumer()</span><br></pre></td></tr></table></figure>
+<p>有几个要点：</p>
+<ul>
+<li>在consumer里面 resume那个生产者协程，才是可以的。
+<ul>
+<li>因为生产一个就拿一个，这种设计是合理的，lua本身没有异步，只有用多少生产多少。</li>
+</ul>
+</li>
+<li>这样的设计有弊端，就是consumer要拿到<strong>producer的实例</strong>才可以。</li>
 </ul>
 <h1>10. Lua SQL</h1>
 <h2 id="10-1-安装SQLite和lua工具">10.1 安装SQLite和lua工具</h2>
@@ -871,31 +914,6 @@
 <p>这样就用不着main.lua文件了。</p>
 </li>
 </ul>
-<p>windows: 写一份Makefile，把当前路径下所有<code>*.lua</code>文件编译为<code>*.obj</code>文件</p>
-<p>我已经修改了你的文件像这样：“# 定义编译器和标志<br>
-CC=g++<br>
-CFLAGS=-I/usr/local/include/luajit-2.1<br>
-LDFLAGS=-L/usr/local/lib -lluajit-5.1 -ldl</p>
-<h1>源文件和目标文件</h1>
-<p>LUA_FILES=$(wildcard *.lua)<br>
-OBJ_FILES=$(LUA_FILES:.lua=.obj)<br>
-TARGET=main</p>
-<h1>默认目标</h1>
-<p>all: $(TARGET)</p>
-<h1>编译.lua为.obj，这里需要你提供具体的转换命令</h1>
-<p>%.obj: %.lua<br>
-luajit -b $&lt; $@</p>
-<h1>从.obj文件创建.a文件</h1>
-<p>liblua.lib: $(OBJ_FILES)<br>
-ar rcs $@ $(OBJ_FILES)</p>
-<h1>编译main.cc和链接</h1>
-<p>$(TARGET): <a target="_blank" rel="noopener" href="http://main.cc">main.cc</a> liblua.lib<br>
-$(CC) $(CFLAGS) <a target="_blank" rel="noopener" href="http://main.cc">main.cc</a> -o $@ $(LDFLAGS) ./liblua.lib</p>
-<h1>清理目标</h1>
-<p>clean:<br>
-rm -f $(OBJ_FILES) liblua.lib $(TARGET)</p>
-<h1>伪目标</h1>
-<p>.PHONY: all clean”  不过有一个问题，我这是在windows路径下完成这个工作，我的flags路径需要重新编辑。我的CFLAGS在D:\Code_Space\Compiler\luajit-windows\src下面，而我的LDFLAGS在</p>
 <h1>Lua Optimize</h1>
 <h2 id="1-Frequent-local-variable">1. Frequent &amp; local variable</h2>
 <p><strong>高频访问的对象，应先赋值给一个local变量再进行访问</strong></p>

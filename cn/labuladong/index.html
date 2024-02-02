@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">5</span> Minutes
+              Estimated Reading Time <span class="post-count">6</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.3k</span> In Total
+              Words <span class="post-count">1.6k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -581,6 +581,25 @@
 <p>抽象完了之后，就可以直接把一个结点中的两个元素连起来，就完了。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trav</span><span class="params">(Node* node1, Node* node2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node1 == <span class="literal">NULL</span> || node2 == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    node1-&gt;next = node2;</span><br><span class="line">    <span class="built_in">trav</span>(node1-&gt;left, node1-&gt;right);</span><br><span class="line">    <span class="built_in">trav</span>(node1-&gt;right, node2-&gt;left);</span><br><span class="line">    <span class="built_in">trav</span>(node2-&gt;left, node2-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-构造篇">3. 构造篇</h2>
+<p><strong>leetcode 654: 构造最大二叉树</strong></p>
+<p>这引起了我对<strong>分解问题的反思</strong></p>
+<p>分解问题：</p>
+<ul>
+<li>函数确实是有返回值的。</li>
+<li><strong>前序位置是可以做事的</strong></li>
+<li>返回的东西是不固定的，可以是结点，可以是一个具体的number</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">TreeNode* <span class="title">constructMaximumBinaryTree</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 找到数组中的最大值</span></span><br><span class="line">    <span class="keyword">auto</span> max_it = <span class="built_in">max_element</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">int</span> max_idx = <span class="built_in">distance</span>(nums.<span class="built_in">begin</span>(), max_it);</span><br><span class="line">    TreeNode* root = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(*max_it);</span><br><span class="line">    <span class="comment">// 递归调用构造左右子树</span></span><br><span class="line">    <span class="keyword">if</span> (max_idx &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">left</span><span class="params">(nums.begin(), nums.begin() + max_idx)</span></span>;</span><br><span class="line">        root-&gt;left = <span class="built_in">constructMaximumBinaryTree</span>(left);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (max_idx &lt; nums.<span class="built_in">size</span>() - <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">right</span><span class="params">(nums.begin() + max_idx + <span class="number">1</span>, nums.end())</span></span>;</span><br><span class="line">        root-&gt;right = <span class="built_in">constructMaximumBinaryTree</span>(right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二叉树构造的题目，用遍历的思路没法做：因为根本就没东西让你遍历。</p>
+<p>最好的方法就是分解。</p>
+<ul>
+<li>解决根节点的问题</li>
+<li>解决左右子树的问题</li>
+</ul>
+<p>核心：</p>
+<p><img src="image-20240202105353676.png" alt="image-20240202105353676"></p>
+<h1>二叉树搜索</h1>
 
 
         <hr>
@@ -726,7 +745,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">刷题的框架思维</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">双指针：链表题</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">二叉树与递归 traverse</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E7%BA%B2%E9%A2%86%E7%AF%87"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1. 纲领篇</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E4%B8%A4%E7%A7%8D%E9%87%8D%E8%A6%81%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">1.1 两种重要思路</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-%E5%90%8E%E5%BA%8F%E4%BD%8D%E7%BD%AE%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">1.2 后序位置有什么不同？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-3-%E7%B2%BE%E5%8D%8E%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91%E8%A7%A3%E9%A2%98%E6%80%BB%E7%BA%B2"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">1.3 精华：二叉树解题总纲</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%80%9D%E8%B7%AF%E7%AF%87%EF%BC%9A%E6%80%BB%E7%BB%93"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2. 思路篇：总结</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">刷题的框架思维</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">双指针：链表题</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">二叉树与递归 traverse</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E7%BA%B2%E9%A2%86%E7%AF%87"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1. 纲领篇</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E4%B8%A4%E7%A7%8D%E9%87%8D%E8%A6%81%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">1.1 两种重要思路</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-2-%E5%90%8E%E5%BA%8F%E4%BD%8D%E7%BD%AE%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">1.2 后序位置有什么不同？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-3-%E7%B2%BE%E5%8D%8E%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91%E8%A7%A3%E9%A2%98%E6%80%BB%E7%BA%B2"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">1.3 精华：二叉树解题总纲</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%80%9D%E8%B7%AF%E7%AF%87%EF%BC%9A%E6%80%BB%E7%BB%93"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2. 思路篇：总结</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E6%9E%84%E9%80%A0%E7%AF%87"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3. 构造篇</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">二叉树搜索</span></a></li></ol>
         
         </div>
       </aside>
