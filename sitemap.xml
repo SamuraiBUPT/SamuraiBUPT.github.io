@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/cn/C-programming/</loc>
+    
+    <lastmod>2024-03-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/cn/labuladong/</loc>
     
     <lastmod>2024-02-01</lastmod>
@@ -284,7 +291,7 @@
 
   <url>
     <loc>http://yoursite-url/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -294,56 +301,56 @@
   
   <url>
     <loc>http://yoursite-url/categories/Cplusplus/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/Javascript/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/Python/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/Lua/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/Coding-life/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/hexo/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/ACM/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite-url/categories/Reverse-Engineering/</loc>
-    <lastmod>2024-02-26</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

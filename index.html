@@ -474,6 +474,43 @@
   <!-- top end -->
   
 
+  <a href="/cn/C-programming/">
+    <h2 class="post-title">
+      C Programming
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      0. Compile CMD Tools1arm-linux-gcc -o main_32bit main.c -lpthread -std=c99
+如果不是c99标准的话，在for里面都不能初始化变量。
+1. 从malloc、free认识C123456#include &lt;stdlib.h&gt;int* heap_arr = (int*)malloc(5 * sizeof(int))......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yazhu Dong on
+    2024-03-04
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <div class="top">
+    <div class="iconfont icon-hot animated infinite tada"></div>
+  </div>
+  
+  <!-- top end -->
+  
+
   <a href="/cn/Lua进阶/">
     <h2 class="post-title">
       Lua Reference
@@ -827,43 +864,6 @@ package.json 文件中的 dependencies 和......
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/dll-development/">
-    <h2 class="post-title">
-      dll developing
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      工作中遇到了dll开发。
-DLL原理
-
-定位进程：首先，注入程序必须找到或启动目标进程（在您的案例中是 main.exe）。
-分配内存：注入程序在目标进程的地址空间中分配内存，用于存放 DLL 的路径。
-写入DLL路径：注入程序将 DLL 的路径写入之前分配的内存。
-远程线程创建：注入程序在目标进程中创建一个远程线程，这个线程调用 LoadLibrary（或类似的函数），这个函数负责加载 D......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yazhu Dong on
-    2024-01-16
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -943,6 +943,10 @@ DLL原理
 <div class="widget">
   <ul>
     
+    <a href="cn/C-programming/">
+      <li>C Programming</li>
+    </a>
+    
     <a href="cn/labuladong/">
       <li>labuladong算法笔记</li>
     </a>
@@ -957,10 +961,6 @@ DLL原理
     
     <a href="cn/FastAPI-SQL_backend/">
       <li>FastAPI-SQL backend</li>
-    </a>
-    
-    <a href="cn/torch-lib/">
-      <li>torch-lib</li>
     </a>
     
   </ul>

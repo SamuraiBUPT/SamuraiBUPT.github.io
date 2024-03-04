@@ -474,6 +474,43 @@
   <!-- top end -->
   
 
+  <a href="/cn/C-programming/">
+    <h2 class="post-title">
+      C Programming
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      0. Compile CMD Tools1arm-linux-gcc -o main_32bit main.c -lpthread -std=c99
+如果不是c99标准的话，在for里面都不能初始化变量。
+1. 从malloc、free认识C123456#include &lt;stdlib.h&gt;int* heap_arr = (int*)malloc(5 * sizeof(int))......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Yazhu Dong on
+    2024-03-04
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <div class="top">
+    <div class="iconfont icon-hot animated infinite tada"></div>
+  </div>
+  
+  <!-- top end -->
+  
+
   <a href="/cn/Python-Reference/">
     <h2 class="post-title">
       Python Reference
@@ -816,45 +853,6 @@ MultiLoraKernel.h
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/cudaStream/">
-    <h2 class="post-title">
-      Cuda Stream 实战记录
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      工作中使用到了cuda stream，在这里想做总结与记录。
-Cuda生态分层
-从最底层编写cuda kernel是有难度的，并且想写一份好的核函数，需要下很大功夫。在这篇博客中并不会讲解如何写核函数，而是会讲解在核函数封装之上的那一层的开发与使用。
-
-最上层：调用层
-中间层：Cuda封装与调用
-最底层：Cuda Kernel function
-
-cuda stream 与 cuda eve......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Yazhu Dong on
-    2023-10-08
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -934,6 +932,10 @@ cuda stream 与 cuda eve......
 <div class="widget">
   <ul>
     
+    <a href="C-programming/">
+      <li>C Programming</li>
+    </a>
+    
     <a href="labuladong/">
       <li>labuladong算法笔记</li>
     </a>
@@ -948,10 +950,6 @@ cuda stream 与 cuda eve......
     
     <a href="FastAPI-SQL_backend/">
       <li>FastAPI-SQL backend</li>
-    </a>
-    
-    <a href="torch-lib/">
-      <li>torch-lib</li>
     </a>
     
   </ul>
