@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">5</span> Minutes
+              Estimated Reading Time <span class="post-count">6</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.5k</span> In Total
+              Words <span class="post-count">1.9k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -503,19 +503,26 @@
 <p>最后还提一个非常隐蔽且常常被人忽视的情况。那就是你需要确认一下你在属性页的程序配置平台和实际运行的配置平台是一致的，如下图所示：</p>
 </li>
 </ul>
-<h1>VS配置项目踩坑记录</h1>
-<h2 id="1-配置附加包含目录：IDE进行代码查找">1. 配置<code>附加包含目录</code>：IDE进行代码查找</h2>
+<h1>VS配置项目方法</h1>
+<h2 id="1-配置附加包含目录：方便IDE进行代码查找">1. 配置<code>附加包含目录</code>：方便IDE进行代码查找</h2>
 <p>具体的位置在：</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目 -&gt; 属性 -&gt; C/C++ -&gt; 常规 -&gt; 第一个：附加包含目录</span><br></pre></td></tr></table></figure>
 <p>因为要引用的文件就是在imgui这个库里面，所以要分别包含：</p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\m</span>svc-projects<span class="symbol">\i</span>mgui</span><br><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\m</span>svc-projects<span class="symbol">\i</span>mgui<span class="symbol">\b</span>ackends</span><br></pre></td></tr></table></figure>
 <p>这样才可以方便编译（<strong>注意这一步是为了IDE查找代码用的</strong>）</p>
-<h2 id="2-配置依赖库：进行编译链接时候使用">2. 配置依赖库：进行编译链接时候使用</h2>
+<p>这个设置，重点在<strong>包含</strong>两个字，是给include找代码用的，不是给链接用的。</p>
+<h2 id="2-配置依赖库（链接库）：进行编译链接时候使用">2. 配置依赖库（链接库）：进行编译链接时候使用</h2>
+<h3 id="2-1-直接使用lib文件">2.1 直接使用lib文件</h3>
 <p>具体位置：</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目 -&gt; 属性 -&gt; 链接器 -&gt; 输入 -&gt; 第一个：附加依赖项</span><br></pre></td></tr></table></figure>
 <p>因为要用到d3d之类的东西，所以在这里要包含：</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d3d10.<span class="keyword">lib</span></span><br><span class="line">d3dcompiler.<span class="keyword">lib</span></span><br><span class="line">dxgi.<span class="keyword">lib</span></span><br></pre></td></tr></table></figure>
 <p>这样在链接的时候，IDE才知道有reference。否则会报错LNK2019</p>
+<h3 id="2-2-添加链接库路径">2.2 添加链接库路径</h3>
+<p>具体位置：</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目 -&gt; 属性 -&gt; 链接器 -&gt; 常规 -&gt; 附加库目录</span><br></pre></td></tr></table></figure>
+<p>比如说，我需要添加torch里面的lib，我就在这里直接添加一个：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\l</span>ibtorch<span class="symbol">\l</span>ib</span><br></pre></td></tr></table></figure>
 <h2 id="3-Filters过滤器与添加已有项">3. Filters过滤器与<code>添加已有项</code></h2>
 <p>有的时候，代码并不一定要自己手动添加到项目的路径下面。而是可以<strong>添加已有项</strong>。</p>
 <p>首先VS里面有一个重点的概念叫做<code>filters</code> 这个东西，看起来跟<code>文件夹</code>是一样的，其实不然，<strong>这个是决定你能否编译、编译什么文件的重要关卡。</strong></p>
@@ -531,6 +538,28 @@
 <p>没了，就这么简单。甚至<strong>不需要去关心文件的路径，哪个文件到底在哪个路径下面，我应该怎么include？</strong></p>
 <p>这些东西VS早就帮你做好了。</p>
 <p>问就是<code>添加已有项</code>。</p>
+<h2 id="4-从安装LibTorch认识VS编译方案">4. 从安装LibTorch认识VS编译方案</h2>
+<p>首先解压得到一份<code>libtorch</code>文件，添加到系统的环境变量中：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\l</span>ibtorch<span class="symbol">\l</span>ib</span><br><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\l</span>ibtorch<span class="symbol">\b</span>in</span><br></pre></td></tr></table></figure>
+<p>然后开始配置VS</p>
+<p>首先是把目标平台设置为x64，</p>
+<p>如果下载的是Debug版本的，那VS项目就设置成Debug，反之同理。</p>
+<p>然后设置<strong>附加包含目录</strong>，在哪里找到可以看上面：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\l</span>ibtorch<span class="symbol">\i</span>nclude</span><br><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\l</span>ibtorch<span class="symbol">\i</span>nclude<span class="symbol">\t</span>orch<span class="symbol">\c</span>src<span class="symbol">\a</span>pi<span class="symbol">\i</span>nclude</span><br></pre></td></tr></table></figure>
+<p>这一步，是为了代码提示用的，对编译没任何作用。</p>
+<p>然后下一步才是添加链接库</p>
+<p>首先是添加路径。<code>libtorch/lib</code></p>
+<p>然后是添加具体的文件（在编译的时候到底要链接哪些文件）</p>
+<p>先在链接器-常规里面 添加路径：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\l</span>ibtorch<span class="symbol">\l</span>ib\</span><br></pre></td></tr></table></figure>
+<p>然后添加具体的文件：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="symbol">\C</span>ode_Space<span class="symbol">\C</span>plusplus<span class="symbol">\l</span>ibtorch<span class="symbol">\l</span>ib<span class="symbol">\*</span>.lib</span><br></pre></td></tr></table></figure>
+<p>最后要注意，把C++标准设置为C++ 17，C/C++里面的 符合模式  设置为“否”</p>
+<h4 id="都多余了，直接用libtorch构建项目">都多余了，直接用libtorch构建项目</h4>
+<ul>
+<li>记得把Windows SDK调成自己的</li>
+<li>语言标准调整成C++ 17</li>
+</ul>
 <h1>一元负运算符应用于无符号类型，结果仍为无符号类型</h1>
 <p>解决办法——关闭SDL检查</p>
 <p>右键选中要配置的属性的<code>项目-&gt;配置属性-&gt;C/C++-&gt;SDL检查</code>，选择否。</p>
@@ -684,7 +713,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&quot;const char *&quot;类型的实参与&quot;char *&quot;类型的形参不兼容</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">”std&quot;命名空间中没有xxx</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">LNK2019 无法解析的外部符号，undefiened reference</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E5%86%99%E4%BB%A3%E7%A0%81%E9%98%B6%E6%AE%B5%E6%8A%A5%E9%94%99"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1. 写代码阶段报错</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E7%BC%96%E8%AF%91%E5%88%AB%E4%BA%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99%EF%BC%88%E5%B0%A4%E5%85%B6%E6%98%AF%E5%B8%A6%E6%9C%89%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%EF%BC%89"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2. 编译别人的代码报错（尤其是带有第三方库）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-macro%E5%BC%95%E8%B5%B7%E7%9A%84"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3. macro引起的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">VS配置项目踩坑记录</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E9%85%8D%E7%BD%AE%E9%99%84%E5%8A%A0%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95%EF%BC%9AIDE%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%9F%A5%E6%89%BE"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">1. 配置附加包含目录：IDE进行代码查找</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E9%85%8D%E7%BD%AE%E4%BE%9D%E8%B5%96%E5%BA%93%EF%BC%9A%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">2. 配置依赖库：进行编译链接时候使用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Filters%E8%BF%87%E6%BB%A4%E5%99%A8%E4%B8%8E%E6%B7%BB%E5%8A%A0%E5%B7%B2%E6%9C%89%E9%A1%B9"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">3. Filters过滤器与添加已有项</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">一元负运算符应用于无符号类型，结果仍为无符号类型</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">LNK2009 无法解析的外部符号</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&quot;const char *&quot;类型的实参与&quot;char *&quot;类型的形参不兼容</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">”std&quot;命名空间中没有xxx</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">LNK2019 无法解析的外部符号，undefiened reference</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E5%86%99%E4%BB%A3%E7%A0%81%E9%98%B6%E6%AE%B5%E6%8A%A5%E9%94%99"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">1. 写代码阶段报错</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E7%BC%96%E8%AF%91%E5%88%AB%E4%BA%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E6%8A%A5%E9%94%99%EF%BC%88%E5%B0%A4%E5%85%B6%E6%98%AF%E5%B8%A6%E6%9C%89%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%EF%BC%89"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">2. 编译别人的代码报错（尤其是带有第三方库）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-macro%E5%BC%95%E8%B5%B7%E7%9A%84"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3. macro引起的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">VS配置项目方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E9%85%8D%E7%BD%AE%E9%99%84%E5%8A%A0%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95%EF%BC%9A%E6%96%B9%E4%BE%BFIDE%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%9F%A5%E6%89%BE"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">1. 配置附加包含目录：方便IDE进行代码查找</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E9%85%8D%E7%BD%AE%E4%BE%9D%E8%B5%96%E5%BA%93%EF%BC%88%E9%93%BE%E6%8E%A5%E5%BA%93%EF%BC%89%EF%BC%9A%E8%BF%9B%E8%A1%8C%E7%BC%96%E8%AF%91%E9%93%BE%E6%8E%A5%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">2. 配置依赖库（链接库）：进行编译链接时候使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8lib%E6%96%87%E4%BB%B6"><span class="toc-nav-number">4.2.1.</span> <span class="toc-nav-text">2.1 直接使用lib文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E6%B7%BB%E5%8A%A0%E9%93%BE%E6%8E%A5%E5%BA%93%E8%B7%AF%E5%BE%84"><span class="toc-nav-number">4.2.2.</span> <span class="toc-nav-text">2.2 添加链接库路径</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Filters%E8%BF%87%E6%BB%A4%E5%99%A8%E4%B8%8E%E6%B7%BB%E5%8A%A0%E5%B7%B2%E6%9C%89%E9%A1%B9"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">3. Filters过滤器与添加已有项</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-%E4%BB%8E%E5%AE%89%E8%A3%85LibTorch%E8%AE%A4%E8%AF%86VS%E7%BC%96%E8%AF%91%E6%96%B9%E6%A1%88"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">4. 从安装LibTorch认识VS编译方案</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%83%BD%E5%A4%9A%E4%BD%99%E4%BA%86%EF%BC%8C%E7%9B%B4%E6%8E%A5%E7%94%A8libtorch%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-nav-number">4.4.0.1.</span> <span class="toc-nav-text">都多余了，直接用libtorch构建项目</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">一元负运算符应用于无符号类型，结果仍为无符号类型</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">LNK2009 无法解析的外部符号</span></a></li></ol>
         
         </div>
       </aside>
